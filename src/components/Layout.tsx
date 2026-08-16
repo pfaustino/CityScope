@@ -1,4 +1,5 @@
-import { NavLink, Outlet } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { NavLink, Outlet, useLocation } from 'react-router-dom'
 import { useCityData } from '../lib/data.ts'
 
 type NavGroup = {
@@ -43,6 +44,8 @@ const NAV: NavGroup[] = [
 
 export function Layout() {
   const { warehouse } = useCityData()
+  const location = useLocation()
+  const [navOpen, setNavOpen] = useState(false)
   const hasCollisions = warehouse.collisions.length > 0
   const groups = NAV.map((g) => {
     if (g.group === 'With data' && hasCollisions) {
@@ -55,9 +58,31 @@ export function Layout() {
     }
     return g
   })
+
+  useEffect(() => {
+    setNavOpen(false)
+  }, [location.pathname])
+
+  useEffect(() => {
+    if (!navOpen) return
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setNavOpen(false)
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [navOpen])
+
   return (
     <div className="shell">
-      <aside className="side">
+      {navOpen ? (
+        <button
+          type="button"
+          className="nav-overlay"
+          aria-label="Close navigation"
+          onClick={() => setNavOpen(false)}
+        />
+      ) : null}
+      <aside id="site-nav" className={navOpen ? 'side is-open' : 'side'}>
         <NavLink to="/" className="brand" end>
           <strong>CityScope</strong>
           <span>Burbank, California</span>
@@ -78,11 +103,20 @@ export function Layout() {
       </aside>
       <div className="main">
         <header className="mast">
+          <button
+            type="button"
+            className="menu-toggle"
+            aria-expanded={navOpen}
+            aria-controls="site-nav"
+            onClick={() => setNavOpen((open) => !open)}
+          >
+            Menu
+          </button>
           <div>
             <div className="kicker">Public data desk</div>
             <div className="serif">Turn Burbank’s public data into verifiable information.</div>
           </div>
-          <div className="kicker">Investigative without being accusatory</div>
+          <div className="kicker mast-end">Investigative without being accusatory</div>
         </header>
         <Outlet />
       </div>

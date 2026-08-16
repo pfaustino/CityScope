@@ -157,6 +157,7 @@ p {
 
 .main {
   min-width: 0;
+  overflow-x: hidden;
 }
 
 .mast {
@@ -304,6 +305,8 @@ p {
 
 .table-wrap {
   overflow: auto;
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
   border: 1px solid var(--rule);
 }
 
@@ -368,6 +371,8 @@ th {
 .map-root {
   height: calc(100vh - var(--mast) - 8.5rem);
   min-height: 480px;
+  max-width: 100%;
+  overflow: hidden;
   border: 1px solid var(--ink);
 }
 
@@ -419,16 +424,95 @@ select {
   color: var(--muted);
 }
 
+.menu-toggle,
+.nav-overlay {
+  display: none;
+}
+
 @media (max-width: 900px) {
   .shell {
     grid-template-columns: 1fr;
   }
-  .side {
-    position: relative;
-    height: auto;
+
+  .menu-toggle {
+    display: inline-block;
+    flex-shrink: 0;
+    align-self: center;
+    background: var(--civic-2);
+    color: #f0eadb;
+    border: 0;
+    padding: 0.4rem 0.7rem;
+    font: inherit;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
   }
+
+  .menu-toggle[aria-expanded='true'] {
+    background: var(--civic);
+  }
+
+  .nav-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 25;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: rgba(19, 47, 60, 0.45);
+    cursor: pointer;
+  }
+
+  .side {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 30;
+    width: min(var(--sidebar), 86vw);
+    height: 100dvh;
+    transform: translateX(-100%);
+    visibility: hidden;
+  }
+
+  .side.is-open {
+    transform: translateX(0);
+    visibility: visible;
+  }
+
+  .mast {
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0.75rem 1rem;
+  }
+
+  .mast .serif {
+    font-size: 1rem;
+  }
+
+  .page {
+    padding: 1rem 1rem 2.5rem;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .map-root {
+    min-height: 240px;
+    height: min(62vh, calc(100dvh - 12rem));
+  }
+
   .grid.two {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .mast-end {
+    display: none;
   }
 }
 
@@ -436,7 +520,9 @@ select {
   .side,
   .mast,
   .layers,
-  .btn {
+  .btn,
+  .menu-toggle,
+  .nav-overlay {
     display: none !important;
   }
   .shell {
