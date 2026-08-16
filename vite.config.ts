@@ -1,10 +1,42 @@
-import { copyFileSync, existsSync } from 'node:fs'
+import { copyFileSync, existsSync, mkdirSync } from 'node:fs'
 import path from 'node:path'
 import { defineConfig, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import { bakeStaticOverlay } from './scripts/bake-static.ts'
 
 const REPO = 'CityScope'
+
+/** Physical folders so GitHub Pages returns HTTP 200 for shared deep links. 404.html is still 404 status. */
+const SPA_DIRS = [
+  'airport',
+  'businesses',
+  'crime',
+  'demographics',
+  'development',
+  'environment',
+  'investigations',
+  'map',
+  'money',
+  'police',
+  'reports',
+  'reports/airport',
+  'reports/business',
+  'reports/crime-annual',
+  'reports/crime-compare',
+  'reports/crime-monthly',
+  'reports/crime-quarterly',
+  'reports/crime-weekly',
+  'reports/demographics',
+  'reports/development',
+  'reports/environment',
+  'reports/housing',
+  'reports/money',
+  'reports/police',
+  'reports/transport',
+  'settings',
+  'sources',
+  'transportation',
+]
 
 function pagesPlugins(): Plugin[] {
   return [
@@ -20,7 +52,13 @@ function pagesPlugins(): Plugin[] {
       apply: 'build',
       closeBundle() {
         const index = path.resolve(__dirname, 'dist/index.html')
-        if (existsSync(index)) copyFileSync(index, path.resolve(__dirname, 'dist/404.html'))
+        if (!existsSync(index)) return
+        copyFileSync(index, path.resolve(__dirname, 'dist/404.html'))
+        for (const dir of SPA_DIRS) {
+          const dest = path.resolve(__dirname, 'dist', dir)
+          mkdirSync(dest, { recursive: true })
+          copyFileSync(index, path.join(dest, 'index.html'))
+        }
       },
     },
   ]
