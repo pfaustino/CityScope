@@ -159,7 +159,7 @@ export const SOURCES: SourceRecord[] = [
     updateFrequency: 'monthly',
     geographicCoverage: 'Burbank city, CA; tracts; block groups',
     historicalCoverage: '2010 and 2020 Census; ACS 5-year and 1-year vintages',
-    fieldsAvailable: ['population', 'income', 'poverty', 'housing', 'education', 'age'],
+    fieldsAvailable: ['population', 'income', 'poverty', 'housing', 'education', 'age', 'race', 'ethnicity'],
     lastSuccessfulRetrieval: '2026-08-15',
     lastModified: '2024-12-01',
     dataQualityRating: 5,

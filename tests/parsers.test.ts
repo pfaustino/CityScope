@@ -11,14 +11,77 @@ describe('live parsers', () => {
   it('parses a Census ACS table into a live snapshot', () => {
     const snap = parseAcsTable(
       [
-        ['NAME', 'B01003_001E', 'B19013_001E', 'B17001_002E', 'B17001_001E'],
-        ['Burbank city, California', '105165', '95816', '7467', '105165'],
+        [
+          'NAME',
+          'B01003_001E',
+          'B19013_001E',
+          'B17001_002E',
+          'B17001_001E',
+          'B15003_001E',
+          'B15003_022E',
+          'B15003_023E',
+          'B15003_024E',
+          'B15003_025E',
+          'B03002_001E',
+          'B03002_001M',
+          'B03002_012E',
+          'B03002_012M',
+          'B03002_003E',
+          'B03002_003M',
+          'B03002_004E',
+          'B03002_004M',
+          'B03002_005E',
+          'B03002_005M',
+          'B03002_006E',
+          'B03002_006M',
+          'B03002_007E',
+          'B03002_007M',
+          'B03002_008E',
+          'B03002_008M',
+          'B03002_009E',
+          'B03002_009M',
+        ],
+        [
+          'Burbank city, California',
+          '105165',
+          '95816',
+          '7467',
+          '105165',
+          '1000',
+          '300',
+          '100',
+          '50',
+          '50',
+          '1000',
+          '20',
+          '250',
+          '10',
+          '400',
+          '12',
+          '50',
+          '8',
+          '10',
+          '5',
+          '200',
+          '9',
+          '5',
+          '4',
+          '15',
+          '6',
+          '70',
+          '7',
+        ],
       ],
       '2026-08-15T00:00:00Z',
     )
     expect(snap.population).toBe(105165)
     expect(snap.provenance.dataClass).toBe('live')
     expect(snap.povertyRate).toBeCloseTo(7467 / 105165, 5)
+    expect(snap.bachelorOrHigher).toBeCloseTo(0.5, 5)
+    expect(snap.raceEthnicity).toHaveLength(8)
+    const hispanic = snap.raceEthnicity?.find((g) => g.id === 'hispanic')
+    expect(hispanic?.share).toBeCloseTo(0.25, 5)
+    expect(hispanic?.shareMoe).not.toBeNull()
   })
 
   it('parses AirNow observations', () => {

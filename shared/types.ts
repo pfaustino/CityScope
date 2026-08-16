@@ -186,6 +186,16 @@ export type Collision = {
   dataClass: DataClass
 }
 
+/** Mutually exclusive ACS B03002 group. Shares are calculations from estimates. */
+export type CensusRaceEthnicity = {
+  id: string
+  label: string
+  estimate: number
+  moe: number | null
+  share: number
+  shareMoe: number | null
+}
+
 export type CensusSnapshot = {
   year: string
   vintage: string
@@ -197,6 +207,7 @@ export type CensusSnapshot = {
   medianGrossRent: number | null
   households: number | null
   bachelorOrHigher: number | null
+  raceEthnicity: CensusRaceEthnicity[] | null
   notes: string[]
   provenance: Provenance
 }

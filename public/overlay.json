@@ -1,5 +1,5 @@
 {
-  "retrievedAt": "2026-08-16T05:14:32.196Z",
+  "retrievedAt": "2026-08-16T18:07:36.817Z",
   "census": [
     {
       "year": "2023",
@@ -11,9 +11,75 @@
       "medianHomeValue": 1041100,
       "medianGrossRent": 2089,
       "households": 43066,
-      "bachelorOrHigher": null,
+      "bachelorOrHigher": 0.4603406012127467,
+      "raceEthnicity": [
+        {
+          "id": "hispanic",
+          "label": "Hispanic or Latino (any race)",
+          "estimate": 25851,
+          "moe": 1742,
+          "share": 0.2458137212951077,
+          "shareMoe": 0.01656336429680596
+        },
+        {
+          "id": "nh-white",
+          "label": "White, not Hispanic",
+          "estimate": 56897,
+          "moe": 2317,
+          "share": 0.5410260067512955,
+          "shareMoe": 0.02202810377771104
+        },
+        {
+          "id": "nh-black",
+          "label": "Black or African American, not Hispanic",
+          "estimate": 3451,
+          "moe": 1080,
+          "share": 0.03281510008082537,
+          "shareMoe": 0.010269545277625754
+        },
+        {
+          "id": "nh-asian",
+          "label": "Asian, not Hispanic",
+          "estimate": 12251,
+          "moe": 1391,
+          "share": 0.11649312984357914,
+          "shareMoe": 0.013226529690943756
+        },
+        {
+          "id": "nh-aian",
+          "label": "American Indian and Alaska Native, not Hispanic",
+          "estimate": 314,
+          "moe": 176,
+          "share": 0.00298578424380735,
+          "shareMoe": 0.0016735590151964648
+        },
+        {
+          "id": "nh-nhpi",
+          "label": "Native Hawaiian and Other Pacific Islander, not Hispanic",
+          "estimate": 60,
+          "moe": 51,
+          "share": 0.0005705320211096848,
+          "shareMoe": 0.0004849520188489546
+        },
+        {
+          "id": "nh-other",
+          "label": "Some other race, not Hispanic",
+          "estimate": 1175,
+          "moe": 773,
+          "share": 0.011172918746731327,
+          "shareMoe": 0.00735034916770721
+        },
+        {
+          "id": "nh-two",
+          "label": "Two or more races, not Hispanic",
+          "estimate": 5166,
+          "moe": 1134,
+          "share": 0.04912280701754386,
+          "shareMoe": 0.010782988821082072
+        }
+      ],
       "notes": [
-        "Live Census Data API pull for Burbank city, California (place 08954). ACS estimates have margins of error."
+        "Live Census Data API pull for Burbank city, California (place 08954). ACS estimates have 90% margins of error."
       ],
       "provenance": {
         "statisticId": "census-2023-acs5-live",
@@ -22,7 +88,7 @@
         "sourceId": "census-acs",
         "sourceName": "U.S. Census Bureau ACS / Decennial",
         "dataset": "ACS 5-year 2019–2023",
-        "retrievedAt": "2026-08-16T05:02:59.253Z",
+        "retrievedAt": "2026-08-16T18:05:44.956Z",
         "query": {
           "geography": "place:08954",
           "state": "06",
@@ -33,12 +99,13 @@
           "start": "2019-01-01",
           "end": "2023-12-31"
         },
-        "transformation": "Direct ACS estimates; poverty rate = B17001_002E / B17001_001E",
+        "transformation": "Direct ACS estimates; poverty rate = B17001_002E / B17001_001E; bachelor’s+ = B15003_022–025 / B15003_001; race/ethnicity shares = B03002 group / B03002_001",
         "claimType": "fact",
         "dataClass": "snapshot",
         "limitations": [
-          "ACS 5-year estimates have margins of error.",
-          "Not a 2026 population count."
+          "ACS 5-year estimates have 90% margins of error.",
+          "Not a 2026 population count.",
+          "Race/ethnicity groups are mutually exclusive (Hispanic origin table B03002)."
         ]
       }
     }
@@ -4447,9 +4514,75 @@
       "medianHomeValue": 1043900,
       "medianGrossRent": 2095,
       "households": 73179,
-      "bachelorOrHigher": null,
+      "bachelorOrHigher": 0.4549665357906356,
+      "raceEthnicity": [
+        {
+          "id": "hispanic",
+          "label": "Hispanic or Latino (any race)",
+          "estimate": 35503,
+          "moe": 2253,
+          "share": 0.18465179175118324,
+          "shareMoe": 0.011717720040029175
+        },
+        {
+          "id": "nh-white",
+          "label": "White, not Hispanic",
+          "estimate": 119803,
+          "moe": 2870,
+          "share": 0.6230977271545223,
+          "shareMoe": 0.01492534638884906
+        },
+        {
+          "id": "nh-black",
+          "label": "Black or African American, not Hispanic",
+          "estimate": 2969,
+          "moe": 641,
+          "share": 0.01544182659801321,
+          "shareMoe": 0.0033338490926947983
+        },
+        {
+          "id": "nh-asian",
+          "label": "Asian, not Hispanic",
+          "estimate": 25472,
+          "moe": 1589,
+          "share": 0.13248036615176575,
+          "shareMoe": 0.008264290885410764
+        },
+        {
+          "id": "nh-aian",
+          "label": "American Indian and Alaska Native, not Hispanic",
+          "estimate": 83,
+          "moe": 52,
+          "share": 0.000431684610183596,
+          "shareMoe": 0.0002704529669549027
+        },
+        {
+          "id": "nh-nhpi",
+          "label": "Native Hawaiian and Other Pacific Islander, not Hispanic",
+          "estimate": 282,
+          "moe": 164,
+          "share": 0.0014666874707442658,
+          "shareMoe": 0.0008529670284449367
+        },
+        {
+          "id": "nh-other",
+          "label": "Some other race, not Hispanic",
+          "estimate": 925,
+          "moe": 329,
+          "share": 0.004810942944817184,
+          "shareMoe": 0.0017111345612900448
+        },
+        {
+          "id": "nh-two",
+          "label": "Two or more races, not Hispanic",
+          "estimate": 7233,
+          "moe": 1378,
+          "share": 0.03761897331877048,
+          "shareMoe": 0.007166992744199663
+        }
+      ],
       "notes": [
-        "Live Census Data API pull for Glendale city, California (place 30000). ACS estimates have margins of error."
+        "Live Census Data API pull for Glendale city, California (place 30000). ACS estimates have 90% margins of error."
       ],
       "provenance": {
         "statisticId": "census-2023-acs5-live-glendale",
@@ -4458,7 +4591,7 @@
         "sourceId": "census-acs",
         "sourceName": "U.S. Census Bureau ACS / Decennial",
         "dataset": "ACS 5-year 2019–2023",
-        "retrievedAt": "2026-08-16T05:02:59.821Z",
+        "retrievedAt": "2026-08-16T18:05:45.539Z",
         "query": {
           "geography": "place:30000",
           "state": "06",
@@ -4469,12 +4602,13 @@
           "start": "2019-01-01",
           "end": "2023-12-31"
         },
-        "transformation": "Direct ACS estimates; poverty rate = B17001_002E / B17001_001E",
+        "transformation": "Direct ACS estimates; poverty rate = B17001_002E / B17001_001E; bachelor’s+ = B15003_022–025 / B15003_001; race/ethnicity shares = B03002 group / B03002_001",
         "claimType": "fact",
         "dataClass": "snapshot",
         "limitations": [
-          "ACS 5-year estimates have margins of error.",
-          "Not a 2026 population count."
+          "ACS 5-year estimates have 90% margins of error.",
+          "Not a 2026 population count.",
+          "Race/ethnicity groups are mutually exclusive (Hispanic origin table B03002)."
         ]
       }
     }
