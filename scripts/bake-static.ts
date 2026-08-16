@@ -1,0 +1,167 @@
+import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
+import { liveSourceView, SOURCES } from '../shared/catalog.ts'
+import { parseForecast, parseQuakes } from '../shared/liveParse.ts'
+import { parseSwitrsCsv, SWITRS_DEFAULT_FILE } from '../shared/switrs.ts'
+import type {
+  AgencyCrimeYear,
+  AirQualityObs,
+  CensusSnapshot,
+  ClimateDay,
+  LiveOverlay,
+} from '../shared/types.ts'
+
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
+const PUBLIC_DIR = path.join(ROOT, 'public')
+const OVERLAY_FILE = path.join(PUBLIC_DIR, 'overlay.json')
+const SOURCES_FILE = path.join(PUBLIC_DIR, 'sources.json')
+
+const KEYS_OFF = {
+  CENSUS_API_KEY: false,
+  NOAA_CDO_TOKEN: false,
+  AIRNOW_API_KEY: false,
+  DATA_GOV_API_KEY: false,
+}
+
+function isGap(value: unknown): boolean {
+  return Boolean(
+    value &&
+      typeof value === 'object' &&
+      !Array.isArray(value) &&
+      'status' in value &&
+      'message' in value,
+  )
+}
+
+function latestRaw(sourceId: string): unknown | null {
+  const dir = path.join(ROOT, 'data', 'raw', sourceId)
+  if (!existsSync(dir)) return null
+  const files = readdirSync(dir)
+    .filter((name) => name.endsWith('.json'))
+    .sort()
+  const last = files.at(-1)
+  if (!last) return null
+  const body = JSON.parse(readFileSync(path.join(dir, last), 'utf8')) as unknown
+  return isGap(body) ? null : body
+}
+
+function readExistingOverlay(): LiveOverlay | null {
+  if (!existsSync(OVERLAY_FILE)) return null
+  try {
+    return JSON.parse(readFileSync(OVERLAY_FILE, 'utf8')) as LiveOverlay
+  } catch {
+    return null
+  }
+}
+
+function asArray<T>(value: unknown): T[] | null {
+  return Array.isArray(value) && value.length > 0 ? (value as T[]) : null
+}
+
+function snapshotize<T>(value: T): T {
+  if (Array.isArray(value)) return value.map((item) => snapshotize(item)) as T
+  if (value && typeof value === 'object') {
+    const next: Record<string, unknown> = {}
+    for (const [key, nested] of Object.entries(value as Record<string, unknown>)) {
+      next[key] = key === 'dataClass' && nested === 'live' ? 'snapshot' : snapshotize(nested)
+    }
+    return next as T
+  }
+  return value
+}
+
+function loadCollisions(): { collisions: LiveOverlay['collisions']; collisionsFile: string | null } {
+  const candidates = [
+    path.join(ROOT, SWITRS_DEFAULT_FILE),
+    path.join(ROOT, 'crashes.csv'),
+    path.join(ROOT, 'data', SWITRS_DEFAULT_FILE),
+    path.join(ROOT, 'data', 'crashes.csv'),
+  ]
+  for (const file of candidates) {
+    if (!existsSync(file)) continue
+    const collisions = parseSwitrsCsv(readFileSync(file, 'utf8'), path.basename(file))
+    return { collisions, collisionsFile: path.basename(file) }
+  }
+  return { collisions: null, collisionsFile: null }
+}
+
+function emptyOverlay(retrievedAt: string): LiveOverlay {
+  return {
+    retrievedAt,
+    census: null,
+    weather: null,
+    earthquakes: null,
+    climate: null,
+    airQuality: null,
+    crimeAnnual: null,
+    fbiAnnual: null,
+    collisions: null,
+    collisionsFile: null,
+    errors: [],
+  }
+}
+
+/** Bake public overlay JSON. Never reads `.env` or calls keyed APIs. */
+export function bakeStaticOverlay(): LiveOverlay {
+  const existing = readExistingOverlay()
+  const overlay = emptyOverlay(new Date().toISOString())
+  if (existing) {
+    overlay.census = existing.census
+    overlay.weather = existing.weather
+    overlay.earthquakes = existing.earthquakes
+    overlay.climate = existing.climate
+    overlay.airQuality = existing.airQuality
+    overlay.crimeAnnual = existing.crimeAnnual
+    overlay.fbiAnnual = existing.fbiAnnual
+    overlay.collisions = existing.collisions
+    overlay.collisionsFile = existing.collisionsFile
+    overlay.retrievedAt = existing.retrievedAt
+  }
+
+  const census = asArray<CensusSnapshot>(latestRaw('census-acs'))
+  if (census) overlay.census = census
+  const climate = asArray<ClimateDay>(latestRaw('noaa-cdo'))
+  if (climate) overlay.climate = climate
+  const airQuality = asArray<AirQualityObs>(latestRaw('aqi'))
+  if (airQuality) overlay.airQuality = airQuality
+  const crimeAnnual = asArray<AgencyCrimeYear>(latestRaw('ca-doj-openjustice'))
+  if (crimeAnnual) overlay.crimeAnnual = crimeAnnual
+  const fbiAnnual = asArray<AgencyCrimeYear>(latestRaw('fbi-cde'))
+  if (fbiAnnual) overlay.fbiAnnual = fbiAnnual
+
+  const nws = latestRaw('nws-forecast')
+  if (nws) {
+    const weather = parseForecast(nws)
+    if (weather.length > 0) overlay.weather = weather
+  }
+  const usgs = latestRaw('usgs-earthquakes')
+  if (usgs) {
+    const earthquakes = parseQuakes(usgs, 'snapshot')
+    if (earthquakes.length > 0) overlay.earthquakes = earthquakes
+  }
+
+  const switrs = loadCollisions()
+  if (switrs.collisions && switrs.collisions.length > 0) {
+    overlay.collisions = switrs.collisions
+    overlay.collisionsFile = switrs.collisionsFile
+  }
+
+  overlay.retrievedAt = new Date().toISOString()
+  overlay.errors = []
+  const baked = snapshotize(overlay)
+
+  if (!existsSync(PUBLIC_DIR)) mkdirSync(PUBLIC_DIR, { recursive: true })
+  writeFileSync(OVERLAY_FILE, `${JSON.stringify(baked, null, 2)}\n`, 'utf8')
+  const sources = SOURCES.map((source) => liveSourceView(source, KEYS_OFF, baked))
+  writeFileSync(SOURCES_FILE, `${JSON.stringify(sources, null, 2)}\n`, 'utf8')
+  return baked
+}
+
+const invoked = process.argv[1] && path.basename(process.argv[1]).startsWith('bake-static')
+if (invoked) {
+  const overlay = bakeStaticOverlay()
+  console.log(
+    `baked overlay ${overlay.retrievedAt} collisions=${overlay.collisions?.length ?? 0} openjustice=${overlay.crimeAnnual?.length ?? 0}`,
+  )
+}
