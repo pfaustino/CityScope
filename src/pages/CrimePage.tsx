@@ -76,7 +76,8 @@ export function CrimePage() {
           <Banner kind="live">
             FBI Crime Data Explorer annual/API facts for Burbank PD (ORI CA0191200). Monthly CDE
             actuals are summed to calendar years. These are not incidents. CDE and OpenJustice can
-            differ.
+            differ. 2021 CDE for this ORI has actuals only in December (Jan–Nov are blank), so that
+            year is not a full-year total.
           </Banner>
           <div className="grid stats">
             <Stat
