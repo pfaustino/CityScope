@@ -1,5 +1,14 @@
 import { gapFor } from './accessGaps.ts'
 import { analyzeWarehouse, topN, type Analysis } from './analysis.ts'
+import {
+  ACS_2023_RATE_VINTAGE,
+  acs5Population,
+  compareAgencyYears,
+  formatRate,
+  isFbiCdeFullYear,
+  rateProvenance,
+} from './crimeCompare.ts'
+import { GLENDALE } from './peerCities.ts'
 import { collisionsProvenance } from './switrs.ts'
 import type { Provenance, Warehouse } from './types.ts'
 
@@ -33,6 +42,7 @@ export const REPORT_DEFS = [
   { id: 'crime-weekly', category: 'Crime & Public Safety', title: 'Crime & public safety — weekly rollup', period: '2026-07' },
   { id: 'crime-quarterly', category: 'Crime & Public Safety', title: 'Crime & public safety — Q2 2026', period: '2026-Q2' },
   { id: 'crime-annual', category: 'Crime & Public Safety', title: 'Crime & public safety — annual agency totals', period: '2024 (OpenJustice)' },
+  { id: 'crime-compare', category: 'Crime & Public Safety', title: 'Burbank vs Glendale — annual agency totals', period: '2024 (OpenJustice)' },
   { id: 'housing', category: 'Housing & Real Estate', title: 'Housing, permits, and development', period: '2024-01 to 2026-07' },
   { id: 'business', category: 'Business Pulse', title: 'Business pulse', period: '2026-07' },
   { id: 'money', category: 'City Spending & Contracts', title: 'City spending and contracts', period: '2026 YTD vs 2025' },
@@ -59,6 +69,9 @@ const MISSING_DOMAIN: Record<string, string> = {
 /** True when the report is built from warehouse/overlay rows, not an access-gap stub. */
 export function reportHasConnectedDataset(id: string, wh?: Warehouse): boolean {
   if (id === 'transport') return (wh?.collisions.length ?? 0) > 0
+  if (id === 'crime-compare') {
+    return (wh?.crimeAnnual.length ?? 0) > 0 && (wh?.crimeAnnualGlendale.length ?? 0) > 0
+  }
   return !(id in MISSING_DOMAIN) && id !== 'police'
 }
 
@@ -82,6 +95,8 @@ export function buildReport(id: string, wh: Warehouse, analysis: Analysis): Repo
       return environmentReport(def, wh, analysis)
     case 'crime-annual':
       return crimeAnnualReport(def, wh)
+    case 'crime-compare':
+      return crimeCompareReport(def, wh)
     default:
       throw new Error(`Unhandled report ${id}`)
   }
@@ -178,6 +193,125 @@ function crimeAnnualReport(def: (typeof REPORT_DEFS)[number], wh: Warehouse): Re
       'Reporting-practice change, CIBRS transition, incomplete statewide submissions.',
       'Incident locations, monthly series, clearances by neighborhood, FBI CDE live API.',
       'Keep OpenJustice ingest; add FBI CDE annual API only with an api.data.gov key. CPRA for incidents.',
+    ),
+  })
+}
+
+function crimeCompareReport(def: (typeof REPORT_DEFS)[number], wh: Warehouse): Report {
+  const burbankPop = acs5Population(wh.census)?.population ?? wh.populationForRates
+  const glendalePop = acs5Population(wh.censusGlendale)?.population ?? wh.populationGlendaleForRates
+  const rows = compareAgencyYears(wh.crimeAnnual, wh.crimeAnnualGlendale, burbankPop, glendalePop)
+  const latest = rows[0]
+  const latestBurbank = wh.crimeAnnual.find((r) => r.year === latest?.year)
+  const latestGlendale = wh.crimeAnnualGlendale.find((r) => r.year === latest?.year)
+  const fbiUsable = compareAgencyYears(
+    wh.fbiAnnual.filter(isFbiCdeFullYear),
+    wh.fbiAnnualGlendale.filter(isFbiCdeFullYear),
+    burbankPop,
+    glendalePop,
+  )
+  const keyNumbers =
+    latest && latestBurbank && latestGlendale && latest.burbankViolentPer1000 != null && latest.glendaleViolentPer1000 != null
+      ? [
+          {
+            label: `${latest.year} violent (Burbank, OpenJustice)`,
+            value: latest.burbankViolent.toLocaleString(),
+            provenance: latestBurbank.provenance,
+          },
+          {
+            label: `${latest.year} violent (Glendale, OpenJustice)`,
+            value: latest.glendaleViolent.toLocaleString(),
+            provenance: latestGlendale.provenance,
+          },
+          {
+            label: `${latest.year} violent per 1,000 (Burbank)`,
+            value: formatRate(latest.burbankViolentPer1000),
+            provenance: rateProvenance(
+              `${latest.year} violent offenses per 1,000 (Burbank)`,
+              latest.burbankViolentPer1000,
+              'Burbank',
+              latest.year,
+              latest.burbankViolent,
+              burbankPop,
+              latestBurbank,
+              ACS_2023_RATE_VINTAGE,
+            ),
+          },
+          {
+            label: `${latest.year} violent per 1,000 (Glendale)`,
+            value: formatRate(latest.glendaleViolentPer1000),
+            provenance: rateProvenance(
+              `${latest.year} violent offenses per 1,000 (Glendale)`,
+              latest.glendaleViolentPer1000,
+              'Glendale',
+              latest.year,
+              latest.glendaleViolent,
+              glendalePop,
+              latestGlendale,
+              ACS_2023_RATE_VINTAGE,
+            ),
+          },
+        ]
+      : []
+  return finish(def, {
+    dataClassNote:
+      'OpenJustice annual agency totals are the primary full-year comparison (Fact). Rates per 1,000 are Calculations using ACS 2019–2023 5-year population. FBI CDE is secondary and is omitted when a year is incomplete. Correlation is not causation.',
+    executiveSummary: [
+      latest
+        ? `${latest.year} OpenJustice violent offenses: Burbank ${latest.burbankViolent.toLocaleString()}, Glendale ${latest.glendaleViolent.toLocaleString()}.`
+        : 'OpenJustice rows for both cities are not loaded.',
+      latest
+        ? `${latest.year} violent rates per 1,000 residents (${ACS_2023_RATE_VINTAGE}): Burbank ${formatRate(latest.burbankViolentPer1000)}, Glendale ${formatRate(latest.glendaleViolentPer1000)}.`
+        : '',
+      latest
+        ? `${latest.year} property offenses: Burbank ${latest.burbankProperty.toLocaleString()} (${formatRate(latest.burbankPropertyPer1000)} per 1,000), Glendale ${latest.glendaleProperty.toLocaleString()} (${formatRate(latest.glendalePropertyPer1000)} per 1,000).`
+        : '',
+      'These are UCR-style agency summaries, not incident maps. A rate difference is not a causal finding.',
+    ].filter(Boolean),
+    keyNumbers,
+    whatChanged: rows.slice(0, 4).map(
+      (row) =>
+        `${row.year}: violent Burbank ${row.burbankViolent.toLocaleString()} vs Glendale ${row.glendaleViolent.toLocaleString()}; property ${row.burbankProperty.toLocaleString()} vs ${row.glendaleProperty.toLocaleString()}.`,
+    ),
+    geographic: [
+      `Citywide agency totals only. OpenJustice NCICCode Burbank and ${GLENDALE.openJusticeAgency}, Los Angeles County. FBI CDE ORI ${GLENDALE.fbiOri} for Glendale PD.`,
+    ],
+    trends: rows.slice(0, 8).map(
+      (row) =>
+        `${row.year} violent per 1,000: Burbank ${formatRate(row.burbankViolentPer1000)}, Glendale ${formatRate(row.glendaleViolentPer1000)}.`,
+    ),
+    notable: [
+      'Do not infer that one city is safer, or that any local policy caused a gap, from a rate comparison.',
+      fbiUsable.length > 0
+        ? `FBI CDE full-year rows available for ${fbiUsable.map((r) => r.year).join(', ')}. 2021 CDE is excluded (NIBRS transition / incomplete actuals).`
+        : 'FBI CDE is not used for this comparison because coverage is incomplete or not loaded.',
+    ],
+    crossDataset: [
+      'No association with weather, spending, airport activity, or demographics is claimed. Correlation is not causation.',
+    ],
+    unknown: [
+      'Incident locations, neighborhood assignment, and clearance rates by city.',
+      'Year-matched population for every crime year; rates use one ACS 5-year vintage for both cities.',
+    ],
+    sources: [
+      'ca-doj-openjustice',
+      'census-acs (Burbank place 08954; Glendale place 30000)',
+      fbiUsable.length > 0 ? `fbi-cde (ORI CA0191200 and ${GLENDALE.fbiOri})` : 'fbi-cde (not used for full-year comparison)',
+    ],
+    qualityAnswers: quality(
+      latest
+        ? `${latest.year} OpenJustice agency totals for Burbank PD and Glendale PD.`
+        : 'Comparison not loaded.',
+      latest
+        ? `Violent per 1,000: Burbank ${formatRate(latest.burbankViolentPer1000)} vs Glendale ${formatRate(latest.glendaleViolentPer1000)}`
+        : 'n/a',
+      'Burbank PD and Glendale PD agency rows, Los Angeles County',
+      latest ? String(latest.year) : 'n/a',
+      `${ACS_2023_RATE_VINTAGE} population; prior OpenJustice years in the table`,
+      'CA DOJ Crimes and Clearances CSV filtered to each agency; Census ACS 5-year population.',
+      'Reporting-practice change, CIBRS/NIBRS transition, different service populations, daytime vs resident population.',
+      'Incidents, clearances, year-matched population, complete CDE for 2021.',
+      'Keep OpenJustice as the full-year series. Do not treat CDE 2021 as a full-year pair.',
     ),
   })
 }

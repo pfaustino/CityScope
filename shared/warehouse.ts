@@ -17,6 +17,9 @@ export function buildWarehouse(nowIso = '2026-08-15T08:00:00-07:00'): Warehouse 
     collisions: [],
     collisionsFile: null,
     fbiAnnual: [],
+    crimeAnnualGlendale: openJusticeGlendaleSnapshots(nowIso),
+    fbiAnnualGlendale: [],
+    censusGlendale: censusGlendaleSnapshots(),
     census: censusSnapshots(),
     earthquakes: earthquakeSnapshot(),
     weather: weatherSnapshot(),
@@ -25,6 +28,7 @@ export function buildWarehouse(nowIso = '2026-08-15T08:00:00-07:00'): Warehouse 
     climate: [],
     accessGaps: ACCESS_GAPS,
     populationForRates: 105165,
+    populationGlendaleForRates: 192270,
   }
 }
 
@@ -140,6 +144,99 @@ function censusSnapshots(): CensusSnapshot[] {
         retrievedAt: retrieved,
         query: { geography: 'Burbank city, CA', series: 'PEPSV2025' },
         geographicFilter: 'Burbank city, California',
+        timePeriod: { start: '2025-07-01', end: '2025-07-01' },
+        transformation: 'Published estimate; no transformation',
+        claimType: 'fact',
+        dataClass: SNAP,
+        limitations: ['Estimates, not a census count.', 'QuickFacts mixes vintages.'],
+      },
+    },
+  ]
+}
+
+function censusGlendaleSnapshots(): CensusSnapshot[] {
+  const retrieved = '2026-08-15T08:00:00-07:00'
+  return [
+    {
+      year: '2020',
+      vintage: '2020 Decennial Census',
+      population: 196543,
+      medianAge: null,
+      medianHouseholdIncome: null,
+      povertyRate: null,
+      medianHomeValue: null,
+      medianGrossRent: null,
+      households: null,
+      bachelorOrHigher: null,
+      notes: ['April 1, 2020 count. Source: U.S. Census Bureau QuickFacts, Glendale city, California.'],
+      provenance: {
+        statisticId: 'census-2020-pop-glendale',
+        label: '2020 Census population (Glendale)',
+        value: 196543,
+        sourceId: 'census-acs',
+        sourceName: 'U.S. Census Bureau ACS / Decennial',
+        dataset: 'Decennial Census 2020',
+        retrievedAt: retrieved,
+        query: { geography: 'Glendale city, CA', table: 'P1' },
+        geographicFilter: 'Glendale city, California',
+        timePeriod: { start: '2020-04-01', end: '2020-04-01' },
+        transformation: 'Published count; no transformation',
+        claimType: 'fact',
+        dataClass: SNAP,
+        limitations: ['Point-in-time census count; not a current estimate.'],
+      },
+    },
+    {
+      year: '2023',
+      vintage: 'ACS 2019–2023 5-year',
+      population: 192270,
+      medianAge: null,
+      medianHouseholdIncome: null,
+      povertyRate: null,
+      medianHomeValue: null,
+      medianGrossRent: null,
+      households: null,
+      bachelorOrHigher: null,
+      notes: ['ACS 5-year estimate from Census Data API (place 30000). Replaced by a live API row when CENSUS_API_KEY ingest succeeds.'],
+      provenance: {
+        statisticId: 'census-2023-acs5-pop-glendale',
+        label: 'ACS 2023 5-year population (Glendale)',
+        value: 192270,
+        sourceId: 'census-acs',
+        sourceName: 'U.S. Census Bureau ACS / Decennial',
+        dataset: 'ACS 5-year 2019–2023',
+        retrievedAt: retrieved,
+        query: { geography: 'place:30000', state: '06', vintage: 'acs5-2023' },
+        geographicFilter: 'Glendale city, California',
+        timePeriod: { start: '2019-01-01', end: '2023-12-31' },
+        transformation: 'Published estimate; no transformation',
+        claimType: 'fact',
+        dataClass: SNAP,
+        limitations: ['ACS 5-year estimates have margins of error.'],
+      },
+    },
+    {
+      year: '2025',
+      vintage: 'Census Population Estimates (V2025)',
+      population: 187160,
+      medianAge: null,
+      medianHouseholdIncome: null,
+      povertyRate: null,
+      medianHomeValue: null,
+      medianGrossRent: null,
+      households: null,
+      bachelorOrHigher: null,
+      notes: ['July 1, 2025 estimate from QuickFacts, Glendale city, California.'],
+      provenance: {
+        statisticId: 'census-2025-pep-glendale',
+        label: 'July 1, 2025 population estimate (Glendale)',
+        value: 187160,
+        sourceId: 'census-acs',
+        sourceName: 'U.S. Census Bureau ACS / Decennial',
+        dataset: 'Vintage 2025 Population Estimates / QuickFacts',
+        retrievedAt: retrieved,
+        query: { geography: 'Glendale city, CA', series: 'PEPSV2025' },
+        geographicFilter: 'Glendale city, California',
         timePeriod: { start: '2025-07-01', end: '2025-07-01' },
         transformation: 'Published estimate; no transformation',
         claimType: 'fact',
@@ -270,19 +367,76 @@ function openJusticeSnapshots(retrieved: string): AgencyCrimeYear[] {
       larceny: 2470,
     },
   ]
-  return rows.map((row) => ({
+  return rows.map((row) => openJusticeSnapshotRow(row, retrieved, 'Burbank'))
+}
+
+function openJusticeGlendaleSnapshots(retrieved: string): AgencyCrimeYear[] {
+  const rows: Omit<AgencyCrimeYear, 'dataClass' | 'provenance'>[] = [
+    {
+      year: 2022,
+      county: 'Los Angeles County',
+      agency: 'Glendale',
+      violent: 283,
+      homicide: 0,
+      rape: 18,
+      robbery: 130,
+      aggravatedAssault: 135,
+      property: 3444,
+      burglary: 486,
+      vehicleTheft: 413,
+      larceny: 2545,
+    },
+    {
+      year: 2023,
+      county: 'Los Angeles County',
+      agency: 'Glendale',
+      violent: 422,
+      homicide: 2,
+      rape: 28,
+      robbery: 168,
+      aggravatedAssault: 224,
+      property: 4152,
+      burglary: 538,
+      vehicleTheft: 491,
+      larceny: 3123,
+    },
+    {
+      year: 2024,
+      county: 'Los Angeles County',
+      agency: 'Glendale',
+      violent: 530,
+      homicide: 4,
+      rape: 34,
+      robbery: 172,
+      aggravatedAssault: 320,
+      property: 3733,
+      burglary: 372,
+      vehicleTheft: 424,
+      larceny: 2937,
+    },
+  ]
+  return rows.map((row) => openJusticeSnapshotRow(row, retrieved, 'Glendale'))
+}
+
+function openJusticeSnapshotRow(
+  row: Omit<AgencyCrimeYear, 'dataClass' | 'provenance'>,
+  retrieved: string,
+  city: 'Burbank' | 'Glendale',
+): AgencyCrimeYear {
+  const slug = city === 'Burbank' ? `openjustice-${row.year}-violent` : `openjustice-glendale-${row.year}-violent`
+  return {
     ...row,
     dataClass: SNAP,
     provenance: {
-      statisticId: `openjustice-${row.year}-violent`,
-      label: `${row.year} reported violent offenses (Burbank PD)`,
+      statisticId: slug,
+      label: `${row.year} reported violent offenses (${city} PD)`,
       value: row.violent,
       sourceId: 'ca-doj-openjustice',
       sourceName: 'CA DOJ OpenJustice crimes and clearances',
       dataset: 'Crimes and Clearances with Arson 1985–2024',
       retrievedAt: retrieved,
-      query: { agency: 'Burbank', county: 'Los Angeles County', year: String(row.year) },
-      geographicFilter: 'Burbank PD / Los Angeles County (OpenJustice agency row)',
+      query: { agency: city, county: 'Los Angeles County', year: String(row.year) },
+      geographicFilter: `${city} PD / Los Angeles County (OpenJustice agency row)`,
       timePeriod: { start: `${row.year}-01-01`, end: `${row.year}-12-31` },
       transformation: 'Direct annual UCR-style agency totals; not incident locations',
       claimType: 'fact',
@@ -293,7 +447,7 @@ function openJusticeSnapshots(retrieved: string): AgencyCrimeYear[] {
         'Correlation is not causation.',
       ],
     },
-  }))
+  }
 }
 
 export function warehouseDisclaimer(wh: Warehouse): string {

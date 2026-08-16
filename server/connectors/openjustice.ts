@@ -1,15 +1,30 @@
+import { GLENDALE } from '../../shared/peerCities.ts'
 import type { AgencyCrimeYear, DataClass } from '../../shared/types.ts'
 
 export const OPENJUSTICE_CRIMES_URL =
   'https://data-openjustice.doj.ca.gov/sites/default/files/dataset/2025-07/Crimes_and_Clearances_with_Arson-1985-2024.csv'
 
-const LIMITATIONS = [
-  'Annual reported offenses for Burbank PD, not geocoded incidents.',
-  '2021–2023 statewide files mix UCR summary and CIBRS/IBR.',
-  'Correlation is not causation.',
-]
+export type OpenJusticeBundle = {
+  burbank: AgencyCrimeYear[]
+  glendale: AgencyCrimeYear[]
+}
+
+const DEFAULT_AGENCIES = ['Burbank'] as const
+
+function limitationsFor(agencyLabel: string): string[] {
+  return [
+    `Annual reported offenses for ${agencyLabel}, not geocoded incidents.`,
+    '2021–2023 statewide files mix UCR summary and CIBRS/IBR.',
+    'Correlation is not causation.',
+  ]
+}
 
 export async function fetchOpenJustice(): Promise<AgencyCrimeYear[]> {
+  const bundle = await fetchOpenJusticeBundle()
+  return bundle.burbank
+}
+
+export async function fetchOpenJusticeBundle(): Promise<OpenJusticeBundle> {
   const res = await fetch(OPENJUSTICE_CRIMES_URL, {
     headers: {
       Accept: 'text/csv',
@@ -19,10 +34,21 @@ export async function fetchOpenJustice(): Promise<AgencyCrimeYear[]> {
   })
   if (!res.ok) throw new Error(`OpenJustice HTTP ${res.status}`)
   const text = await res.text()
-  return parseOpenJusticeCsv(text, new Date().toISOString(), 'live')
+  const retrievedAt = new Date().toISOString()
+  const all = parseOpenJusticeCsv(text, retrievedAt, 'live', ['Burbank', GLENDALE.openJusticeAgency])
+  const burbank = all.filter((row) => row.agency.toLowerCase() === 'burbank')
+  const glendale = all.filter((row) => row.agency.toLowerCase() === GLENDALE.openJusticeAgency.toLowerCase())
+  if (burbank.length === 0) throw new Error('OpenJustice: no Burbank PD rows')
+  if (glendale.length === 0) throw new Error('OpenJustice: no Glendale PD rows')
+  return { burbank, glendale }
 }
 
-export function parseOpenJusticeCsv(text: string, retrievedAt: string, dataClass: DataClass): AgencyCrimeYear[] {
+export function parseOpenJusticeCsv(
+  text: string,
+  retrievedAt: string,
+  dataClass: DataClass,
+  agencies: readonly string[] = DEFAULT_AGENCIES,
+): AgencyCrimeYear[] {
   const lines = text.split(/\r?\n/).filter((line) => line.trim().length > 0)
   const headerLine = lines[0]
   if (!headerLine) throw new Error('OpenJustice: empty file')
@@ -45,12 +71,13 @@ export function parseOpenJusticeCsv(text: string, retrievedAt: string, dataClass
   if (yearI < 0 || countyI < 0 || agencyI < 0 || col.violent < 0 || col.property < 0) {
     throw new Error('OpenJustice: unexpected header')
   }
+  const wanted = new Set(agencies.map((name) => name.toLowerCase()))
   const out: AgencyCrimeYear[] = []
   for (const line of lines.slice(1)) {
     const parts = line.split(',')
     const agency = (parts[agencyI] ?? '').trim()
     const county = (parts[countyI] ?? '').trim()
-    if (agency.toLowerCase() !== 'burbank') continue
+    if (!wanted.has(agency.toLowerCase())) continue
     if (!/los angeles/i.test(county)) continue
     const year = Number(parts[yearI])
     const violent = Number(parts[col.violent])
@@ -60,6 +87,8 @@ export function parseOpenJusticeCsv(text: string, retrievedAt: string, dataClass
       const n = Number(parts[i])
       return Number.isFinite(n) ? n : 0
     }
+    const isBurbank = agency.toLowerCase() === 'burbank'
+    const agencyLabel = isBurbank ? 'Burbank PD' : `${agency} PD`
     out.push({
       year,
       county,
@@ -75,23 +104,23 @@ export function parseOpenJusticeCsv(text: string, retrievedAt: string, dataClass
       larceny: numAt(col.larceny),
       dataClass,
       provenance: {
-        statisticId: `openjustice-${year}-violent`,
-        label: `${year} reported violent offenses (Burbank PD)`,
+        statisticId: isBurbank ? `openjustice-${year}-violent` : `openjustice-${agency.toLowerCase()}-${year}-violent`,
+        label: `${year} reported violent offenses (${agencyLabel})`,
         value: violent,
         sourceId: 'ca-doj-openjustice',
         sourceName: 'CA DOJ OpenJustice crimes and clearances',
         dataset: 'Crimes and Clearances with Arson 1985–2024',
         retrievedAt,
-        query: { agency: 'Burbank', county, year: String(year), url: OPENJUSTICE_CRIMES_URL },
-        geographicFilter: 'Burbank PD / Los Angeles County (OpenJustice agency row)',
+        query: { agency, county, year: String(year), url: OPENJUSTICE_CRIMES_URL },
+        geographicFilter: `${agencyLabel} / Los Angeles County (OpenJustice agency row)`,
         timePeriod: { start: `${year}-01-01`, end: `${year}-12-31` },
-        transformation: 'Filter statewide CSV to agency Burbank in Los Angeles County',
+        transformation: `Filter statewide CSV to agency ${agency} in Los Angeles County`,
         claimType: 'fact',
         dataClass,
-        limitations: LIMITATIONS,
+        limitations: limitationsFor(agencyLabel),
       },
     })
   }
-  if (out.length === 0) throw new Error('OpenJustice: no Burbank PD rows')
-  return out.sort((a, b) => a.year - b.year)
+  if (out.length === 0) throw new Error(`OpenJustice: no rows for ${agencies.join(', ')}`)
+  return out.sort((a, b) => a.year - b.year || a.agency.localeCompare(b.agency))
 }

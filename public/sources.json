@@ -156,7 +156,7 @@
       "education",
       "age"
     ],
-    "lastSuccessfulRetrieval": "2026-08-16T04:07:31.428Z",
+    "lastSuccessfulRetrieval": "2026-08-16T05:14:32.196Z",
     "lastModified": "2024-12-01",
     "dataQualityRating": 5,
     "legalAccess": "API_KEY",
@@ -233,7 +233,7 @@
       "short forecast",
       "precipitation probability"
     ],
-    "lastSuccessfulRetrieval": "2026-08-16T04:07:31.428Z",
+    "lastSuccessfulRetrieval": "2026-08-16T05:14:32.196Z",
     "lastModified": "2026-08-15",
     "dataQualityRating": 5,
     "legalAccess": "PUBLIC",
@@ -262,7 +262,7 @@
       "depth",
       "event url"
     ],
-    "lastSuccessfulRetrieval": "2026-08-16T04:07:31.428Z",
+    "lastSuccessfulRetrieval": "2026-08-16T05:14:32.196Z",
     "lastModified": "2026-08-15",
     "dataQualityRating": 5,
     "legalAccess": "PUBLIC",
@@ -281,7 +281,7 @@
     "authentication": "PUBLIC",
     "rateLimit": "Statewide annual files; no live incident API",
     "updateFrequency": "monthly",
-    "geographicCoverage": "California agencies including Burbank PD",
+    "geographicCoverage": "California agencies including Burbank PD and Glendale PD",
     "historicalCoverage": "Annual UCR-style agency totals (multi-decade files)",
     "fieldsAvailable": [
       "homicide",
@@ -293,11 +293,11 @@
       "vehicle theft",
       "arson"
     ],
-    "lastSuccessfulRetrieval": "2026-08-16T04:07:31.428Z",
+    "lastSuccessfulRetrieval": "2026-08-16T05:14:32.196Z",
     "lastModified": "2025-07-01",
     "dataQualityRating": 4,
     "legalAccess": "PUBLIC",
-    "howToObtain": "Download Crimes and Clearances from OpenJustice and filter to Burbank PD. These are annual agency totals, not geocoded incidents. CityScope does not display fabricated incident counts.",
+    "howToObtain": "Download Crimes and Clearances from OpenJustice and filter to Burbank PD or Glendale PD. These are annual agency totals, not geocoded incidents. CityScope does not display fabricated incident counts.",
     "phase1Priority": 5,
     "status": "connected",
     "statusDetail": "Published snapshot"
@@ -308,17 +308,17 @@
     "agency": "Federal Bureau of Investigation",
     "url": "https://api.data.gov/signup/",
     "apiEndpoint": "https://api.usa.gov/crime/fbi/sapi",
-    "datasetId": "ORI CA0191200",
+    "datasetId": "ORI CA0191200 / CA0192500",
     "authentication": "API_KEY",
     "rateLimit": "api.data.gov key required",
     "updateFrequency": "monthly",
-    "geographicCoverage": "Burbank PD (ORI CA0191200)",
+    "geographicCoverage": "Burbank PD (ORI CA0191200) and Glendale PD (ORI CA0192500)",
     "historicalCoverage": "UCR/NIBRS annual agency summaries",
     "fieldsAvailable": [
       "offense counts by year",
       "violent/property summaries"
     ],
-    "lastSuccessfulRetrieval": "2026-08-16T04:07:31.428Z",
+    "lastSuccessfulRetrieval": "2026-08-16T05:14:32.196Z",
     "lastModified": null,
     "dataQualityRating": 4,
     "legalAccess": "API_KEY",
@@ -344,7 +344,7 @@
       "TMIN",
       "PRCP"
     ],
-    "lastSuccessfulRetrieval": "2026-08-16T04:07:31.428Z",
+    "lastSuccessfulRetrieval": "2026-08-16T05:14:32.196Z",
     "lastModified": null,
     "dataQualityRating": 5,
     "legalAccess": "API_KEY",
@@ -371,7 +371,7 @@
       "intersection",
       "coordinates"
     ],
-    "lastSuccessfulRetrieval": "2026-08-16T04:07:31.428Z",
+    "lastSuccessfulRetrieval": "2026-08-16T05:14:32.196Z",
     "lastModified": null,
     "dataQualityRating": 4,
     "legalAccess": "REGISTRATION",
@@ -423,7 +423,7 @@
       "PM2.5",
       "ozone"
     ],
-    "lastSuccessfulRetrieval": "2026-08-16T04:07:31.428Z",
+    "lastSuccessfulRetrieval": "2026-08-16T05:14:32.196Z",
     "lastModified": null,
     "dataQualityRating": 4,
     "legalAccess": "API_KEY",

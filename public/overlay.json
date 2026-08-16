@@ -1,5 +1,5 @@
 {
-  "retrievedAt": "2026-08-16T04:07:31.428Z",
+  "retrievedAt": "2026-08-16T05:14:32.196Z",
   "census": [
     {
       "year": "2023",
@@ -13,16 +13,16 @@
       "households": 43066,
       "bachelorOrHigher": null,
       "notes": [
-        "Live Census Data API pull for Burbank city, CA (place 08954). ACS estimates have margins of error."
+        "Live Census Data API pull for Burbank city, California (place 08954). ACS estimates have margins of error."
       ],
       "provenance": {
         "statisticId": "census-2023-acs5-live",
-        "label": "ACS 2023 5-year population (live)",
+        "label": "ACS 2023 5-year population (live) — Burbank city, California",
         "value": 105165,
         "sourceId": "census-acs",
         "sourceName": "U.S. Census Bureau ACS / Decennial",
         "dataset": "ACS 5-year 2019–2023",
-        "retrievedAt": "2026-08-16T03:50:28.989Z",
+        "retrievedAt": "2026-08-16T05:02:59.253Z",
         "query": {
           "geography": "place:08954",
           "state": "06",
@@ -63,7 +63,7 @@
       "startTime": "2026-08-18T06:00:00-07:00",
       "temperatureF": 96,
       "shortForecast": "Mostly Sunny",
-      "wind": "0 to 5 mph SSE"
+      "wind": "0 to 5 mph S"
     },
     {
       "name": "Wednesday",
@@ -91,7 +91,7 @@
       "startTime": "2026-08-22T06:00:00-07:00",
       "temperatureF": 94,
       "shortForecast": "Sunny",
-      "wind": "0 to 5 mph SE"
+      "wind": "0 to 5 mph S"
     }
   ],
   "earthquakes": [
@@ -256,7 +256,7 @@
         "sourceId": "ca-doj-openjustice",
         "sourceName": "CA DOJ OpenJustice crimes and clearances",
         "dataset": "Crimes and Clearances with Arson 1985–2024",
-        "retrievedAt": "2026-08-16T03:50:31.932Z",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
         "query": {
           "agency": "Burbank",
           "county": "Los Angeles County",
@@ -299,7 +299,7 @@
         "sourceId": "ca-doj-openjustice",
         "sourceName": "CA DOJ OpenJustice crimes and clearances",
         "dataset": "Crimes and Clearances with Arson 1985–2024",
-        "retrievedAt": "2026-08-16T03:50:31.932Z",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
         "query": {
           "agency": "Burbank",
           "county": "Los Angeles County",
@@ -342,7 +342,7 @@
         "sourceId": "ca-doj-openjustice",
         "sourceName": "CA DOJ OpenJustice crimes and clearances",
         "dataset": "Crimes and Clearances with Arson 1985–2024",
-        "retrievedAt": "2026-08-16T03:50:31.932Z",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
         "query": {
           "agency": "Burbank",
           "county": "Los Angeles County",
@@ -385,7 +385,7 @@
         "sourceId": "ca-doj-openjustice",
         "sourceName": "CA DOJ OpenJustice crimes and clearances",
         "dataset": "Crimes and Clearances with Arson 1985–2024",
-        "retrievedAt": "2026-08-16T03:50:31.932Z",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
         "query": {
           "agency": "Burbank",
           "county": "Los Angeles County",
@@ -428,7 +428,7 @@
         "sourceId": "ca-doj-openjustice",
         "sourceName": "CA DOJ OpenJustice crimes and clearances",
         "dataset": "Crimes and Clearances with Arson 1985–2024",
-        "retrievedAt": "2026-08-16T03:50:31.932Z",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
         "query": {
           "agency": "Burbank",
           "county": "Los Angeles County",
@@ -471,7 +471,7 @@
         "sourceId": "ca-doj-openjustice",
         "sourceName": "CA DOJ OpenJustice crimes and clearances",
         "dataset": "Crimes and Clearances with Arson 1985–2024",
-        "retrievedAt": "2026-08-16T03:50:31.932Z",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
         "query": {
           "agency": "Burbank",
           "county": "Los Angeles County",
@@ -514,7 +514,7 @@
         "sourceId": "ca-doj-openjustice",
         "sourceName": "CA DOJ OpenJustice crimes and clearances",
         "dataset": "Crimes and Clearances with Arson 1985–2024",
-        "retrievedAt": "2026-08-16T03:50:31.932Z",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
         "query": {
           "agency": "Burbank",
           "county": "Los Angeles County",
@@ -557,7 +557,7 @@
         "sourceId": "ca-doj-openjustice",
         "sourceName": "CA DOJ OpenJustice crimes and clearances",
         "dataset": "Crimes and Clearances with Arson 1985–2024",
-        "retrievedAt": "2026-08-16T03:50:31.932Z",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
         "query": {
           "agency": "Burbank",
           "county": "Los Angeles County",
@@ -600,7 +600,7 @@
         "sourceId": "ca-doj-openjustice",
         "sourceName": "CA DOJ OpenJustice crimes and clearances",
         "dataset": "Crimes and Clearances with Arson 1985–2024",
-        "retrievedAt": "2026-08-16T03:50:31.932Z",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
         "query": {
           "agency": "Burbank",
           "county": "Los Angeles County",
@@ -643,7 +643,7 @@
         "sourceId": "ca-doj-openjustice",
         "sourceName": "CA DOJ OpenJustice crimes and clearances",
         "dataset": "Crimes and Clearances with Arson 1985–2024",
-        "retrievedAt": "2026-08-16T03:50:31.932Z",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
         "query": {
           "agency": "Burbank",
           "county": "Los Angeles County",
@@ -686,7 +686,7 @@
         "sourceId": "ca-doj-openjustice",
         "sourceName": "CA DOJ OpenJustice crimes and clearances",
         "dataset": "Crimes and Clearances with Arson 1985–2024",
-        "retrievedAt": "2026-08-16T03:50:31.932Z",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
         "query": {
           "agency": "Burbank",
           "county": "Los Angeles County",
@@ -729,7 +729,7 @@
         "sourceId": "ca-doj-openjustice",
         "sourceName": "CA DOJ OpenJustice crimes and clearances",
         "dataset": "Crimes and Clearances with Arson 1985–2024",
-        "retrievedAt": "2026-08-16T03:50:31.932Z",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
         "query": {
           "agency": "Burbank",
           "county": "Los Angeles County",
@@ -772,7 +772,7 @@
         "sourceId": "ca-doj-openjustice",
         "sourceName": "CA DOJ OpenJustice crimes and clearances",
         "dataset": "Crimes and Clearances with Arson 1985–2024",
-        "retrievedAt": "2026-08-16T03:50:31.932Z",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
         "query": {
           "agency": "Burbank",
           "county": "Los Angeles County",
@@ -815,7 +815,7 @@
         "sourceId": "ca-doj-openjustice",
         "sourceName": "CA DOJ OpenJustice crimes and clearances",
         "dataset": "Crimes and Clearances with Arson 1985–2024",
-        "retrievedAt": "2026-08-16T03:50:31.932Z",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
         "query": {
           "agency": "Burbank",
           "county": "Los Angeles County",
@@ -858,7 +858,7 @@
         "sourceId": "ca-doj-openjustice",
         "sourceName": "CA DOJ OpenJustice crimes and clearances",
         "dataset": "Crimes and Clearances with Arson 1985–2024",
-        "retrievedAt": "2026-08-16T03:50:31.932Z",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
         "query": {
           "agency": "Burbank",
           "county": "Los Angeles County",
@@ -901,7 +901,7 @@
         "sourceId": "ca-doj-openjustice",
         "sourceName": "CA DOJ OpenJustice crimes and clearances",
         "dataset": "Crimes and Clearances with Arson 1985–2024",
-        "retrievedAt": "2026-08-16T03:50:31.932Z",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
         "query": {
           "agency": "Burbank",
           "county": "Los Angeles County",
@@ -944,7 +944,7 @@
         "sourceId": "ca-doj-openjustice",
         "sourceName": "CA DOJ OpenJustice crimes and clearances",
         "dataset": "Crimes and Clearances with Arson 1985–2024",
-        "retrievedAt": "2026-08-16T03:50:31.932Z",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
         "query": {
           "agency": "Burbank",
           "county": "Los Angeles County",
@@ -987,7 +987,7 @@
         "sourceId": "ca-doj-openjustice",
         "sourceName": "CA DOJ OpenJustice crimes and clearances",
         "dataset": "Crimes and Clearances with Arson 1985–2024",
-        "retrievedAt": "2026-08-16T03:50:31.932Z",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
         "query": {
           "agency": "Burbank",
           "county": "Los Angeles County",
@@ -1030,7 +1030,7 @@
         "sourceId": "ca-doj-openjustice",
         "sourceName": "CA DOJ OpenJustice crimes and clearances",
         "dataset": "Crimes and Clearances with Arson 1985–2024",
-        "retrievedAt": "2026-08-16T03:50:31.932Z",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
         "query": {
           "agency": "Burbank",
           "county": "Los Angeles County",
@@ -1073,7 +1073,7 @@
         "sourceId": "ca-doj-openjustice",
         "sourceName": "CA DOJ OpenJustice crimes and clearances",
         "dataset": "Crimes and Clearances with Arson 1985–2024",
-        "retrievedAt": "2026-08-16T03:50:31.932Z",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
         "query": {
           "agency": "Burbank",
           "county": "Los Angeles County",
@@ -1116,7 +1116,7 @@
         "sourceId": "ca-doj-openjustice",
         "sourceName": "CA DOJ OpenJustice crimes and clearances",
         "dataset": "Crimes and Clearances with Arson 1985–2024",
-        "retrievedAt": "2026-08-16T03:50:31.932Z",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
         "query": {
           "agency": "Burbank",
           "county": "Los Angeles County",
@@ -1159,7 +1159,7 @@
         "sourceId": "ca-doj-openjustice",
         "sourceName": "CA DOJ OpenJustice crimes and clearances",
         "dataset": "Crimes and Clearances with Arson 1985–2024",
-        "retrievedAt": "2026-08-16T03:50:31.932Z",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
         "query": {
           "agency": "Burbank",
           "county": "Los Angeles County",
@@ -1202,7 +1202,7 @@
         "sourceId": "ca-doj-openjustice",
         "sourceName": "CA DOJ OpenJustice crimes and clearances",
         "dataset": "Crimes and Clearances with Arson 1985–2024",
-        "retrievedAt": "2026-08-16T03:50:31.932Z",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
         "query": {
           "agency": "Burbank",
           "county": "Los Angeles County",
@@ -1245,7 +1245,7 @@
         "sourceId": "ca-doj-openjustice",
         "sourceName": "CA DOJ OpenJustice crimes and clearances",
         "dataset": "Crimes and Clearances with Arson 1985–2024",
-        "retrievedAt": "2026-08-16T03:50:31.932Z",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
         "query": {
           "agency": "Burbank",
           "county": "Los Angeles County",
@@ -1288,7 +1288,7 @@
         "sourceId": "ca-doj-openjustice",
         "sourceName": "CA DOJ OpenJustice crimes and clearances",
         "dataset": "Crimes and Clearances with Arson 1985–2024",
-        "retrievedAt": "2026-08-16T03:50:31.932Z",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
         "query": {
           "agency": "Burbank",
           "county": "Los Angeles County",
@@ -1331,7 +1331,7 @@
         "sourceId": "ca-doj-openjustice",
         "sourceName": "CA DOJ OpenJustice crimes and clearances",
         "dataset": "Crimes and Clearances with Arson 1985–2024",
-        "retrievedAt": "2026-08-16T03:50:31.932Z",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
         "query": {
           "agency": "Burbank",
           "county": "Los Angeles County",
@@ -1374,7 +1374,7 @@
         "sourceId": "ca-doj-openjustice",
         "sourceName": "CA DOJ OpenJustice crimes and clearances",
         "dataset": "Crimes and Clearances with Arson 1985–2024",
-        "retrievedAt": "2026-08-16T03:50:31.932Z",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
         "query": {
           "agency": "Burbank",
           "county": "Los Angeles County",
@@ -1417,7 +1417,7 @@
         "sourceId": "ca-doj-openjustice",
         "sourceName": "CA DOJ OpenJustice crimes and clearances",
         "dataset": "Crimes and Clearances with Arson 1985–2024",
-        "retrievedAt": "2026-08-16T03:50:31.932Z",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
         "query": {
           "agency": "Burbank",
           "county": "Los Angeles County",
@@ -1460,7 +1460,7 @@
         "sourceId": "ca-doj-openjustice",
         "sourceName": "CA DOJ OpenJustice crimes and clearances",
         "dataset": "Crimes and Clearances with Arson 1985–2024",
-        "retrievedAt": "2026-08-16T03:50:31.932Z",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
         "query": {
           "agency": "Burbank",
           "county": "Los Angeles County",
@@ -1503,7 +1503,7 @@
         "sourceId": "ca-doj-openjustice",
         "sourceName": "CA DOJ OpenJustice crimes and clearances",
         "dataset": "Crimes and Clearances with Arson 1985–2024",
-        "retrievedAt": "2026-08-16T03:50:31.932Z",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
         "query": {
           "agency": "Burbank",
           "county": "Los Angeles County",
@@ -1546,7 +1546,7 @@
         "sourceId": "ca-doj-openjustice",
         "sourceName": "CA DOJ OpenJustice crimes and clearances",
         "dataset": "Crimes and Clearances with Arson 1985–2024",
-        "retrievedAt": "2026-08-16T03:50:31.932Z",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
         "query": {
           "agency": "Burbank",
           "county": "Los Angeles County",
@@ -1589,7 +1589,7 @@
         "sourceId": "ca-doj-openjustice",
         "sourceName": "CA DOJ OpenJustice crimes and clearances",
         "dataset": "Crimes and Clearances with Arson 1985–2024",
-        "retrievedAt": "2026-08-16T03:50:31.932Z",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
         "query": {
           "agency": "Burbank",
           "county": "Los Angeles County",
@@ -1632,7 +1632,7 @@
         "sourceId": "ca-doj-openjustice",
         "sourceName": "CA DOJ OpenJustice crimes and clearances",
         "dataset": "Crimes and Clearances with Arson 1985–2024",
-        "retrievedAt": "2026-08-16T03:50:31.932Z",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
         "query": {
           "agency": "Burbank",
           "county": "Los Angeles County",
@@ -1675,7 +1675,7 @@
         "sourceId": "ca-doj-openjustice",
         "sourceName": "CA DOJ OpenJustice crimes and clearances",
         "dataset": "Crimes and Clearances with Arson 1985–2024",
-        "retrievedAt": "2026-08-16T03:50:31.932Z",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
         "query": {
           "agency": "Burbank",
           "county": "Los Angeles County",
@@ -1718,7 +1718,7 @@
         "sourceId": "ca-doj-openjustice",
         "sourceName": "CA DOJ OpenJustice crimes and clearances",
         "dataset": "Crimes and Clearances with Arson 1985–2024",
-        "retrievedAt": "2026-08-16T03:50:31.932Z",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
         "query": {
           "agency": "Burbank",
           "county": "Los Angeles County",
@@ -1761,7 +1761,7 @@
         "sourceId": "ca-doj-openjustice",
         "sourceName": "CA DOJ OpenJustice crimes and clearances",
         "dataset": "Crimes and Clearances with Arson 1985–2024",
-        "retrievedAt": "2026-08-16T03:50:31.932Z",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
         "query": {
           "agency": "Burbank",
           "county": "Los Angeles County",
@@ -1804,7 +1804,7 @@
         "sourceId": "ca-doj-openjustice",
         "sourceName": "CA DOJ OpenJustice crimes and clearances",
         "dataset": "Crimes and Clearances with Arson 1985–2024",
-        "retrievedAt": "2026-08-16T03:50:31.932Z",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
         "query": {
           "agency": "Burbank",
           "county": "Los Angeles County",
@@ -1847,7 +1847,7 @@
         "sourceId": "ca-doj-openjustice",
         "sourceName": "CA DOJ OpenJustice crimes and clearances",
         "dataset": "Crimes and Clearances with Arson 1985–2024",
-        "retrievedAt": "2026-08-16T03:50:31.932Z",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
         "query": {
           "agency": "Burbank",
           "county": "Los Angeles County",
@@ -1890,7 +1890,7 @@
         "sourceId": "ca-doj-openjustice",
         "sourceName": "CA DOJ OpenJustice crimes and clearances",
         "dataset": "Crimes and Clearances with Arson 1985–2024",
-        "retrievedAt": "2026-08-16T03:50:31.932Z",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
         "query": {
           "agency": "Burbank",
           "county": "Los Angeles County",
@@ -1933,7 +1933,7 @@
         "sourceId": "ca-doj-openjustice",
         "sourceName": "CA DOJ OpenJustice crimes and clearances",
         "dataset": "Crimes and Clearances with Arson 1985–2024",
-        "retrievedAt": "2026-08-16T03:50:31.932Z",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
         "query": {
           "agency": "Burbank",
           "county": "Los Angeles County",
@@ -1964,12 +1964,13 @@
       "violent": 229,
       "homicide": 0,
       "rape": 18,
-      "robbery": 77,
-      "aggravatedAssault": 134,
+      "robbery": 0,
+      "aggravatedAssault": 0,
       "property": 2633,
       "burglary": 276,
       "vehicleTheft": 214,
-      "larceny": 2135,
+      "larceny": 0,
+      "monthsReported": 12,
       "dataClass": "snapshot",
       "provenance": {
         "statisticId": "fbi-cde-2018-violent",
@@ -1978,12 +1979,13 @@
         "sourceId": "fbi-cde",
         "sourceName": "FBI Crime Data Explorer (agency summaries)",
         "dataset": "CDE summarized agency actuals ORI CA0191200",
-        "retrievedAt": "2026-08-16T03:50:32.047Z",
+        "retrievedAt": "2026-08-16T05:04:01.258Z",
         "query": {
           "ori": "CA0191200",
           "from": "01-2018",
           "to": "12-2025",
-          "offense": "violent-crime+components"
+          "offense": "violent-crime+components",
+          "monthsReported": "12"
         },
         "geographicFilter": "Burbank PD (ORI CA0191200)",
         "timePeriod": {
@@ -1997,6 +1999,7 @@
           "FBI CDE summarized agency actuals, rolled up from monthly counts to calendar years.",
           "These are official annual/API totals, not geocoded incidents or a live CAD feed.",
           "CDE figures can differ from CA DOJ OpenJustice because of reporting systems and revisions.",
+          "2021 CDE may be incomplete for agencies in the NIBRS transition and is not used as a full-year comparison.",
           "Correlation is not causation."
         ]
       }
@@ -2006,14 +2009,15 @@
       "county": "Los Angeles County",
       "agency": "Burbank Police Department",
       "violent": 189,
-      "homicide": 1,
+      "homicide": 0,
       "rape": 11,
-      "robbery": 54,
-      "aggravatedAssault": 123,
+      "robbery": 0,
+      "aggravatedAssault": 0,
       "property": 2621,
       "burglary": 299,
       "vehicleTheft": 211,
-      "larceny": 2107,
+      "larceny": 0,
+      "monthsReported": 12,
       "dataClass": "snapshot",
       "provenance": {
         "statisticId": "fbi-cde-2019-violent",
@@ -2022,12 +2026,13 @@
         "sourceId": "fbi-cde",
         "sourceName": "FBI Crime Data Explorer (agency summaries)",
         "dataset": "CDE summarized agency actuals ORI CA0191200",
-        "retrievedAt": "2026-08-16T03:50:32.047Z",
+        "retrievedAt": "2026-08-16T05:04:01.258Z",
         "query": {
           "ori": "CA0191200",
           "from": "01-2018",
           "to": "12-2025",
-          "offense": "violent-crime+components"
+          "offense": "violent-crime+components",
+          "monthsReported": "12"
         },
         "geographicFilter": "Burbank PD (ORI CA0191200)",
         "timePeriod": {
@@ -2041,6 +2046,7 @@
           "FBI CDE summarized agency actuals, rolled up from monthly counts to calendar years.",
           "These are official annual/API totals, not geocoded incidents or a live CAD feed.",
           "CDE figures can differ from CA DOJ OpenJustice because of reporting systems and revisions.",
+          "2021 CDE may be incomplete for agencies in the NIBRS transition and is not used as a full-year comparison.",
           "Correlation is not causation."
         ]
       }
@@ -2050,14 +2056,15 @@
       "county": "Los Angeles County",
       "agency": "Burbank Police Department",
       "violent": 174,
-      "homicide": 1,
+      "homicide": 0,
       "rape": 12,
-      "robbery": 48,
-      "aggravatedAssault": 113,
+      "robbery": 0,
+      "aggravatedAssault": 0,
       "property": 2483,
       "burglary": 293,
       "vehicleTheft": 301,
-      "larceny": 1880,
+      "larceny": 0,
+      "monthsReported": 12,
       "dataClass": "snapshot",
       "provenance": {
         "statisticId": "fbi-cde-2020-violent",
@@ -2066,12 +2073,13 @@
         "sourceId": "fbi-cde",
         "sourceName": "FBI Crime Data Explorer (agency summaries)",
         "dataset": "CDE summarized agency actuals ORI CA0191200",
-        "retrievedAt": "2026-08-16T03:50:32.047Z",
+        "retrievedAt": "2026-08-16T05:04:01.258Z",
         "query": {
           "ori": "CA0191200",
           "from": "01-2018",
           "to": "12-2025",
-          "offense": "violent-crime+components"
+          "offense": "violent-crime+components",
+          "monthsReported": "12"
         },
         "geographicFilter": "Burbank PD (ORI CA0191200)",
         "timePeriod": {
@@ -2085,6 +2093,7 @@
           "FBI CDE summarized agency actuals, rolled up from monthly counts to calendar years.",
           "These are official annual/API totals, not geocoded incidents or a live CAD feed.",
           "CDE figures can differ from CA DOJ OpenJustice because of reporting systems and revisions.",
+          "2021 CDE may be incomplete for agencies in the NIBRS transition and is not used as a full-year comparison.",
           "Correlation is not causation."
         ]
       }
@@ -2096,12 +2105,13 @@
       "violent": 21,
       "homicide": 0,
       "rape": 1,
-      "robbery": 5,
-      "aggravatedAssault": 15,
+      "robbery": 0,
+      "aggravatedAssault": 0,
       "property": 268,
       "burglary": 36,
       "vehicleTheft": 30,
-      "larceny": 202,
+      "larceny": 0,
+      "monthsReported": 12,
       "dataClass": "snapshot",
       "provenance": {
         "statisticId": "fbi-cde-2021-violent",
@@ -2110,12 +2120,13 @@
         "sourceId": "fbi-cde",
         "sourceName": "FBI Crime Data Explorer (agency summaries)",
         "dataset": "CDE summarized agency actuals ORI CA0191200",
-        "retrievedAt": "2026-08-16T03:50:32.047Z",
+        "retrievedAt": "2026-08-16T05:04:01.258Z",
         "query": {
           "ori": "CA0191200",
           "from": "01-2018",
           "to": "12-2025",
-          "offense": "violent-crime+components"
+          "offense": "violent-crime+components",
+          "monthsReported": "12"
         },
         "geographicFilter": "Burbank PD (ORI CA0191200)",
         "timePeriod": {
@@ -2129,7 +2140,9 @@
           "FBI CDE summarized agency actuals, rolled up from monthly counts to calendar years.",
           "These are official annual/API totals, not geocoded incidents or a live CAD feed.",
           "CDE figures can differ from CA DOJ OpenJustice because of reporting systems and revisions.",
-          "Correlation is not causation."
+          "2021 CDE may be incomplete for agencies in the NIBRS transition and is not used as a full-year comparison.",
+          "Correlation is not causation.",
+          "This CDE year is not treated as a full-year total (NIBRS transition, incomplete months, or all-zero actuals)."
         ]
       }
     },
@@ -2138,14 +2151,15 @@
       "county": "Los Angeles County",
       "agency": "Burbank Police Department",
       "violent": 317,
-      "homicide": 1,
+      "homicide": 0,
       "rape": 21,
-      "robbery": 82,
-      "aggravatedAssault": 213,
+      "robbery": 0,
+      "aggravatedAssault": 0,
       "property": 2850,
       "burglary": 275,
       "vehicleTheft": 293,
-      "larceny": 2244,
+      "larceny": 0,
+      "monthsReported": 12,
       "dataClass": "snapshot",
       "provenance": {
         "statisticId": "fbi-cde-2022-violent",
@@ -2154,12 +2168,13 @@
         "sourceId": "fbi-cde",
         "sourceName": "FBI Crime Data Explorer (agency summaries)",
         "dataset": "CDE summarized agency actuals ORI CA0191200",
-        "retrievedAt": "2026-08-16T03:50:32.047Z",
+        "retrievedAt": "2026-08-16T05:04:01.258Z",
         "query": {
           "ori": "CA0191200",
           "from": "01-2018",
           "to": "12-2025",
-          "offense": "violent-crime+components"
+          "offense": "violent-crime+components",
+          "monthsReported": "12"
         },
         "geographicFilter": "Burbank PD (ORI CA0191200)",
         "timePeriod": {
@@ -2173,6 +2188,7 @@
           "FBI CDE summarized agency actuals, rolled up from monthly counts to calendar years.",
           "These are official annual/API totals, not geocoded incidents or a live CAD feed.",
           "CDE figures can differ from CA DOJ OpenJustice because of reporting systems and revisions.",
+          "2021 CDE may be incomplete for agencies in the NIBRS transition and is not used as a full-year comparison.",
           "Correlation is not causation."
         ]
       }
@@ -2184,12 +2200,13 @@
       "violent": 371,
       "homicide": 0,
       "rape": 20,
-      "robbery": 109,
-      "aggravatedAssault": 242,
+      "robbery": 0,
+      "aggravatedAssault": 0,
       "property": 3297,
       "burglary": 346,
       "vehicleTheft": 313,
-      "larceny": 2603,
+      "larceny": 0,
+      "monthsReported": 12,
       "dataClass": "snapshot",
       "provenance": {
         "statisticId": "fbi-cde-2023-violent",
@@ -2198,12 +2215,13 @@
         "sourceId": "fbi-cde",
         "sourceName": "FBI Crime Data Explorer (agency summaries)",
         "dataset": "CDE summarized agency actuals ORI CA0191200",
-        "retrievedAt": "2026-08-16T03:50:32.047Z",
+        "retrievedAt": "2026-08-16T05:04:01.258Z",
         "query": {
           "ori": "CA0191200",
           "from": "01-2018",
           "to": "12-2025",
-          "offense": "violent-crime+components"
+          "offense": "violent-crime+components",
+          "monthsReported": "12"
         },
         "geographicFilter": "Burbank PD (ORI CA0191200)",
         "timePeriod": {
@@ -2217,6 +2235,7 @@
           "FBI CDE summarized agency actuals, rolled up from monthly counts to calendar years.",
           "These are official annual/API totals, not geocoded incidents or a live CAD feed.",
           "CDE figures can differ from CA DOJ OpenJustice because of reporting systems and revisions.",
+          "2021 CDE may be incomplete for agencies in the NIBRS transition and is not used as a full-year comparison.",
           "Correlation is not causation."
         ]
       }
@@ -2226,14 +2245,15 @@
       "county": "Los Angeles County",
       "agency": "Burbank Police Department",
       "violent": 409,
-      "homicide": 2,
+      "homicide": 0,
       "rape": 24,
-      "robbery": 96,
-      "aggravatedAssault": 287,
+      "robbery": 0,
+      "aggravatedAssault": 0,
       "property": 3113,
       "burglary": 346,
       "vehicleTheft": 298,
-      "larceny": 2445,
+      "larceny": 0,
+      "monthsReported": 12,
       "dataClass": "snapshot",
       "provenance": {
         "statisticId": "fbi-cde-2024-violent",
@@ -2242,12 +2262,13 @@
         "sourceId": "fbi-cde",
         "sourceName": "FBI Crime Data Explorer (agency summaries)",
         "dataset": "CDE summarized agency actuals ORI CA0191200",
-        "retrievedAt": "2026-08-16T03:50:32.047Z",
+        "retrievedAt": "2026-08-16T05:04:01.258Z",
         "query": {
           "ori": "CA0191200",
           "from": "01-2018",
           "to": "12-2025",
-          "offense": "violent-crime+components"
+          "offense": "violent-crime+components",
+          "monthsReported": "12"
         },
         "geographicFilter": "Burbank PD (ORI CA0191200)",
         "timePeriod": {
@@ -2261,6 +2282,7 @@
           "FBI CDE summarized agency actuals, rolled up from monthly counts to calendar years.",
           "These are official annual/API totals, not geocoded incidents or a live CAD feed.",
           "CDE figures can differ from CA DOJ OpenJustice because of reporting systems and revisions.",
+          "2021 CDE may be incomplete for agencies in the NIBRS transition and is not used as a full-year comparison.",
           "Correlation is not causation."
         ]
       }
@@ -2272,12 +2294,13 @@
       "violent": 351,
       "homicide": 0,
       "rape": 12,
-      "robbery": 67,
-      "aggravatedAssault": 272,
+      "robbery": 0,
+      "aggravatedAssault": 0,
       "property": 2522,
       "burglary": 285,
       "vehicleTheft": 245,
-      "larceny": 1982,
+      "larceny": 0,
+      "monthsReported": 12,
       "dataClass": "snapshot",
       "provenance": {
         "statisticId": "fbi-cde-2025-violent",
@@ -2286,12 +2309,13 @@
         "sourceId": "fbi-cde",
         "sourceName": "FBI Crime Data Explorer (agency summaries)",
         "dataset": "CDE summarized agency actuals ORI CA0191200",
-        "retrievedAt": "2026-08-16T03:50:32.047Z",
+        "retrievedAt": "2026-08-16T05:04:01.258Z",
         "query": {
           "ori": "CA0191200",
           "from": "01-2018",
           "to": "12-2025",
-          "offense": "violent-crime+components"
+          "offense": "violent-crime+components",
+          "monthsReported": "12"
         },
         "geographicFilter": "Burbank PD (ORI CA0191200)",
         "timePeriod": {
@@ -2305,7 +2329,2152 @@
           "FBI CDE summarized agency actuals, rolled up from monthly counts to calendar years.",
           "These are official annual/API totals, not geocoded incidents or a live CAD feed.",
           "CDE figures can differ from CA DOJ OpenJustice because of reporting systems and revisions.",
+          "2021 CDE may be incomplete for agencies in the NIBRS transition and is not used as a full-year comparison.",
           "Correlation is not causation."
+        ]
+      }
+    }
+  ],
+  "crimeAnnualGlendale": [
+    {
+      "year": 1985,
+      "county": "Los Angeles County",
+      "agency": "Glendale",
+      "violent": 479,
+      "homicide": 4,
+      "rape": 17,
+      "robbery": 263,
+      "aggravatedAssault": 195,
+      "property": 6926,
+      "burglary": 1916,
+      "vehicleTheft": 922,
+      "larceny": 4088,
+      "dataClass": "snapshot",
+      "provenance": {
+        "statisticId": "openjustice-glendale-1985-violent",
+        "label": "1985 reported violent offenses (Glendale PD)",
+        "value": 479,
+        "sourceId": "ca-doj-openjustice",
+        "sourceName": "CA DOJ OpenJustice crimes and clearances",
+        "dataset": "Crimes and Clearances with Arson 1985–2024",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
+        "query": {
+          "agency": "Glendale",
+          "county": "Los Angeles County",
+          "year": "1985",
+          "url": "https://data-openjustice.doj.ca.gov/sites/default/files/dataset/2025-07/Crimes_and_Clearances_with_Arson-1985-2024.csv"
+        },
+        "geographicFilter": "Glendale PD / Los Angeles County (OpenJustice agency row)",
+        "timePeriod": {
+          "start": "1985-01-01",
+          "end": "1985-12-31"
+        },
+        "transformation": "Filter statewide CSV to agency Glendale in Los Angeles County",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "Annual reported offenses for Glendale PD, not geocoded incidents.",
+          "2021–2023 statewide files mix UCR summary and CIBRS/IBR.",
+          "Correlation is not causation."
+        ]
+      }
+    },
+    {
+      "year": 1986,
+      "county": "Los Angeles County",
+      "agency": "Glendale",
+      "violent": 548,
+      "homicide": 5,
+      "rape": 21,
+      "robbery": 226,
+      "aggravatedAssault": 296,
+      "property": 7867,
+      "burglary": 1768,
+      "vehicleTheft": 1093,
+      "larceny": 5006,
+      "dataClass": "snapshot",
+      "provenance": {
+        "statisticId": "openjustice-glendale-1986-violent",
+        "label": "1986 reported violent offenses (Glendale PD)",
+        "value": 548,
+        "sourceId": "ca-doj-openjustice",
+        "sourceName": "CA DOJ OpenJustice crimes and clearances",
+        "dataset": "Crimes and Clearances with Arson 1985–2024",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
+        "query": {
+          "agency": "Glendale",
+          "county": "Los Angeles County",
+          "year": "1986",
+          "url": "https://data-openjustice.doj.ca.gov/sites/default/files/dataset/2025-07/Crimes_and_Clearances_with_Arson-1985-2024.csv"
+        },
+        "geographicFilter": "Glendale PD / Los Angeles County (OpenJustice agency row)",
+        "timePeriod": {
+          "start": "1986-01-01",
+          "end": "1986-12-31"
+        },
+        "transformation": "Filter statewide CSV to agency Glendale in Los Angeles County",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "Annual reported offenses for Glendale PD, not geocoded incidents.",
+          "2021–2023 statewide files mix UCR summary and CIBRS/IBR.",
+          "Correlation is not causation."
+        ]
+      }
+    },
+    {
+      "year": 1987,
+      "county": "Los Angeles County",
+      "agency": "Glendale",
+      "violent": 634,
+      "homicide": 6,
+      "rape": 28,
+      "robbery": 227,
+      "aggravatedAssault": 373,
+      "property": 7959,
+      "burglary": 1809,
+      "vehicleTheft": 1328,
+      "larceny": 4822,
+      "dataClass": "snapshot",
+      "provenance": {
+        "statisticId": "openjustice-glendale-1987-violent",
+        "label": "1987 reported violent offenses (Glendale PD)",
+        "value": 634,
+        "sourceId": "ca-doj-openjustice",
+        "sourceName": "CA DOJ OpenJustice crimes and clearances",
+        "dataset": "Crimes and Clearances with Arson 1985–2024",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
+        "query": {
+          "agency": "Glendale",
+          "county": "Los Angeles County",
+          "year": "1987",
+          "url": "https://data-openjustice.doj.ca.gov/sites/default/files/dataset/2025-07/Crimes_and_Clearances_with_Arson-1985-2024.csv"
+        },
+        "geographicFilter": "Glendale PD / Los Angeles County (OpenJustice agency row)",
+        "timePeriod": {
+          "start": "1987-01-01",
+          "end": "1987-12-31"
+        },
+        "transformation": "Filter statewide CSV to agency Glendale in Los Angeles County",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "Annual reported offenses for Glendale PD, not geocoded incidents.",
+          "2021–2023 statewide files mix UCR summary and CIBRS/IBR.",
+          "Correlation is not causation."
+        ]
+      }
+    },
+    {
+      "year": 1988,
+      "county": "Los Angeles County",
+      "agency": "Glendale",
+      "violent": 482,
+      "homicide": 6,
+      "rape": 32,
+      "robbery": 222,
+      "aggravatedAssault": 222,
+      "property": 8159,
+      "burglary": 1610,
+      "vehicleTheft": 1630,
+      "larceny": 4919,
+      "dataClass": "snapshot",
+      "provenance": {
+        "statisticId": "openjustice-glendale-1988-violent",
+        "label": "1988 reported violent offenses (Glendale PD)",
+        "value": 482,
+        "sourceId": "ca-doj-openjustice",
+        "sourceName": "CA DOJ OpenJustice crimes and clearances",
+        "dataset": "Crimes and Clearances with Arson 1985–2024",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
+        "query": {
+          "agency": "Glendale",
+          "county": "Los Angeles County",
+          "year": "1988",
+          "url": "https://data-openjustice.doj.ca.gov/sites/default/files/dataset/2025-07/Crimes_and_Clearances_with_Arson-1985-2024.csv"
+        },
+        "geographicFilter": "Glendale PD / Los Angeles County (OpenJustice agency row)",
+        "timePeriod": {
+          "start": "1988-01-01",
+          "end": "1988-12-31"
+        },
+        "transformation": "Filter statewide CSV to agency Glendale in Los Angeles County",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "Annual reported offenses for Glendale PD, not geocoded incidents.",
+          "2021–2023 statewide files mix UCR summary and CIBRS/IBR.",
+          "Correlation is not causation."
+        ]
+      }
+    },
+    {
+      "year": 1989,
+      "county": "Los Angeles County",
+      "agency": "Glendale",
+      "violent": 603,
+      "homicide": 7,
+      "rape": 54,
+      "robbery": 271,
+      "aggravatedAssault": 271,
+      "property": 8624,
+      "burglary": 1877,
+      "vehicleTheft": 1672,
+      "larceny": 5075,
+      "dataClass": "snapshot",
+      "provenance": {
+        "statisticId": "openjustice-glendale-1989-violent",
+        "label": "1989 reported violent offenses (Glendale PD)",
+        "value": 603,
+        "sourceId": "ca-doj-openjustice",
+        "sourceName": "CA DOJ OpenJustice crimes and clearances",
+        "dataset": "Crimes and Clearances with Arson 1985–2024",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
+        "query": {
+          "agency": "Glendale",
+          "county": "Los Angeles County",
+          "year": "1989",
+          "url": "https://data-openjustice.doj.ca.gov/sites/default/files/dataset/2025-07/Crimes_and_Clearances_with_Arson-1985-2024.csv"
+        },
+        "geographicFilter": "Glendale PD / Los Angeles County (OpenJustice agency row)",
+        "timePeriod": {
+          "start": "1989-01-01",
+          "end": "1989-12-31"
+        },
+        "transformation": "Filter statewide CSV to agency Glendale in Los Angeles County",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "Annual reported offenses for Glendale PD, not geocoded incidents.",
+          "2021–2023 statewide files mix UCR summary and CIBRS/IBR.",
+          "Correlation is not causation."
+        ]
+      }
+    },
+    {
+      "year": 1990,
+      "county": "Los Angeles County",
+      "agency": "Glendale",
+      "violent": 764,
+      "homicide": 3,
+      "rape": 37,
+      "robbery": 392,
+      "aggravatedAssault": 332,
+      "property": 8021,
+      "burglary": 1916,
+      "vehicleTheft": 1556,
+      "larceny": 4549,
+      "dataClass": "snapshot",
+      "provenance": {
+        "statisticId": "openjustice-glendale-1990-violent",
+        "label": "1990 reported violent offenses (Glendale PD)",
+        "value": 764,
+        "sourceId": "ca-doj-openjustice",
+        "sourceName": "CA DOJ OpenJustice crimes and clearances",
+        "dataset": "Crimes and Clearances with Arson 1985–2024",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
+        "query": {
+          "agency": "Glendale",
+          "county": "Los Angeles County",
+          "year": "1990",
+          "url": "https://data-openjustice.doj.ca.gov/sites/default/files/dataset/2025-07/Crimes_and_Clearances_with_Arson-1985-2024.csv"
+        },
+        "geographicFilter": "Glendale PD / Los Angeles County (OpenJustice agency row)",
+        "timePeriod": {
+          "start": "1990-01-01",
+          "end": "1990-12-31"
+        },
+        "transformation": "Filter statewide CSV to agency Glendale in Los Angeles County",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "Annual reported offenses for Glendale PD, not geocoded incidents.",
+          "2021–2023 statewide files mix UCR summary and CIBRS/IBR.",
+          "Correlation is not causation."
+        ]
+      }
+    },
+    {
+      "year": 1991,
+      "county": "Los Angeles County",
+      "agency": "Glendale",
+      "violent": 683,
+      "homicide": 8,
+      "rape": 36,
+      "robbery": 398,
+      "aggravatedAssault": 241,
+      "property": 8539,
+      "burglary": 2025,
+      "vehicleTheft": 1751,
+      "larceny": 4763,
+      "dataClass": "snapshot",
+      "provenance": {
+        "statisticId": "openjustice-glendale-1991-violent",
+        "label": "1991 reported violent offenses (Glendale PD)",
+        "value": 683,
+        "sourceId": "ca-doj-openjustice",
+        "sourceName": "CA DOJ OpenJustice crimes and clearances",
+        "dataset": "Crimes and Clearances with Arson 1985–2024",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
+        "query": {
+          "agency": "Glendale",
+          "county": "Los Angeles County",
+          "year": "1991",
+          "url": "https://data-openjustice.doj.ca.gov/sites/default/files/dataset/2025-07/Crimes_and_Clearances_with_Arson-1985-2024.csv"
+        },
+        "geographicFilter": "Glendale PD / Los Angeles County (OpenJustice agency row)",
+        "timePeriod": {
+          "start": "1991-01-01",
+          "end": "1991-12-31"
+        },
+        "transformation": "Filter statewide CSV to agency Glendale in Los Angeles County",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "Annual reported offenses for Glendale PD, not geocoded incidents.",
+          "2021–2023 statewide files mix UCR summary and CIBRS/IBR.",
+          "Correlation is not causation."
+        ]
+      }
+    },
+    {
+      "year": 1992,
+      "county": "Los Angeles County",
+      "agency": "Glendale",
+      "violent": 716,
+      "homicide": 7,
+      "rape": 38,
+      "robbery": 373,
+      "aggravatedAssault": 298,
+      "property": 7566,
+      "burglary": 1756,
+      "vehicleTheft": 1403,
+      "larceny": 4407,
+      "dataClass": "snapshot",
+      "provenance": {
+        "statisticId": "openjustice-glendale-1992-violent",
+        "label": "1992 reported violent offenses (Glendale PD)",
+        "value": 716,
+        "sourceId": "ca-doj-openjustice",
+        "sourceName": "CA DOJ OpenJustice crimes and clearances",
+        "dataset": "Crimes and Clearances with Arson 1985–2024",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
+        "query": {
+          "agency": "Glendale",
+          "county": "Los Angeles County",
+          "year": "1992",
+          "url": "https://data-openjustice.doj.ca.gov/sites/default/files/dataset/2025-07/Crimes_and_Clearances_with_Arson-1985-2024.csv"
+        },
+        "geographicFilter": "Glendale PD / Los Angeles County (OpenJustice agency row)",
+        "timePeriod": {
+          "start": "1992-01-01",
+          "end": "1992-12-31"
+        },
+        "transformation": "Filter statewide CSV to agency Glendale in Los Angeles County",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "Annual reported offenses for Glendale PD, not geocoded incidents.",
+          "2021–2023 statewide files mix UCR summary and CIBRS/IBR.",
+          "Correlation is not causation."
+        ]
+      }
+    },
+    {
+      "year": 1993,
+      "county": "Los Angeles County",
+      "agency": "Glendale",
+      "violent": 671,
+      "homicide": 9,
+      "rape": 30,
+      "robbery": 355,
+      "aggravatedAssault": 277,
+      "property": 7544,
+      "burglary": 1596,
+      "vehicleTheft": 1447,
+      "larceny": 4501,
+      "dataClass": "snapshot",
+      "provenance": {
+        "statisticId": "openjustice-glendale-1993-violent",
+        "label": "1993 reported violent offenses (Glendale PD)",
+        "value": 671,
+        "sourceId": "ca-doj-openjustice",
+        "sourceName": "CA DOJ OpenJustice crimes and clearances",
+        "dataset": "Crimes and Clearances with Arson 1985–2024",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
+        "query": {
+          "agency": "Glendale",
+          "county": "Los Angeles County",
+          "year": "1993",
+          "url": "https://data-openjustice.doj.ca.gov/sites/default/files/dataset/2025-07/Crimes_and_Clearances_with_Arson-1985-2024.csv"
+        },
+        "geographicFilter": "Glendale PD / Los Angeles County (OpenJustice agency row)",
+        "timePeriod": {
+          "start": "1993-01-01",
+          "end": "1993-12-31"
+        },
+        "transformation": "Filter statewide CSV to agency Glendale in Los Angeles County",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "Annual reported offenses for Glendale PD, not geocoded incidents.",
+          "2021–2023 statewide files mix UCR summary and CIBRS/IBR.",
+          "Correlation is not causation."
+        ]
+      }
+    },
+    {
+      "year": 1994,
+      "county": "Los Angeles County",
+      "agency": "Glendale",
+      "violent": 678,
+      "homicide": 5,
+      "rape": 15,
+      "robbery": 333,
+      "aggravatedAssault": 325,
+      "property": 6674,
+      "burglary": 1133,
+      "vehicleTheft": 1225,
+      "larceny": 4316,
+      "dataClass": "snapshot",
+      "provenance": {
+        "statisticId": "openjustice-glendale-1994-violent",
+        "label": "1994 reported violent offenses (Glendale PD)",
+        "value": 678,
+        "sourceId": "ca-doj-openjustice",
+        "sourceName": "CA DOJ OpenJustice crimes and clearances",
+        "dataset": "Crimes and Clearances with Arson 1985–2024",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
+        "query": {
+          "agency": "Glendale",
+          "county": "Los Angeles County",
+          "year": "1994",
+          "url": "https://data-openjustice.doj.ca.gov/sites/default/files/dataset/2025-07/Crimes_and_Clearances_with_Arson-1985-2024.csv"
+        },
+        "geographicFilter": "Glendale PD / Los Angeles County (OpenJustice agency row)",
+        "timePeriod": {
+          "start": "1994-01-01",
+          "end": "1994-12-31"
+        },
+        "transformation": "Filter statewide CSV to agency Glendale in Los Angeles County",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "Annual reported offenses for Glendale PD, not geocoded incidents.",
+          "2021–2023 statewide files mix UCR summary and CIBRS/IBR.",
+          "Correlation is not causation."
+        ]
+      }
+    },
+    {
+      "year": 1995,
+      "county": "Los Angeles County",
+      "agency": "Glendale",
+      "violent": 765,
+      "homicide": 8,
+      "rape": 22,
+      "robbery": 351,
+      "aggravatedAssault": 384,
+      "property": 7193,
+      "burglary": 1315,
+      "vehicleTheft": 1326,
+      "larceny": 4552,
+      "dataClass": "snapshot",
+      "provenance": {
+        "statisticId": "openjustice-glendale-1995-violent",
+        "label": "1995 reported violent offenses (Glendale PD)",
+        "value": 765,
+        "sourceId": "ca-doj-openjustice",
+        "sourceName": "CA DOJ OpenJustice crimes and clearances",
+        "dataset": "Crimes and Clearances with Arson 1985–2024",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
+        "query": {
+          "agency": "Glendale",
+          "county": "Los Angeles County",
+          "year": "1995",
+          "url": "https://data-openjustice.doj.ca.gov/sites/default/files/dataset/2025-07/Crimes_and_Clearances_with_Arson-1985-2024.csv"
+        },
+        "geographicFilter": "Glendale PD / Los Angeles County (OpenJustice agency row)",
+        "timePeriod": {
+          "start": "1995-01-01",
+          "end": "1995-12-31"
+        },
+        "transformation": "Filter statewide CSV to agency Glendale in Los Angeles County",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "Annual reported offenses for Glendale PD, not geocoded incidents.",
+          "2021–2023 statewide files mix UCR summary and CIBRS/IBR.",
+          "Correlation is not causation."
+        ]
+      }
+    },
+    {
+      "year": 1996,
+      "county": "Los Angeles County",
+      "agency": "Glendale",
+      "violent": 721,
+      "homicide": 14,
+      "rape": 16,
+      "robbery": 344,
+      "aggravatedAssault": 347,
+      "property": 6245,
+      "burglary": 1135,
+      "vehicleTheft": 1066,
+      "larceny": 4044,
+      "dataClass": "snapshot",
+      "provenance": {
+        "statisticId": "openjustice-glendale-1996-violent",
+        "label": "1996 reported violent offenses (Glendale PD)",
+        "value": 721,
+        "sourceId": "ca-doj-openjustice",
+        "sourceName": "CA DOJ OpenJustice crimes and clearances",
+        "dataset": "Crimes and Clearances with Arson 1985–2024",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
+        "query": {
+          "agency": "Glendale",
+          "county": "Los Angeles County",
+          "year": "1996",
+          "url": "https://data-openjustice.doj.ca.gov/sites/default/files/dataset/2025-07/Crimes_and_Clearances_with_Arson-1985-2024.csv"
+        },
+        "geographicFilter": "Glendale PD / Los Angeles County (OpenJustice agency row)",
+        "timePeriod": {
+          "start": "1996-01-01",
+          "end": "1996-12-31"
+        },
+        "transformation": "Filter statewide CSV to agency Glendale in Los Angeles County",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "Annual reported offenses for Glendale PD, not geocoded incidents.",
+          "2021–2023 statewide files mix UCR summary and CIBRS/IBR.",
+          "Correlation is not causation."
+        ]
+      }
+    },
+    {
+      "year": 1997,
+      "county": "Los Angeles County",
+      "agency": "Glendale",
+      "violent": 694,
+      "homicide": 6,
+      "rape": 21,
+      "robbery": 256,
+      "aggravatedAssault": 411,
+      "property": 5121,
+      "burglary": 987,
+      "vehicleTheft": 1035,
+      "larceny": 3099,
+      "dataClass": "snapshot",
+      "provenance": {
+        "statisticId": "openjustice-glendale-1997-violent",
+        "label": "1997 reported violent offenses (Glendale PD)",
+        "value": 694,
+        "sourceId": "ca-doj-openjustice",
+        "sourceName": "CA DOJ OpenJustice crimes and clearances",
+        "dataset": "Crimes and Clearances with Arson 1985–2024",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
+        "query": {
+          "agency": "Glendale",
+          "county": "Los Angeles County",
+          "year": "1997",
+          "url": "https://data-openjustice.doj.ca.gov/sites/default/files/dataset/2025-07/Crimes_and_Clearances_with_Arson-1985-2024.csv"
+        },
+        "geographicFilter": "Glendale PD / Los Angeles County (OpenJustice agency row)",
+        "timePeriod": {
+          "start": "1997-01-01",
+          "end": "1997-12-31"
+        },
+        "transformation": "Filter statewide CSV to agency Glendale in Los Angeles County",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "Annual reported offenses for Glendale PD, not geocoded incidents.",
+          "2021–2023 statewide files mix UCR summary and CIBRS/IBR.",
+          "Correlation is not causation."
+        ]
+      }
+    },
+    {
+      "year": 1998,
+      "county": "Los Angeles County",
+      "agency": "Glendale",
+      "violent": 558,
+      "homicide": 2,
+      "rape": 19,
+      "robbery": 206,
+      "aggravatedAssault": 331,
+      "property": 4788,
+      "burglary": 737,
+      "vehicleTheft": 873,
+      "larceny": 3178,
+      "dataClass": "snapshot",
+      "provenance": {
+        "statisticId": "openjustice-glendale-1998-violent",
+        "label": "1998 reported violent offenses (Glendale PD)",
+        "value": 558,
+        "sourceId": "ca-doj-openjustice",
+        "sourceName": "CA DOJ OpenJustice crimes and clearances",
+        "dataset": "Crimes and Clearances with Arson 1985–2024",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
+        "query": {
+          "agency": "Glendale",
+          "county": "Los Angeles County",
+          "year": "1998",
+          "url": "https://data-openjustice.doj.ca.gov/sites/default/files/dataset/2025-07/Crimes_and_Clearances_with_Arson-1985-2024.csv"
+        },
+        "geographicFilter": "Glendale PD / Los Angeles County (OpenJustice agency row)",
+        "timePeriod": {
+          "start": "1998-01-01",
+          "end": "1998-12-31"
+        },
+        "transformation": "Filter statewide CSV to agency Glendale in Los Angeles County",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "Annual reported offenses for Glendale PD, not geocoded incidents.",
+          "2021–2023 statewide files mix UCR summary and CIBRS/IBR.",
+          "Correlation is not causation."
+        ]
+      }
+    },
+    {
+      "year": 1999,
+      "county": "Los Angeles County",
+      "agency": "Glendale",
+      "violent": 529,
+      "homicide": 3,
+      "rape": 20,
+      "robbery": 177,
+      "aggravatedAssault": 329,
+      "property": 4461,
+      "burglary": 723,
+      "vehicleTheft": 743,
+      "larceny": 2995,
+      "dataClass": "snapshot",
+      "provenance": {
+        "statisticId": "openjustice-glendale-1999-violent",
+        "label": "1999 reported violent offenses (Glendale PD)",
+        "value": 529,
+        "sourceId": "ca-doj-openjustice",
+        "sourceName": "CA DOJ OpenJustice crimes and clearances",
+        "dataset": "Crimes and Clearances with Arson 1985–2024",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
+        "query": {
+          "agency": "Glendale",
+          "county": "Los Angeles County",
+          "year": "1999",
+          "url": "https://data-openjustice.doj.ca.gov/sites/default/files/dataset/2025-07/Crimes_and_Clearances_with_Arson-1985-2024.csv"
+        },
+        "geographicFilter": "Glendale PD / Los Angeles County (OpenJustice agency row)",
+        "timePeriod": {
+          "start": "1999-01-01",
+          "end": "1999-12-31"
+        },
+        "transformation": "Filter statewide CSV to agency Glendale in Los Angeles County",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "Annual reported offenses for Glendale PD, not geocoded incidents.",
+          "2021–2023 statewide files mix UCR summary and CIBRS/IBR.",
+          "Correlation is not causation."
+        ]
+      }
+    },
+    {
+      "year": 2000,
+      "county": "Los Angeles County",
+      "agency": "Glendale",
+      "violent": 726,
+      "homicide": 6,
+      "rape": 20,
+      "robbery": 182,
+      "aggravatedAssault": 518,
+      "property": 4183,
+      "burglary": 896,
+      "vehicleTheft": 807,
+      "larceny": 2480,
+      "dataClass": "snapshot",
+      "provenance": {
+        "statisticId": "openjustice-glendale-2000-violent",
+        "label": "2000 reported violent offenses (Glendale PD)",
+        "value": 726,
+        "sourceId": "ca-doj-openjustice",
+        "sourceName": "CA DOJ OpenJustice crimes and clearances",
+        "dataset": "Crimes and Clearances with Arson 1985–2024",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
+        "query": {
+          "agency": "Glendale",
+          "county": "Los Angeles County",
+          "year": "2000",
+          "url": "https://data-openjustice.doj.ca.gov/sites/default/files/dataset/2025-07/Crimes_and_Clearances_with_Arson-1985-2024.csv"
+        },
+        "geographicFilter": "Glendale PD / Los Angeles County (OpenJustice agency row)",
+        "timePeriod": {
+          "start": "2000-01-01",
+          "end": "2000-12-31"
+        },
+        "transformation": "Filter statewide CSV to agency Glendale in Los Angeles County",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "Annual reported offenses for Glendale PD, not geocoded incidents.",
+          "2021–2023 statewide files mix UCR summary and CIBRS/IBR.",
+          "Correlation is not causation."
+        ]
+      }
+    },
+    {
+      "year": 2001,
+      "county": "Los Angeles County",
+      "agency": "Glendale",
+      "violent": 442,
+      "homicide": 5,
+      "rape": 22,
+      "robbery": 180,
+      "aggravatedAssault": 235,
+      "property": 4049,
+      "burglary": 987,
+      "vehicleTheft": 749,
+      "larceny": 2313,
+      "dataClass": "snapshot",
+      "provenance": {
+        "statisticId": "openjustice-glendale-2001-violent",
+        "label": "2001 reported violent offenses (Glendale PD)",
+        "value": 442,
+        "sourceId": "ca-doj-openjustice",
+        "sourceName": "CA DOJ OpenJustice crimes and clearances",
+        "dataset": "Crimes and Clearances with Arson 1985–2024",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
+        "query": {
+          "agency": "Glendale",
+          "county": "Los Angeles County",
+          "year": "2001",
+          "url": "https://data-openjustice.doj.ca.gov/sites/default/files/dataset/2025-07/Crimes_and_Clearances_with_Arson-1985-2024.csv"
+        },
+        "geographicFilter": "Glendale PD / Los Angeles County (OpenJustice agency row)",
+        "timePeriod": {
+          "start": "2001-01-01",
+          "end": "2001-12-31"
+        },
+        "transformation": "Filter statewide CSV to agency Glendale in Los Angeles County",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "Annual reported offenses for Glendale PD, not geocoded incidents.",
+          "2021–2023 statewide files mix UCR summary and CIBRS/IBR.",
+          "Correlation is not causation."
+        ]
+      }
+    },
+    {
+      "year": 2002,
+      "county": "Los Angeles County",
+      "agency": "Glendale",
+      "violent": 495,
+      "homicide": 9,
+      "rape": 21,
+      "robbery": 186,
+      "aggravatedAssault": 279,
+      "property": 4040,
+      "burglary": 913,
+      "vehicleTheft": 735,
+      "larceny": 2392,
+      "dataClass": "snapshot",
+      "provenance": {
+        "statisticId": "openjustice-glendale-2002-violent",
+        "label": "2002 reported violent offenses (Glendale PD)",
+        "value": 495,
+        "sourceId": "ca-doj-openjustice",
+        "sourceName": "CA DOJ OpenJustice crimes and clearances",
+        "dataset": "Crimes and Clearances with Arson 1985–2024",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
+        "query": {
+          "agency": "Glendale",
+          "county": "Los Angeles County",
+          "year": "2002",
+          "url": "https://data-openjustice.doj.ca.gov/sites/default/files/dataset/2025-07/Crimes_and_Clearances_with_Arson-1985-2024.csv"
+        },
+        "geographicFilter": "Glendale PD / Los Angeles County (OpenJustice agency row)",
+        "timePeriod": {
+          "start": "2002-01-01",
+          "end": "2002-12-31"
+        },
+        "transformation": "Filter statewide CSV to agency Glendale in Los Angeles County",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "Annual reported offenses for Glendale PD, not geocoded incidents.",
+          "2021–2023 statewide files mix UCR summary and CIBRS/IBR.",
+          "Correlation is not causation."
+        ]
+      }
+    },
+    {
+      "year": 2003,
+      "county": "Los Angeles County",
+      "agency": "Glendale",
+      "violent": 363,
+      "homicide": 6,
+      "rape": 18,
+      "robbery": 146,
+      "aggravatedAssault": 193,
+      "property": 3876,
+      "burglary": 800,
+      "vehicleTheft": 793,
+      "larceny": 2283,
+      "dataClass": "snapshot",
+      "provenance": {
+        "statisticId": "openjustice-glendale-2003-violent",
+        "label": "2003 reported violent offenses (Glendale PD)",
+        "value": 363,
+        "sourceId": "ca-doj-openjustice",
+        "sourceName": "CA DOJ OpenJustice crimes and clearances",
+        "dataset": "Crimes and Clearances with Arson 1985–2024",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
+        "query": {
+          "agency": "Glendale",
+          "county": "Los Angeles County",
+          "year": "2003",
+          "url": "https://data-openjustice.doj.ca.gov/sites/default/files/dataset/2025-07/Crimes_and_Clearances_with_Arson-1985-2024.csv"
+        },
+        "geographicFilter": "Glendale PD / Los Angeles County (OpenJustice agency row)",
+        "timePeriod": {
+          "start": "2003-01-01",
+          "end": "2003-12-31"
+        },
+        "transformation": "Filter statewide CSV to agency Glendale in Los Angeles County",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "Annual reported offenses for Glendale PD, not geocoded incidents.",
+          "2021–2023 statewide files mix UCR summary and CIBRS/IBR.",
+          "Correlation is not causation."
+        ]
+      }
+    },
+    {
+      "year": 2004,
+      "county": "Los Angeles County",
+      "agency": "Glendale",
+      "violent": 270,
+      "homicide": 5,
+      "rape": 11,
+      "robbery": 133,
+      "aggravatedAssault": 121,
+      "property": 3817,
+      "burglary": 737,
+      "vehicleTheft": 661,
+      "larceny": 2419,
+      "dataClass": "snapshot",
+      "provenance": {
+        "statisticId": "openjustice-glendale-2004-violent",
+        "label": "2004 reported violent offenses (Glendale PD)",
+        "value": 270,
+        "sourceId": "ca-doj-openjustice",
+        "sourceName": "CA DOJ OpenJustice crimes and clearances",
+        "dataset": "Crimes and Clearances with Arson 1985–2024",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
+        "query": {
+          "agency": "Glendale",
+          "county": "Los Angeles County",
+          "year": "2004",
+          "url": "https://data-openjustice.doj.ca.gov/sites/default/files/dataset/2025-07/Crimes_and_Clearances_with_Arson-1985-2024.csv"
+        },
+        "geographicFilter": "Glendale PD / Los Angeles County (OpenJustice agency row)",
+        "timePeriod": {
+          "start": "2004-01-01",
+          "end": "2004-12-31"
+        },
+        "transformation": "Filter statewide CSV to agency Glendale in Los Angeles County",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "Annual reported offenses for Glendale PD, not geocoded incidents.",
+          "2021–2023 statewide files mix UCR summary and CIBRS/IBR.",
+          "Correlation is not causation."
+        ]
+      }
+    },
+    {
+      "year": 2005,
+      "county": "Los Angeles County",
+      "agency": "Glendale",
+      "violent": 350,
+      "homicide": 19,
+      "rape": 14,
+      "robbery": 136,
+      "aggravatedAssault": 181,
+      "property": 3790,
+      "burglary": 723,
+      "vehicleTheft": 614,
+      "larceny": 2453,
+      "dataClass": "snapshot",
+      "provenance": {
+        "statisticId": "openjustice-glendale-2005-violent",
+        "label": "2005 reported violent offenses (Glendale PD)",
+        "value": 350,
+        "sourceId": "ca-doj-openjustice",
+        "sourceName": "CA DOJ OpenJustice crimes and clearances",
+        "dataset": "Crimes and Clearances with Arson 1985–2024",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
+        "query": {
+          "agency": "Glendale",
+          "county": "Los Angeles County",
+          "year": "2005",
+          "url": "https://data-openjustice.doj.ca.gov/sites/default/files/dataset/2025-07/Crimes_and_Clearances_with_Arson-1985-2024.csv"
+        },
+        "geographicFilter": "Glendale PD / Los Angeles County (OpenJustice agency row)",
+        "timePeriod": {
+          "start": "2005-01-01",
+          "end": "2005-12-31"
+        },
+        "transformation": "Filter statewide CSV to agency Glendale in Los Angeles County",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "Annual reported offenses for Glendale PD, not geocoded incidents.",
+          "2021–2023 statewide files mix UCR summary and CIBRS/IBR.",
+          "Correlation is not causation."
+        ]
+      }
+    },
+    {
+      "year": 2006,
+      "county": "Los Angeles County",
+      "agency": "Glendale",
+      "violent": 368,
+      "homicide": 2,
+      "rape": 14,
+      "robbery": 167,
+      "aggravatedAssault": 185,
+      "property": 3935,
+      "burglary": 672,
+      "vehicleTheft": 578,
+      "larceny": 2685,
+      "dataClass": "snapshot",
+      "provenance": {
+        "statisticId": "openjustice-glendale-2006-violent",
+        "label": "2006 reported violent offenses (Glendale PD)",
+        "value": 368,
+        "sourceId": "ca-doj-openjustice",
+        "sourceName": "CA DOJ OpenJustice crimes and clearances",
+        "dataset": "Crimes and Clearances with Arson 1985–2024",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
+        "query": {
+          "agency": "Glendale",
+          "county": "Los Angeles County",
+          "year": "2006",
+          "url": "https://data-openjustice.doj.ca.gov/sites/default/files/dataset/2025-07/Crimes_and_Clearances_with_Arson-1985-2024.csv"
+        },
+        "geographicFilter": "Glendale PD / Los Angeles County (OpenJustice agency row)",
+        "timePeriod": {
+          "start": "2006-01-01",
+          "end": "2006-12-31"
+        },
+        "transformation": "Filter statewide CSV to agency Glendale in Los Angeles County",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "Annual reported offenses for Glendale PD, not geocoded incidents.",
+          "2021–2023 statewide files mix UCR summary and CIBRS/IBR.",
+          "Correlation is not causation."
+        ]
+      }
+    },
+    {
+      "year": 2007,
+      "county": "Los Angeles County",
+      "agency": "Glendale",
+      "violent": 375,
+      "homicide": 2,
+      "rape": 12,
+      "robbery": 166,
+      "aggravatedAssault": 195,
+      "property": 3667,
+      "burglary": 611,
+      "vehicleTheft": 523,
+      "larceny": 2533,
+      "dataClass": "snapshot",
+      "provenance": {
+        "statisticId": "openjustice-glendale-2007-violent",
+        "label": "2007 reported violent offenses (Glendale PD)",
+        "value": 375,
+        "sourceId": "ca-doj-openjustice",
+        "sourceName": "CA DOJ OpenJustice crimes and clearances",
+        "dataset": "Crimes and Clearances with Arson 1985–2024",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
+        "query": {
+          "agency": "Glendale",
+          "county": "Los Angeles County",
+          "year": "2007",
+          "url": "https://data-openjustice.doj.ca.gov/sites/default/files/dataset/2025-07/Crimes_and_Clearances_with_Arson-1985-2024.csv"
+        },
+        "geographicFilter": "Glendale PD / Los Angeles County (OpenJustice agency row)",
+        "timePeriod": {
+          "start": "2007-01-01",
+          "end": "2007-12-31"
+        },
+        "transformation": "Filter statewide CSV to agency Glendale in Los Angeles County",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "Annual reported offenses for Glendale PD, not geocoded incidents.",
+          "2021–2023 statewide files mix UCR summary and CIBRS/IBR.",
+          "Correlation is not causation."
+        ]
+      }
+    },
+    {
+      "year": 2008,
+      "county": "Los Angeles County",
+      "agency": "Glendale",
+      "violent": 351,
+      "homicide": 3,
+      "rape": 21,
+      "robbery": 151,
+      "aggravatedAssault": 176,
+      "property": 4105,
+      "burglary": 708,
+      "vehicleTheft": 506,
+      "larceny": 2891,
+      "dataClass": "snapshot",
+      "provenance": {
+        "statisticId": "openjustice-glendale-2008-violent",
+        "label": "2008 reported violent offenses (Glendale PD)",
+        "value": 351,
+        "sourceId": "ca-doj-openjustice",
+        "sourceName": "CA DOJ OpenJustice crimes and clearances",
+        "dataset": "Crimes and Clearances with Arson 1985–2024",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
+        "query": {
+          "agency": "Glendale",
+          "county": "Los Angeles County",
+          "year": "2008",
+          "url": "https://data-openjustice.doj.ca.gov/sites/default/files/dataset/2025-07/Crimes_and_Clearances_with_Arson-1985-2024.csv"
+        },
+        "geographicFilter": "Glendale PD / Los Angeles County (OpenJustice agency row)",
+        "timePeriod": {
+          "start": "2008-01-01",
+          "end": "2008-12-31"
+        },
+        "transformation": "Filter statewide CSV to agency Glendale in Los Angeles County",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "Annual reported offenses for Glendale PD, not geocoded incidents.",
+          "2021–2023 statewide files mix UCR summary and CIBRS/IBR.",
+          "Correlation is not causation."
+        ]
+      }
+    },
+    {
+      "year": 2009,
+      "county": "Los Angeles County",
+      "agency": "Glendale",
+      "violent": 302,
+      "homicide": 3,
+      "rape": 15,
+      "robbery": 126,
+      "aggravatedAssault": 158,
+      "property": 3755,
+      "burglary": 635,
+      "vehicleTheft": 397,
+      "larceny": 2723,
+      "dataClass": "snapshot",
+      "provenance": {
+        "statisticId": "openjustice-glendale-2009-violent",
+        "label": "2009 reported violent offenses (Glendale PD)",
+        "value": 302,
+        "sourceId": "ca-doj-openjustice",
+        "sourceName": "CA DOJ OpenJustice crimes and clearances",
+        "dataset": "Crimes and Clearances with Arson 1985–2024",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
+        "query": {
+          "agency": "Glendale",
+          "county": "Los Angeles County",
+          "year": "2009",
+          "url": "https://data-openjustice.doj.ca.gov/sites/default/files/dataset/2025-07/Crimes_and_Clearances_with_Arson-1985-2024.csv"
+        },
+        "geographicFilter": "Glendale PD / Los Angeles County (OpenJustice agency row)",
+        "timePeriod": {
+          "start": "2009-01-01",
+          "end": "2009-12-31"
+        },
+        "transformation": "Filter statewide CSV to agency Glendale in Los Angeles County",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "Annual reported offenses for Glendale PD, not geocoded incidents.",
+          "2021–2023 statewide files mix UCR summary and CIBRS/IBR.",
+          "Correlation is not causation."
+        ]
+      }
+    },
+    {
+      "year": 2010,
+      "county": "Los Angeles County",
+      "agency": "Glendale",
+      "violent": 277,
+      "homicide": 0,
+      "rape": 17,
+      "robbery": 119,
+      "aggravatedAssault": 141,
+      "property": 3717,
+      "burglary": 642,
+      "vehicleTheft": 328,
+      "larceny": 2747,
+      "dataClass": "snapshot",
+      "provenance": {
+        "statisticId": "openjustice-glendale-2010-violent",
+        "label": "2010 reported violent offenses (Glendale PD)",
+        "value": 277,
+        "sourceId": "ca-doj-openjustice",
+        "sourceName": "CA DOJ OpenJustice crimes and clearances",
+        "dataset": "Crimes and Clearances with Arson 1985–2024",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
+        "query": {
+          "agency": "Glendale",
+          "county": "Los Angeles County",
+          "year": "2010",
+          "url": "https://data-openjustice.doj.ca.gov/sites/default/files/dataset/2025-07/Crimes_and_Clearances_with_Arson-1985-2024.csv"
+        },
+        "geographicFilter": "Glendale PD / Los Angeles County (OpenJustice agency row)",
+        "timePeriod": {
+          "start": "2010-01-01",
+          "end": "2010-12-31"
+        },
+        "transformation": "Filter statewide CSV to agency Glendale in Los Angeles County",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "Annual reported offenses for Glendale PD, not geocoded incidents.",
+          "2021–2023 statewide files mix UCR summary and CIBRS/IBR.",
+          "Correlation is not causation."
+        ]
+      }
+    },
+    {
+      "year": 2011,
+      "county": "Los Angeles County",
+      "agency": "Glendale",
+      "violent": 258,
+      "homicide": 0,
+      "rape": 14,
+      "robbery": 108,
+      "aggravatedAssault": 136,
+      "property": 3452,
+      "burglary": 623,
+      "vehicleTheft": 323,
+      "larceny": 2506,
+      "dataClass": "snapshot",
+      "provenance": {
+        "statisticId": "openjustice-glendale-2011-violent",
+        "label": "2011 reported violent offenses (Glendale PD)",
+        "value": 258,
+        "sourceId": "ca-doj-openjustice",
+        "sourceName": "CA DOJ OpenJustice crimes and clearances",
+        "dataset": "Crimes and Clearances with Arson 1985–2024",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
+        "query": {
+          "agency": "Glendale",
+          "county": "Los Angeles County",
+          "year": "2011",
+          "url": "https://data-openjustice.doj.ca.gov/sites/default/files/dataset/2025-07/Crimes_and_Clearances_with_Arson-1985-2024.csv"
+        },
+        "geographicFilter": "Glendale PD / Los Angeles County (OpenJustice agency row)",
+        "timePeriod": {
+          "start": "2011-01-01",
+          "end": "2011-12-31"
+        },
+        "transformation": "Filter statewide CSV to agency Glendale in Los Angeles County",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "Annual reported offenses for Glendale PD, not geocoded incidents.",
+          "2021–2023 statewide files mix UCR summary and CIBRS/IBR.",
+          "Correlation is not causation."
+        ]
+      }
+    },
+    {
+      "year": 2012,
+      "county": "Los Angeles County",
+      "agency": "Glendale",
+      "violent": 233,
+      "homicide": 0,
+      "rape": 6,
+      "robbery": 108,
+      "aggravatedAssault": 119,
+      "property": 3043,
+      "burglary": 516,
+      "vehicleTheft": 309,
+      "larceny": 2218,
+      "dataClass": "snapshot",
+      "provenance": {
+        "statisticId": "openjustice-glendale-2012-violent",
+        "label": "2012 reported violent offenses (Glendale PD)",
+        "value": 233,
+        "sourceId": "ca-doj-openjustice",
+        "sourceName": "CA DOJ OpenJustice crimes and clearances",
+        "dataset": "Crimes and Clearances with Arson 1985–2024",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
+        "query": {
+          "agency": "Glendale",
+          "county": "Los Angeles County",
+          "year": "2012",
+          "url": "https://data-openjustice.doj.ca.gov/sites/default/files/dataset/2025-07/Crimes_and_Clearances_with_Arson-1985-2024.csv"
+        },
+        "geographicFilter": "Glendale PD / Los Angeles County (OpenJustice agency row)",
+        "timePeriod": {
+          "start": "2012-01-01",
+          "end": "2012-12-31"
+        },
+        "transformation": "Filter statewide CSV to agency Glendale in Los Angeles County",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "Annual reported offenses for Glendale PD, not geocoded incidents.",
+          "2021–2023 statewide files mix UCR summary and CIBRS/IBR.",
+          "Correlation is not causation."
+        ]
+      }
+    },
+    {
+      "year": 2013,
+      "county": "Los Angeles County",
+      "agency": "Glendale",
+      "violent": 181,
+      "homicide": 1,
+      "rape": 8,
+      "robbery": 75,
+      "aggravatedAssault": 97,
+      "property": 3198,
+      "burglary": 563,
+      "vehicleTheft": 251,
+      "larceny": 2384,
+      "dataClass": "snapshot",
+      "provenance": {
+        "statisticId": "openjustice-glendale-2013-violent",
+        "label": "2013 reported violent offenses (Glendale PD)",
+        "value": 181,
+        "sourceId": "ca-doj-openjustice",
+        "sourceName": "CA DOJ OpenJustice crimes and clearances",
+        "dataset": "Crimes and Clearances with Arson 1985–2024",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
+        "query": {
+          "agency": "Glendale",
+          "county": "Los Angeles County",
+          "year": "2013",
+          "url": "https://data-openjustice.doj.ca.gov/sites/default/files/dataset/2025-07/Crimes_and_Clearances_with_Arson-1985-2024.csv"
+        },
+        "geographicFilter": "Glendale PD / Los Angeles County (OpenJustice agency row)",
+        "timePeriod": {
+          "start": "2013-01-01",
+          "end": "2013-12-31"
+        },
+        "transformation": "Filter statewide CSV to agency Glendale in Los Angeles County",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "Annual reported offenses for Glendale PD, not geocoded incidents.",
+          "2021–2023 statewide files mix UCR summary and CIBRS/IBR.",
+          "Correlation is not causation."
+        ]
+      }
+    },
+    {
+      "year": 2014,
+      "county": "Los Angeles County",
+      "agency": "Glendale",
+      "violent": 186,
+      "homicide": 0,
+      "rape": 9,
+      "robbery": 67,
+      "aggravatedAssault": 110,
+      "property": 3073,
+      "burglary": 511,
+      "vehicleTheft": 268,
+      "larceny": 2294,
+      "dataClass": "snapshot",
+      "provenance": {
+        "statisticId": "openjustice-glendale-2014-violent",
+        "label": "2014 reported violent offenses (Glendale PD)",
+        "value": 186,
+        "sourceId": "ca-doj-openjustice",
+        "sourceName": "CA DOJ OpenJustice crimes and clearances",
+        "dataset": "Crimes and Clearances with Arson 1985–2024",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
+        "query": {
+          "agency": "Glendale",
+          "county": "Los Angeles County",
+          "year": "2014",
+          "url": "https://data-openjustice.doj.ca.gov/sites/default/files/dataset/2025-07/Crimes_and_Clearances_with_Arson-1985-2024.csv"
+        },
+        "geographicFilter": "Glendale PD / Los Angeles County (OpenJustice agency row)",
+        "timePeriod": {
+          "start": "2014-01-01",
+          "end": "2014-12-31"
+        },
+        "transformation": "Filter statewide CSV to agency Glendale in Los Angeles County",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "Annual reported offenses for Glendale PD, not geocoded incidents.",
+          "2021–2023 statewide files mix UCR summary and CIBRS/IBR.",
+          "Correlation is not causation."
+        ]
+      }
+    },
+    {
+      "year": 2015,
+      "county": "Los Angeles County",
+      "agency": "Glendale",
+      "violent": 195,
+      "homicide": 5,
+      "rape": 17,
+      "robbery": 75,
+      "aggravatedAssault": 98,
+      "property": 3513,
+      "burglary": 530,
+      "vehicleTheft": 353,
+      "larceny": 2630,
+      "dataClass": "snapshot",
+      "provenance": {
+        "statisticId": "openjustice-glendale-2015-violent",
+        "label": "2015 reported violent offenses (Glendale PD)",
+        "value": 195,
+        "sourceId": "ca-doj-openjustice",
+        "sourceName": "CA DOJ OpenJustice crimes and clearances",
+        "dataset": "Crimes and Clearances with Arson 1985–2024",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
+        "query": {
+          "agency": "Glendale",
+          "county": "Los Angeles County",
+          "year": "2015",
+          "url": "https://data-openjustice.doj.ca.gov/sites/default/files/dataset/2025-07/Crimes_and_Clearances_with_Arson-1985-2024.csv"
+        },
+        "geographicFilter": "Glendale PD / Los Angeles County (OpenJustice agency row)",
+        "timePeriod": {
+          "start": "2015-01-01",
+          "end": "2015-12-31"
+        },
+        "transformation": "Filter statewide CSV to agency Glendale in Los Angeles County",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "Annual reported offenses for Glendale PD, not geocoded incidents.",
+          "2021–2023 statewide files mix UCR summary and CIBRS/IBR.",
+          "Correlation is not causation."
+        ]
+      }
+    },
+    {
+      "year": 2016,
+      "county": "Los Angeles County",
+      "agency": "Glendale",
+      "violent": 227,
+      "homicide": 1,
+      "rape": 38,
+      "robbery": 84,
+      "aggravatedAssault": 104,
+      "property": 3450,
+      "burglary": 596,
+      "vehicleTheft": 363,
+      "larceny": 2491,
+      "dataClass": "snapshot",
+      "provenance": {
+        "statisticId": "openjustice-glendale-2016-violent",
+        "label": "2016 reported violent offenses (Glendale PD)",
+        "value": 227,
+        "sourceId": "ca-doj-openjustice",
+        "sourceName": "CA DOJ OpenJustice crimes and clearances",
+        "dataset": "Crimes and Clearances with Arson 1985–2024",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
+        "query": {
+          "agency": "Glendale",
+          "county": "Los Angeles County",
+          "year": "2016",
+          "url": "https://data-openjustice.doj.ca.gov/sites/default/files/dataset/2025-07/Crimes_and_Clearances_with_Arson-1985-2024.csv"
+        },
+        "geographicFilter": "Glendale PD / Los Angeles County (OpenJustice agency row)",
+        "timePeriod": {
+          "start": "2016-01-01",
+          "end": "2016-12-31"
+        },
+        "transformation": "Filter statewide CSV to agency Glendale in Los Angeles County",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "Annual reported offenses for Glendale PD, not geocoded incidents.",
+          "2021–2023 statewide files mix UCR summary and CIBRS/IBR.",
+          "Correlation is not causation."
+        ]
+      }
+    },
+    {
+      "year": 2017,
+      "county": "Los Angeles County",
+      "agency": "Glendale",
+      "violent": 274,
+      "homicide": 3,
+      "rape": 32,
+      "robbery": 127,
+      "aggravatedAssault": 112,
+      "property": 3118,
+      "burglary": 498,
+      "vehicleTheft": 317,
+      "larceny": 2303,
+      "dataClass": "snapshot",
+      "provenance": {
+        "statisticId": "openjustice-glendale-2017-violent",
+        "label": "2017 reported violent offenses (Glendale PD)",
+        "value": 274,
+        "sourceId": "ca-doj-openjustice",
+        "sourceName": "CA DOJ OpenJustice crimes and clearances",
+        "dataset": "Crimes and Clearances with Arson 1985–2024",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
+        "query": {
+          "agency": "Glendale",
+          "county": "Los Angeles County",
+          "year": "2017",
+          "url": "https://data-openjustice.doj.ca.gov/sites/default/files/dataset/2025-07/Crimes_and_Clearances_with_Arson-1985-2024.csv"
+        },
+        "geographicFilter": "Glendale PD / Los Angeles County (OpenJustice agency row)",
+        "timePeriod": {
+          "start": "2017-01-01",
+          "end": "2017-12-31"
+        },
+        "transformation": "Filter statewide CSV to agency Glendale in Los Angeles County",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "Annual reported offenses for Glendale PD, not geocoded incidents.",
+          "2021–2023 statewide files mix UCR summary and CIBRS/IBR.",
+          "Correlation is not causation."
+        ]
+      }
+    },
+    {
+      "year": 2018,
+      "county": "Los Angeles County",
+      "agency": "Glendale",
+      "violent": 202,
+      "homicide": 1,
+      "rape": 24,
+      "robbery": 77,
+      "aggravatedAssault": 100,
+      "property": 3110,
+      "burglary": 454,
+      "vehicleTheft": 266,
+      "larceny": 2390,
+      "dataClass": "snapshot",
+      "provenance": {
+        "statisticId": "openjustice-glendale-2018-violent",
+        "label": "2018 reported violent offenses (Glendale PD)",
+        "value": 202,
+        "sourceId": "ca-doj-openjustice",
+        "sourceName": "CA DOJ OpenJustice crimes and clearances",
+        "dataset": "Crimes and Clearances with Arson 1985–2024",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
+        "query": {
+          "agency": "Glendale",
+          "county": "Los Angeles County",
+          "year": "2018",
+          "url": "https://data-openjustice.doj.ca.gov/sites/default/files/dataset/2025-07/Crimes_and_Clearances_with_Arson-1985-2024.csv"
+        },
+        "geographicFilter": "Glendale PD / Los Angeles County (OpenJustice agency row)",
+        "timePeriod": {
+          "start": "2018-01-01",
+          "end": "2018-12-31"
+        },
+        "transformation": "Filter statewide CSV to agency Glendale in Los Angeles County",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "Annual reported offenses for Glendale PD, not geocoded incidents.",
+          "2021–2023 statewide files mix UCR summary and CIBRS/IBR.",
+          "Correlation is not causation."
+        ]
+      }
+    },
+    {
+      "year": 2019,
+      "county": "Los Angeles County",
+      "agency": "Glendale",
+      "violent": 231,
+      "homicide": 5,
+      "rape": 16,
+      "robbery": 93,
+      "aggravatedAssault": 117,
+      "property": 3305,
+      "burglary": 480,
+      "vehicleTheft": 263,
+      "larceny": 2562,
+      "dataClass": "snapshot",
+      "provenance": {
+        "statisticId": "openjustice-glendale-2019-violent",
+        "label": "2019 reported violent offenses (Glendale PD)",
+        "value": 231,
+        "sourceId": "ca-doj-openjustice",
+        "sourceName": "CA DOJ OpenJustice crimes and clearances",
+        "dataset": "Crimes and Clearances with Arson 1985–2024",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
+        "query": {
+          "agency": "Glendale",
+          "county": "Los Angeles County",
+          "year": "2019",
+          "url": "https://data-openjustice.doj.ca.gov/sites/default/files/dataset/2025-07/Crimes_and_Clearances_with_Arson-1985-2024.csv"
+        },
+        "geographicFilter": "Glendale PD / Los Angeles County (OpenJustice agency row)",
+        "timePeriod": {
+          "start": "2019-01-01",
+          "end": "2019-12-31"
+        },
+        "transformation": "Filter statewide CSV to agency Glendale in Los Angeles County",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "Annual reported offenses for Glendale PD, not geocoded incidents.",
+          "2021–2023 statewide files mix UCR summary and CIBRS/IBR.",
+          "Correlation is not causation."
+        ]
+      }
+    },
+    {
+      "year": 2020,
+      "county": "Los Angeles County",
+      "agency": "Glendale",
+      "violent": 206,
+      "homicide": 3,
+      "rape": 14,
+      "robbery": 87,
+      "aggravatedAssault": 102,
+      "property": 3197,
+      "burglary": 407,
+      "vehicleTheft": 433,
+      "larceny": 2357,
+      "dataClass": "snapshot",
+      "provenance": {
+        "statisticId": "openjustice-glendale-2020-violent",
+        "label": "2020 reported violent offenses (Glendale PD)",
+        "value": 206,
+        "sourceId": "ca-doj-openjustice",
+        "sourceName": "CA DOJ OpenJustice crimes and clearances",
+        "dataset": "Crimes and Clearances with Arson 1985–2024",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
+        "query": {
+          "agency": "Glendale",
+          "county": "Los Angeles County",
+          "year": "2020",
+          "url": "https://data-openjustice.doj.ca.gov/sites/default/files/dataset/2025-07/Crimes_and_Clearances_with_Arson-1985-2024.csv"
+        },
+        "geographicFilter": "Glendale PD / Los Angeles County (OpenJustice agency row)",
+        "timePeriod": {
+          "start": "2020-01-01",
+          "end": "2020-12-31"
+        },
+        "transformation": "Filter statewide CSV to agency Glendale in Los Angeles County",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "Annual reported offenses for Glendale PD, not geocoded incidents.",
+          "2021–2023 statewide files mix UCR summary and CIBRS/IBR.",
+          "Correlation is not causation."
+        ]
+      }
+    },
+    {
+      "year": 2021,
+      "county": "Los Angeles County",
+      "agency": "Glendale",
+      "violent": 221,
+      "homicide": 1,
+      "rape": 15,
+      "robbery": 113,
+      "aggravatedAssault": 92,
+      "property": 3346,
+      "burglary": 418,
+      "vehicleTheft": 493,
+      "larceny": 2435,
+      "dataClass": "snapshot",
+      "provenance": {
+        "statisticId": "openjustice-glendale-2021-violent",
+        "label": "2021 reported violent offenses (Glendale PD)",
+        "value": 221,
+        "sourceId": "ca-doj-openjustice",
+        "sourceName": "CA DOJ OpenJustice crimes and clearances",
+        "dataset": "Crimes and Clearances with Arson 1985–2024",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
+        "query": {
+          "agency": "Glendale",
+          "county": "Los Angeles County",
+          "year": "2021",
+          "url": "https://data-openjustice.doj.ca.gov/sites/default/files/dataset/2025-07/Crimes_and_Clearances_with_Arson-1985-2024.csv"
+        },
+        "geographicFilter": "Glendale PD / Los Angeles County (OpenJustice agency row)",
+        "timePeriod": {
+          "start": "2021-01-01",
+          "end": "2021-12-31"
+        },
+        "transformation": "Filter statewide CSV to agency Glendale in Los Angeles County",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "Annual reported offenses for Glendale PD, not geocoded incidents.",
+          "2021–2023 statewide files mix UCR summary and CIBRS/IBR.",
+          "Correlation is not causation."
+        ]
+      }
+    },
+    {
+      "year": 2022,
+      "county": "Los Angeles County",
+      "agency": "Glendale",
+      "violent": 283,
+      "homicide": 0,
+      "rape": 18,
+      "robbery": 130,
+      "aggravatedAssault": 135,
+      "property": 3444,
+      "burglary": 486,
+      "vehicleTheft": 413,
+      "larceny": 2545,
+      "dataClass": "snapshot",
+      "provenance": {
+        "statisticId": "openjustice-glendale-2022-violent",
+        "label": "2022 reported violent offenses (Glendale PD)",
+        "value": 283,
+        "sourceId": "ca-doj-openjustice",
+        "sourceName": "CA DOJ OpenJustice crimes and clearances",
+        "dataset": "Crimes and Clearances with Arson 1985–2024",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
+        "query": {
+          "agency": "Glendale",
+          "county": "Los Angeles County",
+          "year": "2022",
+          "url": "https://data-openjustice.doj.ca.gov/sites/default/files/dataset/2025-07/Crimes_and_Clearances_with_Arson-1985-2024.csv"
+        },
+        "geographicFilter": "Glendale PD / Los Angeles County (OpenJustice agency row)",
+        "timePeriod": {
+          "start": "2022-01-01",
+          "end": "2022-12-31"
+        },
+        "transformation": "Filter statewide CSV to agency Glendale in Los Angeles County",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "Annual reported offenses for Glendale PD, not geocoded incidents.",
+          "2021–2023 statewide files mix UCR summary and CIBRS/IBR.",
+          "Correlation is not causation."
+        ]
+      }
+    },
+    {
+      "year": 2023,
+      "county": "Los Angeles County",
+      "agency": "Glendale",
+      "violent": 422,
+      "homicide": 2,
+      "rape": 28,
+      "robbery": 168,
+      "aggravatedAssault": 224,
+      "property": 4152,
+      "burglary": 538,
+      "vehicleTheft": 491,
+      "larceny": 3123,
+      "dataClass": "snapshot",
+      "provenance": {
+        "statisticId": "openjustice-glendale-2023-violent",
+        "label": "2023 reported violent offenses (Glendale PD)",
+        "value": 422,
+        "sourceId": "ca-doj-openjustice",
+        "sourceName": "CA DOJ OpenJustice crimes and clearances",
+        "dataset": "Crimes and Clearances with Arson 1985–2024",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
+        "query": {
+          "agency": "Glendale",
+          "county": "Los Angeles County",
+          "year": "2023",
+          "url": "https://data-openjustice.doj.ca.gov/sites/default/files/dataset/2025-07/Crimes_and_Clearances_with_Arson-1985-2024.csv"
+        },
+        "geographicFilter": "Glendale PD / Los Angeles County (OpenJustice agency row)",
+        "timePeriod": {
+          "start": "2023-01-01",
+          "end": "2023-12-31"
+        },
+        "transformation": "Filter statewide CSV to agency Glendale in Los Angeles County",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "Annual reported offenses for Glendale PD, not geocoded incidents.",
+          "2021–2023 statewide files mix UCR summary and CIBRS/IBR.",
+          "Correlation is not causation."
+        ]
+      }
+    },
+    {
+      "year": 2024,
+      "county": "Los Angeles County",
+      "agency": "Glendale",
+      "violent": 530,
+      "homicide": 4,
+      "rape": 34,
+      "robbery": 172,
+      "aggravatedAssault": 320,
+      "property": 3733,
+      "burglary": 372,
+      "vehicleTheft": 424,
+      "larceny": 2937,
+      "dataClass": "snapshot",
+      "provenance": {
+        "statisticId": "openjustice-glendale-2024-violent",
+        "label": "2024 reported violent offenses (Glendale PD)",
+        "value": 530,
+        "sourceId": "ca-doj-openjustice",
+        "sourceName": "CA DOJ OpenJustice crimes and clearances",
+        "dataset": "Crimes and Clearances with Arson 1985–2024",
+        "retrievedAt": "2026-08-16T05:03:21.846Z",
+        "query": {
+          "agency": "Glendale",
+          "county": "Los Angeles County",
+          "year": "2024",
+          "url": "https://data-openjustice.doj.ca.gov/sites/default/files/dataset/2025-07/Crimes_and_Clearances_with_Arson-1985-2024.csv"
+        },
+        "geographicFilter": "Glendale PD / Los Angeles County (OpenJustice agency row)",
+        "timePeriod": {
+          "start": "2024-01-01",
+          "end": "2024-12-31"
+        },
+        "transformation": "Filter statewide CSV to agency Glendale in Los Angeles County",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "Annual reported offenses for Glendale PD, not geocoded incidents.",
+          "2021–2023 statewide files mix UCR summary and CIBRS/IBR.",
+          "Correlation is not causation."
+        ]
+      }
+    }
+  ],
+  "fbiAnnualGlendale": [
+    {
+      "year": 2018,
+      "county": "Los Angeles County",
+      "agency": "Glendale Police Department",
+      "violent": 202,
+      "homicide": 1,
+      "rape": 0,
+      "robbery": 77,
+      "aggravatedAssault": 100,
+      "property": 3121,
+      "burglary": 454,
+      "vehicleTheft": 0,
+      "larceny": 2390,
+      "monthsReported": 12,
+      "dataClass": "snapshot",
+      "provenance": {
+        "statisticId": "fbi-cde-glendale-2018-violent",
+        "label": "2018 FBI CDE violent offenses (Glendale PD)",
+        "value": 202,
+        "sourceId": "fbi-cde",
+        "sourceName": "FBI Crime Data Explorer (agency summaries)",
+        "dataset": "CDE summarized agency actuals ORI CA0192500",
+        "retrievedAt": "2026-08-16T05:04:14.001Z",
+        "query": {
+          "ori": "CA0192500",
+          "from": "01-2018",
+          "to": "12-2025",
+          "offense": "violent-crime+components",
+          "monthsReported": "12"
+        },
+        "geographicFilter": "Glendale PD (ORI CA0192500)",
+        "timePeriod": {
+          "start": "2018-01-01",
+          "end": "2018-12-31"
+        },
+        "transformation": "Sum monthly CDE actuals to calendar year; not incident locations",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "FBI CDE summarized agency actuals, rolled up from monthly counts to calendar years.",
+          "These are official annual/API totals, not geocoded incidents or a live CAD feed.",
+          "CDE figures can differ from CA DOJ OpenJustice because of reporting systems and revisions.",
+          "2021 CDE may be incomplete for agencies in the NIBRS transition and is not used as a full-year comparison.",
+          "Correlation is not causation."
+        ]
+      }
+    },
+    {
+      "year": 2019,
+      "county": "Los Angeles County",
+      "agency": "Glendale Police Department",
+      "violent": 231,
+      "homicide": 5,
+      "rape": 0,
+      "robbery": 93,
+      "aggravatedAssault": 117,
+      "property": 3318,
+      "burglary": 480,
+      "vehicleTheft": 0,
+      "larceny": 2562,
+      "monthsReported": 12,
+      "dataClass": "snapshot",
+      "provenance": {
+        "statisticId": "fbi-cde-glendale-2019-violent",
+        "label": "2019 FBI CDE violent offenses (Glendale PD)",
+        "value": 231,
+        "sourceId": "fbi-cde",
+        "sourceName": "FBI Crime Data Explorer (agency summaries)",
+        "dataset": "CDE summarized agency actuals ORI CA0192500",
+        "retrievedAt": "2026-08-16T05:04:14.001Z",
+        "query": {
+          "ori": "CA0192500",
+          "from": "01-2018",
+          "to": "12-2025",
+          "offense": "violent-crime+components",
+          "monthsReported": "12"
+        },
+        "geographicFilter": "Glendale PD (ORI CA0192500)",
+        "timePeriod": {
+          "start": "2019-01-01",
+          "end": "2019-12-31"
+        },
+        "transformation": "Sum monthly CDE actuals to calendar year; not incident locations",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "FBI CDE summarized agency actuals, rolled up from monthly counts to calendar years.",
+          "These are official annual/API totals, not geocoded incidents or a live CAD feed.",
+          "CDE figures can differ from CA DOJ OpenJustice because of reporting systems and revisions.",
+          "2021 CDE may be incomplete for agencies in the NIBRS transition and is not used as a full-year comparison.",
+          "Correlation is not causation."
+        ]
+      }
+    },
+    {
+      "year": 2020,
+      "county": "Los Angeles County",
+      "agency": "Glendale Police Department",
+      "violent": 206,
+      "homicide": 3,
+      "rape": 0,
+      "robbery": 87,
+      "aggravatedAssault": 102,
+      "property": 3212,
+      "burglary": 407,
+      "vehicleTheft": 0,
+      "larceny": 2357,
+      "monthsReported": 12,
+      "dataClass": "snapshot",
+      "provenance": {
+        "statisticId": "fbi-cde-glendale-2020-violent",
+        "label": "2020 FBI CDE violent offenses (Glendale PD)",
+        "value": 206,
+        "sourceId": "fbi-cde",
+        "sourceName": "FBI Crime Data Explorer (agency summaries)",
+        "dataset": "CDE summarized agency actuals ORI CA0192500",
+        "retrievedAt": "2026-08-16T05:04:14.001Z",
+        "query": {
+          "ori": "CA0192500",
+          "from": "01-2018",
+          "to": "12-2025",
+          "offense": "violent-crime+components",
+          "monthsReported": "12"
+        },
+        "geographicFilter": "Glendale PD (ORI CA0192500)",
+        "timePeriod": {
+          "start": "2020-01-01",
+          "end": "2020-12-31"
+        },
+        "transformation": "Sum monthly CDE actuals to calendar year; not incident locations",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "FBI CDE summarized agency actuals, rolled up from monthly counts to calendar years.",
+          "These are official annual/API totals, not geocoded incidents or a live CAD feed.",
+          "CDE figures can differ from CA DOJ OpenJustice because of reporting systems and revisions.",
+          "2021 CDE may be incomplete for agencies in the NIBRS transition and is not used as a full-year comparison.",
+          "Correlation is not causation."
+        ]
+      }
+    },
+    {
+      "year": 2021,
+      "county": "Los Angeles County",
+      "agency": "Glendale Police Department",
+      "violent": 0,
+      "homicide": 0,
+      "rape": 0,
+      "robbery": 0,
+      "aggravatedAssault": 0,
+      "property": 0,
+      "burglary": 0,
+      "vehicleTheft": 0,
+      "larceny": 0,
+      "monthsReported": 12,
+      "dataClass": "snapshot",
+      "provenance": {
+        "statisticId": "fbi-cde-glendale-2021-violent",
+        "label": "2021 FBI CDE violent offenses (Glendale PD)",
+        "value": 0,
+        "sourceId": "fbi-cde",
+        "sourceName": "FBI Crime Data Explorer (agency summaries)",
+        "dataset": "CDE summarized agency actuals ORI CA0192500",
+        "retrievedAt": "2026-08-16T05:04:14.001Z",
+        "query": {
+          "ori": "CA0192500",
+          "from": "01-2018",
+          "to": "12-2025",
+          "offense": "violent-crime+components",
+          "monthsReported": "12"
+        },
+        "geographicFilter": "Glendale PD (ORI CA0192500)",
+        "timePeriod": {
+          "start": "2021-01-01",
+          "end": "2021-12-31"
+        },
+        "transformation": "Sum monthly CDE actuals to calendar year; not incident locations",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "FBI CDE summarized agency actuals, rolled up from monthly counts to calendar years.",
+          "These are official annual/API totals, not geocoded incidents or a live CAD feed.",
+          "CDE figures can differ from CA DOJ OpenJustice because of reporting systems and revisions.",
+          "2021 CDE may be incomplete for agencies in the NIBRS transition and is not used as a full-year comparison.",
+          "Correlation is not causation.",
+          "This CDE year is not treated as a full-year total (NIBRS transition, incomplete months, or all-zero actuals)."
+        ]
+      }
+    },
+    {
+      "year": 2022,
+      "county": "Los Angeles County",
+      "agency": "Glendale Police Department",
+      "violent": 281,
+      "homicide": 0,
+      "rape": 0,
+      "robbery": 131,
+      "aggravatedAssault": 132,
+      "property": 3468,
+      "burglary": 486,
+      "vehicleTheft": 0,
+      "larceny": 2541,
+      "monthsReported": 12,
+      "dataClass": "snapshot",
+      "provenance": {
+        "statisticId": "fbi-cde-glendale-2022-violent",
+        "label": "2022 FBI CDE violent offenses (Glendale PD)",
+        "value": 281,
+        "sourceId": "fbi-cde",
+        "sourceName": "FBI Crime Data Explorer (agency summaries)",
+        "dataset": "CDE summarized agency actuals ORI CA0192500",
+        "retrievedAt": "2026-08-16T05:04:14.001Z",
+        "query": {
+          "ori": "CA0192500",
+          "from": "01-2018",
+          "to": "12-2025",
+          "offense": "violent-crime+components",
+          "monthsReported": "12"
+        },
+        "geographicFilter": "Glendale PD (ORI CA0192500)",
+        "timePeriod": {
+          "start": "2022-01-01",
+          "end": "2022-12-31"
+        },
+        "transformation": "Sum monthly CDE actuals to calendar year; not incident locations",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "FBI CDE summarized agency actuals, rolled up from monthly counts to calendar years.",
+          "These are official annual/API totals, not geocoded incidents or a live CAD feed.",
+          "CDE figures can differ from CA DOJ OpenJustice because of reporting systems and revisions.",
+          "2021 CDE may be incomplete for agencies in the NIBRS transition and is not used as a full-year comparison.",
+          "Correlation is not causation."
+        ]
+      }
+    },
+    {
+      "year": 2023,
+      "county": "Los Angeles County",
+      "agency": "Glendale Police Department",
+      "violent": 426,
+      "homicide": 2,
+      "rape": 0,
+      "robbery": 168,
+      "aggravatedAssault": 227,
+      "property": 4193,
+      "burglary": 536,
+      "vehicleTheft": 0,
+      "larceny": 3128,
+      "monthsReported": 12,
+      "dataClass": "snapshot",
+      "provenance": {
+        "statisticId": "fbi-cde-glendale-2023-violent",
+        "label": "2023 FBI CDE violent offenses (Glendale PD)",
+        "value": 426,
+        "sourceId": "fbi-cde",
+        "sourceName": "FBI Crime Data Explorer (agency summaries)",
+        "dataset": "CDE summarized agency actuals ORI CA0192500",
+        "retrievedAt": "2026-08-16T05:04:14.001Z",
+        "query": {
+          "ori": "CA0192500",
+          "from": "01-2018",
+          "to": "12-2025",
+          "offense": "violent-crime+components",
+          "monthsReported": "12"
+        },
+        "geographicFilter": "Glendale PD (ORI CA0192500)",
+        "timePeriod": {
+          "start": "2023-01-01",
+          "end": "2023-12-31"
+        },
+        "transformation": "Sum monthly CDE actuals to calendar year; not incident locations",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "FBI CDE summarized agency actuals, rolled up from monthly counts to calendar years.",
+          "These are official annual/API totals, not geocoded incidents or a live CAD feed.",
+          "CDE figures can differ from CA DOJ OpenJustice because of reporting systems and revisions.",
+          "2021 CDE may be incomplete for agencies in the NIBRS transition and is not used as a full-year comparison.",
+          "Correlation is not causation."
+        ]
+      }
+    },
+    {
+      "year": 2024,
+      "county": "Los Angeles County",
+      "agency": "Glendale Police Department",
+      "violent": 528,
+      "homicide": 4,
+      "rape": 0,
+      "robbery": 172,
+      "aggravatedAssault": 318,
+      "property": 3772,
+      "burglary": 372,
+      "vehicleTheft": 0,
+      "larceny": 2944,
+      "monthsReported": 12,
+      "dataClass": "snapshot",
+      "provenance": {
+        "statisticId": "fbi-cde-glendale-2024-violent",
+        "label": "2024 FBI CDE violent offenses (Glendale PD)",
+        "value": 528,
+        "sourceId": "fbi-cde",
+        "sourceName": "FBI Crime Data Explorer (agency summaries)",
+        "dataset": "CDE summarized agency actuals ORI CA0192500",
+        "retrievedAt": "2026-08-16T05:04:14.001Z",
+        "query": {
+          "ori": "CA0192500",
+          "from": "01-2018",
+          "to": "12-2025",
+          "offense": "violent-crime+components",
+          "monthsReported": "12"
+        },
+        "geographicFilter": "Glendale PD (ORI CA0192500)",
+        "timePeriod": {
+          "start": "2024-01-01",
+          "end": "2024-12-31"
+        },
+        "transformation": "Sum monthly CDE actuals to calendar year; not incident locations",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "FBI CDE summarized agency actuals, rolled up from monthly counts to calendar years.",
+          "These are official annual/API totals, not geocoded incidents or a live CAD feed.",
+          "CDE figures can differ from CA DOJ OpenJustice because of reporting systems and revisions.",
+          "2021 CDE may be incomplete for agencies in the NIBRS transition and is not used as a full-year comparison.",
+          "Correlation is not causation."
+        ]
+      }
+    },
+    {
+      "year": 2025,
+      "county": "Los Angeles County",
+      "agency": "Glendale Police Department",
+      "violent": 435,
+      "homicide": 1,
+      "rape": 0,
+      "robbery": 148,
+      "aggravatedAssault": 268,
+      "property": 3539,
+      "burglary": 313,
+      "vehicleTheft": 0,
+      "larceny": 2817,
+      "monthsReported": 12,
+      "dataClass": "snapshot",
+      "provenance": {
+        "statisticId": "fbi-cde-glendale-2025-violent",
+        "label": "2025 FBI CDE violent offenses (Glendale PD)",
+        "value": 435,
+        "sourceId": "fbi-cde",
+        "sourceName": "FBI Crime Data Explorer (agency summaries)",
+        "dataset": "CDE summarized agency actuals ORI CA0192500",
+        "retrievedAt": "2026-08-16T05:04:14.001Z",
+        "query": {
+          "ori": "CA0192500",
+          "from": "01-2018",
+          "to": "12-2025",
+          "offense": "violent-crime+components",
+          "monthsReported": "12"
+        },
+        "geographicFilter": "Glendale PD (ORI CA0192500)",
+        "timePeriod": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "transformation": "Sum monthly CDE actuals to calendar year; not incident locations",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "FBI CDE summarized agency actuals, rolled up from monthly counts to calendar years.",
+          "These are official annual/API totals, not geocoded incidents or a live CAD feed.",
+          "CDE figures can differ from CA DOJ OpenJustice because of reporting systems and revisions.",
+          "2021 CDE may be incomplete for agencies in the NIBRS transition and is not used as a full-year comparison.",
+          "Correlation is not causation."
+        ]
+      }
+    }
+  ],
+  "censusGlendale": [
+    {
+      "year": "2023",
+      "vintage": "ACS 2019–2023 5-year (live API)",
+      "population": 192270,
+      "medianAge": 41.4,
+      "medianHouseholdIncome": 84262,
+      "povertyRate": 0.1344245797757756,
+      "medianHomeValue": 1043900,
+      "medianGrossRent": 2095,
+      "households": 73179,
+      "bachelorOrHigher": null,
+      "notes": [
+        "Live Census Data API pull for Glendale city, California (place 30000). ACS estimates have margins of error."
+      ],
+      "provenance": {
+        "statisticId": "census-2023-acs5-live-glendale",
+        "label": "ACS 2023 5-year population (live) — Glendale city, California",
+        "value": 192270,
+        "sourceId": "census-acs",
+        "sourceName": "U.S. Census Bureau ACS / Decennial",
+        "dataset": "ACS 5-year 2019–2023",
+        "retrievedAt": "2026-08-16T05:02:59.821Z",
+        "query": {
+          "geography": "place:30000",
+          "state": "06",
+          "vintage": "acs5-2023"
+        },
+        "geographicFilter": "Glendale city, California",
+        "timePeriod": {
+          "start": "2019-01-01",
+          "end": "2023-12-31"
+        },
+        "transformation": "Direct ACS estimates; poverty rate = B17001_002E / B17001_001E",
+        "claimType": "fact",
+        "dataClass": "snapshot",
+        "limitations": [
+          "ACS 5-year estimates have margins of error.",
+          "Not a 2026 population count."
         ]
       }
     }

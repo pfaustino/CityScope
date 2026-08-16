@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { parseAcsTable } from '../server/connectors/census.ts'
 import { parseAirNow } from '../server/connectors/airnow.ts'
 import { parseNoaa } from '../server/connectors/noaa.ts'
-import { parseFbiCdeActualsByYear } from '../server/connectors/fbiCde.ts'
+import { parseFbiCdeActualsByYear, parseFbiCdeYearCoverage } from '../server/connectors/fbiCde.ts'
 import { parseOpenJusticeCsv } from '../server/connectors/openjustice.ts'
 import { parseForecast, parseQuakes } from '../shared/liveParse.ts'
 import { parseSwitrsCsv } from '../shared/switrs.ts'
@@ -58,6 +58,7 @@ describe('live parsers', () => {
       [
         'Year,County,NCICCode,Violent_sum,Homicide_sum,ForRape_sum,Robbery_sum,AggAssault_sum,Property_sum,Burglary_sum,VehicleTheft_sum,LTtotal_sum',
         '2024,Los Angeles County,Burbank,396,2,12,96,286,3114,347,297,2470',
+        '2024,Los Angeles County,Glendale,530,4,34,172,320,3733,372,424,2937',
         '2024,Orange County,Anaheim,1,0,0,0,1,2,0,0,2',
       ].join('\n'),
       '2026-08-15T00:00:00Z',
@@ -67,6 +68,23 @@ describe('live parsers', () => {
     expect(rows[0]?.violent).toBe(396)
     expect(rows[0]?.property).toBe(3114)
     expect(rows[0]?.dataClass).toBe('live')
+  })
+
+  it('filters OpenJustice CSV to Glendale PD when requested', () => {
+    const rows = parseOpenJusticeCsv(
+      [
+        'Year,County,NCICCode,Violent_sum,Homicide_sum,ForRape_sum,Robbery_sum,AggAssault_sum,Property_sum,Burglary_sum,VehicleTheft_sum,LTtotal_sum',
+        '2024,Los Angeles County,Burbank,396,2,12,96,286,3114,347,297,2470',
+        '2024,Los Angeles County,Glendale,530,4,34,172,320,3733,372,424,2937',
+      ].join('\n'),
+      '2026-08-15T00:00:00Z',
+      'live',
+      ['Glendale'],
+    )
+    expect(rows).toHaveLength(1)
+    expect(rows[0]?.agency).toBe('Glendale')
+    expect(rows[0]?.violent).toBe(530)
+    expect(rows[0]?.property).toBe(3733)
   })
 
   it('parses SWITRS Crashes.csv rows as snapshot collisions', () => {
@@ -131,5 +149,24 @@ describe('live parsers', () => {
     })
     expect(years[2023]).toBe(30)
     expect(years[2024]).toBe(5)
+  })
+
+  it('counts FBI CDE months with numeric actuals', () => {
+    const coverage = parseFbiCdeYearCoverage({
+      offenses: {
+        actuals: {
+          'Glendale Police Department Offenses': {
+            '01-2021': 0,
+            '12-2021': 0,
+            '01-2022': 20,
+            '02-2022': 10,
+          },
+        },
+      },
+    })
+    expect(coverage.months[2021]).toBe(2)
+    expect(coverage.totals[2021]).toBe(0)
+    expect(coverage.months[2022]).toBe(2)
+    expect(coverage.totals[2022]).toBe(30)
   })
 })

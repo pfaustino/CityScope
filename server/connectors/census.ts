@@ -1,5 +1,12 @@
-import { keyPresent } from '../env.ts'
+import { GLENDALE } from '../../shared/peerCities.ts'
 import type { CensusSnapshot } from '../../shared/types.ts'
+import { keyPresent } from '../env.ts'
+
+type PlaceGeo = {
+  place: string
+  name: string
+  statisticId: string
+}
 
 const VARS = [
   'NAME',
@@ -19,7 +26,29 @@ export async function fetchCensusHint() {
   return fetchCensusAcs()
 }
 
+const BURBANK_PLACE: PlaceGeo = {
+  place: '08954',
+  name: 'Burbank city, California',
+  statisticId: 'census-2023-acs5-live',
+}
+
+const GLENDALE_PLACE: PlaceGeo = {
+  place: GLENDALE.censusPlace,
+  name: GLENDALE.censusPlaceName,
+  statisticId: 'census-2023-acs5-live-glendale',
+}
+
 export async function fetchCensusAcs(): Promise<CensusSnapshot[] | { status: string; message: string }> {
+  return fetchCensusAcsPlace(BURBANK_PLACE)
+}
+
+export async function fetchCensusAcsGlendale(): Promise<CensusSnapshot[] | { status: string; message: string }> {
+  return fetchCensusAcsPlace(GLENDALE_PLACE)
+}
+
+export async function fetchCensusAcsPlace(
+  geo: PlaceGeo,
+): Promise<CensusSnapshot[] | { status: string; message: string }> {
   if (!keyPresent('CENSUS_API_KEY')) {
     return {
       status: 'needs_api_key',
@@ -30,7 +59,7 @@ export async function fetchCensusAcs(): Promise<CensusSnapshot[] | { status: str
   if (!key) throw new Error('CENSUS_API_KEY missing')
   const params = new URLSearchParams({
     get: VARS.join(','),
-    for: 'place:08954',
+    for: `place:${geo.place}`,
     in: 'state:06',
     key,
   })
@@ -53,10 +82,14 @@ export async function fetchCensusAcs(): Promise<CensusSnapshot[] | { status: str
   } catch {
     throw new Error(`Census HTTP ${res.status}: response was not JSON`)
   }
-  return [parseAcsTable(body, new Date().toISOString())]
+  return [parseAcsTable(body, new Date().toISOString(), geo)]
 }
 
-export function parseAcsTable(body: unknown, retrievedAt: string): CensusSnapshot {
+export function parseAcsTable(
+  body: unknown,
+  retrievedAt: string,
+  geo: PlaceGeo = BURBANK_PLACE,
+): CensusSnapshot {
   if (!Array.isArray(body) || body.length < 2) throw new Error('Census ACS: unexpected payload')
   const header = body[0]
   const row = body[1]
@@ -85,17 +118,17 @@ export function parseAcsTable(body: unknown, retrievedAt: string): CensusSnapsho
     medianGrossRent: num('B25064_001E'),
     households: num('B11001_001E'),
     bachelorOrHigher: null,
-    notes: ['Live Census Data API pull for Burbank city, CA (place 08954). ACS estimates have margins of error.'],
+    notes: [`Live Census Data API pull for ${geo.name} (place ${geo.place}). ACS estimates have margins of error.`],
     provenance: {
-      statisticId: 'census-2023-acs5-live',
-      label: 'ACS 2023 5-year population (live)',
+      statisticId: geo.statisticId,
+      label: `ACS 2023 5-year population (live) — ${geo.name}`,
       value: population,
       sourceId: 'census-acs',
       sourceName: 'U.S. Census Bureau ACS / Decennial',
       dataset: 'ACS 5-year 2019–2023',
       retrievedAt,
-      query: { geography: 'place:08954', state: '06', vintage: 'acs5-2023' },
-      geographicFilter: 'Burbank city, California',
+      query: { geography: `place:${geo.place}`, state: '06', vintage: 'acs5-2023' },
+      geographicFilter: geo.name,
       timePeriod: { start: '2019-01-01', end: '2023-12-31' },
       transformation: 'Direct ACS estimates; poverty rate = B17001_002E / B17001_001E',
       claimType: 'fact',

@@ -25,6 +25,8 @@ describe('reports and catalog', () => {
       'environment',
     ])
     expect(reportHasConnectedDataset('crime-monthly')).toBe(false)
+    expect(reportHasConnectedDataset('crime-compare')).toBe(false)
+    expect(reportHasConnectedDataset('crime-compare', wh)).toBe(true)
     expect(reportHasConnectedDataset('police')).toBe(false)
     expect(reportHasConnectedDataset('business')).toBe(false)
     expect(reportHasConnectedDataset('transport')).toBe(false)
@@ -73,6 +75,10 @@ describe('reports and catalog', () => {
     expect(crime?.dataClassNote.toLowerCase()).toContain('does not invent')
     expect(annual?.keyNumbers.length).toBeGreaterThan(0)
     expect(annual?.dataClassNote.toLowerCase()).not.toContain('demonstration')
+    const compare = reports.find((r) => r.id === 'crime-compare')
+    expect(compare?.keyNumbers.length).toBeGreaterThan(0)
+    expect(compare?.dataClassNote.toLowerCase()).toContain('calculation')
+    expect(compare?.executiveSummary.join(' ').toLowerCase()).toContain('not a causal')
   })
 
   it('catalogs flock as restricted', () => {

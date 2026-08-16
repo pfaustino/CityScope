@@ -96,6 +96,9 @@ function emptyOverlay(retrievedAt: string): LiveOverlay {
     airQuality: null,
     crimeAnnual: null,
     fbiAnnual: null,
+    crimeAnnualGlendale: null,
+    fbiAnnualGlendale: null,
+    censusGlendale: null,
     collisions: null,
     collisionsFile: null,
     errors: [],
@@ -114,6 +117,9 @@ export function bakeStaticOverlay(): LiveOverlay {
     overlay.airQuality = existing.airQuality
     overlay.crimeAnnual = existing.crimeAnnual
     overlay.fbiAnnual = existing.fbiAnnual
+    overlay.crimeAnnualGlendale = existing.crimeAnnualGlendale
+    overlay.fbiAnnualGlendale = existing.fbiAnnualGlendale
+    overlay.censusGlendale = existing.censusGlendale
     overlay.collisions = existing.collisions
     overlay.collisionsFile = existing.collisionsFile
     overlay.retrievedAt = existing.retrievedAt
@@ -129,6 +135,12 @@ export function bakeStaticOverlay(): LiveOverlay {
   if (crimeAnnual) overlay.crimeAnnual = crimeAnnual
   const fbiAnnual = asArray<AgencyCrimeYear>(latestRaw('fbi-cde'))
   if (fbiAnnual) overlay.fbiAnnual = fbiAnnual
+  const crimeAnnualGlendale = asArray<AgencyCrimeYear>(latestRaw('ca-doj-openjustice-glendale'))
+  if (crimeAnnualGlendale) overlay.crimeAnnualGlendale = crimeAnnualGlendale
+  const fbiAnnualGlendale = asArray<AgencyCrimeYear>(latestRaw('fbi-cde-glendale'))
+  if (fbiAnnualGlendale) overlay.fbiAnnualGlendale = fbiAnnualGlendale
+  const censusGlendale = asArray<CensusSnapshot>(latestRaw('census-acs-glendale'))
+  if (censusGlendale) overlay.censusGlendale = censusGlendale
 
   const nws = latestRaw('nws-forecast')
   if (nws) {
@@ -162,6 +174,6 @@ const invoked = process.argv[1] && path.basename(process.argv[1]).startsWith('ba
 if (invoked) {
   const overlay = bakeStaticOverlay()
   console.log(
-    `baked overlay ${overlay.retrievedAt} collisions=${overlay.collisions?.length ?? 0} openjustice=${overlay.crimeAnnual?.length ?? 0}`,
+    `baked overlay ${overlay.retrievedAt} collisions=${overlay.collisions?.length ?? 0} openjustice=${overlay.crimeAnnual?.length ?? 0} glendale=${overlay.crimeAnnualGlendale?.length ?? 0}`,
   )
 }

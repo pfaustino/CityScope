@@ -120,6 +120,8 @@ export type AgencyCrimeYear = {
   burglary: number
   vehicleTheft: number
   larceny: number
+  /** Months with numeric CDE actuals. Absent on OpenJustice annual rows. */
+  monthsReported?: number
   dataClass: DataClass
   provenance: Provenance
 }
@@ -262,6 +264,9 @@ export type LiveOverlay = {
   airQuality: AirQualityObs[] | null
   crimeAnnual: AgencyCrimeYear[] | null
   fbiAnnual: AgencyCrimeYear[] | null
+  crimeAnnualGlendale: AgencyCrimeYear[] | null
+  fbiAnnualGlendale: AgencyCrimeYear[] | null
+  censusGlendale: CensusSnapshot[] | null
   collisions: Collision[] | null
   collisionsFile: string | null
   errors: { sourceId: string; message: string }[]
@@ -279,6 +284,9 @@ export type Warehouse = {
   collisions: Collision[]
   collisionsFile: string | null
   fbiAnnual: AgencyCrimeYear[]
+  crimeAnnualGlendale: AgencyCrimeYear[]
+  fbiAnnualGlendale: AgencyCrimeYear[]
+  censusGlendale: CensusSnapshot[]
   census: CensusSnapshot[]
   earthquakes: Earthquake[]
   weather: WeatherPeriod[]
@@ -287,6 +295,7 @@ export type Warehouse = {
   climate: ClimateDay[]
   accessGaps: AccessGap[]
   populationForRates: number
+  populationGlendaleForRates: number
 }
 
 export const CLAIM_LABEL: Record<ClaimType, string> = {

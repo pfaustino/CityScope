@@ -68,6 +68,9 @@ describe('warehouse and analysis', () => {
       ],
       crimeAnnual: null,
       fbiAnnual: null,
+      crimeAnnualGlendale: null,
+      fbiAnnualGlendale: null,
+      censusGlendale: null,
       collisions: null,
       collisionsFile: null,
       errors: [],
@@ -88,6 +91,9 @@ describe('warehouse and analysis', () => {
       airQuality: null,
       crimeAnnual: null,
       fbiAnnual: null,
+      crimeAnnualGlendale: null,
+      fbiAnnualGlendale: null,
+      censusGlendale: null,
       collisions: [
         {
           id: '82189740',

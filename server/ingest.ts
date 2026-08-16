@@ -2,11 +2,12 @@ import { writeFileSync, mkdirSync, existsSync } from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { fetchAirNow } from './connectors/airnow.ts'
-import { fetchCensusHint } from './connectors/census.ts'
+import { GLENDALE } from '../shared/peerCities.ts'
+import { fetchCensusAcsGlendale, fetchCensusHint } from './connectors/census.ts'
 import { fetchNoaaHint } from './connectors/noaa.ts'
 import { fetchForecast } from './connectors/nws.ts'
-import { fetchFbiCde } from './connectors/fbiCde.ts'
-import { fetchOpenJustice } from './connectors/openjustice.ts'
+import { fetchFbiCde, fetchFbiCdeAgency } from './connectors/fbiCde.ts'
+import { fetchOpenJusticeBundle } from './connectors/openjustice.ts'
 import { loadSwitrsCrashes } from './connectors/switrs.ts'
 import { fetchEarthquakes } from './connectors/usgs.ts'
 import { loadEnv } from './env.ts'
@@ -28,10 +29,14 @@ export async function runIngest(): Promise<IngestResult[]> {
   results.push(await snapshot('usgs-earthquakes', () => fetchEarthquakes()))
   results.push(await snapshot('nws-forecast', () => fetchForecast()))
   results.push(await snapshot('census-acs', () => fetchCensusHint()))
+  results.push(await snapshot('census-acs-glendale', () => fetchCensusAcsGlendale()))
   results.push(await snapshot('noaa-cdo', () => fetchNoaaHint()))
   results.push(await snapshot('aqi', () => fetchAirNow()))
-  results.push(await snapshot('ca-doj-openjustice', () => fetchOpenJustice()))
+  const openJustice = fetchOpenJusticeBundle()
+  results.push(await snapshot('ca-doj-openjustice', async () => (await openJustice).burbank))
+  results.push(await snapshot('ca-doj-openjustice-glendale', async () => (await openJustice).glendale))
   results.push(await snapshot('fbi-cde', () => fetchFbiCde()))
+  results.push(await snapshot('fbi-cde-glendale', () => fetchFbiCdeAgency(GLENDALE.fbiOri, GLENDALE.fbiAgencyName)))
   results.push(await snapshot('switrs', () => Promise.resolve(loadSwitrsCrashes())))
   return results
 }

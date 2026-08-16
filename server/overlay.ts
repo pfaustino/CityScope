@@ -1,11 +1,12 @@
 import { parseForecast, parseQuakes } from '../shared/liveParse.ts'
 import type { LiveOverlay } from '../shared/types.ts'
 import { fetchAirNow } from './connectors/airnow.ts'
-import { fetchCensusAcs } from './connectors/census.ts'
-import { fetchFbiCde } from './connectors/fbiCde.ts'
+import { GLENDALE } from '../shared/peerCities.ts'
+import { fetchCensusAcs, fetchCensusAcsGlendale } from './connectors/census.ts'
+import { fetchFbiCde, fetchFbiCdeAgency } from './connectors/fbiCde.ts'
 import { fetchNoaaClimate } from './connectors/noaa.ts'
 import { fetchForecast } from './connectors/nws.ts'
-import { fetchOpenJustice } from './connectors/openjustice.ts'
+import { fetchOpenJusticeBundle } from './connectors/openjustice.ts'
 import { loadSwitrsCrashes } from './connectors/switrs.ts'
 import { fetchEarthquakes } from './connectors/usgs.ts'
 import { redact } from './http.ts'
@@ -25,6 +26,9 @@ export async function buildLiveOverlay(): Promise<LiveOverlay> {
     airQuality: null,
     crimeAnnual: null,
     fbiAnnual: null,
+    crimeAnnualGlendale: null,
+    fbiAnnualGlendale: null,
+    censusGlendale: null,
     collisions: null,
     collisionsFile: null,
     errors,
@@ -34,9 +38,11 @@ export async function buildLiveOverlay(): Promise<LiveOverlay> {
     {
       sourceId: 'census-acs',
       run: async () => {
-        const result = await fetchCensusAcs()
-        if (isGap(result)) errors.push({ sourceId: 'census-acs', message: result.message })
-        else overlay.census = result
+        const [burbank, glendale] = await Promise.all([fetchCensusAcs(), fetchCensusAcsGlendale()])
+        if (isGap(burbank)) errors.push({ sourceId: 'census-acs', message: burbank.message })
+        else overlay.census = burbank
+        if (isGap(glendale)) errors.push({ sourceId: 'census-acs-glendale', message: glendale.message })
+        else overlay.censusGlendale = glendale
       },
     },
     {
@@ -70,15 +76,22 @@ export async function buildLiveOverlay(): Promise<LiveOverlay> {
     {
       sourceId: 'ca-doj-openjustice',
       run: async () => {
-        overlay.crimeAnnual = await fetchOpenJustice()
+        const bundle = await fetchOpenJusticeBundle()
+        overlay.crimeAnnual = bundle.burbank
+        overlay.crimeAnnualGlendale = bundle.glendale
       },
     },
     {
       sourceId: 'fbi-cde',
       run: async () => {
-        const result = await fetchFbiCde()
-        if (isGap(result)) errors.push({ sourceId: 'fbi-cde', message: result.message })
-        else overlay.fbiAnnual = result
+        const [burbank, glendale] = await Promise.all([
+          fetchFbiCde(),
+          fetchFbiCdeAgency(GLENDALE.fbiOri, GLENDALE.fbiAgencyName),
+        ])
+        if (isGap(burbank)) errors.push({ sourceId: 'fbi-cde', message: burbank.message })
+        else overlay.fbiAnnual = burbank
+        if (isGap(glendale)) errors.push({ sourceId: 'fbi-cde-glendale', message: glendale.message })
+        else overlay.fbiAnnualGlendale = glendale
       },
     },
     {
