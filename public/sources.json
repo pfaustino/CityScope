@@ -158,7 +158,7 @@
       "race",
       "ethnicity"
     ],
-    "lastSuccessfulRetrieval": "2026-08-16T18:07:36.817Z",
+    "lastSuccessfulRetrieval": "2026-08-16T22:56:54.828Z",
     "lastModified": "2024-12-01",
     "dataQualityRating": 5,
     "legalAccess": "API_KEY",
@@ -235,7 +235,7 @@
       "short forecast",
       "precipitation probability"
     ],
-    "lastSuccessfulRetrieval": "2026-08-16T18:07:36.817Z",
+    "lastSuccessfulRetrieval": "2026-08-16T22:56:54.828Z",
     "lastModified": "2026-08-15",
     "dataQualityRating": 5,
     "legalAccess": "PUBLIC",
@@ -264,7 +264,7 @@
       "depth",
       "event url"
     ],
-    "lastSuccessfulRetrieval": "2026-08-16T18:07:36.817Z",
+    "lastSuccessfulRetrieval": "2026-08-16T22:56:54.828Z",
     "lastModified": "2026-08-15",
     "dataQualityRating": 5,
     "legalAccess": "PUBLIC",
@@ -295,7 +295,7 @@
       "vehicle theft",
       "arson"
     ],
-    "lastSuccessfulRetrieval": "2026-08-16T18:07:36.817Z",
+    "lastSuccessfulRetrieval": "2026-08-16T22:56:54.828Z",
     "lastModified": "2025-07-01",
     "dataQualityRating": 4,
     "legalAccess": "PUBLIC",
@@ -303,6 +303,37 @@
     "phase1Priority": 5,
     "status": "connected",
     "statusDetail": "Published snapshot"
+  },
+  {
+    "id": "ca-doj-openjustice-hate-crime",
+    "name": "CA DOJ OpenJustice hate crime",
+    "agency": "California Department of Justice — Criminal Justice Statistics Center",
+    "url": "https://data-openjustice.doj.ca.gov/data/hate-crime",
+    "apiEndpoint": "https://data-openjustice.doj.ca.gov/sites/default/files/dataset/2026-07/Hate%20Crimes_2001-2025.csv",
+    "datasetId": "hate-crime",
+    "authentication": "PUBLIC",
+    "rateLimit": "Statewide event-level file; no live incident API",
+    "updateFrequency": "monthly",
+    "geographicCoverage": "Burbank PD (NCIC 1912 / Los Angeles County 19). The CSV has no city name.",
+    "historicalCoverage": "Reported hate-crime events, ClosedYear 2001–2025",
+    "fieldsAvailable": [
+      "ClosedYear",
+      "MonthOccurrence",
+      "MostSeriousBias",
+      "MostSeriousBiasType",
+      "MostSeriousUcr",
+      "victim counts",
+      "suspect counts",
+      "location"
+    ],
+    "lastSuccessfulRetrieval": "2026-08-16T22:56:54.828Z",
+    "lastModified": "2026-07-01",
+    "dataQualityRating": 4,
+    "legalAccess": "PUBLIC",
+    "howToObtain": "Download Hate Crimes 2001–2025 from https://data-openjustice.doj.ca.gov/data/hate-crime and filter NCIC=1912 (Burbank PD). Do not use statewide totals as Burbank. These are reported events, not geocoded incidents. CityScope does not display fabricated incident counts.",
+    "phase1Priority": 5,
+    "status": "connected",
+    "statusDetail": "149 hate-crime events (NCIC 1912)"
   },
   {
     "id": "fbi-cde",
@@ -320,7 +351,7 @@
       "offense counts by year",
       "violent/property summaries"
     ],
-    "lastSuccessfulRetrieval": "2026-08-16T18:07:36.817Z",
+    "lastSuccessfulRetrieval": "2026-08-16T22:56:54.828Z",
     "lastModified": null,
     "dataQualityRating": 4,
     "legalAccess": "API_KEY",
@@ -346,7 +377,7 @@
       "TMIN",
       "PRCP"
     ],
-    "lastSuccessfulRetrieval": "2026-08-16T18:07:36.817Z",
+    "lastSuccessfulRetrieval": "2026-08-16T22:56:54.828Z",
     "lastModified": null,
     "dataQualityRating": 5,
     "legalAccess": "API_KEY",
@@ -373,7 +404,7 @@
       "intersection",
       "coordinates"
     ],
-    "lastSuccessfulRetrieval": "2026-08-16T18:07:36.817Z",
+    "lastSuccessfulRetrieval": "2026-08-16T22:56:54.828Z",
     "lastModified": null,
     "dataQualityRating": 4,
     "legalAccess": "REGISTRATION",
@@ -425,7 +456,7 @@
       "PM2.5",
       "ozone"
     ],
-    "lastSuccessfulRetrieval": "2026-08-16T18:07:36.817Z",
+    "lastSuccessfulRetrieval": "2026-08-16T22:56:54.828Z",
     "lastModified": null,
     "dataQualityRating": 4,
     "legalAccess": "API_KEY",

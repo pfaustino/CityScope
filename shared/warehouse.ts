@@ -16,6 +16,7 @@ export function buildWarehouse(nowIso = '2026-08-15T08:00:00-07:00'): Warehouse 
     expenditures: [],
     collisions: [],
     collisionsFile: null,
+    hateCrimeEvents: [],
     fbiAnnual: [],
     crimeAnnualGlendale: openJusticeGlendaleSnapshots(nowIso),
     fbiAnnualGlendale: [],
@@ -529,7 +530,7 @@ function openJusticeSnapshotRow(
 }
 
 export function warehouseDisclaimer(wh: Warehouse): string {
-  return `Warehouse generated ${wh.generatedAt} for ${CITY.name}, ${CITY.state}. Census, USGS, NWS, NOAA, AirNow, CA DOJ OpenJustice, FBI CDE annual totals, and SWITRS collisions may carry numbers. Incident-level crime and other city-operational series stay empty until a public feed is connected.`
+  return `Warehouse generated ${wh.generatedAt} for ${CITY.name}, ${CITY.state}. Census, USGS, NWS, NOAA, AirNow, CA DOJ OpenJustice (including hate-crime events for NCIC 1912), FBI CDE annual totals, and SWITRS collisions may carry numbers. Incident-level crime and other city-operational series stay empty until a public feed is connected.`
 }
 
 let cached: Warehouse | null = null

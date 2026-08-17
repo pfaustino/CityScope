@@ -6,6 +6,7 @@ import { fetchCensusAcs, fetchCensusAcsGlendale } from './connectors/census.ts'
 import { fetchFbiCde, fetchFbiCdeAgency } from './connectors/fbiCde.ts'
 import { fetchNoaaClimate } from './connectors/noaa.ts'
 import { fetchForecast } from './connectors/nws.ts'
+import { fetchHateCrimeEvents, loadHateCrimeEvents } from './connectors/hateCrime.ts'
 import { fetchOpenJusticeBundle } from './connectors/openjustice.ts'
 import { loadSwitrsCrashes } from './connectors/switrs.ts'
 import { fetchEarthquakes } from './connectors/usgs.ts'
@@ -31,6 +32,7 @@ export async function buildLiveOverlay(): Promise<LiveOverlay> {
     censusGlendale: null,
     collisions: null,
     collisionsFile: null,
+    hateCrimeEvents: null,
     errors,
   }
 
@@ -103,6 +105,17 @@ export async function buildLiveOverlay(): Promise<LiveOverlay> {
           overlay.collisions = result.collisions
           overlay.collisionsFile = result.fileName
         }
+      },
+    },
+    {
+      sourceId: 'ca-doj-openjustice-hate-crime',
+      run: async () => {
+        const local = loadHateCrimeEvents('snapshot')
+        if (!isGap(local)) {
+          overlay.hateCrimeEvents = local
+          return
+        }
+        overlay.hateCrimeEvents = await fetchHateCrimeEvents()
       },
     },
   ]

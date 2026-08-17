@@ -3,6 +3,7 @@ import { parseAcsTable } from '../server/connectors/census.ts'
 import { parseAirNow } from '../server/connectors/airnow.ts'
 import { parseNoaa } from '../server/connectors/noaa.ts'
 import { parseFbiCdeActualsByYear, parseFbiCdeYearCoverage } from '../server/connectors/fbiCde.ts'
+import { parseHateCrimeCsv, hateCrimeAnnual, hateCrimeBiasTypeCounts } from '../shared/hateCrime.ts'
 import { parseOpenJusticeCsv } from '../server/connectors/openjustice.ts'
 import { parseForecast, parseQuakes } from '../shared/liveParse.ts'
 import { parseSwitrsCsv } from '../shared/switrs.ts'
@@ -148,6 +149,39 @@ describe('live parsers', () => {
     expect(rows[0]?.agency).toBe('Glendale')
     expect(rows[0]?.violent).toBe(530)
     expect(rows[0]?.property).toBe(3733)
+  })
+
+  it('filters OpenJustice hate-crime CSV to NCIC 1912 and counts 2024 events', () => {
+    const header =
+      'RecordId,ClosedYear,MonthOccurrence,County,NCIC,TotalNumberOfVictims,TotalNumberOfSuspects,MostSeriousUcr,MostSeriousLocation,MostSeriousBias,MostSeriousBiasType'
+    const rows = [
+      header,
+      'CA24-1,2024,1,19,1912,1,0,Intimidation,Residence,Anti-Black or African American,Race/Ethnicity/Ancestry',
+      'CA24-2,2024,2,19,1912,1,1,Simple Assault,School,Anti-Black or African American,Race/Ethnicity/Ancestry',
+      'CA24-3,2024,4,19,1912,1,1,Simple Assault,Other,Anti-Black or African American,Race/Ethnicity/Ancestry',
+      'CA24-4,2024,5,19,1912,1,1,Simple Assault,Parking Lot,Anti-Other Religion,Religion',
+      'CA24-5,2024,1,19,1912,1,0,Destruction/Damage/Vandalism,Church,Anti-Gay (Male),Sexual Orientation',
+      'CA24-6,2024,2,19,1912,1,1,Aggravated Assault,Grocery,Anti-Black or African American,Race/Ethnicity/Ancestry',
+      'CA24-7,2024,8,19,1912,1,0,Destruction/Damage/Vandalism,Residence,Anti-Black or African American,Race/Ethnicity/Ancestry',
+      'CA24-8,2024,10,19,1912,1,2,Intimidation,School,Anti-Black or African American,Race/Ethnicity/Ancestry',
+      'CA24-9,2024,12,19,1912,1,0,Destruction/Damage/Vandalism,Parking Lot,Anti-Gay (Male),Sexual Orientation',
+      'CA23-1,2023,3,19,1912,1,1,Intimidation,Residence,Anti-Jewish,Religion',
+      'CA24-other,2024,1,19,1913,99,99,Intimidation,Residence,Anti-Jewish,Religion',
+      'CA24-state,2024,1,00,0000,500,500,Intimidation,Residence,Anti-Jewish,Religion',
+    ]
+    const events = parseHateCrimeCsv(rows.join('\n'), 'snapshot')
+    expect(events).toHaveLength(10)
+    expect(events.every((e) => e.ncic === '1912')).toBe(true)
+    expect(events.every((e) => e.victims !== 99 && e.victims !== 500)).toBe(true)
+    const annual = hateCrimeAnnual(events)
+    const y2024 = annual.find((r) => r.year === 2024)
+    expect(y2024).toEqual({ year: 2024, events: 9, victims: 9, suspects: 6 })
+    expect(hateCrimeBiasTypeCounts(events, 2024)).toEqual([
+      { biasType: 'Race/Ethnicity/Ancestry', events: 6 },
+      { biasType: 'Sexual Orientation', events: 2 },
+      { biasType: 'Religion', events: 1 },
+    ])
+    expect(events.every((e) => e.dataClass === 'snapshot')).toBe(true)
   })
 
   it('parses SWITRS Crashes.csv rows as snapshot collisions', () => {

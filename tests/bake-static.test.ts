@@ -10,6 +10,8 @@ describe('static Pages bake', () => {
     const overlay = bakeStaticOverlay()
     expect(overlay.collisions?.length ?? 0).toBeGreaterThan(0)
     expect(overlay.crimeAnnual?.length ?? 0).toBeGreaterThan(0)
+    expect(overlay.hateCrimeEvents?.length ?? 0).toBeGreaterThan(0)
+    expect(overlay.hateCrimeEvents?.every((e) => e.ncic === '1912')).toBe(true)
     const text = readFileSync(path.join(process.cwd(), 'public', 'overlay.json'), 'utf8')
     expect(text).not.toMatch(SECRET)
     expect(JSON.stringify(overlay)).not.toMatch(SECRET)

@@ -6,7 +6,7 @@ export const ACCESS_GAPS: AccessGap[] = [
     status: 'needs_cpra',
     headline: 'Access Status: Restricted — no public incident feed',
     detail:
-      'Incident-level Burbank PD records are not published as a bulk API. Annual agency totals from CA DOJ OpenJustice are shown separately and are not a substitute for incident maps or monthly counts.',
+      'Incident-level Burbank PD records are not published as a bulk API. Annual agency totals and reported hate-crime events from CA DOJ OpenJustice are shown separately and are not a substitute for incident maps or monthly counts.',
     howToObtain:
       'Annual agency totals: FBI Crime Data Explorer (ORI CA0191200) after an api.data.gov key, or CA DOJ OpenJustice crimes-and-clearances tables. Incident-level extracts: CPRA request to Burbank PD. Do not treat third-party crime-map scrapes as official.',
     portals: [

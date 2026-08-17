@@ -18,6 +18,10 @@ export function applyOverlay(base: Warehouse, overlay: LiveOverlay): Warehouse {
         : base.fbiAnnualGlendale,
     collisions: overlay.collisions && overlay.collisions.length > 0 ? overlay.collisions : base.collisions,
     collisionsFile: overlay.collisionsFile ?? base.collisionsFile,
+    hateCrimeEvents:
+      overlay.hateCrimeEvents && overlay.hateCrimeEvents.length > 0
+        ? overlay.hateCrimeEvents
+        : base.hateCrimeEvents,
   }
   if (overlay.census && overlay.census.length > 0) {
     const liveYears = new Set(overlay.census.map((c) => c.year))

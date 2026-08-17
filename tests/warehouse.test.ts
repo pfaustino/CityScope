@@ -15,6 +15,7 @@ describe('warehouse and analysis', () => {
     expect(analysis.anomalies.filter((a) => a.id.includes('crime'))).toHaveLength(0)
     expect(wh.crimeAnnual.some((r) => r.year === 2024 && r.violent === 396)).toBe(true)
     expect(wh.crimeAnnual.every((r) => r.dataClass !== 'demonstration')).toBe(true)
+    expect(wh.hateCrimeEvents).toHaveLength(0)
   })
 
   it('keeps census and earthquake rows as snapshots until overlay', () => {
@@ -73,6 +74,7 @@ describe('warehouse and analysis', () => {
       censusGlendale: null,
       collisions: null,
       collisionsFile: null,
+      hateCrimeEvents: null,
       errors: [],
     })
     expect(merged.crime).toHaveLength(0)
@@ -116,10 +118,50 @@ describe('warehouse and analysis', () => {
         },
       ],
       collisionsFile: 'Crashes.csv',
+      hateCrimeEvents: null,
       errors: [],
     })
     expect(merged.collisions).toHaveLength(1)
     expect(merged.collisions[0]?.dataClass).toBe('snapshot')
     expect(merged.collisionsFile).toBe('Crashes.csv')
+  })
+
+  it('overlays OpenJustice hate-crime events for NCIC 1912', () => {
+    const merged = applyOverlay(wh, {
+      retrievedAt: '2026-08-16T12:00:00Z',
+      census: null,
+      weather: null,
+      earthquakes: null,
+      climate: null,
+      airQuality: null,
+      crimeAnnual: null,
+      fbiAnnual: null,
+      crimeAnnualGlendale: null,
+      fbiAnnualGlendale: null,
+      censusGlendale: null,
+      collisions: null,
+      collisionsFile: null,
+      hateCrimeEvents: [
+        {
+          id: 'CA24-1',
+          year: 2024,
+          month: 1,
+          ncic: '1912',
+          county: '19',
+          mostSeriousBias: 'Anti-Black or African American',
+          mostSeriousBiasType: 'Race/Ethnicity/Ancestry',
+          mostSeriousUcr: 'Intimidation',
+          mostSeriousLocation: 'Residence/Home/Driveway',
+          victims: 1,
+          suspects: 0,
+          dataClass: 'snapshot',
+        },
+      ],
+      errors: [],
+    })
+    expect(merged.hateCrimeEvents).toHaveLength(1)
+    expect(merged.hateCrimeEvents[0]?.ncic).toBe('1912')
+    expect(merged.hateCrimeEvents[0]?.dataClass).toBe('snapshot')
+    expect(merged.crime).toHaveLength(0)
   })
 })

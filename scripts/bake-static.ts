@@ -3,12 +3,14 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { liveSourceView, SOURCES } from '../shared/catalog.ts'
 import { parseForecast, parseQuakes } from '../shared/liveParse.ts'
+import { parseHateCrimeCsv } from '../shared/hateCrime.ts'
 import { parseSwitrsCsv, SWITRS_DEFAULT_FILE } from '../shared/switrs.ts'
 import type {
   AgencyCrimeYear,
   AirQualityObs,
   CensusSnapshot,
   ClimateDay,
+  HateCrimeEvent,
   LiveOverlay,
 } from '../shared/types.ts'
 
@@ -86,6 +88,20 @@ function loadCollisions(): { collisions: LiveOverlay['collisions']; collisionsFi
   return { collisions: null, collisionsFile: null }
 }
 
+function loadHateCrimeEvents(): HateCrimeEvent[] | null {
+  const dir = path.join(ROOT, 'data', 'raw', 'ca-doj-openjustice-hate-crime')
+  if (existsSync(dir)) {
+    const csvs = readdirSync(dir)
+      .filter((name) => name.endsWith('.csv'))
+      .sort()
+    const lastCsv = csvs.at(-1)
+    if (lastCsv) {
+      return parseHateCrimeCsv(readFileSync(path.join(dir, lastCsv), 'utf8'), 'snapshot')
+    }
+  }
+  return asArray<HateCrimeEvent>(latestRaw('ca-doj-openjustice-hate-crime'))
+}
+
 function emptyOverlay(retrievedAt: string): LiveOverlay {
   return {
     retrievedAt,
@@ -101,6 +117,7 @@ function emptyOverlay(retrievedAt: string): LiveOverlay {
     censusGlendale: null,
     collisions: null,
     collisionsFile: null,
+    hateCrimeEvents: null,
     errors: [],
   }
 }
@@ -122,6 +139,7 @@ export function bakeStaticOverlay(): LiveOverlay {
     overlay.censusGlendale = existing.censusGlendale
     overlay.collisions = existing.collisions
     overlay.collisionsFile = existing.collisionsFile
+    overlay.hateCrimeEvents = existing.hateCrimeEvents
     overlay.retrievedAt = existing.retrievedAt
   }
 
@@ -159,6 +177,9 @@ export function bakeStaticOverlay(): LiveOverlay {
     overlay.collisionsFile = switrs.collisionsFile
   }
 
+  const hateCrimeEvents = loadHateCrimeEvents()
+  if (hateCrimeEvents && hateCrimeEvents.length > 0) overlay.hateCrimeEvents = hateCrimeEvents
+
   overlay.retrievedAt = new Date().toISOString()
   overlay.errors = []
   const baked = snapshotize(overlay)
@@ -174,6 +195,6 @@ const invoked = process.argv[1] && path.basename(process.argv[1]).startsWith('ba
 if (invoked) {
   const overlay = bakeStaticOverlay()
   console.log(
-    `baked overlay ${overlay.retrievedAt} collisions=${overlay.collisions?.length ?? 0} openjustice=${overlay.crimeAnnual?.length ?? 0} glendale=${overlay.crimeAnnualGlendale?.length ?? 0}`,
+    `baked overlay ${overlay.retrievedAt} collisions=${overlay.collisions?.length ?? 0} openjustice=${overlay.crimeAnnual?.length ?? 0} hatecrime=${overlay.hateCrimeEvents?.length ?? 0} glendale=${overlay.crimeAnnualGlendale?.length ?? 0}`,
   )
 }

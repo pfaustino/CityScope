@@ -122,6 +122,22 @@ describe('liveSourceView', () => {
     expect(row.status).toBe('connected')
     expect(row.statusDetail).toMatch(/Crashes\.csv/i)
   })
+
+  it('marks OpenJustice hate crime connected when overlay has NCIC 1912 events', () => {
+    const hate = sourceById('ca-doj-openjustice-hate-crime')
+    expect(hate).toBeDefined()
+    if (!hate) return
+    const row = liveSourceView(hate, keysOn, {
+      retrievedAt: '2026-08-16T12:00:00Z',
+      census: null,
+      climate: [],
+      airQuality: [],
+      hateCrimeEvents: [{ id: 'CA24-1', year: 2024, ncic: '1912' }],
+      errors: [],
+    })
+    expect(row.status).toBe('connected')
+    expect(row.statusDetail).toMatch(/NCIC 1912/)
+  })
 })
 
 describe('unconnected source obtain URLs', () => {

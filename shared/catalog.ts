@@ -22,6 +22,7 @@ export type SourceOverlayHints = {
   crimeAnnual?: unknown
   fbiAnnual?: unknown
   collisions?: unknown
+  hateCrimeEvents?: unknown
   errors: { sourceId: string; message: string }[]
 }
 
@@ -39,6 +40,7 @@ const PUBLIC_OVERLAY: Record<string, keyof SourceOverlayHints> = {
   'nws-forecast': 'weather',
   'usgs-earthquakes': 'earthquakes',
   'ca-doj-openjustice': 'crimeAnnual',
+  'ca-doj-openjustice-hate-crime': 'hateCrimeEvents',
 }
 
 export const SOURCES: SourceRecord[] = [
@@ -271,6 +273,37 @@ export const SOURCES: SourceRecord[] = [
     phase1Priority: 5,
   },
   {
+    id: 'ca-doj-openjustice-hate-crime',
+    name: 'CA DOJ OpenJustice hate crime',
+    agency: 'California Department of Justice — Criminal Justice Statistics Center',
+    url: 'https://data-openjustice.doj.ca.gov/data/hate-crime',
+    apiEndpoint:
+      'https://data-openjustice.doj.ca.gov/sites/default/files/dataset/2026-07/Hate%20Crimes_2001-2025.csv',
+    datasetId: 'hate-crime',
+    authentication: 'PUBLIC',
+    rateLimit: 'Statewide event-level file; no live incident API',
+    updateFrequency: 'monthly',
+    geographicCoverage: 'Burbank PD (NCIC 1912 / Los Angeles County 19). The CSV has no city name.',
+    historicalCoverage: 'Reported hate-crime events, ClosedYear 2001–2025',
+    fieldsAvailable: [
+      'ClosedYear',
+      'MonthOccurrence',
+      'MostSeriousBias',
+      'MostSeriousBiasType',
+      'MostSeriousUcr',
+      'victim counts',
+      'suspect counts',
+      'location',
+    ],
+    lastSuccessfulRetrieval: '2026-08-16',
+    lastModified: '2026-07-01',
+    dataQualityRating: 4,
+    legalAccess: 'PUBLIC',
+    howToObtain:
+      'Download Hate Crimes 2001–2025 from https://data-openjustice.doj.ca.gov/data/hate-crime and filter NCIC=1912 (Burbank PD). Do not use statewide totals as Burbank. These are reported events, not geocoded incidents. CityScope does not display fabricated incident counts.',
+    phase1Priority: 5,
+  },
+  {
     id: 'fbi-cde',
     name: 'FBI Crime Data Explorer (agency summaries)',
     agency: 'Federal Bureau of Investigation',
@@ -451,6 +484,7 @@ export function statusFor(source: SourceRecord): SourceStatus {
       source.id === 'noaa-cdo' ||
       source.id === 'aqi' ||
       source.id === 'ca-doj-openjustice' ||
+      source.id === 'ca-doj-openjustice-hate-crime' ||
       source.id === 'switrs' ||
       source.id === 'fbi-cde'
     ) {
@@ -490,6 +524,19 @@ export function liveSourceView(
         status: 'connected',
         lastSuccessfulRetrieval: overlay?.retrievedAt ?? source.lastSuccessfulRetrieval,
         statusDetail: `${count} collision records from local Crashes.csv`,
+      }
+    }
+    return { ...source, status: statusFor(source), statusDetail: null }
+  }
+  if (source.id === 'ca-doj-openjustice-hate-crime') {
+    const events = overlay?.hateCrimeEvents
+    const count = Array.isArray(events) ? events.length : 0
+    if (count > 0) {
+      return {
+        ...source,
+        status: 'connected',
+        lastSuccessfulRetrieval: overlay?.retrievedAt ?? source.lastSuccessfulRetrieval,
+        statusDetail: `${count} hate-crime events (NCIC 1912)`,
       }
     }
     return { ...source, status: statusFor(source), statusDetail: null }

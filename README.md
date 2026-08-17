@@ -32,6 +32,7 @@ npm run bake           # write public/overlay.json + public/sources.json from sn
 | NOAA GHCND (token; snapshots on Pages) | | |
 | AirNow (key; preliminary; snapshots on Pages) | | |
 | CA DOJ OpenJustice annual totals | | |
+| CA DOJ OpenJustice hate-crime events (NCIC 1912) | | |
 | SWITRS collisions (`Crashes.csv`) | | |
 
 Click any statistic for provenance (source, query, period, transformation, limitations).

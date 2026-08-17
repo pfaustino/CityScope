@@ -7,8 +7,13 @@ import { fetchCensusAcsGlendale, fetchCensusHint } from './connectors/census.ts'
 import { fetchNoaaHint } from './connectors/noaa.ts'
 import { fetchForecast } from './connectors/nws.ts'
 import { fetchFbiCde, fetchFbiCdeAgency } from './connectors/fbiCde.ts'
+import {
+  fetchHateCrimeCsvText,
+  HATE_CRIME_RAW_DIR,
+} from './connectors/hateCrime.ts'
 import { fetchOpenJusticeBundle } from './connectors/openjustice.ts'
 import { loadSwitrsCrashes } from './connectors/switrs.ts'
+import { parseHateCrimeCsv } from '../shared/hateCrime.ts'
 import { fetchEarthquakes } from './connectors/usgs.ts'
 import { loadEnv } from './env.ts'
 
@@ -38,7 +43,31 @@ export async function runIngest(): Promise<IngestResult[]> {
   results.push(await snapshot('fbi-cde', () => fetchFbiCde()))
   results.push(await snapshot('fbi-cde-glendale', () => fetchFbiCdeAgency(GLENDALE.fbiOri, GLENDALE.fbiAgencyName)))
   results.push(await snapshot('switrs', () => Promise.resolve(loadSwitrsCrashes())))
+  results.push(await snapshotHateCrime())
   return results
+}
+
+async function snapshotHateCrime(): Promise<IngestResult> {
+  const sourceId = 'ca-doj-openjustice-hate-crime'
+  const stamp = new Date().toISOString().replace(/[:.]/g, '-')
+  if (!existsSync(HATE_CRIME_RAW_DIR)) mkdirSync(HATE_CRIME_RAW_DIR, { recursive: true })
+  const csvPath = path.join(HATE_CRIME_RAW_DIR, `${stamp}.csv`)
+  const jsonPath = path.join(HATE_CRIME_RAW_DIR, `${stamp}.json`)
+  try {
+    const csv = await fetchHateCrimeCsvText()
+    writeFileSync(csvPath, csv, 'utf8')
+    const events = parseHateCrimeCsv(csv, 'snapshot')
+    writeFileSync(jsonPath, JSON.stringify(events, null, 2), 'utf8')
+    return {
+      sourceId,
+      ok: true,
+      message: `Wrote immutable CSV and ${events.length} NCIC 1912 events (prior files kept).`,
+      snapshotPath: csvPath,
+    }
+  } catch (err) {
+    const message = err instanceof Error ? err.message : String(err)
+    return { sourceId, ok: false, message, snapshotPath: null }
+  }
 }
 
 function isAccessGap(value: unknown): value is { status: string; message: string } {

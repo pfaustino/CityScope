@@ -106,6 +106,22 @@ export type CrimeIncident = {
   dataClass: DataClass
 }
 
+/** One reported hate-crime event. Not a geocoded incident. */
+export type HateCrimeEvent = {
+  id: string
+  year: number
+  month: number
+  ncic: string
+  county: string
+  mostSeriousBias: string
+  mostSeriousBiasType: string
+  mostSeriousUcr: string
+  mostSeriousLocation: string
+  victims: number
+  suspects: number
+  dataClass: DataClass
+}
+
 /** Annual UCR-style agency totals. Not incident locations. */
 export type AgencyCrimeYear = {
   year: number
@@ -280,6 +296,7 @@ export type LiveOverlay = {
   censusGlendale: CensusSnapshot[] | null
   collisions: Collision[] | null
   collisionsFile: string | null
+  hateCrimeEvents: HateCrimeEvent[] | null
   errors: { sourceId: string; message: string }[]
 }
 
@@ -294,6 +311,7 @@ export type Warehouse = {
   expenditures: Expenditure[]
   collisions: Collision[]
   collisionsFile: string | null
+  hateCrimeEvents: HateCrimeEvent[]
   fbiAnnual: AgencyCrimeYear[]
   crimeAnnualGlendale: AgencyCrimeYear[]
   fbiAnnualGlendale: AgencyCrimeYear[]
