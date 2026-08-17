@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { analyzeWarehouse } from '../shared/analysis.ts'
 import { joinGeo, nearestNeighborhood, normalizeAddress } from '../shared/geo.ts'
 import { applyOverlay } from '../shared/overlay.ts'
+import { mergePublicFeeds } from '../shared/publicFeeds.ts'
 import { buildWarehouse } from '../shared/warehouse.ts'
 
 describe('warehouse and analysis', () => {
@@ -193,5 +194,60 @@ describe('warehouse and analysis', () => {
     expect(merged.hateCrimeEvents[0]?.ncic).toBe('1912')
     expect(merged.hateCrimeEvents[0]?.dataClass).toBe('snapshot')
     expect(merged.crime).toHaveLength(0)
+  })
+
+  it('replaces baked quakes with a live empty catalog and stamps snapshot on fetch failure', () => {
+    const liveEmpty = mergePublicFeeds(
+      wh,
+      {
+        items: [{ name: 'Today', startTime: '2026-08-17T08:00:00-07:00', temperatureF: 93, shortForecast: 'Sunny', wind: '5 mph S' }],
+        dataClass: 'live',
+        retrievedAt: '2026-08-17T15:00:00Z',
+        sourceUrl: 'https://forecast.weather.gov/MapClick.php?lat=34.1808&lon=-118.3090&FcstType=dwml',
+        format: 'xml',
+        error: null,
+        note: null,
+        loading: false,
+      },
+      {
+        items: [],
+        dataClass: 'live',
+        retrievedAt: '2026-08-17T15:00:00Z',
+        sourceUrl: 'https://earthquake.usgs.gov/fdsnws/event/1/query',
+        format: 'xml',
+        error: null,
+        note: null,
+        loading: false,
+      },
+    )
+    expect(liveEmpty.weather[0]?.temperatureF).toBe(93)
+    expect(liveEmpty.earthquakes).toHaveLength(0)
+
+    const failed = mergePublicFeeds(
+      wh,
+      {
+        items: null,
+        dataClass: 'snapshot',
+        retrievedAt: null,
+        sourceUrl: 'https://forecast.weather.gov/MapClick.php?lat=34.1808&lon=-118.3090&FcstType=dwml',
+        format: null,
+        error: 'DWML HTTP 500',
+        note: null,
+        loading: false,
+      },
+      {
+        items: null,
+        dataClass: 'snapshot',
+        retrievedAt: null,
+        sourceUrl: 'https://earthquake.usgs.gov/fdsnws/event/1/query',
+        format: null,
+        error: 'QuakeML HTTP 500',
+        note: null,
+        loading: false,
+      },
+    )
+    expect(failed.weather[0]?.shortForecast).toBe(wh.weather[0]?.shortForecast)
+    expect(failed.earthquakes.length).toBe(wh.earthquakes.length)
+    expect(failed.earthquakes.every((e) => e.dataClass === 'snapshot')).toBe(true)
   })
 })

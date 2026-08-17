@@ -158,7 +158,7 @@
       "race",
       "ethnicity"
     ],
-    "lastSuccessfulRetrieval": "2026-08-17T07:31:11.599Z",
+    "lastSuccessfulRetrieval": "2026-08-17T15:45:48.536Z",
     "lastModified": "2024-12-01",
     "dataQualityRating": 5,
     "legalAccess": "API_KEY",
@@ -222,12 +222,12 @@
     "name": "NWS / weather.gov forecast",
     "agency": "National Weather Service",
     "url": "https://www.weather.gov/",
-    "apiEndpoint": "https://api.weather.gov/gridpoints/LOX/154,51/forecast",
+    "apiEndpoint": "https://forecast.weather.gov/MapClick.php?lat=34.1808&lon=-118.3090&FcstType=dwml",
     "datasetId": "LOX/154,51",
     "authentication": "PUBLIC",
-    "rateLimit": "User-Agent required; be polite",
+    "rateLimit": "Public DWML; be polite",
     "updateFrequency": "daily",
-    "geographicCoverage": "Burbank grid point (NWS LOX)",
+    "geographicCoverage": "Burbank (~34.1808, -118.309)",
     "historicalCoverage": "Forecast periods only (not a climate archive)",
     "fieldsAvailable": [
       "temperature",
@@ -235,11 +235,11 @@
       "short forecast",
       "precipitation probability"
     ],
-    "lastSuccessfulRetrieval": "2026-08-17T07:31:11.599Z",
+    "lastSuccessfulRetrieval": "2026-08-17T15:45:48.536Z",
     "lastModified": "2026-08-15",
     "dataQualityRating": 5,
     "legalAccess": "PUBLIC",
-    "howToObtain": "GET https://api.weather.gov/points/34.1808,-118.3090 then follow forecast URL. Include a contact User-Agent.",
+    "howToObtain": "Browser GET https://forecast.weather.gov/MapClick.php?lat=34.1808&lon=-118.3090&FcstType=dwml (DWML XML, no key). If XML is blocked, fall back to https://api.weather.gov/gridpoints/LOX/154,51/forecast and label that JSON fallback. NOAA CDO is a separate keyed archive — do not put that token in the browser.",
     "phase1Priority": 9,
     "status": "connected",
     "statusDetail": "Published snapshot"
@@ -249,13 +249,13 @@
     "name": "USGS earthquake catalog",
     "agency": "U.S. Geological Survey",
     "url": "https://earthquake.usgs.gov/",
-    "apiEndpoint": "https://earthquake.usgs.gov/fdsnws/event/1/query",
+    "apiEndpoint": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=xml&latitude=34.1808&longitude=-118.3090&maxradiuskm=40&starttime=2026-01-01&minmagnitude=2.5",
     "datasetId": "fdsnws-event",
     "authentication": "PUBLIC",
     "rateLimit": "USGS FDSN; keep queries bounded",
     "updateFrequency": "daily",
     "geographicCoverage": "40 km radius from Burbank center",
-    "historicalCoverage": "1900–present depending on network",
+    "historicalCoverage": "2026 YTD in the live browser query (starttime=2026-01-01); catalog itself is longer",
     "fieldsAvailable": [
       "magnitude",
       "place",
@@ -264,11 +264,11 @@
       "depth",
       "event url"
     ],
-    "lastSuccessfulRetrieval": "2026-08-17T07:31:11.599Z",
+    "lastSuccessfulRetrieval": "2026-08-17T15:45:48.536Z",
     "lastModified": "2026-08-15",
     "dataQualityRating": 5,
     "legalAccess": "PUBLIC",
-    "howToObtain": "FDSN query with latitude, longitude, maxradiuskm. No key required.",
+    "howToObtain": "Browser GET https://earthquake.usgs.gov/fdsnws/event/1/query?format=xml&latitude=34.1808&longitude=-118.3090&maxradiuskm=40&starttime=2026-01-01&minmagnitude=2.5 (QuakeML XML, no key). Filter is 40 km from Burbank center, M≥2.5, 2026-01-01 through request time (2026 YTD). Parse in the client.",
     "phase1Priority": 10,
     "status": "connected",
     "statusDetail": "Published snapshot"
@@ -295,7 +295,7 @@
       "vehicle theft",
       "arson"
     ],
-    "lastSuccessfulRetrieval": "2026-08-17T07:31:11.599Z",
+    "lastSuccessfulRetrieval": "2026-08-17T15:45:48.536Z",
     "lastModified": "2025-07-01",
     "dataQualityRating": 4,
     "legalAccess": "PUBLIC",
@@ -328,7 +328,7 @@
       "TotalNumberOfVictims",
       "TotalNumberOfSuspects"
     ],
-    "lastSuccessfulRetrieval": "2026-08-17T07:31:11.599Z",
+    "lastSuccessfulRetrieval": "2026-08-17T15:45:48.536Z",
     "lastModified": "2026-07-01",
     "dataQualityRating": 4,
     "legalAccess": "PUBLIC",
@@ -353,7 +353,7 @@
       "offense counts by year",
       "violent/property summaries"
     ],
-    "lastSuccessfulRetrieval": "2026-08-17T07:31:11.599Z",
+    "lastSuccessfulRetrieval": "2026-08-17T15:45:48.536Z",
     "lastModified": null,
     "dataQualityRating": 4,
     "legalAccess": "API_KEY",
@@ -379,7 +379,7 @@
       "TMIN",
       "PRCP"
     ],
-    "lastSuccessfulRetrieval": "2026-08-17T07:31:11.599Z",
+    "lastSuccessfulRetrieval": "2026-08-17T15:45:48.536Z",
     "lastModified": null,
     "dataQualityRating": 5,
     "legalAccess": "API_KEY",
@@ -418,7 +418,7 @@
       "LIGHTING",
       "coordinates"
     ],
-    "lastSuccessfulRetrieval": "2026-08-17T07:31:11.599Z",
+    "lastSuccessfulRetrieval": "2026-08-17T15:45:48.536Z",
     "lastModified": null,
     "dataQualityRating": 4,
     "legalAccess": "REGISTRATION",
@@ -470,7 +470,7 @@
       "PM2.5",
       "ozone"
     ],
-    "lastSuccessfulRetrieval": "2026-08-17T07:31:11.599Z",
+    "lastSuccessfulRetrieval": "2026-08-17T15:45:48.536Z",
     "lastModified": null,
     "dataQualityRating": 4,
     "legalAccess": "API_KEY",

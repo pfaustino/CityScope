@@ -14,10 +14,21 @@ import {
   HATE_CRIME_BLANK_CELL,
 } from '../shared/hateCrime.ts'
 import { parseOpenJusticeCsv } from '../server/connectors/openjustice.ts'
-import { parseForecast, parseQuakes } from '../shared/liveParse.ts'
+import { parseForecast, parseQuakes, parseDwmlForecast, parseQuakeMl } from '../shared/liveParse.ts'
+import { NWS_DWML_URL, USGS_QUAKEML_URL } from '../shared/publicFeeds.ts'
 import { parseSwitrsCsv, rollupCollisions } from '../shared/switrs.ts'
 
 describe('live parsers', () => {
+  it('documents the public XML URLs used on page load', () => {
+    expect(USGS_QUAKEML_URL).toContain('format=xml')
+    expect(USGS_QUAKEML_URL).toContain('latitude=34.1808')
+    expect(USGS_QUAKEML_URL).toContain('maxradiuskm=40')
+    expect(USGS_QUAKEML_URL).toContain('minmagnitude=2.5')
+    expect(USGS_QUAKEML_URL).toContain('starttime=2026-01-01')
+    expect(NWS_DWML_URL).toContain('FcstType=dwml')
+    expect(NWS_DWML_URL).toContain('lat=34.1808')
+  })
+
   it('parses a Census ACS table into a live snapshot', () => {
     const snap = parseAcsTable(
       [
@@ -306,6 +317,87 @@ describe('live parsers', () => {
     expect(rows).toHaveLength(1)
     expect(rows[0]?.dataClass).toBe('snapshot')
     expect(rows[0]?.lat).toBeCloseTo(34.18)
+  })
+
+  it('parses USGS QuakeML events and converts depth meters to km', () => {
+    const xml = `<?xml version="1.0"?>
+<q:quakeml xmlns="http://quakeml.org/xmlns/bed/1.2" xmlns:catalog="http://anss.org/xmlns/catalog/0.1" xmlns:q="http://quakeml.org/xmlns/quakeml/1.2">
+ <eventParameters>
+  <event catalog:eventsource="ci" catalog:eventid="40671466" publicID="quakeml:earthquake.usgs.gov/fdsnws/event/1/query?eventid=ci40671466">
+   <description><type>earthquake name</type><text>9 km SW of Valencia, CA</text></description>
+   <origin>
+    <time><value>2026-08-12T20:56:29.310Z</value></time>
+    <longitude><value>-118.62866666667</value></longitude>
+    <latitude><value>34.3845</value></latitude>
+    <depth><value>4220</value></depth>
+   </origin>
+   <magnitude>
+    <mag><value>2.63</value></mag>
+   </magnitude>
+  </event>
+ </eventParameters>
+</q:quakeml>`
+    const rows = parseQuakeMl(xml, 'live')
+    expect(rows).toHaveLength(1)
+    expect(rows[0]?.id).toBe('ci40671466')
+    expect(rows[0]?.mag).toBeCloseTo(2.63)
+    expect(rows[0]?.depthKm).toBeCloseTo(4.22)
+    expect(rows[0]?.dataClass).toBe('live')
+    expect(rows[0]?.url).toContain('ci40671466')
+  })
+
+  it('treats empty QuakeML eventParameters as a live zero-event catalog', () => {
+    const xml =
+      '<q:quakeml xmlns:q="http://quakeml.org/xmlns/quakeml/1.2"><eventParameters publicID="q"></eventParameters></q:quakeml>'
+    expect(parseQuakeMl(xml)).toEqual([])
+  })
+
+  it('parses NWS DWML daytime periods from the 12-hour layout', () => {
+    const xml = `<?xml version="1.0"?>
+<dwml>
+  <data type="forecast">
+    <time-layout>
+      <layout-key>k-p12h-n4-1</layout-key>
+      <start-valid-time period-name="Today">2026-08-17T08:00:00-07:00</start-valid-time>
+      <start-valid-time period-name="Tonight">2026-08-17T18:00:00-07:00</start-valid-time>
+      <start-valid-time period-name="Tuesday">2026-08-18T06:00:00-07:00</start-valid-time>
+      <start-valid-time period-name="Tuesday Night">2026-08-18T18:00:00-07:00</start-valid-time>
+    </time-layout>
+    <time-layout>
+      <layout-key>k-p24h-n2-1</layout-key>
+      <start-valid-time period-name="Today">2026-08-17T08:00:00-07:00</start-valid-time>
+      <start-valid-time period-name="Tuesday">2026-08-18T06:00:00-07:00</start-valid-time>
+    </time-layout>
+    <parameters>
+      <temperature type="maximum" units="Fahrenheit" time-layout="k-p24h-n2-1">
+        <name>Daily Maximum Temperature</name>
+        <value>93</value>
+        <value>96</value>
+      </temperature>
+      <weather time-layout="k-p12h-n4-1">
+        <weather-conditions weather-summary="Mostly Sunny"/>
+        <weather-conditions weather-summary="Partly Cloudy"/>
+        <weather-conditions weather-summary="Hot"/>
+        <weather-conditions weather-summary="Mostly Clear"/>
+      </weather>
+      <wordedForecast time-layout="k-p12h-n4-1">
+        <text>Mostly sunny, with a high near 93. Light south wind becoming southwest 5 to 10 mph in the afternoon.</text>
+        <text>Partly cloudy, with a low around 68.</text>
+        <text>Mostly sunny and hot, with a high near 96. Calm wind becoming south around 5 mph.</text>
+        <text>Mostly clear.</text>
+      </wordedForecast>
+    </parameters>
+  </data>
+</dwml>`
+    const rows = parseDwmlForecast(xml)
+    expect(rows).toHaveLength(2)
+    expect(rows[0]?.name).toBe('Today')
+    expect(rows[0]?.temperatureF).toBe(93)
+    expect(rows[0]?.shortForecast).toBe('Mostly Sunny')
+    expect(rows[0]?.wind).toMatch(/wind/i)
+    expect(rows[1]?.name).toBe('Tuesday')
+    expect(rows[1]?.temperatureF).toBe(96)
+    expect(rows[1]?.shortForecast).toBe('Hot')
   })
 
   it('sums FBI CDE monthly actuals to calendar years', () => {

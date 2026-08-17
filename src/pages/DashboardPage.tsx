@@ -2,10 +2,11 @@ import { Link } from 'react-router-dom'
 import { gapFor } from '@shared/accessGaps.ts'
 import { AccessPanel } from '../components/AccessPanel.tsx'
 import { Banner, Stat } from '../components/Stat.tsx'
+import { feedMetaLine, feedStatLabel, quakeProvenance, weatherProvenance } from '../lib/fetchPublicFeeds.ts'
 import { useCityData, num } from '../lib/data.ts'
 
 export function DashboardPage() {
-  const { warehouse, analysis, overlayErrors } = useCityData()
+  const { warehouse, analysis, overlayErrors, publicFeeds } = useCityData()
   const o = analysis.overview
   const crimeGap = gapFor('crime')
   const pop = warehouse.census.find((c) => c.year === '2023')
@@ -19,10 +20,10 @@ export function DashboardPage() {
         Correlation is not causation.
       </p>
       <Banner kind="live">
-        Live/snapshot: Census ACS, NWS, USGS, NOAA GHCND, AirNow, CA DOJ OpenJustice annual
-        totals, FBI CDE annual/API facts when the key works, and SWITRS collisions when
-        Crashes.csv is loaded. Incident-level crime is not connected — no substitute incident
-        counts.
+        Live/snapshot: Census ACS, NWS and USGS public XML on page load, NOAA GHCND, AirNow, CA DOJ
+        OpenJustice annual totals, FBI CDE annual/API facts when the key works, and SWITRS collisions
+        when Crashes.csv is loaded. NWS/USGS are labeled live only after the browser GET succeeds.
+        Incident-level crime is not connected — no substitute incident counts.
       </Banner>
       <div className="grid stats">
         <Stat
@@ -30,8 +31,18 @@ export function DashboardPage() {
           value={num(o.population)}
           provenance={pop?.provenance ?? o.stats[0]}
         />
-        <Stat label="Weather (NWS)" value={o.weatherToday} />
-        <Stat label="USGS M≥2.5 (40 km)" value={num(o.quakesNearby)} />
+        <Stat
+          label={feedStatLabel('Weather (NWS)', publicFeeds.weather)}
+          value={o.weatherToday}
+          meta={feedMetaLine(publicFeeds.weather)}
+          provenance={weatherProvenance(publicFeeds.weather, warehouse.weather[0], warehouse.generatedAt)}
+        />
+        <Stat
+          label={feedStatLabel('USGS M≥2.5 (40 km)', publicFeeds.earthquakes)}
+          value={num(o.quakesNearby)}
+          meta={feedMetaLine(publicFeeds.earthquakes)}
+          provenance={quakeProvenance(publicFeeds.earthquakes, o.quakesNearby, warehouse.generatedAt)}
+        />
         <Stat label="AirNow" value={o.aqiSummary ?? 'Run ingest / start API'} />
         {crimeYear ? (
           <Stat
