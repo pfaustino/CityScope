@@ -8,17 +8,8 @@ import {
   isFbiCdeFullYear,
   rateProvenance,
 } from '@shared/crimeCompare.ts'
-import {
-  BURBANK_HATE_CRIME_NCIC,
-  HATE_CRIME_2023_LIMITATION,
-  HATE_CRIME_SMALL_N_LIMITATION,
-  hateCrimeAnnual,
-  hateCrimeBiasTypeCounts,
-  hateCrimeEventProvenance,
-  hateCrimeSumProvenance,
-} from '@shared/hateCrime.ts'
 import { GLENDALE } from '@shared/peerCities.ts'
-import { CLAIM_LABEL, type Warehouse } from '@shared/types.ts'
+import { CLAIM_LABEL } from '@shared/types.ts'
 import { AccessPanel } from '../components/AccessPanel.tsx'
 import { Banner, Stat } from '../components/Stat.tsx'
 import { useCityData, num } from '../lib/data.ts'
@@ -108,7 +99,9 @@ export function CrimePage() {
       ) : (
         <p>Annual OpenJustice totals are not loaded yet. Start the API or run ingest.</p>
       )}
-      <HateCrimeSection warehouse={warehouse} />
+      <p>
+        <Link to="/hate-crimes">Hate crimes (OpenJustice events, NCIC 1912)</Link>
+      </p>
       {compareLatest && latestBurbank && latestGlendale ? (
         <>
           <h2>Burbank vs Glendale</h2>
@@ -308,111 +301,5 @@ export function CrimePage() {
         <Link to="/reports/crime-monthly">Open the incident access-status report</Link>
       </p>
     </div>
-  )
-}
-
-const BIAS_TYPE_COUNT_CAP = 30
-
-function HateCrimeSection({ warehouse }: { warehouse: Warehouse }) {
-  const events = warehouse.hateCrimeEvents
-  if (events.length === 0) return null
-  const years = hateCrimeAnnual(events)
-  const latestYear = years[0]
-  const biasRows =
-    latestYear && latestYear.events > 0 && latestYear.events <= BIAS_TYPE_COUNT_CAP
-      ? hateCrimeBiasTypeCounts(events, latestYear.year)
-      : []
-  const eventProv = hateCrimeEventProvenance(events, warehouse.generatedAt, latestYear?.year)
-  const victimProv =
-    latestYear != null
-      ? hateCrimeSumProvenance(events, warehouse.generatedAt, latestYear.year, 'victims', latestYear.victims)
-      : undefined
-  const suspectProv =
-    latestYear != null
-      ? hateCrimeSumProvenance(events, warehouse.generatedAt, latestYear.year, 'suspects', latestYear.suspects)
-      : undefined
-  return (
-    <>
-      <h2>OpenJustice hate-crime events (Burbank PD, NCIC {BURBANK_HATE_CRIME_NCIC})</h2>
-      <Banner kind="live">
-        Reported hate-crime events from CA DOJ OpenJustice ({CLAIM_LABEL.fact} for event counts).
-        One row is one event. Filter NCIC={BURBANK_HATE_CRIME_NCIC} — the CSV has no city name. These
-        are not geocoded incidents and not a finding about a group or about BPD. Victim and
-        suspect totals are labeled {CLAIM_LABEL.calculation} (sums of event fields).
-      </Banner>
-      <p>
-        <span className="pill fact">{CLAIM_LABEL.fact}</span>
-        <span className="pill calculation">{CLAIM_LABEL.calculation}</span>
-      </p>
-      {latestYear ? (
-        <div className="grid stats">
-          <Stat
-            label={`${latestYear.year} events`}
-            value={num(latestYear.events)}
-            provenance={eventProv}
-          />
-          <Stat
-            label={`${latestYear.year} victims (sum)`}
-            value={num(latestYear.victims)}
-            provenance={victimProv}
-          />
-          <Stat
-            label={`${latestYear.year} suspects (sum)`}
-            value={num(latestYear.suspects)}
-            provenance={suspectProv}
-          />
-        </div>
-      ) : null}
-      <div className="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Year</th>
-              <th>Events</th>
-              <th>Victims (sum)</th>
-              <th>Suspects (sum)</th>
-            </tr>
-          </thead>
-          <tbody>
-            {years.map((row) => (
-              <tr key={`hate-${row.year}`}>
-                <td>{row.year}</td>
-                <td>{num(row.events)}</td>
-                <td>{num(row.victims)}</td>
-                <td>{num(row.suspects)}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      {latestYear && biasRows.length > 0 ? (
-        <>
-          <h3>{latestYear.year} by most serious bias type</h3>
-          <table>
-            <thead>
-              <tr>
-                <th>Most serious bias type</th>
-                <th>Events</th>
-              </tr>
-            </thead>
-            <tbody>
-              {biasRows.map((row) => (
-                <tr key={row.biasType}>
-                  <td>{row.biasType}</td>
-                  <td>{num(row.events)}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </>
-      ) : null}
-      <p className="meta">
-        {HATE_CRIME_SMALL_N_LIMITATION} {HATE_CRIME_2023_LIMITATION} 2024 CSV counts are 9 events,
-        9 victims, and 6 suspects, matching Table 6’s events/victims/suspects (Table 6 also lists
-        9 offenses). CityScope displays the CSV and does not silently pick the printed table.
-        ClosedYear 2025 in this file may be incomplete. No map points: the file has no
-        coordinates.
-      </p>
-    </>
   )
 }

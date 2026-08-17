@@ -10,6 +10,7 @@ import { DemographicsPage } from './pages/DemographicsPage.tsx'
 import { DevelopmentPage } from './pages/DevelopmentPage.tsx'
 import { EntityPage } from './pages/EntityPage.tsx'
 import { EnvironmentPage } from './pages/EnvironmentPage.tsx'
+import { HateCrimesPage } from './pages/HateCrimesPage.tsx'
 import { InvestigationsPage } from './pages/InvestigationsPage.tsx'
 import { MapPage } from './pages/MapPage.tsx'
 import { MoneyPage } from './pages/MoneyPage.tsx'
@@ -32,6 +33,7 @@ export default function App() {
           <Route path="/investigations" element={<InvestigationsPage />} />
           <Route path="/businesses" element={<BusinessPage />} />
           <Route path="/crime" element={<CrimePage />} />
+          <Route path="/hate-crimes" element={<HateCrimesPage />} />
           <Route path="/development" element={<DevelopmentPage />} />
           <Route path="/money" element={<MoneyPage />} />
           <Route path="/police" element={<PolicePage />} />

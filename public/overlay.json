@@ -1,5 +1,5 @@
 {
-  "retrievedAt": "2026-08-17T06:54:06.032Z",
+  "retrievedAt": "2026-08-17T07:31:11.599Z",
   "census": [
     {
       "year": "2023",
@@ -105757,6 +105757,8 @@
       "mostSeriousBiasType": "Sexual Orientation",
       "mostSeriousUcr": "Intimidation",
       "mostSeriousLocation": "Commercial/Office Building",
+      "weaponType": "",
+      "offensiveAct": "Annoying telephone calls/fax",
       "victims": 1,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -105771,6 +105773,8 @@
       "mostSeriousBiasType": "Religion",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Church/Synagogue/Temple",
+      "weaponType": "",
+      "offensiveAct": "Daubing of swastika",
       "victims": 1,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -105785,6 +105789,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Field/Woods/Park",
+      "weaponType": "",
+      "offensiveAct": "Graffiti",
       "victims": 1,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -105799,6 +105805,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Intimidation",
       "mostSeriousLocation": "Specialty Store (TV/Fur/etc.)",
+      "weaponType": "",
+      "offensiveAct": "Verbal slurs",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -105813,6 +105821,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Intimidation",
       "mostSeriousLocation": "Residence/Home/Driveway",
+      "weaponType": "Blunt object (blugeon, club, etc.)",
+      "offensiveAct": "Verbal slurs",
       "victims": 1,
       "suspects": 3,
       "dataClass": "snapshot"
@@ -105827,6 +105837,8 @@
       "mostSeriousBiasType": "Religion",
       "mostSeriousUcr": "Intimidation",
       "mostSeriousLocation": "Highway/Road/Alley/Street",
+      "weaponType": "",
+      "offensiveAct": "Verbal slurs",
       "victims": 2,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -105841,6 +105853,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Simple Assault",
       "mostSeriousLocation": "Highway/Road/Alley/Street",
+      "weaponType": "Personal weapons (hands, feet, teeth, etc.)",
+      "offensiveAct": "Verbal slurs",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -105855,6 +105869,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Intimidation",
       "mostSeriousLocation": "Residence/Home/Driveway",
+      "weaponType": "",
+      "offensiveAct": "Annoying telephone calls/fax",
       "victims": 3,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -105869,6 +105885,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "School/college",
+      "weaponType": "",
+      "offensiveAct": "Graffiti",
       "victims": 1,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -105883,6 +105901,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Aggravated Assault",
       "mostSeriousLocation": "Restaurant",
+      "weaponType": "Knife or other cutting or stabbing instrument",
+      "offensiveAct": "Verbal slurs",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -105897,6 +105917,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Intimidation",
       "mostSeriousLocation": "Residence/Home/Driveway",
+      "weaponType": "",
+      "offensiveAct": "Threatening letters/flyers/email",
       "victims": 2,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -105911,6 +105933,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Simple Assault",
       "mostSeriousLocation": "School/college",
+      "weaponType": "Personal weapons (hands, feet, teeth, etc.)",
+      "offensiveAct": "Verbal slurs",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -105925,6 +105949,8 @@
       "mostSeriousBiasType": "Religion",
       "mostSeriousUcr": "Intimidation",
       "mostSeriousLocation": "Residence/Home/Driveway",
+      "weaponType": "",
+      "offensiveAct": "Threatening letters/flyers/email",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -105939,6 +105965,8 @@
       "mostSeriousBiasType": "Sexual Orientation",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Residence/Home/Driveway",
+      "weaponType": "",
+      "offensiveAct": "Graffiti",
       "victims": 1,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -105953,6 +105981,8 @@
       "mostSeriousBiasType": "Sexual Orientation",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Residence/Home/Driveway",
+      "weaponType": "",
+      "offensiveAct": "Graffiti",
       "victims": 2,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -105967,6 +105997,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Government/Public Building",
+      "weaponType": "",
+      "offensiveAct": "Graffiti",
       "victims": 1,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -105981,6 +106013,8 @@
       "mostSeriousBiasType": "Religion",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Church/Synagogue/Temple",
+      "weaponType": "",
+      "offensiveAct": "Daubing of swastika",
       "victims": 1,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -105995,6 +106029,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Drug Store/Dr Office/Hospital",
+      "weaponType": "",
+      "offensiveAct": "Daubing of swastika",
       "victims": 1,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -106009,6 +106045,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "School/college",
+      "weaponType": "Other (bottle, rocks, spitting)",
+      "offensiveAct": "Daubing of swastika",
       "victims": 1,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -106023,6 +106061,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Simple Assault",
       "mostSeriousLocation": "Highway/Road/Alley/Street",
+      "weaponType": "Personal weapons (hands, feet, teeth, etc.)",
+      "offensiveAct": "Verbal slurs",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -106037,6 +106077,8 @@
       "mostSeriousBiasType": "Religion",
       "mostSeriousUcr": "Aggravated Assault",
       "mostSeriousLocation": "Other/Unknown",
+      "weaponType": "Other (bottle, rocks, spitting)",
+      "offensiveAct": "Verbal slurs",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -106051,6 +106093,8 @@
       "mostSeriousBiasType": "Religion",
       "mostSeriousUcr": "Intimidation",
       "mostSeriousLocation": "School/college",
+      "weaponType": "Other (bottle, rocks, spitting)",
+      "offensiveAct": "Annoying telephone calls/fax",
       "victims": 1,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -106065,6 +106109,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Residence/Home/Driveway",
+      "weaponType": "Other (bottle, rocks, spitting)",
+      "offensiveAct": "Other",
       "victims": 1,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -106079,6 +106125,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Other/Unknown",
+      "weaponType": "",
+      "offensiveAct": "Graffiti",
       "victims": 1,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -106093,6 +106141,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Aggravated Assault",
       "mostSeriousLocation": "Bar/Night Club",
+      "weaponType": "Personal weapons (hands, feet, teeth, etc.)",
+      "offensiveAct": "Verbal slurs",
       "victims": 8,
       "suspects": 3,
       "dataClass": "snapshot"
@@ -106107,6 +106157,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Simple Assault",
       "mostSeriousLocation": "Highway/Road/Alley/Street",
+      "weaponType": "Personal weapons (hands, feet, teeth, etc.)",
+      "offensiveAct": "Verbal slurs",
       "victims": 2,
       "suspects": 2,
       "dataClass": "snapshot"
@@ -106121,6 +106173,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Intimidation",
       "mostSeriousLocation": "Highway/Road/Alley/Street",
+      "weaponType": "",
+      "offensiveAct": "Verbal slurs",
       "victims": 2,
       "suspects": 2,
       "dataClass": "snapshot"
@@ -106135,6 +106189,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Specialty Store (TV/Fur/etc.)",
+      "weaponType": "",
+      "offensiveAct": "Graffiti",
       "victims": 1,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -106149,6 +106205,8 @@
       "mostSeriousBiasType": "Sexual Orientation",
       "mostSeriousUcr": "Simple Assault",
       "mostSeriousLocation": "Highway/Road/Alley/Street",
+      "weaponType": "Personal weapons (hands, feet, teeth, etc.)",
+      "offensiveAct": "Verbal slurs",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -106163,6 +106221,8 @@
       "mostSeriousBiasType": "Disability",
       "mostSeriousUcr": "Intimidation",
       "mostSeriousLocation": "Highway/Road/Alley/Street",
+      "weaponType": "",
+      "offensiveAct": "Verbal slurs",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -106177,6 +106237,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Parking Lot/Garage",
+      "weaponType": "",
+      "offensiveAct": "Graffiti",
       "victims": 1,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -106191,6 +106253,8 @@
       "mostSeriousBiasType": "Religion",
       "mostSeriousUcr": "Larceny-Theft",
       "mostSeriousLocation": "Drug Store/Dr Office/Hospital",
+      "weaponType": "",
+      "offensiveAct": "Other",
       "victims": 1,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -106205,6 +106269,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Parking Lot/Garage",
+      "weaponType": "",
+      "offensiveAct": "Damage to vehicle",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -106219,6 +106285,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Simple Assault",
       "mostSeriousLocation": "Restaurant",
+      "weaponType": "Other (bottle, rocks, spitting)",
+      "offensiveAct": "Verbal slurs",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -106233,6 +106301,8 @@
       "mostSeriousBiasType": "Religion",
       "mostSeriousUcr": "Simple Assault",
       "mostSeriousLocation": "Highway/Road/Alley/Street",
+      "weaponType": "Personal weapons (hands, feet, teeth, etc.)",
+      "offensiveAct": "Verbal slurs",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -106247,6 +106317,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Simple Assault",
       "mostSeriousLocation": "Highway/Road/Alley/Street",
+      "weaponType": "Personal weapons (hands, feet, teeth, etc.)",
+      "offensiveAct": "Verbal slurs",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -106261,6 +106333,8 @@
       "mostSeriousBiasType": "Religion",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Field/Woods/Park",
+      "weaponType": "",
+      "offensiveAct": "Graffiti",
       "victims": 1,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -106275,6 +106349,8 @@
       "mostSeriousBiasType": "Religion",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Construction Site",
+      "weaponType": "",
+      "offensiveAct": "Graffiti",
       "victims": 1,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -106289,6 +106365,8 @@
       "mostSeriousBiasType": "Disability",
       "mostSeriousUcr": "Simple Assault",
       "mostSeriousLocation": "Highway/Road/Alley/Street",
+      "weaponType": "Other (bottle, rocks, spitting)",
+      "offensiveAct": "Other",
       "victims": 1,
       "suspects": 5,
       "dataClass": "snapshot"
@@ -106303,6 +106381,8 @@
       "mostSeriousBiasType": "Religion",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "School/college",
+      "weaponType": "",
+      "offensiveAct": "Graffiti",
       "victims": 1,
       "suspects": 2,
       "dataClass": "snapshot"
@@ -106317,6 +106397,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "School/college",
+      "weaponType": "",
+      "offensiveAct": "Graffiti",
       "victims": 1,
       "suspects": 2,
       "dataClass": "snapshot"
@@ -106331,6 +106413,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "School/college",
+      "weaponType": "",
+      "offensiveAct": "Graffiti",
       "victims": 1,
       "suspects": 2,
       "dataClass": "snapshot"
@@ -106345,6 +106429,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Simple Assault",
       "mostSeriousLocation": "Highway/Road/Alley/Street",
+      "weaponType": "Personal weapons (hands, feet, teeth, etc.)",
+      "offensiveAct": "Verbal slurs",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -106359,6 +106445,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Aggravated Assault",
       "mostSeriousLocation": "Highway/Road/Alley/Street",
+      "weaponType": "Vehicle",
+      "offensiveAct": "Damage to vehicle",
       "victims": 2,
       "suspects": 2,
       "dataClass": "snapshot"
@@ -106373,6 +106461,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Simple Assault",
       "mostSeriousLocation": "Highway/Road/Alley/Street",
+      "weaponType": "Personal weapons (hands, feet, teeth, etc.)",
+      "offensiveAct": "Damage to vehicle",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -106387,6 +106477,8 @@
       "mostSeriousBiasType": "Religion",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Highway/Road/Alley/Street",
+      "weaponType": "",
+      "offensiveAct": "Other",
       "victims": 1,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -106401,6 +106493,8 @@
       "mostSeriousBiasType": "Religion",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Residence/Home/Driveway",
+      "weaponType": "",
+      "offensiveAct": "Graffiti",
       "victims": 2,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -106415,6 +106509,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Aggravated Assault",
       "mostSeriousLocation": "Other/Unknown",
+      "weaponType": "Blunt object (blugeon, club, etc.)",
+      "offensiveAct": "Verbal slurs",
       "victims": 1,
       "suspects": 6,
       "dataClass": "snapshot"
@@ -106429,6 +106525,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Shopping Mall",
+      "weaponType": "",
+      "offensiveAct": "Graffiti",
       "victims": 1,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -106443,6 +106541,8 @@
       "mostSeriousBiasType": "Religion",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Drug Store/Dr Office/Hospital",
+      "weaponType": "Unknown",
+      "offensiveAct": "Other",
       "victims": 1,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -106457,6 +106557,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Park/Playground",
+      "weaponType": "Unknown",
+      "offensiveAct": "Graffiti",
       "victims": 1,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -106471,6 +106573,8 @@
       "mostSeriousBiasType": "Religion",
       "mostSeriousUcr": "Intimidation",
       "mostSeriousLocation": "Residence/Home/Driveway",
+      "weaponType": "",
+      "offensiveAct": "Annoying telephone calls/fax",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -106485,6 +106589,8 @@
       "mostSeriousBiasType": "Sexual Orientation",
       "mostSeriousUcr": "Simple Assault",
       "mostSeriousLocation": "School-Elementary/Secondary",
+      "weaponType": "Personal weapons (hands, feet, teeth, etc.)",
+      "offensiveAct": "Other",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -106499,6 +106605,8 @@
       "mostSeriousBiasType": "Religion",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Shopping Mall",
+      "weaponType": "",
+      "offensiveAct": "Graffiti",
       "victims": 1,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -106513,6 +106621,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Highway/Road/Alley/Street",
+      "weaponType": "",
+      "offensiveAct": "Graffiti",
       "victims": 1,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -106527,6 +106637,8 @@
       "mostSeriousBiasType": "Sexual Orientation",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Highway/Road/Alley/Street",
+      "weaponType": "Knife or other cutting or stabbing instrument",
+      "offensiveAct": "Damage to vehicle",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -106541,6 +106653,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Intimidation",
       "mostSeriousLocation": "Residence/Home/Driveway",
+      "weaponType": "Unknown",
+      "offensiveAct": "Verbal slurs",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -106555,6 +106669,8 @@
       "mostSeriousBiasType": "Sexual Orientation",
       "mostSeriousUcr": "Simple Assault",
       "mostSeriousLocation": "Residence/Home/Driveway",
+      "weaponType": "Personal weapons (hands, feet, teeth, etc.)",
+      "offensiveAct": "Other",
       "victims": 1,
       "suspects": 2,
       "dataClass": "snapshot"
@@ -106569,6 +106685,8 @@
       "mostSeriousBiasType": "Sexual Orientation",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Highway/Road/Alley/Street",
+      "weaponType": "Blunt object (blugeon, club, etc.)",
+      "offensiveAct": "Verbal slurs",
       "victims": 1,
       "suspects": 2,
       "dataClass": "snapshot"
@@ -106583,6 +106701,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Simple Assault",
       "mostSeriousLocation": "Highway/Road/Alley/Street",
+      "weaponType": "Personal weapons (hands, feet, teeth, etc.)",
+      "offensiveAct": "Verbal slurs",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -106597,6 +106717,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Highway/Road/Alley/Street",
+      "weaponType": "Unknown",
+      "offensiveAct": "Graffiti",
       "victims": 1,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -106611,6 +106733,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Simple Assault",
       "mostSeriousLocation": "Highway/Road/Alley/Street",
+      "weaponType": "Personal weapons (hands, feet, teeth, etc.)",
+      "offensiveAct": "Verbal slurs",
       "victims": 3,
       "suspects": 7,
       "dataClass": "snapshot"
@@ -106625,6 +106749,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Simple Assault",
       "mostSeriousLocation": "Highway/Road/Alley/Street",
+      "weaponType": "Personal weapons (hands, feet, teeth, etc.)",
+      "offensiveAct": "Verbal slurs",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -106639,6 +106765,8 @@
       "mostSeriousBiasType": "Religion",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Residence/Home/Driveway",
+      "weaponType": "",
+      "offensiveAct": "Graffiti",
       "victims": 4,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -106653,6 +106781,8 @@
       "mostSeriousBiasType": "Sexual Orientation",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Highway/Road/Alley/Street",
+      "weaponType": "Unknown",
+      "offensiveAct": "Other",
       "victims": 2,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -106667,6 +106797,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Simple Assault",
       "mostSeriousLocation": "Restaurant",
+      "weaponType": "Vehicle",
+      "offensiveAct": "Verbal slurs",
       "victims": 2,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -106681,6 +106813,8 @@
       "mostSeriousBiasType": "Sexual Orientation",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Parking Lot/Garage",
+      "weaponType": "Unknown",
+      "offensiveAct": "Graffiti",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -106695,6 +106829,8 @@
       "mostSeriousBiasType": "Religion",
       "mostSeriousUcr": "Simple Assault",
       "mostSeriousLocation": "Shopping Mall",
+      "weaponType": "Other (bottle, rocks, spitting)",
+      "offensiveAct": "Verbal slurs",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -106709,6 +106845,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Residence/Home/Driveway",
+      "weaponType": "Other (bottle, rocks, spitting)",
+      "offensiveAct": "Graffiti",
       "victims": 2,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -106723,6 +106861,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Highway/Road/Alley/Street",
+      "weaponType": "Other (bottle, rocks, spitting)",
+      "offensiveAct": "Damage to vehicle",
       "victims": 1,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -106737,6 +106877,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Intimidation",
       "mostSeriousLocation": "Jail/Prison",
+      "weaponType": "",
+      "offensiveAct": "Verbal slurs",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -106751,6 +106893,8 @@
       "mostSeriousBiasType": "Sexual Orientation",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Residence/Home/Driveway",
+      "weaponType": "Unknown",
+      "offensiveAct": "Damage to vehicle",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -106765,6 +106909,8 @@
       "mostSeriousBiasType": "Religion",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Church/Synagogue/Temple",
+      "weaponType": "Personal weapons (hands, feet, teeth, etc.)",
+      "offensiveAct": "Other",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -106779,6 +106925,8 @@
       "mostSeriousBiasType": "Religion",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Residence/Home/Driveway",
+      "weaponType": "Personal weapons (hands, feet, teeth, etc.)",
+      "offensiveAct": "Other",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -106793,6 +106941,8 @@
       "mostSeriousBiasType": "Religion",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Residence/Home/Driveway",
+      "weaponType": "Personal weapons (hands, feet, teeth, etc.)",
+      "offensiveAct": "Other",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -106807,6 +106957,8 @@
       "mostSeriousBiasType": "Religion",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Residence/Home/Driveway",
+      "weaponType": "Personal weapons (hands, feet, teeth, etc.)",
+      "offensiveAct": "Other",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -106821,6 +106973,8 @@
       "mostSeriousBiasType": "Religion",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Residence/Home/Driveway",
+      "weaponType": "Personal weapons (hands, feet, teeth, etc.)",
+      "offensiveAct": "Other",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -106835,6 +106989,8 @@
       "mostSeriousBiasType": "Religion",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Residence/Home/Driveway",
+      "weaponType": "Personal weapons (hands, feet, teeth, etc.)",
+      "offensiveAct": "Other",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -106849,6 +107005,8 @@
       "mostSeriousBiasType": "Sexual Orientation",
       "mostSeriousUcr": "Simple Assault",
       "mostSeriousLocation": "Highway/Road/Alley/Street",
+      "weaponType": "Personal weapons (hands, feet, teeth, etc.)",
+      "offensiveAct": "Other",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -106863,6 +107021,8 @@
       "mostSeriousBiasType": "Religion",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Parking Lot/Garage",
+      "weaponType": "",
+      "offensiveAct": "Graffiti",
       "victims": 2,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -106877,6 +107037,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Residence/Home/Driveway",
+      "weaponType": "",
+      "offensiveAct": "Graffiti",
       "victims": 1,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -106891,6 +107053,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Residence/Home/Driveway",
+      "weaponType": "",
+      "offensiveAct": "Graffiti",
       "victims": 1,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -106905,6 +107069,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Residence/Home/Driveway",
+      "weaponType": "",
+      "offensiveAct": "Graffiti",
       "victims": 1,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -106919,6 +107085,8 @@
       "mostSeriousBiasType": "Sexual Orientation",
       "mostSeriousUcr": "Intimidation",
       "mostSeriousLocation": "Service/Gas Station",
+      "weaponType": "Vehicle",
+      "offensiveAct": "Verbal slurs",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -106933,6 +107101,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Aggravated Assault",
       "mostSeriousLocation": "Highway/Road/Alley/Street",
+      "weaponType": "Vehicle",
+      "offensiveAct": "Verbal slurs",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -106947,6 +107117,8 @@
       "mostSeriousBiasType": "Religion",
       "mostSeriousUcr": "Larceny-Theft",
       "mostSeriousLocation": "Highway/Road/Alley/Street",
+      "weaponType": "Unknown",
+      "offensiveAct": "Other",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -106961,6 +107133,8 @@
       "mostSeriousBiasType": "Religion",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Highway/Road/Alley/Street",
+      "weaponType": "Unknown",
+      "offensiveAct": "Damage to vehicle",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -106975,6 +107149,8 @@
       "mostSeriousBiasType": "Religion",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Highway/Road/Alley/Street",
+      "weaponType": "Personal weapons (hands, feet, teeth, etc.)",
+      "offensiveAct": "Damage to vehicle",
       "victims": 1,
       "suspects": 3,
       "dataClass": "snapshot"
@@ -106989,6 +107165,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Department/Discount Store",
+      "weaponType": "Unknown",
+      "offensiveAct": "Bombing",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -107003,6 +107181,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Simple Assault",
       "mostSeriousLocation": "Restaurant",
+      "weaponType": "Unknown",
+      "offensiveAct": "Verbal slurs",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -107017,6 +107197,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Intimidation",
       "mostSeriousLocation": "Park/Playground",
+      "weaponType": "Unknown",
+      "offensiveAct": "Verbal slurs",
       "victims": 2,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -107031,6 +107213,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Intimidation",
       "mostSeriousLocation": "Highway/Road/Alley/Street",
+      "weaponType": "Unknown",
+      "offensiveAct": "Verbal slurs",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -107045,6 +107229,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Intimidation",
       "mostSeriousLocation": "Highway/Road/Alley/Street",
+      "weaponType": "Knife or other cutting or stabbing instrument",
+      "offensiveAct": "Verbal slurs",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -107059,6 +107245,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Residence/Home/Driveway",
+      "weaponType": "",
+      "offensiveAct": "Graffiti",
       "victims": 1,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -107073,6 +107261,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Parking Lot/Garage",
+      "weaponType": "Unknown",
+      "offensiveAct": "Damage to vehicle",
       "victims": 1,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -107087,6 +107277,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Residence/Home/Driveway",
+      "weaponType": "Other (bottle, rocks, spitting)",
+      "offensiveAct": "Damage to vehicle",
       "victims": 1,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -107101,6 +107293,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Arson",
       "mostSeriousLocation": "Park/Playground",
+      "weaponType": "Arson, fire",
+      "offensiveAct": "Daubing of swastika",
       "victims": 1,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -107115,6 +107309,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Arson",
       "mostSeriousLocation": "Parking Lot/Garage",
+      "weaponType": "Arson, fire",
+      "offensiveAct": "Other",
       "victims": 1,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -107129,6 +107325,8 @@
       "mostSeriousBiasType": "Religion",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Church/Synagogue/Temple",
+      "weaponType": "Unknown",
+      "offensiveAct": "Graffiti",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -107143,6 +107341,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Intimidation",
       "mostSeriousLocation": "Specialty Store (TV/Fur/etc.)",
+      "weaponType": "Ropes or garrote strangulation or hanging",
+      "offensiveAct": "Hanging in Effigy",
       "victims": 1,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -107157,6 +107357,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Aggravated Assault",
       "mostSeriousLocation": "Restaurant",
+      "weaponType": "Knife or other cutting or stabbing instrument",
+      "offensiveAct": "Verbal slurs",
       "victims": 3,
       "suspects": 2,
       "dataClass": "snapshot"
@@ -107171,6 +107373,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Aggravated Assault",
       "mostSeriousLocation": "Highway/Road/Alley/Street",
+      "weaponType": "Blunt object (blugeon, club, etc.)",
+      "offensiveAct": "Other",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -107185,6 +107389,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Simple Assault",
       "mostSeriousLocation": "Parking Lot/Garage",
+      "weaponType": "Other (bottle, rocks, spitting)",
+      "offensiveAct": "Verbal slurs",
       "victims": 1,
       "suspects": 2,
       "dataClass": "snapshot"
@@ -107199,6 +107405,8 @@
       "mostSeriousBiasType": "Sexual Orientation",
       "mostSeriousUcr": "Simple Assault",
       "mostSeriousLocation": "Highway/Road/Alley/Street",
+      "weaponType": "Other (bottle, rocks, spitting)",
+      "offensiveAct": "Verbal slurs",
       "victims": 1,
       "suspects": 2,
       "dataClass": "snapshot"
@@ -107213,6 +107421,8 @@
       "mostSeriousBiasType": "Sexual Orientation",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "School-Elementary/Secondary",
+      "weaponType": "",
+      "offensiveAct": "Other",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -107227,6 +107437,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Highway/Road/Alley/Street",
+      "weaponType": "",
+      "offensiveAct": "Daubing of swastika",
       "victims": 1,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -107241,6 +107453,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Simple Assault",
       "mostSeriousLocation": "Government/Public Building",
+      "weaponType": "Personal weapons (hands, feet, teeth, etc.)",
+      "offensiveAct": "Other",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -107255,6 +107469,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Intimidation",
       "mostSeriousLocation": "Residence/Home/Driveway",
+      "weaponType": "",
+      "offensiveAct": "Threatening letters/flyers/email",
       "victims": 2,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -107269,6 +107485,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Highway/Road/Alley/Street",
+      "weaponType": "",
+      "offensiveAct": "Verbal slurs",
       "victims": 1,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -107283,6 +107501,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Simple Assault",
       "mostSeriousLocation": "Highway/Road/Alley/Street",
+      "weaponType": "Personal weapons (hands, feet, teeth, etc.)",
+      "offensiveAct": "Other",
       "victims": 2,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -107297,6 +107517,8 @@
       "mostSeriousBiasType": "Sexual Orientation",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "School-Elementary/Secondary",
+      "weaponType": "",
+      "offensiveAct": "Graffiti",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -107311,6 +107533,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Parking Lot/Garage",
+      "weaponType": "",
+      "offensiveAct": "Graffiti",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -107325,6 +107549,8 @@
       "mostSeriousBiasType": "Sexual Orientation",
       "mostSeriousUcr": "Aggravated Assault",
       "mostSeriousLocation": "Highway/Road/Alley/Street",
+      "weaponType": "Personal weapons (hands, feet, teeth, etc.)",
+      "offensiveAct": "Other",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -107339,6 +107565,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Intimidation",
       "mostSeriousLocation": "Specialty Store (TV/Fur/etc.)",
+      "weaponType": "",
+      "offensiveAct": "Verbal slurs",
       "victims": 2,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -107353,6 +107581,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "School-Elementary/Secondary",
+      "weaponType": "",
+      "offensiveAct": "Graffiti",
       "victims": 1,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -107367,6 +107597,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Department/Discount Store",
+      "weaponType": "",
+      "offensiveAct": "Graffiti",
       "victims": 2,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -107381,6 +107613,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Highway/Road/Alley/Street",
+      "weaponType": "",
+      "offensiveAct": "Graffiti",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -107395,6 +107629,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Intimidation",
       "mostSeriousLocation": "Highway/Road/Alley/Street",
+      "weaponType": "",
+      "offensiveAct": "Threatening letters/flyers/email",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -107409,6 +107645,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Simple Assault",
       "mostSeriousLocation": "Convenience Store",
+      "weaponType": "None (Mutually Exclusive)",
+      "offensiveAct": "Verbal slurs",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -107423,6 +107661,8 @@
       "mostSeriousBiasType": "Religion",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Park/Playground",
+      "weaponType": "",
+      "offensiveAct": "Graffiti",
       "victims": 1,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -107437,6 +107677,8 @@
       "mostSeriousBiasType": "Religion",
       "mostSeriousUcr": "Larceny-Theft",
       "mostSeriousLocation": "Commercial/Office Building",
+      "weaponType": "",
+      "offensiveAct": "Damage to Home/Building",
       "victims": 1,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -107451,6 +107693,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Residence/Home/Driveway",
+      "weaponType": "",
+      "offensiveAct": "Damage to Home/Building",
       "victims": 1,
       "suspects": 3,
       "dataClass": "snapshot"
@@ -107465,6 +107709,8 @@
       "mostSeriousBiasType": "Religion",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Church/Synagogue/Temple",
+      "weaponType": "",
+      "offensiveAct": "Daubing of swastika",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -107479,6 +107725,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Intimidation",
       "mostSeriousLocation": "Highway/Road/Alley/Street",
+      "weaponType": "",
+      "offensiveAct": "Threatening letters/flyers/email",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -107493,6 +107741,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Intimidation",
       "mostSeriousLocation": "Other/Unknown",
+      "weaponType": "",
+      "offensiveAct": "Verbal slurs",
       "victims": 1,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -107507,6 +107757,8 @@
       "mostSeriousBiasType": "Religion",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Church/Synagogue/Temple",
+      "weaponType": "",
+      "offensiveAct": "Daubing of swastika",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -107521,6 +107773,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Intimidation",
       "mostSeriousLocation": "Bar/Night Club",
+      "weaponType": "",
+      "offensiveAct": "Verbal slurs",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -107535,6 +107789,8 @@
       "mostSeriousBiasType": "Sexual Orientation",
       "mostSeriousUcr": "Intimidation",
       "mostSeriousLocation": "Government/Public Building",
+      "weaponType": "",
+      "offensiveAct": "Threatening letters/flyers/email",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -107549,6 +107805,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Highway/Road/Alley/Street",
+      "weaponType": "",
+      "offensiveAct": "Graffiti",
       "victims": 4,
       "suspects": 4,
       "dataClass": "snapshot"
@@ -107563,6 +107821,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Restaurant",
+      "weaponType": "",
+      "offensiveAct": "Daubing of swastika",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -107577,6 +107837,8 @@
       "mostSeriousBiasType": "Sexual Orientation",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Park/Playground",
+      "weaponType": "",
+      "offensiveAct": "Graffiti",
       "victims": 1,
       "suspects": 4,
       "dataClass": "snapshot"
@@ -107591,6 +107853,8 @@
       "mostSeriousBiasType": "Religion",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Parking Lot/Garage",
+      "weaponType": "",
+      "offensiveAct": "Graffiti",
       "victims": 1,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -107605,6 +107869,8 @@
       "mostSeriousBiasType": "Sexual Orientation",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Parking Lot/Garage",
+      "weaponType": "",
+      "offensiveAct": "Graffiti",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -107619,6 +107885,8 @@
       "mostSeriousBiasType": "Religion",
       "mostSeriousUcr": "Intimidation",
       "mostSeriousLocation": "Residence/Home/Driveway",
+      "weaponType": "",
+      "offensiveAct": "Verbal slurs",
       "victims": 2,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -107633,6 +107901,8 @@
       "mostSeriousBiasType": "Sexual Orientation",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "School-Elementary/Secondary",
+      "weaponType": "",
+      "offensiveAct": "Graffiti",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -107647,6 +107917,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Intimidation",
       "mostSeriousLocation": "Specialty Store (TV/Fur/etc.)",
+      "weaponType": "",
+      "offensiveAct": "Threatening letters/flyers/email",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -107661,6 +107933,8 @@
       "mostSeriousBiasType": "Sexual Orientation",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Church/Synagogue/Temple",
+      "weaponType": "",
+      "offensiveAct": "Other",
       "victims": 1,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -107675,6 +107949,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Simple Assault",
       "mostSeriousLocation": "School-Elementary/Secondary",
+      "weaponType": "Personal weapons (hands, feet, teeth, etc.)",
+      "offensiveAct": "Harassing Communication",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -107689,6 +107965,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Other/Unknown",
+      "weaponType": "",
+      "offensiveAct": "Graffiti",
       "victims": 1,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -107703,6 +107981,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Aggravated Assault",
       "mostSeriousLocation": "Grocery/Supermarket",
+      "weaponType": "Personal weapons (hands, feet, teeth, etc.)",
+      "offensiveAct": "Verbal slurs",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -107717,6 +107997,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Simple Assault",
       "mostSeriousLocation": "Other/Unknown",
+      "weaponType": "Other (bottle, rocks, spitting)",
+      "offensiveAct": "Verbal slurs",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -107731,6 +108013,8 @@
       "mostSeriousBiasType": "Religion",
       "mostSeriousUcr": "Simple Assault",
       "mostSeriousLocation": "Parking Lot/Garage",
+      "weaponType": "None (Mutually Exclusive)",
+      "offensiveAct": "Verbal slurs",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -107745,6 +108029,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Residence/Home/Driveway",
+      "weaponType": "",
+      "offensiveAct": "Graffiti",
       "victims": 1,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -107759,6 +108045,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Intimidation",
       "mostSeriousLocation": "School-Elementary/Secondary",
+      "weaponType": "",
+      "offensiveAct": "Verbal slurs",
       "victims": 1,
       "suspects": 2,
       "dataClass": "snapshot"
@@ -107773,6 +108061,8 @@
       "mostSeriousBiasType": "Sexual Orientation",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Parking Lot/Garage",
+      "weaponType": "",
+      "offensiveAct": "Damage to vehicle",
       "victims": 1,
       "suspects": 0,
       "dataClass": "snapshot"
@@ -107787,6 +108077,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Aggravated Assault",
       "mostSeriousLocation": "Highway/Road/Alley/Street",
+      "weaponType": "Personal weapons (hands, feet, teeth, etc.)",
+      "offensiveAct": "Verbal slurs",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -107801,6 +108093,8 @@
       "mostSeriousBiasType": "Race/Ethnicity/Ancestry",
       "mostSeriousUcr": "Aggravated Assault",
       "mostSeriousLocation": "Highway/Road/Alley/Street",
+      "weaponType": "Personal weapons (hands, feet, teeth, etc.)",
+      "offensiveAct": "Verbal slurs",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -107815,6 +108109,8 @@
       "mostSeriousBiasType": "Sexual Orientation",
       "mostSeriousUcr": "Destruction/Damage/Vandalism",
       "mostSeriousLocation": "Residence/Home/Driveway",
+      "weaponType": "",
+      "offensiveAct": "Damage to Home/Building",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"
@@ -107829,6 +108125,8 @@
       "mostSeriousBiasType": "Sexual Orientation",
       "mostSeriousUcr": "Intimidation",
       "mostSeriousLocation": "Highway/Road/Alley/Street",
+      "weaponType": "",
+      "offensiveAct": "Threatening letters/flyers/email",
       "victims": 1,
       "suspects": 1,
       "dataClass": "snapshot"

@@ -180,6 +180,8 @@ describe('warehouse and analysis', () => {
           mostSeriousBiasType: 'Race/Ethnicity/Ancestry',
           mostSeriousUcr: 'Intimidation',
           mostSeriousLocation: 'Residence/Home/Driveway',
+          weaponType: '',
+          offensiveAct: 'Verbal slurs',
           victims: 1,
           suspects: 0,
           dataClass: 'snapshot',

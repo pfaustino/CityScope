@@ -158,7 +158,7 @@
       "race",
       "ethnicity"
     ],
-    "lastSuccessfulRetrieval": "2026-08-17T06:54:06.032Z",
+    "lastSuccessfulRetrieval": "2026-08-17T07:31:11.599Z",
     "lastModified": "2024-12-01",
     "dataQualityRating": 5,
     "legalAccess": "API_KEY",
@@ -235,7 +235,7 @@
       "short forecast",
       "precipitation probability"
     ],
-    "lastSuccessfulRetrieval": "2026-08-17T06:54:06.032Z",
+    "lastSuccessfulRetrieval": "2026-08-17T07:31:11.599Z",
     "lastModified": "2026-08-15",
     "dataQualityRating": 5,
     "legalAccess": "PUBLIC",
@@ -264,7 +264,7 @@
       "depth",
       "event url"
     ],
-    "lastSuccessfulRetrieval": "2026-08-17T06:54:06.032Z",
+    "lastSuccessfulRetrieval": "2026-08-17T07:31:11.599Z",
     "lastModified": "2026-08-15",
     "dataQualityRating": 5,
     "legalAccess": "PUBLIC",
@@ -295,7 +295,7 @@
       "vehicle theft",
       "arson"
     ],
-    "lastSuccessfulRetrieval": "2026-08-17T06:54:06.032Z",
+    "lastSuccessfulRetrieval": "2026-08-17T07:31:11.599Z",
     "lastModified": "2025-07-01",
     "dataQualityRating": 4,
     "legalAccess": "PUBLIC",
@@ -322,11 +322,13 @@
       "MostSeriousBias",
       "MostSeriousBiasType",
       "MostSeriousUcr",
-      "victim counts",
-      "suspect counts",
-      "location"
+      "MostSeriousLocation",
+      "WeaponType",
+      "Offensive_Act",
+      "TotalNumberOfVictims",
+      "TotalNumberOfSuspects"
     ],
-    "lastSuccessfulRetrieval": "2026-08-17T06:54:06.032Z",
+    "lastSuccessfulRetrieval": "2026-08-17T07:31:11.599Z",
     "lastModified": "2026-07-01",
     "dataQualityRating": 4,
     "legalAccess": "PUBLIC",
@@ -351,7 +353,7 @@
       "offense counts by year",
       "violent/property summaries"
     ],
-    "lastSuccessfulRetrieval": "2026-08-17T06:54:06.032Z",
+    "lastSuccessfulRetrieval": "2026-08-17T07:31:11.599Z",
     "lastModified": null,
     "dataQualityRating": 4,
     "legalAccess": "API_KEY",
@@ -377,7 +379,7 @@
       "TMIN",
       "PRCP"
     ],
-    "lastSuccessfulRetrieval": "2026-08-17T06:54:06.032Z",
+    "lastSuccessfulRetrieval": "2026-08-17T07:31:11.599Z",
     "lastModified": null,
     "dataQualityRating": 5,
     "legalAccess": "API_KEY",
@@ -416,7 +418,7 @@
       "LIGHTING",
       "coordinates"
     ],
-    "lastSuccessfulRetrieval": "2026-08-17T06:54:06.032Z",
+    "lastSuccessfulRetrieval": "2026-08-17T07:31:11.599Z",
     "lastModified": null,
     "dataQualityRating": 4,
     "legalAccess": "REGISTRATION",
@@ -468,7 +470,7 @@
       "PM2.5",
       "ozone"
     ],
-    "lastSuccessfulRetrieval": "2026-08-17T06:54:06.032Z",
+    "lastSuccessfulRetrieval": "2026-08-17T07:31:11.599Z",
     "lastModified": null,
     "dataQualityRating": 4,
     "legalAccess": "API_KEY",

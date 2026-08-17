@@ -117,6 +117,10 @@ export type HateCrimeEvent = {
   mostSeriousBiasType: string
   mostSeriousUcr: string
   mostSeriousLocation: string
+  /** CSV WeaponType. Empty when the cell is blank — not a finding of “no weapon.” */
+  weaponType: string
+  /** CSV Offensive_Act. Empty when the cell is blank. */
+  offensiveAct: string
   victims: number
   suspects: number
   dataClass: DataClass

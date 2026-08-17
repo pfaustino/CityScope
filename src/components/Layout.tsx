@@ -19,6 +19,7 @@ const NAV: NavGroup[] = [
   ]},
   { group: 'With data', items: [
     { to: '/crime', label: 'Crime' },
+    { to: '/hate-crimes', label: 'Hate Crimes' },
     { to: '/demographics', label: 'Demographics' },
     { to: '/environment', label: 'Environment' },
     { to: '/sources', label: 'Data Sources' },

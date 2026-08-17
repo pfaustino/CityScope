@@ -40,9 +40,70 @@ export type HateCrimeBiasTypeRow = {
   events: number
 }
 
+export type HateCrimeCountRow = {
+  label: string
+  events: number
+}
+
+export type HateCrimeMonthRow = {
+  month: number
+  label: string
+  events: number
+}
+
+/** CSV MonthOccurrence 1–12. Not a calendar invented by CityScope. */
+export const MONTH_OCCURRENCE_NAMES = [
+  '',
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+] as const
+
+export const HATE_CRIME_COLUMNS_USED = [
+  'RecordId',
+  'ClosedYear',
+  'MonthOccurrence',
+  'County',
+  'NCIC',
+  'TotalNumberOfVictims',
+  'TotalNumberOfSuspects',
+  'MostSeriousUcr',
+  'MostSeriousLocation',
+  'MostSeriousBias',
+  'MostSeriousBiasType',
+  'WeaponType',
+  'Offensive_Act',
+] as const
+
+export const HATE_CRIME_BLANK_CELL = 'Blank in CSV'
+
 function numAt(parts: string[], i: number): number {
+  if (i < 0) return 0
   const n = Number(parts[i])
   return Number.isFinite(n) ? n : 0
+}
+
+function cellAt(parts: string[], i: number): string {
+  if (i < 0) return ''
+  return (parts[i] ?? '').trim()
+}
+
+export function monthOccurrenceLabel(month: number): string {
+  const name = month >= 1 && month <= 12 ? MONTH_OCCURRENCE_NAMES[month] : ''
+  return name ? `${name} (${month})` : String(month)
+}
+
+export function hateCrimeBlankLabel(value: string): string {
+  return value.trim() ? value : HATE_CRIME_BLANK_CELL
 }
 
 export function parseHateCrimeCsv(
@@ -66,6 +127,8 @@ export function parseHateCrimeCsv(
     location: idx('MostSeriousLocation'),
     bias: idx('MostSeriousBias'),
     biasType: idx('MostSeriousBiasType'),
+    weapon: idx('WeaponType'),
+    offensiveAct: idx('Offensive_Act'),
   }
   if (col.id < 0 || col.year < 0 || col.ncic < 0 || col.biasType < 0 || col.victims < 0) {
     throw new Error('OpenJustice hate crime: unexpected header')
@@ -88,6 +151,8 @@ export function parseHateCrimeCsv(
       mostSeriousBiasType: (parts[col.biasType] ?? '').trim(),
       mostSeriousUcr: (parts[col.ucr] ?? '').trim(),
       mostSeriousLocation: (parts[col.location] ?? '').trim(),
+      weaponType: cellAt(parts, col.weapon),
+      offensiveAct: cellAt(parts, col.offensiveAct),
       victims: numAt(parts, col.victims),
       suspects: numAt(parts, col.suspects),
       dataClass,
@@ -119,6 +184,49 @@ export function hateCrimeBiasTypeCounts(events: HateCrimeEvent[], year: number):
   return [...counts.entries()]
     .map(([biasType, n]) => ({ biasType, events: n }))
     .sort((a, b) => b.events - a.events || a.biasType.localeCompare(b.biasType))
+}
+
+export function hateCrimeValueCounts(
+  events: HateCrimeEvent[],
+  valueOf: (event: HateCrimeEvent) => string,
+  year?: number,
+): HateCrimeCountRow[] {
+  const counts = new Map<string, number>()
+  for (const event of events) {
+    if (year != null && event.year !== year) continue
+    const key = valueOf(event)
+    counts.set(key, (counts.get(key) ?? 0) + 1)
+  }
+  return [...counts.entries()]
+    .map(([label, n]) => ({ label, events: n }))
+    .sort((a, b) => b.events - a.events || a.label.localeCompare(b.label))
+}
+
+export function hateCrimeMonthCounts(events: HateCrimeEvent[], year?: number): HateCrimeMonthRow[] {
+  const byMonth = new Map<number, number>()
+  for (const event of events) {
+    if (year != null && event.year !== year) continue
+    byMonth.set(event.month, (byMonth.get(event.month) ?? 0) + 1)
+  }
+  return [...byMonth.entries()]
+    .sort((a, b) => a[0] - b[0])
+    .map(([month, n]) => ({ month, label: monthOccurrenceLabel(month), events: n }))
+}
+
+export function hateCrimeLocationCounts(events: HateCrimeEvent[], year?: number): HateCrimeCountRow[] {
+  return hateCrimeValueCounts(events, (event) => hateCrimeBlankLabel(event.mostSeriousLocation), year)
+}
+
+export function hateCrimeWeaponCounts(events: HateCrimeEvent[], year?: number): HateCrimeCountRow[] {
+  return hateCrimeValueCounts(events, (event) => hateCrimeBlankLabel(event.weaponType), year)
+}
+
+export function hateCrimeUcrCounts(events: HateCrimeEvent[], year?: number): HateCrimeCountRow[] {
+  return hateCrimeValueCounts(events, (event) => hateCrimeBlankLabel(event.mostSeriousUcr), year)
+}
+
+export function hateCrimeOffensiveActCounts(events: HateCrimeEvent[], year?: number): HateCrimeCountRow[] {
+  return hateCrimeValueCounts(events, (event) => hateCrimeBlankLabel(event.offensiveAct), year)
 }
 
 export function hateCrimeEventProvenance(

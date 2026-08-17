@@ -15,6 +15,7 @@ const SPA_DIRS = [
   'demographics',
   'development',
   'environment',
+  'hate-crimes',
   'investigations',
   'map',
   'money',

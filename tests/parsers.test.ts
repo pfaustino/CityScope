@@ -3,7 +3,16 @@ import { parseAcsTable } from '../server/connectors/census.ts'
 import { parseAirNow } from '../server/connectors/airnow.ts'
 import { parseNoaa } from '../server/connectors/noaa.ts'
 import { parseFbiCdeActualsByYear, parseFbiCdeYearCoverage } from '../server/connectors/fbiCde.ts'
-import { parseHateCrimeCsv, hateCrimeAnnual, hateCrimeBiasTypeCounts } from '../shared/hateCrime.ts'
+import {
+  parseHateCrimeCsv,
+  hateCrimeAnnual,
+  hateCrimeBiasTypeCounts,
+  hateCrimeLocationCounts,
+  hateCrimeMonthCounts,
+  hateCrimeOffensiveActCounts,
+  hateCrimeWeaponCounts,
+  HATE_CRIME_BLANK_CELL,
+} from '../shared/hateCrime.ts'
 import { parseOpenJusticeCsv } from '../server/connectors/openjustice.ts'
 import { parseForecast, parseQuakes } from '../shared/liveParse.ts'
 import { parseSwitrsCsv, rollupCollisions } from '../shared/switrs.ts'
@@ -153,21 +162,21 @@ describe('live parsers', () => {
 
   it('filters OpenJustice hate-crime CSV to NCIC 1912 and counts 2024 events', () => {
     const header =
-      'RecordId,ClosedYear,MonthOccurrence,County,NCIC,TotalNumberOfVictims,TotalNumberOfSuspects,MostSeriousUcr,MostSeriousLocation,MostSeriousBias,MostSeriousBiasType'
+      'RecordId,ClosedYear,MonthOccurrence,County,NCIC,TotalNumberOfVictims,TotalNumberOfSuspects,MostSeriousUcr,MostSeriousLocation,MostSeriousBias,MostSeriousBiasType,WeaponType,Offensive_Act'
     const rows = [
       header,
-      'CA24-1,2024,1,19,1912,1,0,Intimidation,Residence,Anti-Black or African American,Race/Ethnicity/Ancestry',
-      'CA24-2,2024,2,19,1912,1,1,Simple Assault,School,Anti-Black or African American,Race/Ethnicity/Ancestry',
-      'CA24-3,2024,4,19,1912,1,1,Simple Assault,Other,Anti-Black or African American,Race/Ethnicity/Ancestry',
-      'CA24-4,2024,5,19,1912,1,1,Simple Assault,Parking Lot,Anti-Other Religion,Religion',
-      'CA24-5,2024,1,19,1912,1,0,Destruction/Damage/Vandalism,Church,Anti-Gay (Male),Sexual Orientation',
-      'CA24-6,2024,2,19,1912,1,1,Aggravated Assault,Grocery,Anti-Black or African American,Race/Ethnicity/Ancestry',
-      'CA24-7,2024,8,19,1912,1,0,Destruction/Damage/Vandalism,Residence,Anti-Black or African American,Race/Ethnicity/Ancestry',
-      'CA24-8,2024,10,19,1912,1,2,Intimidation,School,Anti-Black or African American,Race/Ethnicity/Ancestry',
-      'CA24-9,2024,12,19,1912,1,0,Destruction/Damage/Vandalism,Parking Lot,Anti-Gay (Male),Sexual Orientation',
-      'CA23-1,2023,3,19,1912,1,1,Intimidation,Residence,Anti-Jewish,Religion',
-      'CA24-other,2024,1,19,1913,99,99,Intimidation,Residence,Anti-Jewish,Religion',
-      'CA24-state,2024,1,00,0000,500,500,Intimidation,Residence,Anti-Jewish,Religion',
+      'CA24-1,2024,1,19,1912,1,0,Intimidation,Residence,Anti-Black or African American,Race/Ethnicity/Ancestry,,"Verbal slurs"',
+      'CA24-2,2024,2,19,1912,1,1,Simple Assault,School,Anti-Black or African American,Race/Ethnicity/Ancestry,"Personal weapons (hands, feet, teeth, etc.)",Other',
+      'CA24-3,2024,4,19,1912,1,1,Simple Assault,Other,Anti-Black or African American,Race/Ethnicity/Ancestry,Unknown,Other',
+      'CA24-4,2024,5,19,1912,1,1,Simple Assault,Parking Lot,Anti-Other Religion,Religion,Unknown,Verbal slurs',
+      'CA24-5,2024,1,19,1912,1,0,Destruction/Damage/Vandalism,Church,Anti-Gay (Male),Sexual Orientation,,Graffiti',
+      'CA24-6,2024,2,19,1912,1,1,Aggravated Assault,Grocery,Anti-Black or African American,Race/Ethnicity/Ancestry,"Knife or other cutting or stabbing instrument",Other',
+      'CA24-7,2024,8,19,1912,1,0,Destruction/Damage/Vandalism,Residence,Anti-Black or African American,Race/Ethnicity/Ancestry,,Graffiti',
+      'CA24-8,2024,10,19,1912,1,2,Intimidation,School,Anti-Black or African American,Race/Ethnicity/Ancestry,Unknown,Verbal slurs',
+      'CA24-9,2024,12,19,1912,1,0,Destruction/Damage/Vandalism,Parking Lot,Anti-Gay (Male),Sexual Orientation,,Graffiti',
+      'CA23-1,2023,3,19,1912,1,1,Intimidation,Residence,Anti-Jewish,Religion,Unknown,Verbal slurs',
+      'CA24-other,2024,1,19,1913,99,99,Intimidation,Residence,Anti-Jewish,Religion,Unknown,Verbal slurs',
+      'CA24-state,2024,1,00,0000,500,500,Intimidation,Residence,Anti-Jewish,Religion,Unknown,Verbal slurs',
     ]
     const events = parseHateCrimeCsv(rows.join('\n'), 'snapshot')
     expect(events).toHaveLength(10)
@@ -182,6 +191,36 @@ describe('live parsers', () => {
       { biasType: 'Religion', events: 1 },
     ])
     expect(events.every((e) => e.dataClass === 'snapshot')).toBe(true)
+    const jan = events.find((e) => e.id === 'CA24-1')
+    expect(jan?.month).toBe(1)
+    expect(jan?.mostSeriousLocation).toBe('Residence')
+    expect(jan?.weaponType).toBe('')
+    expect(jan?.offensiveAct).toBe('Verbal slurs')
+    const hands = events.find((e) => e.id === 'CA24-2')
+    expect(hands?.weaponType).toBe('Personal weapons (hands, feet, teeth, etc.)')
+    expect(hateCrimeMonthCounts(events, 2024).map((r) => [r.month, r.events])).toEqual([
+      [1, 2],
+      [2, 2],
+      [4, 1],
+      [5, 1],
+      [8, 1],
+      [10, 1],
+      [12, 1],
+    ])
+    expect(hateCrimeLocationCounts(events, 2024)).toEqual(
+      expect.arrayContaining([
+        { label: 'Parking Lot', events: 2 },
+        { label: 'Residence', events: 2 },
+        { label: 'School', events: 2 },
+      ]),
+    )
+    expect(hateCrimeWeaponCounts(events, 2024)).toEqual([
+      { label: HATE_CRIME_BLANK_CELL, events: 4 },
+      { label: 'Unknown', events: 3 },
+      { label: 'Knife or other cutting or stabbing instrument', events: 1 },
+      { label: 'Personal weapons (hands, feet, teeth, etc.)', events: 1 },
+    ])
+    expect(hateCrimeOffensiveActCounts(events, 2024)[0]).toEqual({ label: 'Graffiti', events: 3 })
   })
 
   it('parses SWITRS Crashes.csv rows as snapshot collisions', () => {
