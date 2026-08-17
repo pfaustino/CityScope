@@ -16,6 +16,8 @@ export function buildWarehouse(nowIso = '2026-08-15T08:00:00-07:00'): Warehouse 
     expenditures: [],
     collisions: [],
     collisionsFile: null,
+    collisionsGlendale: [],
+    collisionsGlendaleFile: null,
     hateCrimeEvents: [],
     fbiAnnual: [],
     crimeAnnualGlendale: openJusticeGlendaleSnapshots(nowIso),

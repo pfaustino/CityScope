@@ -1,4 +1,5 @@
 import { lazy, Suspense } from 'react'
+import { Link } from 'react-router-dom'
 import { Banner } from '../components/Stat.tsx'
 import { useCityData } from '../lib/data.ts'
 
@@ -13,14 +14,16 @@ export function MapPage() {
       <h1>Map</h1>
       {mapped > 0 ? (
         <Banner kind="live">
-          {mapped} SWITRS collisions from {fileName} are plotted. Crime, business, and permit
-          points are not. USGS earthquakes and the BUR airport location are also shown.
+          {mapped} SWITRS collisions from {fileName} are plotted (Burbank extract). Crime, business,
+          and permit points are not. USGS earthquakes and the BUR airport location are also shown.{' '}
+          <Link to="/crashes">Crashes page</Link> has the full TIMS tables and Glendale, separately
+          labeled.
         </Banner>
       ) : (
-      <Banner kind="restricted">
-        Crime, business, permit, and collision points are not plotted. Those feeds are not
-        connected. USGS earthquakes and the BUR airport location are shown.
-      </Banner>
+        <Banner kind="restricted">
+          Crime, business, permit, and collision points are not plotted. Those feeds are not
+          connected. USGS earthquakes and the BUR airport location are shown.
+        </Banner>
       )}
       <Suspense fallback={<p>Loading map…</p>}>
         <CityMap />

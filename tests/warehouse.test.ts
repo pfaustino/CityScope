@@ -74,6 +74,8 @@ describe('warehouse and analysis', () => {
       censusGlendale: null,
       collisions: null,
       collisionsFile: null,
+      collisionsGlendale: null,
+      collisionsGlendaleFile: null,
       hateCrimeEvents: null,
       errors: [],
     })
@@ -115,15 +117,39 @@ describe('warehouse and analysis', () => {
             parcel: null,
           },
           dataClass: 'snapshot',
+          city: 'BURBANK',
+          year: 2023,
+          dayOfWeek: 4,
+          severityCode: '3',
+          killed: 0,
+          injured: 1,
+          primaryRd: 'ALAMEDA AVENUE',
+          secondaryRd: 'GATEWAY',
+          alcoholInvolved: false,
+          pedestrian: false,
+          bicycle: false,
+          motorcycle: false,
+          truck: false,
+          hitAndRun: 'N',
+          lighting: 'A',
+          weather: 'B',
+          collisionType: 'E',
+          atIntersection: 'N',
+          towAway: 'N',
+          pcfViolCategory: '01',
         },
       ],
       collisionsFile: 'Crashes.csv',
+      collisionsGlendale: null,
+      collisionsGlendaleFile: null,
       hateCrimeEvents: null,
       errors: [],
     })
     expect(merged.collisions).toHaveLength(1)
     expect(merged.collisions[0]?.dataClass).toBe('snapshot')
     expect(merged.collisionsFile).toBe('Crashes.csv')
+    expect(merged.collisionsGlendale).toHaveLength(0)
+    expect(merged.collisions[0]?.city).toBe('BURBANK')
   })
 
   it('overlays OpenJustice hate-crime events for NCIC 1912', () => {
@@ -141,6 +167,8 @@ describe('warehouse and analysis', () => {
       censusGlendale: null,
       collisions: null,
       collisionsFile: null,
+      collisionsGlendale: null,
+      collisionsGlendaleFile: null,
       hateCrimeEvents: [
         {
           id: 'CA24-1',

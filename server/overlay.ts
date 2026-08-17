@@ -32,6 +32,8 @@ export async function buildLiveOverlay(): Promise<LiveOverlay> {
     censusGlendale: null,
     collisions: null,
     collisionsFile: null,
+    collisionsGlendale: null,
+    collisionsGlendaleFile: null,
     hateCrimeEvents: null,
     errors,
   }
@@ -104,6 +106,8 @@ export async function buildLiveOverlay(): Promise<LiveOverlay> {
         else {
           overlay.collisions = result.collisions
           overlay.collisionsFile = result.fileName
+          overlay.collisionsGlendale = result.collisionsGlendale
+          overlay.collisionsGlendaleFile = result.glendaleFileName
         }
       },
     },

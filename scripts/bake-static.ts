@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url'
 import { liveSourceView, SOURCES } from '../shared/catalog.ts'
 import { parseForecast, parseQuakes } from '../shared/liveParse.ts'
 import { parseHateCrimeCsv } from '../shared/hateCrime.ts'
-import { parseSwitrsCsv, SWITRS_DEFAULT_FILE } from '../shared/switrs.ts'
+import { parseSwitrsCsv, SWITRS_DEFAULT_FILE, SWITRS_GLENDALE_FILE } from '../shared/switrs.ts'
 import type {
   AgencyCrimeYear,
   AirQualityObs,
@@ -73,19 +73,41 @@ function snapshotize<T>(value: T): T {
   return value
 }
 
-function loadCollisions(): { collisions: LiveOverlay['collisions']; collisionsFile: string | null } {
-  const candidates = [
+function loadCollisions(): {
+  collisions: LiveOverlay['collisions']
+  collisionsFile: string | null
+  collisionsGlendale: LiveOverlay['collisionsGlendale']
+  collisionsGlendaleFile: string | null
+} {
+  const burbankCandidates = [
     path.join(ROOT, SWITRS_DEFAULT_FILE),
     path.join(ROOT, 'crashes.csv'),
     path.join(ROOT, 'data', SWITRS_DEFAULT_FILE),
     path.join(ROOT, 'data', 'crashes.csv'),
   ]
-  for (const file of candidates) {
+  const glendaleCandidates = [
+    path.join(ROOT, SWITRS_GLENDALE_FILE),
+    path.join(ROOT, 'crashes-glendale.csv'),
+    path.join(ROOT, 'data', SWITRS_GLENDALE_FILE),
+    path.join(ROOT, 'data', 'crashes-glendale.csv'),
+  ]
+  let collisions: LiveOverlay['collisions'] = null
+  let collisionsFile: string | null = null
+  for (const file of burbankCandidates) {
     if (!existsSync(file)) continue
-    const collisions = parseSwitrsCsv(readFileSync(file, 'utf8'), path.basename(file))
-    return { collisions, collisionsFile: path.basename(file) }
+    collisions = parseSwitrsCsv(readFileSync(file, 'utf8'), path.basename(file), 'BURBANK')
+    collisionsFile = path.basename(file)
+    break
   }
-  return { collisions: null, collisionsFile: null }
+  let collisionsGlendale: LiveOverlay['collisionsGlendale'] = null
+  let collisionsGlendaleFile: string | null = null
+  for (const file of glendaleCandidates) {
+    if (!existsSync(file)) continue
+    collisionsGlendale = parseSwitrsCsv(readFileSync(file, 'utf8'), path.basename(file), 'GLENDALE')
+    collisionsGlendaleFile = path.basename(file)
+    break
+  }
+  return { collisions, collisionsFile, collisionsGlendale, collisionsGlendaleFile }
 }
 
 function loadHateCrimeEvents(): HateCrimeEvent[] | null {
@@ -117,6 +139,8 @@ function emptyOverlay(retrievedAt: string): LiveOverlay {
     censusGlendale: null,
     collisions: null,
     collisionsFile: null,
+    collisionsGlendale: null,
+    collisionsGlendaleFile: null,
     hateCrimeEvents: null,
     errors: [],
   }
@@ -139,6 +163,8 @@ export function bakeStaticOverlay(): LiveOverlay {
     overlay.censusGlendale = existing.censusGlendale
     overlay.collisions = existing.collisions
     overlay.collisionsFile = existing.collisionsFile
+    overlay.collisionsGlendale = existing.collisionsGlendale
+    overlay.collisionsGlendaleFile = existing.collisionsGlendaleFile
     overlay.hateCrimeEvents = existing.hateCrimeEvents
     overlay.retrievedAt = existing.retrievedAt
   }
@@ -176,6 +202,10 @@ export function bakeStaticOverlay(): LiveOverlay {
     overlay.collisions = switrs.collisions
     overlay.collisionsFile = switrs.collisionsFile
   }
+  if (switrs.collisionsGlendale && switrs.collisionsGlendale.length > 0) {
+    overlay.collisionsGlendale = switrs.collisionsGlendale
+    overlay.collisionsGlendaleFile = switrs.collisionsGlendaleFile
+  }
 
   const hateCrimeEvents = loadHateCrimeEvents()
   if (hateCrimeEvents && hateCrimeEvents.length > 0) overlay.hateCrimeEvents = hateCrimeEvents
@@ -195,6 +225,6 @@ const invoked = process.argv[1] && path.basename(process.argv[1]).startsWith('ba
 if (invoked) {
   const overlay = bakeStaticOverlay()
   console.log(
-    `baked overlay ${overlay.retrievedAt} collisions=${overlay.collisions?.length ?? 0} openjustice=${overlay.crimeAnnual?.length ?? 0} hatecrime=${overlay.hateCrimeEvents?.length ?? 0} glendale=${overlay.crimeAnnualGlendale?.length ?? 0}`,
+    `baked overlay ${overlay.retrievedAt} collisions=${overlay.collisions?.length ?? 0} glendaleCrashes=${overlay.collisionsGlendale?.length ?? 0} openjustice=${overlay.crimeAnnual?.length ?? 0} hatecrime=${overlay.hateCrimeEvents?.length ?? 0} glendale=${overlay.crimeAnnualGlendale?.length ?? 0}`,
   )
 }

@@ -18,3 +18,28 @@ export function MonthChart({ data, color = '#1f4d62' }: { data: Record<string, n
     </div>
   )
 }
+
+export function CountChart({
+  data,
+  color = '#1f4d62',
+  height = 220,
+}: {
+  data: { label: string; value: number }[]
+  color?: string
+  height?: number
+}) {
+  return (
+    <div style={{ height }}>
+      <ResponsiveContainer width="100%" height="100%">
+        <BarChart data={data} margin={{ top: 8, right: 8, left: 0, bottom: 0 }}>
+          <CartesianGrid stroke="#c9bfa8" vertical={false} />
+          <XAxis dataKey="label" tick={{ fontSize: 10 }} interval={0} />
+          <YAxis tick={{ fontSize: 10 }} width={40} />
+          <Tooltip />
+          <Bar dataKey="value" fill={color} />
+        </BarChart>
+      </ResponsiveContainer>
+    </div>
+  )
+}
+

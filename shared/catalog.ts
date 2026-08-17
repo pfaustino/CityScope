@@ -22,6 +22,7 @@ export type SourceOverlayHints = {
   crimeAnnual?: unknown
   fbiAnnual?: unknown
   collisions?: unknown
+  collisionsGlendale?: unknown
   hateCrimeEvents?: unknown
   errors: { sourceId: string; message: string }[]
 }
@@ -354,9 +355,26 @@ export const SOURCES: SourceRecord[] = [
     authentication: 'REGISTRATION',
     rateLimit: 'TIMS account',
     updateFrequency: 'monthly',
-    geographicCoverage: 'California; filter to Burbank',
-    historicalCoverage: 'Multi-year collision records',
-    fieldsAvailable: ['date', 'severity', 'intersection', 'coordinates'],
+    geographicCoverage: 'California; Burbank extract, plus Glendale when Crashes-Glendale.csv is present',
+    historicalCoverage: 'Collision records in the local TIMS exports (Burbank 2023; Glendale 2023–2025 when loaded)',
+    fieldsAvailable: [
+      'CASE_ID',
+      'ACCIDENT_YEAR',
+      'COLLISION_DATE',
+      'COLLISION_TIME',
+      'DAY_OF_WEEK',
+      'PRIMARY_RD',
+      'SECONDARY_RD',
+      'COLLISION_SEVERITY',
+      'NUMBER_KILLED',
+      'NUMBER_INJURED',
+      'ALCOHOL_INVOLVED',
+      'PEDESTRIAN_ACCIDENT',
+      'BICYCLE_ACCIDENT',
+      'HIT_AND_RUN',
+      'LIGHTING',
+      'coordinates',
+    ],
     lastSuccessfulRetrieval: null,
     lastModified: null,
     dataQualityRating: 4,
@@ -518,12 +536,18 @@ export function liveSourceView(
   if (source.id === 'switrs') {
     const collisions = overlay?.collisions
     const count = Array.isArray(collisions) ? collisions.length : 0
-    if (count > 0) {
+    const glendale = overlay?.collisionsGlendale
+    const glendaleCount = Array.isArray(glendale) ? glendale.length : 0
+    if (count > 0 || glendaleCount > 0) {
+      const parts = [
+        count > 0 ? `${count} Burbank records from local Crashes.csv` : null,
+        glendaleCount > 0 ? `${glendaleCount} Glendale records from local Crashes-Glendale.csv` : null,
+      ].filter(Boolean)
       return {
         ...source,
         status: 'connected',
         lastSuccessfulRetrieval: overlay?.retrievedAt ?? source.lastSuccessfulRetrieval,
-        statusDetail: `${count} collision records from local Crashes.csv`,
+        statusDetail: parts.join('; '),
       }
     }
     return { ...source, status: statusFor(source), statusDetail: null }

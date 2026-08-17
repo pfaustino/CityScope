@@ -6,7 +6,7 @@ import { parseFbiCdeActualsByYear, parseFbiCdeYearCoverage } from '../server/con
 import { parseHateCrimeCsv, hateCrimeAnnual, hateCrimeBiasTypeCounts } from '../shared/hateCrime.ts'
 import { parseOpenJusticeCsv } from '../server/connectors/openjustice.ts'
 import { parseForecast, parseQuakes } from '../shared/liveParse.ts'
-import { parseSwitrsCsv } from '../shared/switrs.ts'
+import { parseSwitrsCsv, rollupCollisions } from '../shared/switrs.ts'
 
 describe('live parsers', () => {
   it('parses a Census ACS table into a live snapshot', () => {
@@ -197,11 +197,45 @@ describe('live parsers', () => {
     expect(rows).toHaveLength(2)
     expect(rows[0]?.id).toBe('82189740')
     expect(rows[0]?.severity).toBe('injury')
+    expect(rows[0]?.severityCode).toBe('3')
     expect(rows[0]?.hour).toBe(20)
+    expect(rows[0]?.year).toBe(2023)
+    expect(rows[0]?.city).toBe('BURBANK')
+    expect(rows[0]?.killed).toBe(0)
+    expect(rows[0]?.injured).toBe(1)
     expect(rows[0]?.dataClass).toBe('snapshot')
     expect(rows[0]?.geo.lat).toBeCloseTo(34.1735)
     expect(rows[1]?.geo.lat).toBeCloseTo(34.185)
     expect(rows.every((r) => r.dataClass !== 'demonstration')).toBe(true)
+    expect(rows.every((r) => r.city === 'BURBANK')).toBe(true)
+  })
+
+  it('parses Glendale TIMS rows separately and does not mix cities', () => {
+    const header =
+      'CASE_ID,ACCIDENT_YEAR,COLLISION_DATE,COLLISION_TIME,DAY_OF_WEEK,COLLISION_SEVERITY,NUMBER_KILLED,NUMBER_INJURED,PRIMARY_RD,SECONDARY_RD,LATITUDE,LONGITUDE,POINT_X,POINT_Y,CITY'
+    const burbank = parseSwitrsCsv(
+      [header, '1,2023,2023-01-05,2010,4,1,1,0,ALAMEDA,GATEWAY,34.17,-118.30,-118.30,34.17,BURBANK'].join('\n'),
+      'Crashes.csv',
+      'BURBANK',
+    )
+    const glendale = parseSwitrsCsv(
+      [
+        header,
+        '1,2023,2023-01-05,2010,4,1,1,0,ALAMEDA,GATEWAY,34.17,-118.30,-118.30,34.17,BURBANK',
+        '2,2024,2024-06-01,900,6,4,0,1,BRAND,BROADWAY,34.14,-118.25,-118.25,34.14,GLENDALE',
+        '3,2025,2025-03-02,2330,7,2,0,2,GLENOAKS,CHESTER,34.16,-118.24,-118.24,34.16,GLENDALE',
+      ].join('\n'),
+      'Crashes-Glendale.csv',
+      'GLENDALE',
+    )
+    expect(burbank).toHaveLength(1)
+    expect(glendale).toHaveLength(2)
+    expect(glendale.every((r) => r.city === 'GLENDALE')).toBe(true)
+    expect(glendale.map((r) => r.year).sort()).toEqual([2024, 2025])
+    expect(glendale[0]?.alcoholInvolved).toBe(false)
+    expect(rollupCollisions(burbank).n + rollupCollisions(glendale).n).toBe(3)
+    expect(rollupCollisions(burbank).killed).toBe(1)
+    expect(rollupCollisions(glendale).killed).toBe(0)
   })
 
   it('parses NWS daytime forecast periods', () => {

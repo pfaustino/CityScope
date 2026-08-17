@@ -9,6 +9,8 @@ describe('static Pages bake', () => {
   it('writes overlay JSON without API keys and with SWITRS collisions', () => {
     const overlay = bakeStaticOverlay()
     expect(overlay.collisions?.length ?? 0).toBeGreaterThan(0)
+    expect(overlay.collisions?.every((c) => c.city === 'BURBANK')).toBe(true)
+    expect((overlay.collisionsGlendale ?? []).every((c) => c.city === 'GLENDALE')).toBe(true)
     expect(overlay.crimeAnnual?.length ?? 0).toBeGreaterThan(0)
     expect(overlay.hateCrimeEvents?.length ?? 0).toBeGreaterThan(0)
     expect(overlay.hateCrimeEvents?.every((e) => e.ncic === '1912')).toBe(true)

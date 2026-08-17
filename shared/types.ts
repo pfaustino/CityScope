@@ -195,11 +195,31 @@ export type Expenditure = {
 export type Collision = {
   id: string
   date: string
-  hour: number
+  hour: number | null
   severity: 'property' | 'injury' | 'fatal'
   intersection: string
   geo: GeoRef
   dataClass: DataClass
+  city: string
+  year: number | null
+  dayOfWeek: number | null
+  severityCode: string
+  killed: number
+  injured: number
+  primaryRd: string
+  secondaryRd: string
+  alcoholInvolved: boolean
+  pedestrian: boolean
+  bicycle: boolean
+  motorcycle: boolean
+  truck: boolean
+  hitAndRun: string
+  lighting: string
+  weather: string
+  collisionType: string
+  atIntersection: string
+  towAway: string
+  pcfViolCategory: string
 }
 
 /** Mutually exclusive ACS B03002 group. Shares are calculations from estimates. */
@@ -296,6 +316,8 @@ export type LiveOverlay = {
   censusGlendale: CensusSnapshot[] | null
   collisions: Collision[] | null
   collisionsFile: string | null
+  collisionsGlendale: Collision[] | null
+  collisionsGlendaleFile: string | null
   hateCrimeEvents: HateCrimeEvent[] | null
   errors: { sourceId: string; message: string }[]
 }
@@ -311,6 +333,8 @@ export type Warehouse = {
   expenditures: Expenditure[]
   collisions: Collision[]
   collisionsFile: string | null
+  collisionsGlendale: Collision[]
+  collisionsGlendaleFile: string | null
   hateCrimeEvents: HateCrimeEvent[]
   fbiAnnual: AgencyCrimeYear[]
   crimeAnnualGlendale: AgencyCrimeYear[]

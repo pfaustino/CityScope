@@ -18,6 +18,11 @@ export function applyOverlay(base: Warehouse, overlay: LiveOverlay): Warehouse {
         : base.fbiAnnualGlendale,
     collisions: overlay.collisions && overlay.collisions.length > 0 ? overlay.collisions : base.collisions,
     collisionsFile: overlay.collisionsFile ?? base.collisionsFile,
+    collisionsGlendale:
+      overlay.collisionsGlendale && overlay.collisionsGlendale.length > 0
+        ? overlay.collisionsGlendale
+        : base.collisionsGlendale,
+    collisionsGlendaleFile: overlay.collisionsGlendaleFile ?? base.collisionsGlendaleFile,
     hateCrimeEvents:
       overlay.hateCrimeEvents && overlay.hateCrimeEvents.length > 0
         ? overlay.hateCrimeEvents

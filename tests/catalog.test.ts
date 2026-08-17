@@ -121,6 +121,7 @@ describe('liveSourceView', () => {
     })
     expect(row.status).toBe('connected')
     expect(row.statusDetail).toMatch(/Crashes\.csv/i)
+    expect(row.statusDetail).toMatch(/Burbank/i)
   })
 
   it('marks OpenJustice hate crime connected when overlay has NCIC 1912 events', () => {

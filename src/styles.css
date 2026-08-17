@@ -376,6 +376,37 @@ th {
   border: 1px solid var(--ink);
 }
 
+.map-root.crash-map {
+  height: 420px;
+  min-height: 280px;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.8rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.legend .swatch {
+  display: inline-block;
+  width: 0.7rem;
+  height: 0.7rem;
+  margin-right: 0.35rem;
+  vertical-align: middle;
+  border: 1px solid var(--ink);
+}
+
+h2 .meta {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
 .layers {
   display: flex;
   flex-wrap: wrap;
@@ -503,6 +534,11 @@ select {
   .map-root {
     min-height: 240px;
     height: min(62vh, calc(100dvh - 12rem));
+  }
+
+  .map-root.crash-map {
+    height: min(50vh, 360px);
+    min-height: 220px;
   }
 
   .grid.two {

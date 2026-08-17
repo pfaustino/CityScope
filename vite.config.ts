@@ -11,6 +11,7 @@ const SPA_DIRS = [
   'airport',
   'businesses',
   'crime',
+  'crashes',
   'demographics',
   'development',
   'environment',

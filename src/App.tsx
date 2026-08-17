@@ -4,6 +4,7 @@ import { ProvenanceProvider } from './components/ProvenanceDrawer.tsx'
 import { AirportPage } from './pages/AirportPage.tsx'
 import { BusinessPage } from './pages/BusinessPage.tsx'
 import { CrimePage } from './pages/CrimePage.tsx'
+import { CrashesPage } from './pages/CrashesPage.tsx'
 import { DashboardPage } from './pages/DashboardPage.tsx'
 import { DemographicsPage } from './pages/DemographicsPage.tsx'
 import { DevelopmentPage } from './pages/DevelopmentPage.tsx'
@@ -35,6 +36,7 @@ export default function App() {
           <Route path="/money" element={<MoneyPage />} />
           <Route path="/police" element={<PolicePage />} />
           <Route path="/demographics" element={<DemographicsPage />} />
+          <Route path="/crashes" element={<CrashesPage />} />
           <Route path="/transportation" element={<TransportationPage />} />
           <Route path="/environment" element={<EnvironmentPage />} />
           <Route path="/airport" element={<AirportPage />} />

@@ -33,7 +33,7 @@ const NAV: NavGroup[] = [
       { to: '/development', label: 'Development' },
       { to: '/money', label: 'Money' },
       { to: '/police', label: 'Police' },
-      { to: '/transportation', label: 'Transportation' },
+      { to: '/crashes', label: 'Crashes' },
       { to: '/airport', label: 'Airport' },
     ],
   },
@@ -46,15 +46,15 @@ export function Layout() {
   const { warehouse } = useCityData()
   const location = useLocation()
   const [navOpen, setNavOpen] = useState(false)
-  const hasCollisions = warehouse.collisions.length > 0
+  const hasCollisions = warehouse.collisions.length > 0 || warehouse.collisionsGlendale.length > 0
   const groups = NAV.map((g) => {
     if (g.group === 'With data' && hasCollisions) {
       const beforeSources = g.items.filter((i) => i.to !== '/sources')
       const sources = g.items.filter((i) => i.to === '/sources')
-      return { ...g, items: [...beforeSources, { to: '/transportation', label: 'Transportation' }, ...sources] }
+      return { ...g, items: [...beforeSources, { to: '/crashes', label: 'Crashes' }, ...sources] }
     }
     if (g.group === 'No dataset yet' && hasCollisions) {
-      return { ...g, items: g.items.filter((i) => i.to !== '/transportation') }
+      return { ...g, items: g.items.filter((i) => i.to !== '/crashes') }
     }
     return g
   })

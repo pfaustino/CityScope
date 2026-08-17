@@ -158,7 +158,7 @@
       "race",
       "ethnicity"
     ],
-    "lastSuccessfulRetrieval": "2026-08-16T22:56:54.828Z",
+    "lastSuccessfulRetrieval": "2026-08-17T06:54:06.032Z",
     "lastModified": "2024-12-01",
     "dataQualityRating": 5,
     "legalAccess": "API_KEY",
@@ -235,7 +235,7 @@
       "short forecast",
       "precipitation probability"
     ],
-    "lastSuccessfulRetrieval": "2026-08-16T22:56:54.828Z",
+    "lastSuccessfulRetrieval": "2026-08-17T06:54:06.032Z",
     "lastModified": "2026-08-15",
     "dataQualityRating": 5,
     "legalAccess": "PUBLIC",
@@ -264,7 +264,7 @@
       "depth",
       "event url"
     ],
-    "lastSuccessfulRetrieval": "2026-08-16T22:56:54.828Z",
+    "lastSuccessfulRetrieval": "2026-08-17T06:54:06.032Z",
     "lastModified": "2026-08-15",
     "dataQualityRating": 5,
     "legalAccess": "PUBLIC",
@@ -295,7 +295,7 @@
       "vehicle theft",
       "arson"
     ],
-    "lastSuccessfulRetrieval": "2026-08-16T22:56:54.828Z",
+    "lastSuccessfulRetrieval": "2026-08-17T06:54:06.032Z",
     "lastModified": "2025-07-01",
     "dataQualityRating": 4,
     "legalAccess": "PUBLIC",
@@ -326,7 +326,7 @@
       "suspect counts",
       "location"
     ],
-    "lastSuccessfulRetrieval": "2026-08-16T22:56:54.828Z",
+    "lastSuccessfulRetrieval": "2026-08-17T06:54:06.032Z",
     "lastModified": "2026-07-01",
     "dataQualityRating": 4,
     "legalAccess": "PUBLIC",
@@ -351,7 +351,7 @@
       "offense counts by year",
       "violent/property summaries"
     ],
-    "lastSuccessfulRetrieval": "2026-08-16T22:56:54.828Z",
+    "lastSuccessfulRetrieval": "2026-08-17T06:54:06.032Z",
     "lastModified": null,
     "dataQualityRating": 4,
     "legalAccess": "API_KEY",
@@ -377,7 +377,7 @@
       "TMIN",
       "PRCP"
     ],
-    "lastSuccessfulRetrieval": "2026-08-16T22:56:54.828Z",
+    "lastSuccessfulRetrieval": "2026-08-17T06:54:06.032Z",
     "lastModified": null,
     "dataQualityRating": 5,
     "legalAccess": "API_KEY",
@@ -396,22 +396,34 @@
     "authentication": "REGISTRATION",
     "rateLimit": "TIMS account",
     "updateFrequency": "monthly",
-    "geographicCoverage": "California; filter to Burbank",
-    "historicalCoverage": "Multi-year collision records",
+    "geographicCoverage": "California; Burbank extract, plus Glendale when Crashes-Glendale.csv is present",
+    "historicalCoverage": "Collision records in the local TIMS exports (Burbank 2023; Glendale 2023–2025 when loaded)",
     "fieldsAvailable": [
-      "date",
-      "severity",
-      "intersection",
+      "CASE_ID",
+      "ACCIDENT_YEAR",
+      "COLLISION_DATE",
+      "COLLISION_TIME",
+      "DAY_OF_WEEK",
+      "PRIMARY_RD",
+      "SECONDARY_RD",
+      "COLLISION_SEVERITY",
+      "NUMBER_KILLED",
+      "NUMBER_INJURED",
+      "ALCOHOL_INVOLVED",
+      "PEDESTRIAN_ACCIDENT",
+      "BICYCLE_ACCIDENT",
+      "HIT_AND_RUN",
+      "LIGHTING",
       "coordinates"
     ],
-    "lastSuccessfulRetrieval": "2026-08-16T22:56:54.828Z",
+    "lastSuccessfulRetrieval": "2026-08-17T06:54:06.032Z",
     "lastModified": null,
     "dataQualityRating": 4,
     "legalAccess": "REGISTRATION",
     "howToObtain": "Create a free TIMS account at https://tims.berkeley.edu/register.php then export Burbank collisions. Statewide CCRS files: https://data.ca.gov/dataset/ccrs. CityScope does not display fabricated crash points.",
     "phase1Priority": 7,
     "status": "connected",
-    "statusDetail": "508 collision records from local Crashes.csv"
+    "statusDetail": "508 Burbank records from local Crashes.csv; 2085 Glendale records from local Crashes-Glendale.csv"
   },
   {
     "id": "bur-airport",
@@ -456,7 +468,7 @@
       "PM2.5",
       "ozone"
     ],
-    "lastSuccessfulRetrieval": "2026-08-16T22:56:54.828Z",
+    "lastSuccessfulRetrieval": "2026-08-17T06:54:06.032Z",
     "lastModified": null,
     "dataQualityRating": 4,
     "legalAccess": "API_KEY",
