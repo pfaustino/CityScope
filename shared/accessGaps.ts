@@ -50,6 +50,18 @@ export const ACCESS_GAPS: AccessGap[] = [
     ],
   },
   {
+    domain: 'campaigns',
+    status: 'unavailable',
+    headline: 'Access Status: Portal public — transcribed year-end Form 460',
+    detail:
+      'Burbank eFile campaign statements are public. This extract is year-end Form 460 Column B for the five sitting city council members’ last campaign year, not every filer and not independent expenditures.',
+    howToObtain:
+      'Search https://efile.burbankca.gov/public/search/campaign. Use Line 5 Column B on the last calendar-year Form 460. Do not sum overlapping 460s.',
+    portals: [
+      { name: 'Burbank eFile campaign search', url: 'https://efile.burbankca.gov/public/search/campaign' },
+    ],
+  },
+  {
     domain: 'collisions',
     status: 'needs_registration',
     headline: 'Access Status: Needs TIMS registration',

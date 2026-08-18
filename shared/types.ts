@@ -194,6 +194,53 @@ export type OnBasePermitSnapshot = {
   dataClass: DataClass
 }
 
+/** One year-end Form 460 summary. Column B is calendar-year to date — do not sum overlapping 460s. */
+export type CampaignForm460YearEnd = {
+  calendarYear: number
+  coversFrom: string
+  coversThrough: string
+  filedOn: string
+  filingId: string
+  pdfUrl: string
+  monetaryContributions: number
+  loansReceived: number
+  nonmonetaryContributions: number
+  totalContributionsReceived: number
+  totalExpendituresMade: number
+  endingCashBalance: number
+  terminated: boolean
+}
+
+/** Form 470 short form as listed on eFile. Not a dollar total. */
+export type CampaignForm470 = {
+  calendarYear: number
+  coversFrom: string
+  coversThrough: string
+  filedOn: string
+  pdfUrl: string
+}
+
+export type CampaignCommittee = {
+  candidateName: string
+  office: string
+  committeeName: string
+  stateId: string
+  electionYear: number
+  electionDate: string
+  yearEnd460: CampaignForm460YearEnd
+  officeholder470: CampaignForm470[]
+}
+
+/** Transcribed year-end Form 460 totals for sitting Burbank City Council members. Not every eFile filer. */
+export type CampaignSnapshot = {
+  sourceUrl: string
+  retrievedAt: string
+  election: string
+  electionDate: string
+  committees: CampaignCommittee[]
+  dataClass: DataClass
+}
+
 export type DevelopmentProject = {
   id: string
   title: string
@@ -390,6 +437,7 @@ export type LiveOverlay = {
   budgetAnnual?: OpenGovAnnualSnapshot | null
   payments?: OpenGovPaymentRollup | null
   permitListing?: OnBasePermitSnapshot | null
+  campaigns?: CampaignSnapshot | null
   errors: { sourceId: string; message: string }[]
 }
 
@@ -410,6 +458,7 @@ export type Warehouse = {
   budgetAnnual: OpenGovAnnualSnapshot | null
   payments: OpenGovPaymentRollup | null
   permitListing: OnBasePermitSnapshot | null
+  campaigns: CampaignSnapshot | null
   fbiAnnual: AgencyCrimeYear[]
   crimeAnnualGlendale: AgencyCrimeYear[]
   fbiAnnualGlendale: AgencyCrimeYear[]

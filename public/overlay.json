@@ -1,5 +1,5 @@
 {
-  "retrievedAt": "2026-08-18T04:29:50.791Z",
+  "retrievedAt": "2026-08-18T18:26:15.441Z",
   "census": [
     {
       "year": "2023",
@@ -110422,6 +110422,210 @@
       }
     ],
     "dataClass": "snapshot"
+  },
+  "campaigns": {
+    "sourceUrl": "https://efile.burbankca.gov/public/search/campaign",
+    "retrievedAt": "2026-08-18T11:30:00-07:00",
+    "election": "Sitting Burbank City Council",
+    "electionDate": "2022-11-08 / 2024-11-05",
+    "dataClass": "snapshot",
+    "committees": [
+      {
+        "candidateName": "Christopher Rizzotti",
+        "office": "City of Burbank Council Member",
+        "committeeName": "Elect Rizzotti to Burbank City Council 2024",
+        "stateId": "1466605",
+        "electionYear": 2024,
+        "electionDate": "2024-11-05",
+        "yearEnd460": {
+          "calendarYear": 2024,
+          "coversFrom": "2024-10-31",
+          "coversThrough": "2024-12-31",
+          "filedOn": "2025-01-26",
+          "filingId": "212948293",
+          "pdfUrl": "https://efile.burbankca.gov/pdfview?doc_public=Ext_0dfe976d-fbf4-a946-f265-07133b2fb208",
+          "monetaryContributions": 81575,
+          "loansReceived": 0,
+          "nonmonetaryContributions": 854,
+          "totalContributionsReceived": 82429,
+          "totalExpendituresMade": 82429,
+          "endingCashBalance": 0,
+          "terminated": true
+        },
+        "officeholder470": [
+          {
+            "calendarYear": 2025,
+            "coversFrom": "2025-01-01",
+            "coversThrough": "2025-12-31",
+            "filedOn": "2025-07-16",
+            "pdfUrl": "https://efile.burbankca.gov/pdfview?doc_public=Ext_7924d8b0-c8c2-8374-1c5e-6da062865258"
+          },
+          {
+            "calendarYear": 2026,
+            "coversFrom": "2026-01-01",
+            "coversThrough": "2026-12-31",
+            "filedOn": "2026-07-07",
+            "pdfUrl": "https://efile.burbankca.gov/pdfview?doc_public=Ext_c325c335-7998-4cc0-9db3-db1e3420446e"
+          }
+        ]
+      },
+      {
+        "candidateName": "Konstantine Anthony",
+        "office": "City of Burbank Council Member",
+        "committeeName": "Konstantine Anthony for Burbank City Council 2024",
+        "stateId": "1470392",
+        "electionYear": 2024,
+        "electionDate": "2024-11-05",
+        "yearEnd460": {
+          "calendarYear": 2024,
+          "coversFrom": "2024-10-31",
+          "coversThrough": "2024-12-31",
+          "filedOn": "2025-01-31",
+          "filingId": "213045810",
+          "pdfUrl": "https://efile.burbankca.gov/pdfview?doc_public=Ext_c9ca952e-3b14-290b-c375-e58cd322f951",
+          "monetaryContributions": 25206,
+          "loansReceived": 0,
+          "nonmonetaryContributions": 377.48,
+          "totalContributionsReceived": 25583.48,
+          "totalExpendituresMade": 25353.03,
+          "endingCashBalance": -736.05,
+          "terminated": false
+        },
+        "officeholder470": [
+          {
+            "calendarYear": 2025,
+            "coversFrom": "2025-01-01",
+            "coversThrough": "2025-12-31",
+            "filedOn": "2025-07-31",
+            "pdfUrl": "https://efile.burbankca.gov/pdfview?doc_public=Ext_a9a9458e-44e0-72f9-42f1-50f5bddefd22"
+          }
+        ]
+      },
+      {
+        "candidateName": "Zizette Mullins",
+        "office": "City of Burbank Council Member",
+        "committeeName": "Mullins for City Council 2022",
+        "stateId": "1450408",
+        "electionYear": 2022,
+        "electionDate": "2022-11-08",
+        "yearEnd460": {
+          "calendarYear": 2022,
+          "coversFrom": "2022-11-03",
+          "coversThrough": "2022-12-31",
+          "filedOn": "2023-03-16",
+          "filingId": "207122934",
+          "pdfUrl": "https://efile.burbankca.gov/pdfview?doc_public=Ext_c122b5a9-5717-81e1-7750-fe2ecedb1514",
+          "monetaryContributions": 80772.35,
+          "loansReceived": 0,
+          "nonmonetaryContributions": 0,
+          "totalContributionsReceived": 80772.35,
+          "totalExpendituresMade": 72788.01,
+          "endingCashBalance": 26688.12,
+          "terminated": true
+        },
+        "officeholder470": [
+          {
+            "calendarYear": 2024,
+            "coversFrom": "2024-01-01",
+            "coversThrough": "2024-12-31",
+            "filedOn": "2024-07-15",
+            "pdfUrl": "https://efile.burbankca.gov/pdfview?doc_public=Ext_93afe053-395b-334a-f1fa-ff5f3ef0718d"
+          },
+          {
+            "calendarYear": 2025,
+            "coversFrom": "2025-01-01",
+            "coversThrough": "2025-12-31",
+            "filedOn": "2025-07-30",
+            "pdfUrl": "https://efile.burbankca.gov/pdfview?doc_public=Ext_b54a156e-5af5-0e5d-3071-b6596c539716"
+          }
+        ]
+      },
+      {
+        "candidateName": "Nikki Perez",
+        "office": "City of Burbank Council Member",
+        "committeeName": "Nikki Perez for City Council 2022",
+        "stateId": "1448423",
+        "electionYear": 2022,
+        "electionDate": "2022-11-08",
+        "yearEnd460": {
+          "calendarYear": 2022,
+          "coversFrom": "2022-11-03",
+          "coversThrough": "2022-12-31",
+          "filedOn": "2023-01-30",
+          "filingId": "206101802",
+          "pdfUrl": "https://efile.burbankca.gov/pdfview?doc_public=Ext_a55cc24f-03e8-68ba-28ce-1aa91e9f6ccc",
+          "monetaryContributions": 41760,
+          "loansReceived": 3000,
+          "nonmonetaryContributions": 215.58,
+          "totalContributionsReceived": 44975.58,
+          "totalExpendituresMade": 44606.91,
+          "endingCashBalance": 1818.67,
+          "terminated": true
+        },
+        "officeholder470": [
+          {
+            "calendarYear": 2024,
+            "coversFrom": "2024-01-01",
+            "coversThrough": "2024-12-31",
+            "filedOn": "2024-07-31",
+            "pdfUrl": "https://efile.burbankca.gov/pdfview?doc_public=Ext_dcb17043-041f-15d7-98a2-73b1a4fb5370"
+          },
+          {
+            "calendarYear": 2025,
+            "coversFrom": "2025-01-01",
+            "coversThrough": "2025-12-31",
+            "filedOn": "2025-08-08",
+            "pdfUrl": "https://efile.burbankca.gov/pdfview?doc_public=Ext_5e9b64b3-bc79-467f-9407-6ed1ebc8f408"
+          }
+        ]
+      },
+      {
+        "candidateName": "Tamala Takahashi",
+        "office": "City of Burbank Council Member",
+        "committeeName": "Tamala Takahashi for City Council 2022",
+        "stateId": "1448296",
+        "electionYear": 2022,
+        "electionDate": "2022-11-08",
+        "yearEnd460": {
+          "calendarYear": 2022,
+          "coversFrom": "2022-11-03",
+          "coversThrough": "2022-12-31",
+          "filedOn": "2023-01-29",
+          "filingId": "206070434",
+          "pdfUrl": "https://efile.burbankca.gov/pdfview?doc_public=Ext_0da9610b-ab1a-5b11-9fa3-44d2e740a2ff",
+          "monetaryContributions": 17902,
+          "loansReceived": 0,
+          "nonmonetaryContributions": 0,
+          "totalContributionsReceived": 17902,
+          "totalExpendituresMade": 19728.98,
+          "endingCashBalance": 2484.47,
+          "terminated": true
+        },
+        "officeholder470": [
+          {
+            "calendarYear": 2023,
+            "coversFrom": "2023-01-01",
+            "coversThrough": "2023-12-31",
+            "filedOn": "2023-07-25",
+            "pdfUrl": "https://efile.burbankca.gov/pdfview?doc_public=Ext_75186f24-e385-6d35-470a-467bd33feae4"
+          },
+          {
+            "calendarYear": 2024,
+            "coversFrom": "2024-01-01",
+            "coversThrough": "2024-12-31",
+            "filedOn": "2024-07-31",
+            "pdfUrl": "https://efile.burbankca.gov/pdfview?doc_public=Ext_c5789a05-e07f-9cd8-8424-47a69ff4e060"
+          },
+          {
+            "calendarYear": 2025,
+            "coversFrom": "2025-01-01",
+            "coversThrough": "2025-12-31",
+            "filedOn": "2025-07-28",
+            "pdfUrl": "https://efile.burbankca.gov/pdfview?doc_public=Ext_baa7cb5c-9c46-977d-899f-95a2190317eb"
+          }
+        ]
+      }
+    ]
   },
   "errors": []
 }

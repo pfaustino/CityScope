@@ -166,6 +166,24 @@ describe('liveSourceView', () => {
     expect(row.status).toBe('connected')
     expect(row.statusDetail).toMatch(/1 departments from local Burbank Data Snapshot\.csv/)
   })
+
+  it('marks eFile campaigns connected when overlay has year-end Form 460 committees', () => {
+    const source = sourceById('burbank-efile-campaign')
+    expect(source).toBeDefined()
+    if (!source) return
+    const row = liveSourceView(source, keysOn, {
+      retrievedAt: '2026-08-18T12:00:00Z',
+      census: null,
+      climate: [],
+      airQuality: [],
+      errors: [],
+      campaigns: {
+        committees: [{ candidateName: 'Christopher Rizzotti', stateId: '1466605' }],
+      },
+    })
+    expect(row.status).toBe('connected')
+    expect(row.statusDetail).toMatch(/1 sitting-council committees from year-end Form 460/)
+  })
 })
 
 describe('unconnected source obtain URLs', () => {

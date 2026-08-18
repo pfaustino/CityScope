@@ -30,6 +30,7 @@ export function applyOverlay(base: Warehouse, overlay: LiveOverlay): Warehouse {
     budgetAnnual: overlay.budgetAnnual ?? base.budgetAnnual,
     payments: overlay.payments ?? base.payments,
     permitListing: overlay.permitListing ?? base.permitListing,
+    campaigns: overlay.campaigns ?? base.campaigns,
   }
   if (overlay.census && overlay.census.length > 0) {
     const liveYears = new Set(overlay.census.map((c) => c.year))

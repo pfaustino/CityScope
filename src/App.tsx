@@ -3,6 +3,7 @@ import { Layout } from './components/Layout.tsx'
 import { ProvenanceProvider } from './components/ProvenanceDrawer.tsx'
 import { AirportPage } from './pages/AirportPage.tsx'
 import { BusinessPage } from './pages/BusinessPage.tsx'
+import { CampaignsPage } from './pages/CampaignsPage.tsx'
 import { CrimePage } from './pages/CrimePage.tsx'
 import { CrashesPage } from './pages/CrashesPage.tsx'
 import { DashboardPage } from './pages/DashboardPage.tsx'
@@ -36,6 +37,7 @@ export default function App() {
           <Route path="/hate-crimes" element={<HateCrimesPage />} />
           <Route path="/development" element={<DevelopmentPage />} />
           <Route path="/money" element={<MoneyPage />} />
+          <Route path="/campaigns" element={<CampaignsPage />} />
           <Route path="/police" element={<PolicePage />} />
           <Route path="/demographics" element={<DemographicsPage />} />
           <Route path="/crashes" element={<CrashesPage />} />

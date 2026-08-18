@@ -73,7 +73,7 @@
       "street direction",
       "street name"
     ],
-    "lastSuccessfulRetrieval": "2026-08-18T04:29:50.791Z",
+    "lastSuccessfulRetrieval": "2026-08-18T18:26:15.441Z",
     "lastModified": null,
     "dataQualityRating": 3,
     "legalAccess": "PUBLIC",
@@ -102,7 +102,7 @@
       "payment date",
       "invoice amount"
     ],
-    "lastSuccessfulRetrieval": "2026-08-18T04:29:50.791Z",
+    "lastSuccessfulRetrieval": "2026-08-18T18:26:15.441Z",
     "lastModified": null,
     "dataQualityRating": 3,
     "legalAccess": "PUBLIC",
@@ -110,6 +110,35 @@
     "phase1Priority": 4,
     "status": "connected",
     "statusDetail": "16 departments from local Burbank Data Snapshot.csv; 17034 AP payments from local OpenGov-Accounts-Payable.csv"
+  },
+  {
+    "id": "burbank-efile-campaign",
+    "name": "Burbank eFile campaign statements",
+    "agency": "City of Burbank — City Clerk / FPPC",
+    "url": "https://efile.burbankca.gov/public/search/campaign",
+    "apiEndpoint": null,
+    "datasetId": "efile-campaign",
+    "authentication": "PUBLIC",
+    "rateLimit": "Public web search; export is limited to a one-year filing-date window",
+    "updateFrequency": "on_demand",
+    "geographicCoverage": "City of Burbank",
+    "historicalCoverage": "2022 and 2024 campaign-year Form 460 for five sitting city council members",
+    "fieldsAvailable": [
+      "committee name",
+      "state ID",
+      "Form 460 Line 5 Column B",
+      "expenditures",
+      "cash on hand",
+      "Form 470 filing"
+    ],
+    "lastSuccessfulRetrieval": "2026-08-18T18:26:15.441Z",
+    "lastModified": null,
+    "dataQualityRating": 4,
+    "legalAccess": "PUBLIC",
+    "howToObtain": "Public search at https://efile.burbankca.gov/public/search/campaign. Year-end Form 460 Line 5 Column B is the calendar-year contribution total; do not sum overlapping 460s. Independent expenditures are on other committees’ Form 496s. This CityScope extract covers the five sitting council members’ last campaign-year Form 460 (2022: Mullins 1450408, Perez 1448423, Takahashi 1448296; 2024: Rizzotti 1466605, Anthony 1470392).",
+    "phase1Priority": 4,
+    "status": "connected",
+    "statusDetail": "5 sitting-council committees from year-end Form 460"
   },
   {
     "id": "burbank-pd",
@@ -161,7 +190,7 @@
       "race",
       "ethnicity"
     ],
-    "lastSuccessfulRetrieval": "2026-08-18T04:29:50.791Z",
+    "lastSuccessfulRetrieval": "2026-08-18T18:26:15.441Z",
     "lastModified": "2024-12-01",
     "dataQualityRating": 5,
     "legalAccess": "API_KEY",
@@ -238,7 +267,7 @@
       "short forecast",
       "precipitation probability"
     ],
-    "lastSuccessfulRetrieval": "2026-08-18T04:29:50.791Z",
+    "lastSuccessfulRetrieval": "2026-08-18T18:26:15.441Z",
     "lastModified": "2026-08-15",
     "dataQualityRating": 5,
     "legalAccess": "PUBLIC",
@@ -267,7 +296,7 @@
       "depth",
       "event url"
     ],
-    "lastSuccessfulRetrieval": "2026-08-18T04:29:50.791Z",
+    "lastSuccessfulRetrieval": "2026-08-18T18:26:15.441Z",
     "lastModified": "2026-08-15",
     "dataQualityRating": 5,
     "legalAccess": "PUBLIC",
@@ -298,7 +327,7 @@
       "vehicle theft",
       "arson"
     ],
-    "lastSuccessfulRetrieval": "2026-08-18T04:29:50.791Z",
+    "lastSuccessfulRetrieval": "2026-08-18T18:26:15.441Z",
     "lastModified": "2025-07-01",
     "dataQualityRating": 4,
     "legalAccess": "PUBLIC",
@@ -331,7 +360,7 @@
       "TotalNumberOfVictims",
       "TotalNumberOfSuspects"
     ],
-    "lastSuccessfulRetrieval": "2026-08-18T04:29:50.791Z",
+    "lastSuccessfulRetrieval": "2026-08-18T18:26:15.441Z",
     "lastModified": "2026-07-01",
     "dataQualityRating": 4,
     "legalAccess": "PUBLIC",
@@ -356,7 +385,7 @@
       "offense counts by year",
       "violent/property summaries"
     ],
-    "lastSuccessfulRetrieval": "2026-08-18T04:29:50.791Z",
+    "lastSuccessfulRetrieval": "2026-08-18T18:26:15.441Z",
     "lastModified": null,
     "dataQualityRating": 4,
     "legalAccess": "API_KEY",
@@ -382,7 +411,7 @@
       "TMIN",
       "PRCP"
     ],
-    "lastSuccessfulRetrieval": "2026-08-18T04:29:50.791Z",
+    "lastSuccessfulRetrieval": "2026-08-18T18:26:15.441Z",
     "lastModified": null,
     "dataQualityRating": 5,
     "legalAccess": "API_KEY",
@@ -421,7 +450,7 @@
       "LIGHTING",
       "coordinates"
     ],
-    "lastSuccessfulRetrieval": "2026-08-18T04:29:50.791Z",
+    "lastSuccessfulRetrieval": "2026-08-18T18:26:15.441Z",
     "lastModified": null,
     "dataQualityRating": 4,
     "legalAccess": "REGISTRATION",
@@ -473,7 +502,7 @@
       "PM2.5",
       "ozone"
     ],
-    "lastSuccessfulRetrieval": "2026-08-18T04:29:50.791Z",
+    "lastSuccessfulRetrieval": "2026-08-18T18:26:15.441Z",
     "lastModified": null,
     "dataQualityRating": 4,
     "legalAccess": "API_KEY",

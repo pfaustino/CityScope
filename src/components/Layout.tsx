@@ -33,6 +33,7 @@ const NAV: NavGroup[] = [
       { to: '/businesses', label: 'Businesses' },
       { to: '/development', label: 'Development' },
       { to: '/money', label: 'Money' },
+      { to: '/campaigns', label: 'Campaigns' },
       { to: '/police', label: 'Police' },
       { to: '/crashes', label: 'Crashes' },
       { to: '/airport', label: 'Airport' },
@@ -50,12 +51,14 @@ export function Layout() {
   const hasCollisions = warehouse.collisions.length > 0 || warehouse.collisionsGlendale.length > 0
   const hasBudget = Boolean(warehouse.budgetAnnual)
   const hasPermits = Boolean(warehouse.permitListing)
+  const hasCampaigns = Boolean(warehouse.campaigns)
   const groups = NAV.map((g) => {
     if (g.group === 'With data') {
       const extra: { to: string; label: string }[] = []
       if (hasCollisions) extra.push({ to: '/crashes', label: 'Crashes' })
       if (hasPermits) extra.push({ to: '/development', label: 'Development' })
       if (hasBudget) extra.push({ to: '/money', label: 'Money' })
+      if (hasCampaigns) extra.push({ to: '/campaigns', label: 'Campaigns' })
       if (extra.length === 0) return g
       const beforeSources = g.items.filter((i) => i.to !== '/sources')
       const sources = g.items.filter((i) => i.to === '/sources')
@@ -68,6 +71,7 @@ export function Layout() {
           if (i.to === '/crashes' && hasCollisions) return false
           if (i.to === '/development' && hasPermits) return false
           if (i.to === '/money' && hasBudget) return false
+          if (i.to === '/campaigns' && hasCampaigns) return false
           return true
         }),
       }

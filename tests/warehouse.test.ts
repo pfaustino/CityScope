@@ -241,6 +241,65 @@ describe('warehouse and analysis', () => {
     expect(merged.expenditures).toHaveLength(0)
   })
 
+  it('merges transcribed Form 460 campaign totals without inventing committees', () => {
+    expect(wh.campaigns).toBeNull()
+    const merged = applyOverlay(wh, {
+      retrievedAt: '2026-08-18T12:00:00Z',
+      census: null,
+      weather: null,
+      earthquakes: null,
+      climate: null,
+      airQuality: null,
+      crimeAnnual: null,
+      fbiAnnual: null,
+      crimeAnnualGlendale: null,
+      fbiAnnualGlendale: null,
+      censusGlendale: null,
+      collisions: null,
+      collisionsFile: null,
+      collisionsGlendale: null,
+      collisionsGlendaleFile: null,
+      hateCrimeEvents: null,
+      campaigns: {
+        sourceUrl: 'https://efile.burbankca.gov/public/search/campaign',
+        retrievedAt: '2026-08-18T09:30:00-07:00',
+        election: 'Burbank City Council 2024',
+        electionDate: '2024-11-05',
+        dataClass: 'snapshot',
+        committees: [
+          {
+            candidateName: 'Christopher Rizzotti',
+            office: 'City of Burbank Council Member',
+            committeeName: 'Elect Rizzotti to Burbank City Council 2024',
+            stateId: '1466605',
+            electionYear: 2024,
+            electionDate: '2024-11-05',
+            yearEnd460: {
+              calendarYear: 2024,
+              coversFrom: '2024-10-31',
+              coversThrough: '2024-12-31',
+              filedOn: '2025-01-26',
+              filingId: '212948293',
+              pdfUrl: 'https://efile.burbankca.gov/pdfview?doc_public=Ext_0dfe976d-fbf4-a946-f265-07133b2fb208',
+              monetaryContributions: 81575,
+              loansReceived: 0,
+              nonmonetaryContributions: 854,
+              totalContributionsReceived: 82429,
+              totalExpendituresMade: 82429,
+              endingCashBalance: 0,
+              terminated: true,
+            },
+            officeholder470: [],
+          },
+        ],
+      },
+      errors: [],
+    })
+    expect(merged.campaigns?.committees).toHaveLength(1)
+    expect(merged.campaigns?.committees[0]?.yearEnd460.totalContributionsReceived).toBe(82429)
+    expect(merged.campaigns?.dataClass).toBe('snapshot')
+  })
+
   it('replaces baked quakes with a live empty catalog and stamps snapshot on fetch failure', () => {
     const liveEmpty = mergePublicFeeds(
       wh,

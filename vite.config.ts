@@ -19,6 +19,7 @@ const SPA_DIRS = [
   'investigations',
   'map',
   'money',
+  'campaigns',
   'police',
   'reports',
   'reports/airport',

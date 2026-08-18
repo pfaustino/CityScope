@@ -28,6 +28,7 @@ export type SourceOverlayHints = {
   budgetAnnual?: unknown
   payments?: unknown
   permitListing?: unknown
+  campaigns?: unknown
   errors: { sourceId: string; message: string }[]
 }
 
@@ -131,6 +132,34 @@ export const SOURCES: SourceRecord[] = [
     legalAccess: 'PUBLIC',
     howToObtain:
       'No public signup; Login is city staff only. Annual — Departments: https://burbankca.opengov.com/transparency then Share → Spreadsheet (.csv) as Burbank Data Snapshot.csv. Accounts Payable: https://burbankca.opengov.com/data/#/1296 (Vendor Payment Listing). Refresh AP with node scripts/fetch-opengov-ap.mjs into OpenGov-Accounts-Payable.csv. These files are not a contracts register.',
+    phase1Priority: 4,
+  },
+  {
+    id: 'burbank-efile-campaign',
+    name: 'Burbank eFile campaign statements',
+    agency: 'City of Burbank — City Clerk / FPPC',
+    url: 'https://efile.burbankca.gov/public/search/campaign',
+    apiEndpoint: null,
+    datasetId: 'efile-campaign',
+    authentication: 'PUBLIC',
+    rateLimit: 'Public web search; export is limited to a one-year filing-date window',
+    updateFrequency: 'on_demand',
+    geographicCoverage: 'City of Burbank',
+    historicalCoverage: '2022 and 2024 campaign-year Form 460 for five sitting city council members',
+    fieldsAvailable: [
+      'committee name',
+      'state ID',
+      'Form 460 Line 5 Column B',
+      'expenditures',
+      'cash on hand',
+      'Form 470 filing',
+    ],
+    lastSuccessfulRetrieval: null,
+    lastModified: null,
+    dataQualityRating: 4,
+    legalAccess: 'PUBLIC',
+    howToObtain:
+      'Public search at https://efile.burbankca.gov/public/search/campaign. Year-end Form 460 Line 5 Column B is the calendar-year contribution total; do not sum overlapping 460s. Independent expenditures are on other committees’ Form 496s. This CityScope extract covers the five sitting council members’ last campaign-year Form 460 (2022: Mullins 1450408, Perez 1448423, Takahashi 1448296; 2024: Rizzotti 1466605, Anthony 1470392).',
     phase1Priority: 4,
   },
   {
@@ -604,6 +633,18 @@ export function liveSourceView(
     }
     return { ...source, status: statusFor(source), statusDetail: null }
   }
+  if (source.id === 'burbank-efile-campaign') {
+    const snap = overlay?.campaigns
+    if (isCampaignSnapshot(snap) && snap.committees.length > 0) {
+      return {
+        ...source,
+        status: 'connected',
+        lastSuccessfulRetrieval: overlay?.retrievedAt ?? source.lastSuccessfulRetrieval,
+        statusDetail: `${snap.committees.length} sitting-council committees from year-end Form 460`,
+      }
+    }
+    return { ...source, status: statusFor(source), statusDetail: null }
+  }
   const keyed = KEYED_LIVE[source.id]
   const overlayField = keyed?.overlayField ?? PUBLIC_OVERLAY[source.id]
   const liveData = overlay && overlayField ? overlay[overlayField] : undefined
@@ -680,6 +721,12 @@ function isPaymentRollup(value: unknown): value is { fileName: string; count: nu
 
 function isPermitListing(value: unknown): value is { fileName: string; count: number } {
   return isPaymentRollup(value)
+}
+
+function isCampaignSnapshot(value: unknown): value is { committees: unknown[] } {
+  if (!value || typeof value !== 'object') return false
+  if (!('committees' in value)) return false
+  return Array.isArray((value as { committees: unknown }).committees)
 }
 
 export function accessTone(access: AccessClass): string {

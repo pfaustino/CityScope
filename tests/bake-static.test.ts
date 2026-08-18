@@ -25,6 +25,33 @@ describe('static Pages bake', () => {
     expect(overlay.permitListing?.count).toBe(11192)
     expect(overlay.permitListing?.dataClass).toBe('snapshot')
     expect(overlay.permitListing?.rows.length).toBeLessThanOrEqual(200)
+    expect(overlay.campaigns?.committees).toHaveLength(5)
+    expect(overlay.campaigns?.dataClass).toBe('snapshot')
+    expect(
+      overlay.campaigns?.committees.some(
+        (c) => c.stateId === '1466605' && c.yearEnd460.totalContributionsReceived === 82429,
+      ),
+    ).toBe(true)
+    expect(
+      overlay.campaigns?.committees.some(
+        (c) => c.stateId === '1470392' && c.yearEnd460.totalContributionsReceived === 25583.48,
+      ),
+    ).toBe(true)
+    expect(
+      overlay.campaigns?.committees.some(
+        (c) => c.stateId === '1450408' && c.yearEnd460.totalContributionsReceived === 80772.35,
+      ),
+    ).toBe(true)
+    expect(
+      overlay.campaigns?.committees.some(
+        (c) => c.stateId === '1448423' && c.yearEnd460.totalContributionsReceived === 44975.58,
+      ),
+    ).toBe(true)
+    expect(
+      overlay.campaigns?.committees.some(
+        (c) => c.stateId === '1448296' && c.yearEnd460.totalContributionsReceived === 17902,
+      ),
+    ).toBe(true)
     const text = readFileSync(path.join(process.cwd(), 'public', 'overlay.json'), 'utf8')
     expect(text).not.toMatch(SECRET)
     expect(JSON.stringify(overlay)).not.toMatch(SECRET)

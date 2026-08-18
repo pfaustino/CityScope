@@ -11,6 +11,7 @@ import { fetchOpenJusticeBundle } from './connectors/openjustice.ts'
 import { loadSwitrsCrashes } from './connectors/switrs.ts'
 import { loadOpenGovAnnual, loadOpenGovPayments } from './connectors/opengov.ts'
 import { loadOnBasePermits } from './connectors/onbase.ts'
+import { CAMPAIGN_SNAPSHOT } from '../shared/campaigns.ts'
 import { fetchEarthquakes } from './connectors/usgs.ts'
 import { redact } from './http.ts'
 
@@ -141,6 +142,12 @@ export async function buildLiveOverlay(): Promise<LiveOverlay> {
         const listing = loadOnBasePermits()
         if (isGap(listing)) errors.push({ sourceId: 'burbank-permits', message: listing.message })
         else overlay.permitListing = listing
+      },
+    },
+    {
+      sourceId: 'burbank-efile-campaign',
+      run: async () => {
+        overlay.campaigns = CAMPAIGN_SNAPSHOT
       },
     },
   ]
