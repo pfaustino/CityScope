@@ -1,4 +1,6 @@
 import { describe, expect, it } from 'vitest'
+import { existsSync, readFileSync } from 'node:fs'
+import path from 'node:path'
 import { parseAcsTable } from '../server/connectors/census.ts'
 import { parseAirNow } from '../server/connectors/airnow.ts'
 import { parseNoaa } from '../server/connectors/noaa.ts'
@@ -17,6 +19,14 @@ import { parseOpenJusticeCsv } from '../server/connectors/openjustice.ts'
 import { parseForecast, parseQuakes, parseDwmlForecast, parseQuakeMl } from '../shared/liveParse.ts'
 import { NWS_DWML_URL, USGS_QUAKEML_URL } from '../shared/publicFeeds.ts'
 import { parseSwitrsCsv, rollupCollisions } from '../shared/switrs.ts'
+import {
+  citywideBudgetVsActual,
+  departmentChartRows,
+  latestBudgetPeriod,
+  parseOpenGovAnnualCsv,
+  parseOpenGovPaymentsCsv,
+  ytdActualPeriod,
+} from '../shared/opengov.ts'
 
 describe('live parsers', () => {
   it('documents the public XML URLs used on page load', () => {
@@ -430,5 +440,85 @@ describe('live parsers', () => {
     expect(coverage.totals[2021]).toBe(0)
     expect(coverage.months[2022]).toBe(2)
     expect(coverage.totals[2022]).toBe(30)
+  })
+
+  it('parses an OpenGov Annual Departments snapshot', () => {
+    const snap = parseOpenGovAnnualCsv(
+      [
+        '"Burbank"',
+        '"Annual - Departments"',
+        '"Download generated on 08/17/2026"',
+        '',
+        '"","2023-24 Budget","June 2023-24 Actual","2025-26 Budget","May 2025-26 Actual","2026-27 Budget"',
+        '"Police"," 10,000"," 9,000"," 12,000"," 8,000"," 11,000"',
+        '"Fire"," 5,000"," 4,000"," 6,000"," 5,000"," 7,000"',
+        '"Total"," 15,000"," 13,000"," 18,000"," 13,000"," 18,000"',
+      ].join('\n'),
+      'Burbank Data Snapshot.csv',
+    )
+    expect(snap.city).toBe('Burbank')
+    expect(snap.report).toBe('Annual - Departments')
+    expect(snap.generatedOn).toBe('2026-08-17')
+    expect(snap.dataClass).toBe('snapshot')
+    expect(snap.periods.map((p) => p.kind)).toEqual(['budget', 'actual', 'budget', 'actual', 'budget'])
+    expect(snap.periods[1]?.asOfMonth).toBe('June')
+    expect(snap.periods[3]?.asOfMonth).toBe('May')
+    expect(latestBudgetPeriod(snap)?.label).toBe('2026-27 Budget')
+    expect(ytdActualPeriod(snap)?.label).toBe('May 2025-26 Actual')
+    expect(citywideBudgetVsActual(snap)).toEqual([{ label: '2023-24', budget: 15000, actual: 13000 }])
+    expect(departmentChartRows(snap, '2026-27 Budget')[0]).toEqual({ label: 'Police', value: 11000 })
+  })
+
+  it('parses the local Burbank OpenGov Annual Departments CSV', () => {
+    const file = path.join(process.cwd(), 'Burbank Data Snapshot.csv')
+    expect(existsSync(file)).toBe(true)
+    const snap = parseOpenGovAnnualCsv(readFileSync(file, 'utf8'), 'Burbank Data Snapshot.csv')
+    expect(snap.departments.filter((d) => !d.isTotal)).toHaveLength(16)
+    expect(snap.periods).toHaveLength(7)
+    expect(latestBudgetPeriod(snap)?.label).toBe('2026-27 Budget')
+    const total = snap.departments.find((d) => d.isTotal)
+    expect(total?.amounts['2026-27 Budget']).toBe(1_011_663_440)
+    expect(total?.amounts['June 2024-25 Actual (Audited)']).toBe(723_522_747)
+    const police = snap.departments.find((d) => d.department === 'Police')
+    expect(police?.amounts['2026-27 Budget']).toBe(79_592_692)
+    expect(citywideBudgetVsActual(snap).map((r) => r.label)).toEqual(['2023-24', '2024-25'])
+  })
+
+  it('rolls up an OpenGov Accounts Payable listing', () => {
+    const snap = parseOpenGovPaymentsCsv(
+      [
+        '"Burbank"',
+        '"Accounts Payable Transactions"',
+        '"Download generated on 08/17/2026"',
+        '"https://burbankca.opengov.com/data/#/1296"',
+        '',
+        'Vendor Name,Payment Number,Payment Date,Invoice Number,Description,Invoice Amount,Purchase Order Number',
+        'CALPERS,CK:1,2025-08-15,INV1,RETIREMENT,100.5,',
+        'CALPERS,CK:2,2025-09-01,INV2,RETIREMENT,50,',
+        'US BANK,CK:3,2025-08-20,INV3,CARD,-10,',
+      ].join('\n'),
+      'OpenGov-Accounts-Payable.csv',
+    )
+    expect(snap.count).toBe(3)
+    expect(snap.total).toBeCloseTo(140.5)
+    expect(snap.dateStart).toBe('2025-08-15')
+    expect(snap.dateEnd).toBe('2025-09-01')
+    expect(snap.topVendors[0]).toEqual({ vendor: 'CALPERS', amount: 150.5, count: 2 })
+    expect(snap.byMonth).toEqual([
+      { month: '2025-08', amount: 90.5, count: 2 },
+      { month: '2025-09', amount: 50, count: 1 },
+    ])
+    expect(snap.dataClass).toBe('snapshot')
+  })
+
+  it('parses the local OpenGov Accounts Payable CSV', () => {
+    const file = path.join(process.cwd(), 'OpenGov-Accounts-Payable.csv')
+    expect(existsSync(file)).toBe(true)
+    const snap = parseOpenGovPaymentsCsv(readFileSync(file, 'utf8'), 'OpenGov-Accounts-Payable.csv')
+    expect(snap.count).toBe(17034)
+    expect(snap.total).toBeCloseTo(534739370.31, 2)
+    expect(snap.dateStart).toBe('2025-08-01')
+    expect(snap.dateEnd).toBe('2026-07-31')
+    expect(snap.topVendors[0]?.vendor).toBe('CALPERS')
   })
 })

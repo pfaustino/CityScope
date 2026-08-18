@@ -306,6 +306,47 @@ export type ClimateDay = {
   dataClass: DataClass
 }
 
+/** One OpenGov Annual column: adopted budget or an actuals cutoff. */
+export type OpenGovPeriod = {
+  label: string
+  fiscalYear: string
+  kind: 'budget' | 'actual'
+  asOfMonth: string | null
+  audited: boolean
+}
+
+export type OpenGovDepartmentRow = {
+  department: string
+  amounts: Record<string, number>
+  isTotal: boolean
+}
+
+/** Local OpenGov transparency CSV (Annual — Departments). Not a check register. */
+export type OpenGovAnnualSnapshot = {
+  city: string
+  report: string
+  generatedOn: string | null
+  fileName: string
+  periods: OpenGovPeriod[]
+  departments: OpenGovDepartmentRow[]
+  dataClass: DataClass
+}
+
+/** Vendor payment listing rollup. Not a contract register and not a department budget. */
+export type OpenGovPaymentRollup = {
+  fileName: string
+  report: string
+  generatedOn: string | null
+  sourceUrl: string
+  count: number
+  total: number
+  dateStart: string | null
+  dateEnd: string | null
+  byMonth: { month: string; amount: number; count: number }[]
+  topVendors: { vendor: string; amount: number; count: number }[]
+  dataClass: DataClass
+}
+
 export type LiveOverlay = {
   retrievedAt: string
   census: CensusSnapshot[] | null
@@ -323,6 +364,8 @@ export type LiveOverlay = {
   collisionsGlendale: Collision[] | null
   collisionsGlendaleFile: string | null
   hateCrimeEvents: HateCrimeEvent[] | null
+  budgetAnnual?: OpenGovAnnualSnapshot | null
+  payments?: OpenGovPaymentRollup | null
   errors: { sourceId: string; message: string }[]
 }
 
@@ -340,6 +383,8 @@ export type Warehouse = {
   collisionsGlendale: Collision[]
   collisionsGlendaleFile: string | null
   hateCrimeEvents: HateCrimeEvent[]
+  budgetAnnual: OpenGovAnnualSnapshot | null
+  payments: OpenGovPaymentRollup | null
   fbiAnnual: AgencyCrimeYear[]
   crimeAnnualGlendale: AgencyCrimeYear[]
   fbiAnnualGlendale: AgencyCrimeYear[]

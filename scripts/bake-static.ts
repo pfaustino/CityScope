@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url'
 import { liveSourceView, SOURCES } from '../shared/catalog.ts'
 import { parseForecast, parseQuakes } from '../shared/liveParse.ts'
 import { parseHateCrimeCsv } from '../shared/hateCrime.ts'
+import { parseOpenGovAnnualCsv, parseOpenGovPaymentsCsv, OPENGOV_ALT_FILE, OPENGOV_AP_FILE, OPENGOV_DEFAULT_FILE } from '../shared/opengov.ts'
 import { parseSwitrsCsv, SWITRS_DEFAULT_FILE, SWITRS_GLENDALE_FILE } from '../shared/switrs.ts'
 import type {
   AgencyCrimeYear,
@@ -124,6 +125,29 @@ function loadHateCrimeEvents(): HateCrimeEvent[] | null {
   return asArray<HateCrimeEvent>(latestRaw('ca-doj-openjustice-hate-crime'))
 }
 
+function loadBudgetAnnual(): LiveOverlay['budgetAnnual'] {
+  const candidates = [
+    path.join(ROOT, OPENGOV_DEFAULT_FILE),
+    path.join(ROOT, OPENGOV_ALT_FILE),
+    path.join(ROOT, 'data', OPENGOV_DEFAULT_FILE),
+    path.join(ROOT, 'data', OPENGOV_ALT_FILE),
+  ]
+  for (const file of candidates) {
+    if (!existsSync(file)) continue
+    return parseOpenGovAnnualCsv(readFileSync(file, 'utf8'), path.basename(file))
+  }
+  return null
+}
+
+function loadPayments(): LiveOverlay['payments'] {
+  const candidates = [path.join(ROOT, OPENGOV_AP_FILE), path.join(ROOT, 'data', OPENGOV_AP_FILE)]
+  for (const file of candidates) {
+    if (!existsSync(file)) continue
+    return parseOpenGovPaymentsCsv(readFileSync(file, 'utf8'), path.basename(file))
+  }
+  return null
+}
+
 function emptyOverlay(retrievedAt: string): LiveOverlay {
   return {
     retrievedAt,
@@ -142,6 +166,8 @@ function emptyOverlay(retrievedAt: string): LiveOverlay {
     collisionsGlendale: null,
     collisionsGlendaleFile: null,
     hateCrimeEvents: null,
+    budgetAnnual: null,
+    payments: null,
     errors: [],
   }
 }
@@ -166,6 +192,8 @@ export function bakeStaticOverlay(): LiveOverlay {
     overlay.collisionsGlendale = existing.collisionsGlendale
     overlay.collisionsGlendaleFile = existing.collisionsGlendaleFile
     overlay.hateCrimeEvents = existing.hateCrimeEvents
+    overlay.budgetAnnual = existing.budgetAnnual
+    overlay.payments = existing.payments
     overlay.retrievedAt = existing.retrievedAt
   }
 
@@ -210,6 +238,11 @@ export function bakeStaticOverlay(): LiveOverlay {
   const hateCrimeEvents = loadHateCrimeEvents()
   if (hateCrimeEvents && hateCrimeEvents.length > 0) overlay.hateCrimeEvents = hateCrimeEvents
 
+  const budgetAnnual = loadBudgetAnnual()
+  if (budgetAnnual) overlay.budgetAnnual = budgetAnnual
+  const payments = loadPayments()
+  if (payments) overlay.payments = payments
+
   overlay.retrievedAt = new Date().toISOString()
   overlay.errors = []
   const baked = snapshotize(overlay)
@@ -225,6 +258,6 @@ const invoked = process.argv[1] && path.basename(process.argv[1]).startsWith('ba
 if (invoked) {
   const overlay = bakeStaticOverlay()
   console.log(
-    `baked overlay ${overlay.retrievedAt} collisions=${overlay.collisions?.length ?? 0} glendaleCrashes=${overlay.collisionsGlendale?.length ?? 0} openjustice=${overlay.crimeAnnual?.length ?? 0} hatecrime=${overlay.hateCrimeEvents?.length ?? 0} glendale=${overlay.crimeAnnualGlendale?.length ?? 0}`,
+    `baked overlay ${overlay.retrievedAt} collisions=${overlay.collisions?.length ?? 0} glendaleCrashes=${overlay.collisionsGlendale?.length ?? 0} openjustice=${overlay.crimeAnnual?.length ?? 0} hatecrime=${overlay.hateCrimeEvents?.length ?? 0} glendale=${overlay.crimeAnnualGlendale?.length ?? 0} opengov=${overlay.budgetAnnual?.departments.length ?? 0} ap=${overlay.payments?.count ?? 0}`,
   )
 }

@@ -1,5 +1,5 @@
 {
-  "retrievedAt": "2026-08-17T15:45:48.536Z",
+  "retrievedAt": "2026-08-18T03:43:46.689Z",
   "census": [
     {
       "year": "2023",
@@ -108132,5 +108132,456 @@
       "dataClass": "snapshot"
     }
   ],
+  "budgetAnnual": {
+    "city": "Burbank",
+    "report": "Annual - Departments",
+    "generatedOn": "2026-08-17",
+    "fileName": "Burbank Data Snapshot.csv",
+    "periods": [
+      {
+        "label": "2023-24 Budget",
+        "fiscalYear": "2023-24",
+        "kind": "budget",
+        "asOfMonth": null,
+        "audited": false
+      },
+      {
+        "label": "June 2023-24 Actual",
+        "fiscalYear": "2023-24",
+        "kind": "actual",
+        "asOfMonth": "June",
+        "audited": false
+      },
+      {
+        "label": "2024-25 Budget",
+        "fiscalYear": "2024-25",
+        "kind": "budget",
+        "asOfMonth": null,
+        "audited": false
+      },
+      {
+        "label": "June 2024-25 Actual (Audited)",
+        "fiscalYear": "2024-25",
+        "kind": "actual",
+        "asOfMonth": "June",
+        "audited": true
+      },
+      {
+        "label": "2025-26 Budget",
+        "fiscalYear": "2025-26",
+        "kind": "budget",
+        "asOfMonth": null,
+        "audited": false
+      },
+      {
+        "label": "May 2025-26 Actual",
+        "fiscalYear": "2025-26",
+        "kind": "actual",
+        "asOfMonth": "May",
+        "audited": false
+      },
+      {
+        "label": "2026-27 Budget",
+        "fiscalYear": "2026-27",
+        "kind": "budget",
+        "asOfMonth": null,
+        "audited": false
+      }
+    ],
+    "departments": [
+      {
+        "department": "Burbank Water and Power",
+        "amounts": {
+          "2023-24 Budget": 415183909,
+          "June 2023-24 Actual": 279490205,
+          "2024-25 Budget": 426210449,
+          "June 2024-25 Actual (Audited)": 327485399,
+          "2025-26 Budget": 532080245,
+          "May 2025-26 Actual": 313260758,
+          "2026-27 Budget": 502614369
+        },
+        "isTotal": false
+      },
+      {
+        "department": "Public Works",
+        "amounts": {
+          "2023-24 Budget": 186887768,
+          "June 2023-24 Actual": 87094596,
+          "2024-25 Budget": 184246584,
+          "June 2024-25 Actual (Audited)": 88436489,
+          "2025-26 Budget": 200910462,
+          "May 2025-26 Actual": 91423911,
+          "2026-27 Budget": 141032307
+        },
+        "isTotal": false
+      },
+      {
+        "department": "Police",
+        "amounts": {
+          "2023-24 Budget": 81582587,
+          "June 2023-24 Actual": 71898688,
+          "2024-25 Budget": 86590803,
+          "June 2024-25 Actual (Audited)": 80561615,
+          "2025-26 Budget": 84709257,
+          "May 2025-26 Actual": 73840248,
+          "2026-27 Budget": 79592692
+        },
+        "isTotal": false
+      },
+      {
+        "department": "Community Development",
+        "amounts": {
+          "2023-24 Budget": 95619693,
+          "June 2023-24 Actual": 57191504,
+          "2024-25 Budget": 95117956,
+          "June 2024-25 Actual (Audited)": 53118236,
+          "2025-26 Budget": 98391813,
+          "May 2025-26 Actual": 49921710,
+          "2026-27 Budget": 59456780
+        },
+        "isTotal": false
+      },
+      {
+        "department": "Fire",
+        "amounts": {
+          "2023-24 Budget": 59016022,
+          "June 2023-24 Actual": 54322978,
+          "2024-25 Budget": 62384224,
+          "June 2024-25 Actual (Audited)": 53720931,
+          "2025-26 Budget": 56692318,
+          "May 2025-26 Actual": 52937052,
+          "2026-27 Budget": 60284597
+        },
+        "isTotal": false
+      },
+      {
+        "department": "Parks and Recreation",
+        "amounts": {
+          "2023-24 Budget": 59259056,
+          "June 2023-24 Actual": 38931757,
+          "2024-25 Budget": 67750448,
+          "June 2024-25 Actual (Audited)": 41771557,
+          "2025-26 Budget": 71582194,
+          "May 2025-26 Actual": 38797913,
+          "2026-27 Budget": 60327016
+        },
+        "isTotal": false
+      },
+      {
+        "department": "Management Services",
+        "amounts": {
+          "2023-24 Budget": 32332558,
+          "June 2023-24 Actual": 25838494,
+          "2024-25 Budget": 34365145,
+          "June 2024-25 Actual (Audited)": 26578555,
+          "2025-26 Budget": 36387791,
+          "May 2025-26 Actual": 26159976,
+          "2026-27 Budget": 37566953
+        },
+        "isTotal": false
+      },
+      {
+        "department": "Non-Departmental",
+        "amounts": {
+          "2023-24 Budget": 20027247,
+          "June 2023-24 Actual": 14314793,
+          "2024-25 Budget": 24198383,
+          "June 2024-25 Actual (Audited)": 16782053,
+          "2025-26 Budget": 28106925,
+          "May 2025-26 Actual": 23620486,
+          "2026-27 Budget": 11792161
+        },
+        "isTotal": false
+      },
+      {
+        "department": "Information Technology",
+        "amounts": {
+          "2023-24 Budget": 19161975,
+          "June 2023-24 Actual": 11201310,
+          "2024-25 Budget": 22574791,
+          "June 2024-25 Actual (Audited)": 14258811,
+          "2025-26 Budget": 25707348,
+          "May 2025-26 Actual": 14260131,
+          "2026-27 Budget": 20626194
+        },
+        "isTotal": false
+      },
+      {
+        "department": "Library",
+        "amounts": {
+          "2023-24 Budget": 11586414,
+          "June 2023-24 Actual": 9238982,
+          "2024-25 Budget": 11613243,
+          "June 2024-25 Actual (Audited)": 10202349,
+          "2025-26 Budget": 12692428,
+          "May 2025-26 Actual": 10163292,
+          "2026-27 Budget": 13208417
+        },
+        "isTotal": false
+      },
+      {
+        "department": "City Attorney",
+        "amounts": {
+          "2023-24 Budget": 5577897,
+          "June 2023-24 Actual": 4219439,
+          "2024-25 Budget": 6603282,
+          "June 2024-25 Actual (Audited)": 4743044,
+          "2025-26 Budget": 6935562,
+          "May 2025-26 Actual": 4834781,
+          "2026-27 Budget": 7528764
+        },
+        "isTotal": false
+      },
+      {
+        "department": "Financial Services",
+        "amounts": {
+          "2023-24 Budget": 6001848,
+          "June 2023-24 Actual": 1864644,
+          "2024-25 Budget": 6207655,
+          "June 2024-25 Actual (Audited)": 1782309,
+          "2025-26 Budget": 6530052,
+          "May 2025-26 Actual": 1485377,
+          "2026-27 Budget": 6807024
+        },
+        "isTotal": false
+      },
+      {
+        "department": "City Manager",
+        "amounts": {
+          "2023-24 Budget": 3573779,
+          "June 2023-24 Actual": 1740470,
+          "2024-25 Budget": 3594672,
+          "June 2024-25 Actual (Audited)": 1540013,
+          "2025-26 Budget": 4244210,
+          "May 2025-26 Actual": 2128850,
+          "2026-27 Budget": 4468845
+        },
+        "isTotal": false
+      },
+      {
+        "department": "City Clerk",
+        "amounts": {
+          "2023-24 Budget": 2789403,
+          "June 2023-24 Actual": 817278,
+          "2024-25 Budget": 2884791,
+          "June 2024-25 Actual (Audited)": 1192716,
+          "2025-26 Budget": 2938779,
+          "May 2025-26 Actual": 1018271,
+          "2026-27 Budget": 2578658
+        },
+        "isTotal": false
+      },
+      {
+        "department": "City Council",
+        "amounts": {
+          "2023-24 Budget": 1058737,
+          "June 2023-24 Actual": 704980,
+          "2024-25 Budget": 1662286,
+          "June 2024-25 Actual (Audited)": 1136969,
+          "2025-26 Budget": 2462653,
+          "May 2025-26 Actual": 1547308,
+          "2026-27 Budget": 2583594
+        },
+        "isTotal": false
+      },
+      {
+        "department": "City Treasurer",
+        "amounts": {
+          "2023-24 Budget": 1038292,
+          "June 2023-24 Actual": 164676,
+          "2024-25 Budget": 1197486,
+          "June 2024-25 Actual (Audited)": 211702,
+          "2025-26 Budget": 1262113,
+          "May 2025-26 Actual": 243063,
+          "2026-27 Budget": 1195069
+        },
+        "isTotal": false
+      },
+      {
+        "department": "Total",
+        "amounts": {
+          "2023-24 Budget": 1000697184,
+          "June 2023-24 Actual": 659034795,
+          "2024-25 Budget": 1037202199,
+          "June 2024-25 Actual (Audited)": 723522747,
+          "2025-26 Budget": 1171634148,
+          "May 2025-26 Actual": 705643129,
+          "2026-27 Budget": 1011663440
+        },
+        "isTotal": true
+      }
+    ],
+    "dataClass": "snapshot"
+  },
+  "payments": {
+    "fileName": "OpenGov-Accounts-Payable.csv",
+    "report": "Accounts Payable Transactions",
+    "generatedOn": "2026-08-17",
+    "sourceUrl": "https://burbankca.opengov.com/data/#/1296",
+    "count": 17034,
+    "total": 534739370.31000054,
+    "dateStart": "2025-08-01",
+    "dateEnd": "2026-07-31",
+    "byMonth": [
+      {
+        "month": "2025-08",
+        "amount": 32109339.109999966,
+        "count": 1759
+      },
+      {
+        "month": "2025-09",
+        "amount": 40076451.860000014,
+        "count": 1414
+      },
+      {
+        "month": "2025-10",
+        "amount": 30874306.759999976,
+        "count": 2002
+      },
+      {
+        "month": "2025-11",
+        "amount": 26603822.98,
+        "count": 1350
+      },
+      {
+        "month": "2025-12",
+        "amount": 37013636.380000055,
+        "count": 1305
+      },
+      {
+        "month": "2026-01",
+        "amount": 30389623.77999994,
+        "count": 1539
+      },
+      {
+        "month": "2026-02",
+        "amount": 42767674.73000002,
+        "count": 1453
+      },
+      {
+        "month": "2026-03",
+        "amount": 45476274.47000009,
+        "count": 1349
+      },
+      {
+        "month": "2026-04",
+        "amount": 57656089.08999993,
+        "count": 1509
+      },
+      {
+        "month": "2026-05",
+        "amount": 48296263.150000036,
+        "count": 1727
+      },
+      {
+        "month": "2026-07",
+        "amount": 143475888.00000015,
+        "count": 1627
+      }
+    ],
+    "topVendors": [
+      {
+        "vendor": "CALPERS",
+        "amount": 169780783.90000004,
+        "count": 73
+      },
+      {
+        "vendor": "SCPPA",
+        "amount": 91771934.33,
+        "count": 243
+      },
+      {
+        "vendor": "PAYROLL TAXES",
+        "amount": 39317042.60000001,
+        "count": 26
+      },
+      {
+        "vendor": "US BANK",
+        "amount": 25103488.959999997,
+        "count": 29
+      },
+      {
+        "vendor": "MISSION SQUARE RETIREMENT",
+        "amount": 12840495,
+        "count": 24
+      },
+      {
+        "vendor": "INTERMOUNTAIN POWER AGENC",
+        "amount": 12799011.11,
+        "count": 10
+      },
+      {
+        "vendor": "LOS ANGELES CITY DWP",
+        "amount": 11788024.399999995,
+        "count": 103
+      },
+      {
+        "vendor": "BP ENERGY CO",
+        "amount": 10196832.61,
+        "count": 49
+      },
+      {
+        "vendor": "EDF TRADING NORTH AMERICA",
+        "amount": 9343477.51,
+        "count": 11
+      },
+      {
+        "vendor": "INTERMOUNTAIN POWER AGENCY",
+        "amount": 6909672.83,
+        "count": 5
+      },
+      {
+        "vendor": "MISSION SQUARE RETIREMENT TRUST",
+        "amount": 6703040.880000001,
+        "count": 12
+      },
+      {
+        "vendor": "ATI RESTORATION LLC",
+        "amount": 5271086.500000001,
+        "count": 16
+      },
+      {
+        "vendor": "EDF TRADING NORTH AMERICA LLC",
+        "amount": 5246285,
+        "count": 6
+      },
+      {
+        "vendor": "CITY OF LOS ANGELES",
+        "amount": 4812039.35,
+        "count": 7
+      },
+      {
+        "vendor": "MORGAN STANLEY CAPITAL",
+        "amount": 4470487.17,
+        "count": 15
+      },
+      {
+        "vendor": "W A RASIC CONSTRUCTION CO",
+        "amount": 4320721.84,
+        "count": 10
+      },
+      {
+        "vendor": "UTAH ASSOC MUNI POWER SYS",
+        "amount": 4290638.499999999,
+        "count": 31
+      },
+      {
+        "vendor": "SEI PRIVATE TRUST COMPANY",
+        "amount": 4285000,
+        "count": 36
+      },
+      {
+        "vendor": "POWEREX",
+        "amount": 3854688.32,
+        "count": 16
+      },
+      {
+        "vendor": "ONESOURCE SUPPLY SOLUTION",
+        "amount": 2915644.29,
+        "count": 136
+      }
+    ],
+    "dataClass": "snapshot"
+  },
   "errors": []
 }

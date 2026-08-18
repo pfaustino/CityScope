@@ -196,6 +196,51 @@ describe('warehouse and analysis', () => {
     expect(merged.crime).toHaveLength(0)
   })
 
+  it('overlays an OpenGov Annual Departments snapshot', () => {
+    const merged = applyOverlay(wh, {
+      retrievedAt: '2026-08-17T12:00:00Z',
+      census: null,
+      weather: null,
+      earthquakes: null,
+      climate: null,
+      airQuality: null,
+      crimeAnnual: null,
+      fbiAnnual: null,
+      crimeAnnualGlendale: null,
+      fbiAnnualGlendale: null,
+      censusGlendale: null,
+      collisions: null,
+      collisionsFile: null,
+      collisionsGlendale: null,
+      collisionsGlendaleFile: null,
+      hateCrimeEvents: null,
+      budgetAnnual: {
+        city: 'Burbank',
+        report: 'Annual - Departments',
+        generatedOn: '2026-08-17',
+        fileName: 'Burbank Data Snapshot.csv',
+        periods: [
+          {
+            label: '2026-27 Budget',
+            fiscalYear: '2026-27',
+            kind: 'budget',
+            asOfMonth: null,
+            audited: false,
+          },
+        ],
+        departments: [
+          { department: 'Police', amounts: { '2026-27 Budget': 79592692 }, isTotal: false },
+          { department: 'Total', amounts: { '2026-27 Budget': 1011663440 }, isTotal: true },
+        ],
+        dataClass: 'snapshot',
+      },
+      errors: [],
+    })
+    expect(merged.budgetAnnual?.departments).toHaveLength(2)
+    expect(merged.budgetAnnual?.dataClass).toBe('snapshot')
+    expect(merged.expenditures).toHaveLength(0)
+  })
+
   it('replaces baked quakes with a live empty catalog and stamps snapshot on fetch failure', () => {
     const liveEmpty = mergePublicFeeds(
       wh,

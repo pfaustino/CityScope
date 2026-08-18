@@ -139,6 +139,33 @@ describe('liveSourceView', () => {
     expect(row.status).toBe('connected')
     expect(row.statusDetail).toMatch(/NCIC 1912/)
   })
+
+  it('marks OpenGov connected when overlay has the Annual Departments snapshot', () => {
+    const source = sourceById('burbank-opengov')
+    expect(source).toBeDefined()
+    if (!source) return
+    const row = liveSourceView(source, keysOn, {
+      retrievedAt: '2026-08-17T12:00:00Z',
+      census: null,
+      climate: [],
+      airQuality: [],
+      errors: [],
+      budgetAnnual: {
+        city: 'Burbank',
+        report: 'Annual - Departments',
+        generatedOn: '2026-08-17',
+        fileName: 'Burbank Data Snapshot.csv',
+        periods: [],
+        departments: [
+          { department: 'Police', amounts: { '2026-27 Budget': 1 }, isTotal: false },
+          { department: 'Total', amounts: { '2026-27 Budget': 1 }, isTotal: true },
+        ],
+        dataClass: 'snapshot',
+      },
+    })
+    expect(row.status).toBe('connected')
+    expect(row.statusDetail).toMatch(/1 departments from local Burbank Data Snapshot\.csv/)
+  })
 })
 
 describe('unconnected source obtain URLs', () => {

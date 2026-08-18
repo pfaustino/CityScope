@@ -25,6 +25,8 @@ export type SourceOverlayHints = {
   collisions?: unknown
   collisionsGlendale?: unknown
   hateCrimeEvents?: unknown
+  budgetAnnual?: unknown
+  payments?: unknown
   errors: { sourceId: string; message: string }[]
 }
 
@@ -120,14 +122,14 @@ export const SOURCES: SourceRecord[] = [
     rateLimit: 'Web portal; bulk API access is not documented for this instance',
     updateFrequency: 'monthly',
     geographicCoverage: 'City of Burbank',
-    historicalCoverage: 'Budget years published in OpenGov',
-    fieldsAvailable: ['budget', 'actuals', 'departments', 'funds'],
+    historicalCoverage: 'FY 2023-24 through 2026-27 Annual — Departments; AP payments 2025-08-01 through 2026-07-31',
+    fieldsAvailable: ['budget', 'actuals', 'departments', 'vendor', 'payment date', 'invoice amount'],
     lastSuccessfulRetrieval: null,
     lastModified: null,
     dataQualityRating: 3,
     legalAccess: 'PUBLIC',
     howToObtain:
-      'Browse and export from https://burbankca.opengov.com/transparency. Parse a structured export before CityScope can show expenditure totals. No demonstration ledger is shown.',
+      'No public signup; Login is city staff only. Annual — Departments: https://burbankca.opengov.com/transparency then Share → Spreadsheet (.csv) as Burbank Data Snapshot.csv. Accounts Payable: https://burbankca.opengov.com/data/#/1296 (Vendor Payment Listing). Refresh AP with node scripts/fetch-opengov-ap.mjs into OpenGov-Accounts-Payable.csv. These files are not a contracts register.',
     phase1Priority: 4,
   },
   {
@@ -568,6 +570,27 @@ export function liveSourceView(
     }
     return { ...source, status: statusFor(source), statusDetail: null }
   }
+  if (source.id === 'burbank-opengov') {
+    const parts: string[] = []
+    const snap = overlay?.budgetAnnual
+    if (isOpenGovSnapshot(snap)) {
+      const count = snap.departments.filter((row) => !row.isTotal).length
+      if (count > 0) parts.push(`${count} departments from local ${snap.fileName}`)
+    }
+    const payments = overlay?.payments
+    if (isPaymentRollup(payments) && payments.count > 0) {
+      parts.push(`${payments.count} AP payments from local ${payments.fileName}`)
+    }
+    if (parts.length > 0) {
+      return {
+        ...source,
+        status: 'connected',
+        lastSuccessfulRetrieval: overlay?.retrievedAt ?? source.lastSuccessfulRetrieval,
+        statusDetail: parts.join('; '),
+      }
+    }
+    return { ...source, status: statusFor(source), statusDetail: null }
+  }
   const keyed = KEYED_LIVE[source.id]
   const overlayField = keyed?.overlayField ?? PUBLIC_OVERLAY[source.id]
   const liveData = overlay && overlayField ? overlay[overlayField] : undefined
@@ -622,6 +645,24 @@ export function liveSourceView(
     status: 'connected',
     statusDetail: 'API key present on this machine.',
   }
+}
+
+function isOpenGovSnapshot(
+  value: unknown,
+): value is { fileName: string; departments: { isTotal?: boolean }[] } {
+  if (!value || typeof value !== 'object') return false
+  if (!('fileName' in value) || !('departments' in value)) return false
+  const fileName = (value as { fileName: unknown }).fileName
+  const departments = (value as { departments: unknown }).departments
+  return typeof fileName === 'string' && Array.isArray(departments)
+}
+
+function isPaymentRollup(value: unknown): value is { fileName: string; count: number } {
+  if (!value || typeof value !== 'object') return false
+  if (!('fileName' in value) || !('count' in value)) return false
+  const fileName = (value as { fileName: unknown }).fileName
+  const count = (value as { count: unknown }).count
+  return typeof fileName === 'string' && typeof count === 'number'
 }
 
 export function accessTone(access: AccessClass): string {

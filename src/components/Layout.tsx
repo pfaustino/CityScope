@@ -48,14 +48,26 @@ export function Layout() {
   const location = useLocation()
   const [navOpen, setNavOpen] = useState(false)
   const hasCollisions = warehouse.collisions.length > 0 || warehouse.collisionsGlendale.length > 0
+  const hasBudget = Boolean(warehouse.budgetAnnual)
   const groups = NAV.map((g) => {
-    if (g.group === 'With data' && hasCollisions) {
+    if (g.group === 'With data') {
+      const extra: { to: string; label: string }[] = []
+      if (hasCollisions) extra.push({ to: '/crashes', label: 'Crashes' })
+      if (hasBudget) extra.push({ to: '/money', label: 'Money' })
+      if (extra.length === 0) return g
       const beforeSources = g.items.filter((i) => i.to !== '/sources')
       const sources = g.items.filter((i) => i.to === '/sources')
-      return { ...g, items: [...beforeSources, { to: '/crashes', label: 'Crashes' }, ...sources] }
+      return { ...g, items: [...beforeSources, ...extra, ...sources] }
     }
-    if (g.group === 'No dataset yet' && hasCollisions) {
-      return { ...g, items: g.items.filter((i) => i.to !== '/crashes') }
+    if (g.group === 'No dataset yet') {
+      return {
+        ...g,
+        items: g.items.filter((i) => {
+          if (i.to === '/crashes' && hasCollisions) return false
+          if (i.to === '/money' && hasBudget) return false
+          return true
+        }),
+      }
     }
     return g
   })

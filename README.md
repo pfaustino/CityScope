@@ -4,7 +4,7 @@ Web desk that turns **Burbank, California** public data into verifiable informat
 
 **Public site:** https://pfaustino.github.io/CityScope/
 
-The GitHub Pages build is a static UI. It reads committed/baked public snapshots (OpenJustice annual totals, SWITRS collisions from `Crashes.csv`, Census, USGS, NWS, and other already-ingested series). Live keyed ingest stays local.
+The GitHub Pages build is a static UI. It reads committed/baked public snapshots (OpenJustice annual totals, SWITRS collisions from `Crashes.csv`, OpenGov Annual — Departments from `Burbank Data Snapshot.csv`, OpenGov Accounts Payable from `OpenGov-Accounts-Payable.csv`, Census, USGS, NWS, and other already-ingested series). Live keyed ingest stays local.
 
 ## Run locally
 
@@ -19,7 +19,7 @@ API: http://127.0.0.1:8787
 ```bash
 npm run check          # lint, typecheck, unit tests, build
 npm run ingest         # snapshot USGS, NWS, Census, NOAA, OpenJustice, FBI CDE, SWITRS (immutable files under data/raw)
-npm run bake           # write public/overlay.json + public/sources.json from snapshots + Crashes.csv (no API keys)
+npm run bake           # write public/overlay.json + public/sources.json from snapshots + Crashes.csv + OpenGov CSV (no API keys)
 ```
 
 ## What is live vs not connected
@@ -28,12 +28,14 @@ npm run bake           # write public/overlay.json + public/sources.json from sn
 | --- | --- | --- |
 | Census ACS (live with key; snapshots on Pages) | Crime incidents | Flock / ALPR |
 | USGS earthquakes | Business licenses | Use-of-force / complaints (CPRA) |
-| NWS forecast | Permits, OpenGov export, airport passengers | |
+| NWS forecast | Permits, airport passengers | |
 | NOAA GHCND (token; snapshots on Pages) | | |
 | AirNow (key; preliminary; snapshots on Pages) | | |
 | CA DOJ OpenJustice annual totals | | |
 | CA DOJ OpenJustice hate-crime events (NCIC 1912) | | |
 | SWITRS collisions (`Crashes.csv`) | | |
+| OpenGov Annual — Departments (`Burbank Data Snapshot.csv`) | | |
+| OpenGov Accounts Payable (`OpenGov-Accounts-Payable.csv`) | | |
 
 Click any statistic for provenance (source, query, period, transformation, limitations).
 

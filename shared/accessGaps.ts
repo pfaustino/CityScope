@@ -39,9 +39,12 @@ export const ACCESS_GAPS: AccessGap[] = [
     domain: 'spending',
     status: 'unavailable',
     headline: 'Access Status: Portal public — no structured API yet',
-    detail: 'OpenGov is publicly browsable. CityScope has not parsed a bulk export, so no expenditure totals are shown.',
-    howToObtain: 'Download or parse a structured export from the OpenGov transparency portal, or request a check register from Finance.',
-    portals: [{ name: 'Burbank OpenGov', url: 'https://burbankca.opengov.com/transparency' }],
+    detail: 'OpenGov Annual — Departments and Accounts Payable Transactions are parsed from local exports. Those files are not a contracts register.',
+    howToObtain: 'Annual: Share → Spreadsheet at https://burbankca.opengov.com/transparency. AP listing: https://burbankca.opengov.com/data/#/1296. Refresh AP with node scripts/fetch-opengov-ap.mjs.',
+    portals: [
+      { name: 'Burbank OpenGov', url: 'https://burbankca.opengov.com/transparency' },
+      { name: 'Accounts Payable Transactions', url: 'https://burbankca.opengov.com/data/#/1296' },
+    ],
   },
   {
     domain: 'collisions',

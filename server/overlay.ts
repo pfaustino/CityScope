@@ -9,6 +9,7 @@ import { fetchForecast } from './connectors/nws.ts'
 import { fetchHateCrimeEvents, loadHateCrimeEvents } from './connectors/hateCrime.ts'
 import { fetchOpenJusticeBundle } from './connectors/openjustice.ts'
 import { loadSwitrsCrashes } from './connectors/switrs.ts'
+import { loadOpenGovAnnual, loadOpenGovPayments } from './connectors/opengov.ts'
 import { fetchEarthquakes } from './connectors/usgs.ts'
 import { redact } from './http.ts'
 
@@ -120,6 +121,17 @@ export async function buildLiveOverlay(): Promise<LiveOverlay> {
           return
         }
         overlay.hateCrimeEvents = await fetchHateCrimeEvents()
+      },
+    },
+    {
+      sourceId: 'burbank-opengov',
+      run: async () => {
+        const result = loadOpenGovAnnual()
+        if (isGap(result)) errors.push({ sourceId: 'burbank-opengov', message: result.message })
+        else overlay.budgetAnnual = result
+        const payments = loadOpenGovPayments()
+        if (isGap(payments)) errors.push({ sourceId: 'burbank-opengov-ap', message: payments.message })
+        else overlay.payments = payments
       },
     },
   ]
