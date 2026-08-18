@@ -54,4 +54,19 @@ describe('campaign Form 460 snapshot', () => {
     expect(campaignUsd(25583.48)).toBe('$25,583.48')
     expect(campaignUsd(-736.05)).toBe('-$736.05')
   })
+
+  it('keeps Schedule A itemized plus unitemized equal to Line 1 Column B monetary', () => {
+    for (const committee of CAMPAIGN_SNAPSHOT.committees) {
+      const { itemizedTotal, unitemized } = committee.scheduleA
+      expect(itemizedTotal + unitemized).toBeCloseTo(committee.yearEnd460.monetaryContributions, 2)
+    }
+    const rizzotti = CAMPAIGN_SNAPSHOT.committees.find((c) => c.stateId === '1466605')
+    const anthony = CAMPAIGN_SNAPSHOT.committees.find((c) => c.stateId === '1470392')
+    expect(rizzotti?.scheduleA.itemized[0]?.name).toBe('Rennie Gabriel')
+    expect(rizzotti?.scheduleA.itemized[0]?.amount).toBe(750)
+    expect(anthony?.scheduleA.itemized.some((row) => row.name === 'Jae Kwak')).toBe(true)
+    expect(anthony?.scheduleA.itemized.some((row) => row.name === 'Abundant Housing LA PAC')).toBe(
+      true,
+    )
+  })
 })

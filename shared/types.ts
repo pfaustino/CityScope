@@ -220,6 +220,26 @@ export type CampaignForm470 = {
   pdfUrl: string
 }
 
+export type CampaignContributorCode = 'IND' | 'COM' | 'OTH' | 'PTY' | 'SCC'
+
+/** One itemized Schedule A contributor, summed across campaign-year Form 460s. */
+export type CampaignContributor = {
+  name: string
+  city: string | null
+  state: string | null
+  zip: string | null
+  contributorCode: CampaignContributorCode | null
+  occupationEmployer: string | null
+  amount: number
+  giftCount: number
+}
+
+export type CampaignScheduleA = {
+  itemized: CampaignContributor[]
+  itemizedTotal: number
+  unitemized: number
+}
+
 export type CampaignCommittee = {
   candidateName: string
   office: string
@@ -229,6 +249,7 @@ export type CampaignCommittee = {
   electionDate: string
   yearEnd460: CampaignForm460YearEnd
   officeholder470: CampaignForm470[]
+  scheduleA: CampaignScheduleA
 }
 
 /** Transcribed year-end Form 460 totals for sitting Burbank City Council members. Not every eFile filer. */

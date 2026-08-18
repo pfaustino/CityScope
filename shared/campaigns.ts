@@ -1,5 +1,6 @@
+import { SCHEDULE_A_BY_STATE_ID } from './campaignScheduleA.ts'
 import { makeProvenance } from './provenance.ts'
-import type { CampaignCommittee, CampaignSnapshot, Provenance, Warehouse } from './types.ts'
+import type { CampaignCommittee, CampaignContributorCode, CampaignSnapshot, Provenance, Warehouse } from './types.ts'
 
 export const EFILE_SEARCH_URL = 'https://efile.burbankca.gov/public/search/campaign'
 export const CAMPAIGN_SOURCE_ID = 'burbank-efile-campaign'
@@ -9,7 +10,10 @@ export const CAMPAIGN_LIMITATIONS = [
   'Line 5 Column B on the last campaign-year Form 460 is that calendar year’s contribution total. Summing every 460 in the year would double-count.',
   '2022 and 2024 are different elections. Totals from different years are not a same-race ranking.',
   'These totals are what the named candidate committees received. Independent expenditures for or against them are on other committees’ Form 496s and are not included.',
-  'This extract covers the five sitting Burbank City Council members’ last campaign-year Form 460, not every committee in eFile.',
+  'This extract covers the five sitting Burbank City Council members’ campaign-year Form 460 filings, not every committee in eFile.',
+  'Itemized names are from Schedule A on every Form 460 in that campaign calendar year. Gifts under $100 are usually unitemized unless the giver already hit $100 that year.',
+  'Unitemized is Line 1 Column B (monetary) minus the itemized Schedule A sum. It is not a list of people.',
+  'Street addresses are on the PDFs and are not copied here. Some committee names are shortened where the PDF layout split the name across columns.',
   'A contribution is not evidence that a later vote was caused by a donor. Correlation is not causation.',
   'Form 470 is a short-form certification that the officeholder does not expect to raise or spend $2,000 in that calendar year. It is not a dollar total.',
 ]
@@ -20,6 +24,12 @@ const OFFICE = 'City of Burbank Council Member'
 
 function pdf(ext: string): string {
   return `https://efile.burbankca.gov/pdfview?doc_public=${ext}`
+}
+
+function scheduleAFor(stateId: string) {
+  const row = SCHEDULE_A_BY_STATE_ID[stateId]
+  if (!row) throw new Error(`missing Schedule A extract for ${stateId}`)
+  return row
 }
 
 /** Year-end Form 460 Column B totals transcribed from the published PDFs. */
@@ -68,6 +78,7 @@ export const CAMPAIGN_SNAPSHOT: CampaignSnapshot = {
           pdfUrl: pdf('Ext_c325c335-7998-4cc0-9db3-db1e3420446e'),
         },
       ],
+      scheduleA: scheduleAFor('1466605'),
     },
     {
       candidateName: 'Konstantine Anthony',
@@ -100,6 +111,7 @@ export const CAMPAIGN_SNAPSHOT: CampaignSnapshot = {
           pdfUrl: pdf('Ext_a9a9458e-44e0-72f9-42f1-50f5bddefd22'),
         },
       ],
+      scheduleA: scheduleAFor('1470392'),
     },
     {
       candidateName: 'Zizette Mullins',
@@ -139,6 +151,7 @@ export const CAMPAIGN_SNAPSHOT: CampaignSnapshot = {
           pdfUrl: pdf('Ext_b54a156e-5af5-0e5d-3071-b6596c539716'),
         },
       ],
+      scheduleA: scheduleAFor('1450408'),
     },
     {
       candidateName: 'Nikki Perez',
@@ -178,6 +191,7 @@ export const CAMPAIGN_SNAPSHOT: CampaignSnapshot = {
           pdfUrl: pdf('Ext_5e9b64b3-bc79-467f-9407-6ed1ebc8f408'),
         },
       ],
+      scheduleA: scheduleAFor('1448423'),
     },
     {
       candidateName: 'Tamala Takahashi',
@@ -224,8 +238,17 @@ export const CAMPAIGN_SNAPSHOT: CampaignSnapshot = {
           pdfUrl: pdf('Ext_baa7cb5c-9c46-977d-899f-95a2190317eb'),
         },
       ],
+      scheduleA: scheduleAFor('1448296'),
     },
   ],
+}
+
+export const CONTRIBUTOR_CODE_LABEL: Record<CampaignContributorCode, string> = {
+  IND: 'Individual',
+  COM: 'Recipient committee',
+  OTH: 'Other',
+  PTY: 'Political party',
+  SCC: 'Small contributor committee',
 }
 
 export function campaignUsd(n: number): string {

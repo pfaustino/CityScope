@@ -150,6 +150,10 @@ export const SOURCES: SourceRecord[] = [
       'committee name',
       'state ID',
       'Form 460 Line 5 Column B',
+      'Schedule A itemized contributor',
+      'occupation',
+      'employer',
+      'city',
       'expenditures',
       'cash on hand',
       'Form 470 filing',
@@ -159,7 +163,7 @@ export const SOURCES: SourceRecord[] = [
     dataQualityRating: 4,
     legalAccess: 'PUBLIC',
     howToObtain:
-      'Public search at https://efile.burbankca.gov/public/search/campaign. Year-end Form 460 Line 5 Column B is the calendar-year contribution total; do not sum overlapping 460s. Independent expenditures are on other committees’ Form 496s. This CityScope extract covers the five sitting council members’ last campaign-year Form 460 (2022: Mullins 1450408, Perez 1448423, Takahashi 1448296; 2024: Rizzotti 1466605, Anthony 1470392).',
+      'Public search at https://efile.burbankca.gov/public/search/campaign. Year-end Form 460 Line 5 Column B is the calendar-year contribution total; do not sum overlapping 460s. Itemized names are Schedule A from every campaign-year 460 for that committee. Independent expenditures are on other committees’ Form 496s. This CityScope extract covers the five sitting council members (2022: Mullins 1450408, Perez 1448423, Takahashi 1448296; 2024: Rizzotti 1466605, Anthony 1470392).',
     phase1Priority: 4,
   },
   {

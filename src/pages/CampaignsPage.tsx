@@ -4,6 +4,7 @@ import {
   campaignContributionProvenance,
   campaignUsd,
   committeesByElectionYear,
+  CONTRIBUTOR_CODE_LABEL,
   contributionRatio,
   EFILE_SEARCH_URL,
 } from '@shared/campaigns.ts'
@@ -45,13 +46,13 @@ export function CampaignsPage() {
       <p className="lede">
         Sitting Burbank City Council members from{' '}
         <a href={EFILE_SEARCH_URL}>Burbank eFile</a>. Last campaign-year Form 460 Line 5 Column B
-        (calendar year to date), not a sum of every 460.
+        (calendar year to date), plus itemized Schedule A contributors from every 460 in that year.
       </p>
       <Banner kind="live">
         {CLAIM_LABEL.fact} / snapshot. Five sitting council members. 2022 and 2024 are different
         elections. These totals are what those committees received. Independent expenditures are not
-        included. A contribution is not evidence a later vote was caused by a donor. Correlation is
-        not causation.
+        included. Itemized names are Schedule A; smaller gifts are usually unitemized. A contribution
+        is not evidence a later vote was caused by a donor. Correlation is not causation.
       </Banner>
       <p>
         <span className="pill fact">{CLAIM_LABEL.fact}</span>
@@ -154,6 +155,67 @@ export function CampaignsPage() {
               </li>
               <li>Ending cash (Line 16): {campaignUsd(row.endingCashBalance)}</li>
             </ul>
+            <h3>Itemized Schedule A contributors</h3>
+            <p className="meta">
+              {CLAIM_LABEL.fact}. Names from Schedule A on every {committee.electionYear} campaign-year
+              Form 460 for this committee, not only the year-end statement. Rolled up by name and city.{' '}
+              {CLAIM_LABEL.calculation}: sorted large to small. Gifts under $100 are usually unitemized.
+              Street addresses are on the PDFs and are not listed here.
+            </p>
+            {committee.scheduleA.itemized.length > 0 ? (
+              <HorizontalMoneyChart
+                data={committee.scheduleA.itemized.slice(0, 10).map((person) => ({
+                  label: person.name,
+                  value: person.amount,
+                }))}
+                yAxisWidth={220}
+              />
+            ) : null}
+            <div className="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Contributor</th>
+                    <th>City</th>
+                    <th>Type</th>
+                    <th>Occupation / employer</th>
+                    <th className="num">Itemized</th>
+                    <th className="num">Gifts</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {committee.scheduleA.itemized.map((person) => (
+                    <tr key={`${committee.stateId}-${person.name}-${person.city ?? ''}-${person.zip ?? ''}`}>
+                      <td>{person.name}</td>
+                      <td>
+                        {[person.city, person.state].filter(Boolean).join(', ')}
+                      </td>
+                      <td>
+                        {person.contributorCode
+                          ? CONTRIBUTOR_CODE_LABEL[person.contributorCode]
+                          : ''}
+                      </td>
+                      <td>{person.occupationEmployer ?? ''}</td>
+                      <td className="num">{campaignUsd(person.amount)}</td>
+                      <td className="num">{person.giftCount}</td>
+                    </tr>
+                  ))}
+                  <tr>
+                    <td>Unitemized contributions of less than $100</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td className="num">{campaignUsd(committee.scheduleA.unitemized)}</td>
+                    <td className="num"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="meta">
+              {CLAIM_LABEL.calculation}. Itemized {campaignUsd(committee.scheduleA.itemizedTotal)} +
+              unitemized {campaignUsd(committee.scheduleA.unitemized)} = Line 1 Column B monetary{' '}
+              {campaignUsd(row.monetaryContributions)}.
+            </p>
             {committee.officeholder470.length > 0 ? (
               <>
                 <h3>Officeholder Form 470</h3>

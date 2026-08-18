@@ -290,6 +290,7 @@ describe('warehouse and analysis', () => {
               terminated: true,
             },
             officeholder470: [],
+            scheduleA: { itemized: [], itemizedTotal: 0, unitemized: 81575 },
           },
         ],
       },

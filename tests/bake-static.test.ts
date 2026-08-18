@@ -52,6 +52,11 @@ describe('static Pages bake', () => {
         (c) => c.stateId === '1448296' && c.yearEnd460.totalContributionsReceived === 17902,
       ),
     ).toBe(true)
+    expect(
+      overlay.campaigns?.committees.some(
+        (c) => c.stateId === '1466605' && c.scheduleA.itemized.some((row) => row.name === 'Rennie Gabriel'),
+      ),
+    ).toBe(true)
     const text = readFileSync(path.join(process.cwd(), 'public', 'overlay.json'), 'utf8')
     expect(text).not.toMatch(SECRET)
     expect(JSON.stringify(overlay)).not.toMatch(SECRET)

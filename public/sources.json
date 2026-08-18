@@ -73,7 +73,7 @@
       "street direction",
       "street name"
     ],
-    "lastSuccessfulRetrieval": "2026-08-18T18:26:15.441Z",
+    "lastSuccessfulRetrieval": "2026-08-18T19:13:06.854Z",
     "lastModified": null,
     "dataQualityRating": 3,
     "legalAccess": "PUBLIC",
@@ -102,7 +102,7 @@
       "payment date",
       "invoice amount"
     ],
-    "lastSuccessfulRetrieval": "2026-08-18T18:26:15.441Z",
+    "lastSuccessfulRetrieval": "2026-08-18T19:13:06.854Z",
     "lastModified": null,
     "dataQualityRating": 3,
     "legalAccess": "PUBLIC",
@@ -127,15 +127,19 @@
       "committee name",
       "state ID",
       "Form 460 Line 5 Column B",
+      "Schedule A itemized contributor",
+      "occupation",
+      "employer",
+      "city",
       "expenditures",
       "cash on hand",
       "Form 470 filing"
     ],
-    "lastSuccessfulRetrieval": "2026-08-18T18:26:15.441Z",
+    "lastSuccessfulRetrieval": "2026-08-18T19:13:06.854Z",
     "lastModified": null,
     "dataQualityRating": 4,
     "legalAccess": "PUBLIC",
-    "howToObtain": "Public search at https://efile.burbankca.gov/public/search/campaign. Year-end Form 460 Line 5 Column B is the calendar-year contribution total; do not sum overlapping 460s. Independent expenditures are on other committees’ Form 496s. This CityScope extract covers the five sitting council members’ last campaign-year Form 460 (2022: Mullins 1450408, Perez 1448423, Takahashi 1448296; 2024: Rizzotti 1466605, Anthony 1470392).",
+    "howToObtain": "Public search at https://efile.burbankca.gov/public/search/campaign. Year-end Form 460 Line 5 Column B is the calendar-year contribution total; do not sum overlapping 460s. Itemized names are Schedule A from every campaign-year 460 for that committee. Independent expenditures are on other committees’ Form 496s. This CityScope extract covers the five sitting council members (2022: Mullins 1450408, Perez 1448423, Takahashi 1448296; 2024: Rizzotti 1466605, Anthony 1470392).",
     "phase1Priority": 4,
     "status": "connected",
     "statusDetail": "5 sitting-council committees from year-end Form 460"
@@ -190,7 +194,7 @@
       "race",
       "ethnicity"
     ],
-    "lastSuccessfulRetrieval": "2026-08-18T18:26:15.441Z",
+    "lastSuccessfulRetrieval": "2026-08-18T19:13:06.854Z",
     "lastModified": "2024-12-01",
     "dataQualityRating": 5,
     "legalAccess": "API_KEY",
@@ -267,7 +271,7 @@
       "short forecast",
       "precipitation probability"
     ],
-    "lastSuccessfulRetrieval": "2026-08-18T18:26:15.441Z",
+    "lastSuccessfulRetrieval": "2026-08-18T19:13:06.854Z",
     "lastModified": "2026-08-15",
     "dataQualityRating": 5,
     "legalAccess": "PUBLIC",
@@ -296,7 +300,7 @@
       "depth",
       "event url"
     ],
-    "lastSuccessfulRetrieval": "2026-08-18T18:26:15.441Z",
+    "lastSuccessfulRetrieval": "2026-08-18T19:13:06.854Z",
     "lastModified": "2026-08-15",
     "dataQualityRating": 5,
     "legalAccess": "PUBLIC",
@@ -327,7 +331,7 @@
       "vehicle theft",
       "arson"
     ],
-    "lastSuccessfulRetrieval": "2026-08-18T18:26:15.441Z",
+    "lastSuccessfulRetrieval": "2026-08-18T19:13:06.854Z",
     "lastModified": "2025-07-01",
     "dataQualityRating": 4,
     "legalAccess": "PUBLIC",
@@ -360,7 +364,7 @@
       "TotalNumberOfVictims",
       "TotalNumberOfSuspects"
     ],
-    "lastSuccessfulRetrieval": "2026-08-18T18:26:15.441Z",
+    "lastSuccessfulRetrieval": "2026-08-18T19:13:06.854Z",
     "lastModified": "2026-07-01",
     "dataQualityRating": 4,
     "legalAccess": "PUBLIC",
@@ -385,7 +389,7 @@
       "offense counts by year",
       "violent/property summaries"
     ],
-    "lastSuccessfulRetrieval": "2026-08-18T18:26:15.441Z",
+    "lastSuccessfulRetrieval": "2026-08-18T19:13:06.854Z",
     "lastModified": null,
     "dataQualityRating": 4,
     "legalAccess": "API_KEY",
@@ -411,7 +415,7 @@
       "TMIN",
       "PRCP"
     ],
-    "lastSuccessfulRetrieval": "2026-08-18T18:26:15.441Z",
+    "lastSuccessfulRetrieval": "2026-08-18T19:13:06.854Z",
     "lastModified": null,
     "dataQualityRating": 5,
     "legalAccess": "API_KEY",
@@ -450,7 +454,7 @@
       "LIGHTING",
       "coordinates"
     ],
-    "lastSuccessfulRetrieval": "2026-08-18T18:26:15.441Z",
+    "lastSuccessfulRetrieval": "2026-08-18T19:13:06.854Z",
     "lastModified": null,
     "dataQualityRating": 4,
     "legalAccess": "REGISTRATION",
@@ -502,7 +506,7 @@
       "PM2.5",
       "ozone"
     ],
-    "lastSuccessfulRetrieval": "2026-08-18T18:26:15.441Z",
+    "lastSuccessfulRetrieval": "2026-08-18T19:13:06.854Z",
     "lastModified": null,
     "dataQualityRating": 4,
     "legalAccess": "API_KEY",
