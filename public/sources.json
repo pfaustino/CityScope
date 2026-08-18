@@ -56,30 +56,31 @@
   {
     "id": "burbank-permits",
     "name": "Burbank building permits / development",
-    "agency": "City of Burbank — Community Development",
-    "url": "https://permit.burbankca.gov/bop/jsp/online/onlineRegister.jsp?appId=elms",
-    "apiEndpoint": "https://permit.burbankca.gov/bop/onlineLogon.do",
-    "datasetId": null,
-    "authentication": "REGISTRATION",
-    "rateLimit": "Not published as a bulk API",
+    "agency": "City of Burbank — Community Development / City Clerk",
+    "url": "https://www.burbankca.gov/web/city-clerks-office/public-records-portal",
+    "apiEndpoint": "https://ccpa.burbankca.gov/PublicAccess/api/CustomQuery/KeywordSearch",
+    "datasetId": "onbase-query-172",
+    "authentication": "PUBLIC",
+    "rateLimit": "OnBase Public Access custom query; not a documented bulk download",
     "updateFrequency": "weekly",
     "geographicCoverage": "City of Burbank",
-    "historicalCoverage": "Unknown until a bulk extract is obtained",
+    "historicalCoverage": "Issued building documents 2024-01-02 through 2026-07-28",
     "fieldsAvailable": [
+      "permit number",
       "permit type",
-      "address",
-      "status",
-      "valuation",
-      "dates"
+      "date issued",
+      "street number",
+      "street direction",
+      "street name"
     ],
-    "lastSuccessfulRetrieval": null,
+    "lastSuccessfulRetrieval": "2026-08-18T04:29:50.791Z",
     "lastModified": null,
-    "dataQualityRating": 2,
-    "legalAccess": "REGISTRATION",
-    "howToObtain": "Register at https://permit.burbankca.gov/bop/jsp/online/onlineRegister.jsp?appId=elms then sign in at https://permit.burbankca.gov/bop/onlineLogon.do for individual lookups. Request a bulk CSV via CPRA at https://www.burbankca.gov/web/city-clerks-office/public-records-request. CityScope does not display fabricated permits.",
+    "dataQualityRating": 3,
+    "legalAccess": "PUBLIC",
+    "howToObtain": "Public OnBase search (no login) at https://ccpa.burbankca.gov/PublicAccess/cq-search/index.html, Search Type Building Documents. City page: https://www.burbankca.gov/web/city-clerks-office/public-records-portal. Refresh with node scripts/fetch-onbase-permits.mjs into OnBase-Building-Permits.csv. This listing has no valuation. Burbank Online Permits remains an applicant portal, not this dataset.",
     "phase1Priority": 3,
-    "status": "needs_registration",
-    "statusDetail": null
+    "status": "connected",
+    "statusDetail": "11192 issued permits from local OnBase-Building-Permits.csv"
   },
   {
     "id": "burbank-opengov",
@@ -101,7 +102,7 @@
       "payment date",
       "invoice amount"
     ],
-    "lastSuccessfulRetrieval": "2026-08-18T03:43:46.689Z",
+    "lastSuccessfulRetrieval": "2026-08-18T04:29:50.791Z",
     "lastModified": null,
     "dataQualityRating": 3,
     "legalAccess": "PUBLIC",
@@ -160,7 +161,7 @@
       "race",
       "ethnicity"
     ],
-    "lastSuccessfulRetrieval": "2026-08-18T03:43:46.689Z",
+    "lastSuccessfulRetrieval": "2026-08-18T04:29:50.791Z",
     "lastModified": "2024-12-01",
     "dataQualityRating": 5,
     "legalAccess": "API_KEY",
@@ -237,7 +238,7 @@
       "short forecast",
       "precipitation probability"
     ],
-    "lastSuccessfulRetrieval": "2026-08-18T03:43:46.689Z",
+    "lastSuccessfulRetrieval": "2026-08-18T04:29:50.791Z",
     "lastModified": "2026-08-15",
     "dataQualityRating": 5,
     "legalAccess": "PUBLIC",
@@ -266,7 +267,7 @@
       "depth",
       "event url"
     ],
-    "lastSuccessfulRetrieval": "2026-08-18T03:43:46.689Z",
+    "lastSuccessfulRetrieval": "2026-08-18T04:29:50.791Z",
     "lastModified": "2026-08-15",
     "dataQualityRating": 5,
     "legalAccess": "PUBLIC",
@@ -297,7 +298,7 @@
       "vehicle theft",
       "arson"
     ],
-    "lastSuccessfulRetrieval": "2026-08-18T03:43:46.689Z",
+    "lastSuccessfulRetrieval": "2026-08-18T04:29:50.791Z",
     "lastModified": "2025-07-01",
     "dataQualityRating": 4,
     "legalAccess": "PUBLIC",
@@ -330,7 +331,7 @@
       "TotalNumberOfVictims",
       "TotalNumberOfSuspects"
     ],
-    "lastSuccessfulRetrieval": "2026-08-18T03:43:46.689Z",
+    "lastSuccessfulRetrieval": "2026-08-18T04:29:50.791Z",
     "lastModified": "2026-07-01",
     "dataQualityRating": 4,
     "legalAccess": "PUBLIC",
@@ -355,7 +356,7 @@
       "offense counts by year",
       "violent/property summaries"
     ],
-    "lastSuccessfulRetrieval": "2026-08-18T03:43:46.689Z",
+    "lastSuccessfulRetrieval": "2026-08-18T04:29:50.791Z",
     "lastModified": null,
     "dataQualityRating": 4,
     "legalAccess": "API_KEY",
@@ -381,7 +382,7 @@
       "TMIN",
       "PRCP"
     ],
-    "lastSuccessfulRetrieval": "2026-08-18T03:43:46.689Z",
+    "lastSuccessfulRetrieval": "2026-08-18T04:29:50.791Z",
     "lastModified": null,
     "dataQualityRating": 5,
     "legalAccess": "API_KEY",
@@ -420,7 +421,7 @@
       "LIGHTING",
       "coordinates"
     ],
-    "lastSuccessfulRetrieval": "2026-08-18T03:43:46.689Z",
+    "lastSuccessfulRetrieval": "2026-08-18T04:29:50.791Z",
     "lastModified": null,
     "dataQualityRating": 4,
     "legalAccess": "REGISTRATION",
@@ -472,7 +473,7 @@
       "PM2.5",
       "ozone"
     ],
-    "lastSuccessfulRetrieval": "2026-08-18T03:43:46.689Z",
+    "lastSuccessfulRetrieval": "2026-08-18T04:29:50.791Z",
     "lastModified": null,
     "dataQualityRating": 4,
     "legalAccess": "API_KEY",

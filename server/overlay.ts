@@ -10,6 +10,7 @@ import { fetchHateCrimeEvents, loadHateCrimeEvents } from './connectors/hateCrim
 import { fetchOpenJusticeBundle } from './connectors/openjustice.ts'
 import { loadSwitrsCrashes } from './connectors/switrs.ts'
 import { loadOpenGovAnnual, loadOpenGovPayments } from './connectors/opengov.ts'
+import { loadOnBasePermits } from './connectors/onbase.ts'
 import { fetchEarthquakes } from './connectors/usgs.ts'
 import { redact } from './http.ts'
 
@@ -132,6 +133,14 @@ export async function buildLiveOverlay(): Promise<LiveOverlay> {
         const payments = loadOpenGovPayments()
         if (isGap(payments)) errors.push({ sourceId: 'burbank-opengov-ap', message: payments.message })
         else overlay.payments = payments
+      },
+    },
+    {
+      sourceId: 'burbank-permits',
+      run: async () => {
+        const listing = loadOnBasePermits()
+        if (isGap(listing)) errors.push({ sourceId: 'burbank-permits', message: listing.message })
+        else overlay.permitListing = listing
       },
     },
   ]

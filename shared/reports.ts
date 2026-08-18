@@ -438,7 +438,7 @@ function demoReport(def: (typeof REPORT_DEFS)[number], wh: Warehouse): Report {
     ].filter(Boolean),
     notable: ['QuickFacts mixes vintages; income on the 2025 QuickFacts row is ACS 2020–2024, not a 2025 income survey.'],
     crossDataset: ['Demographic change is not evidence that any local policy caused population movement.'],
-    unknown: ['Tract-level ACS, language, commuting.', 'Housing permits are not connected (city portal, not a bulk API).'],
+    unknown: ['Tract-level ACS, language, commuting.', 'OnBase issued-permit listing has no valuation.'],
     sources: ['census-acs; https://www.census.gov/quickfacts/burbankcitycalifornia'],
     qualityAnswers: quality(
       'Published Census/ACS/PEP figures, plus live ACS when the key ingest succeeds.',

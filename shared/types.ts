@@ -171,6 +171,29 @@ export type PermitRecord = {
   dataClass: DataClass
 }
 
+export type OnBasePermitRow = {
+  permitNo: string
+  streetNo: string
+  streetDirection: string
+  streetName: string
+  permitType: string
+  issuedOn: string
+}
+
+export type OnBasePermitSnapshot = {
+  fileName: string
+  report: string
+  generatedOn: string | null
+  sourceUrl: string
+  count: number
+  dateStart: string | null
+  dateEnd: string | null
+  byMonth: { month: string; count: number }[]
+  byType: { type: string; count: number }[]
+  rows: OnBasePermitRow[]
+  dataClass: DataClass
+}
+
 export type DevelopmentProject = {
   id: string
   title: string
@@ -366,6 +389,7 @@ export type LiveOverlay = {
   hateCrimeEvents: HateCrimeEvent[] | null
   budgetAnnual?: OpenGovAnnualSnapshot | null
   payments?: OpenGovPaymentRollup | null
+  permitListing?: OnBasePermitSnapshot | null
   errors: { sourceId: string; message: string }[]
 }
 
@@ -385,6 +409,7 @@ export type Warehouse = {
   hateCrimeEvents: HateCrimeEvent[]
   budgetAnnual: OpenGovAnnualSnapshot | null
   payments: OpenGovPaymentRollup | null
+  permitListing: OnBasePermitSnapshot | null
   fbiAnnual: AgencyCrimeYear[]
   crimeAnnualGlendale: AgencyCrimeYear[]
   fbiAnnualGlendale: AgencyCrimeYear[]

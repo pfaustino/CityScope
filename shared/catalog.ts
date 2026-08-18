@@ -27,6 +27,7 @@ export type SourceOverlayHints = {
   hateCrimeEvents?: unknown
   budgetAnnual?: unknown
   payments?: unknown
+  permitListing?: unknown
   errors: { sourceId: string; message: string }[]
 }
 
@@ -93,22 +94,22 @@ export const SOURCES: SourceRecord[] = [
   {
     id: 'burbank-permits',
     name: 'Burbank building permits / development',
-    agency: 'City of Burbank — Community Development',
-    url: 'https://permit.burbankca.gov/bop/jsp/online/onlineRegister.jsp?appId=elms',
-    apiEndpoint: 'https://permit.burbankca.gov/bop/onlineLogon.do',
-    datasetId: null,
-    authentication: 'REGISTRATION',
-    rateLimit: 'Not published as a bulk API',
+    agency: 'City of Burbank — Community Development / City Clerk',
+    url: 'https://www.burbankca.gov/web/city-clerks-office/public-records-portal',
+    apiEndpoint: 'https://ccpa.burbankca.gov/PublicAccess/api/CustomQuery/KeywordSearch',
+    datasetId: 'onbase-query-172',
+    authentication: 'PUBLIC',
+    rateLimit: 'OnBase Public Access custom query; not a documented bulk download',
     updateFrequency: 'weekly',
     geographicCoverage: 'City of Burbank',
-    historicalCoverage: 'Unknown until a bulk extract is obtained',
-    fieldsAvailable: ['permit type', 'address', 'status', 'valuation', 'dates'],
+    historicalCoverage: 'Issued building documents 2024-01-02 through 2026-07-28',
+    fieldsAvailable: ['permit number', 'permit type', 'date issued', 'street number', 'street direction', 'street name'],
     lastSuccessfulRetrieval: null,
     lastModified: null,
-    dataQualityRating: 2,
-    legalAccess: 'REGISTRATION',
+    dataQualityRating: 3,
+    legalAccess: 'PUBLIC',
     howToObtain:
-      'Register at https://permit.burbankca.gov/bop/jsp/online/onlineRegister.jsp?appId=elms then sign in at https://permit.burbankca.gov/bop/onlineLogon.do for individual lookups. Request a bulk CSV via CPRA at https://www.burbankca.gov/web/city-clerks-office/public-records-request. CityScope does not display fabricated permits.',
+      'Public OnBase search (no login) at https://ccpa.burbankca.gov/PublicAccess/cq-search/index.html, Search Type Building Documents. City page: https://www.burbankca.gov/web/city-clerks-office/public-records-portal. Refresh with node scripts/fetch-onbase-permits.mjs into OnBase-Building-Permits.csv. This listing has no valuation. Burbank Online Permits remains an applicant portal, not this dataset.',
     phase1Priority: 3,
   },
   {
@@ -591,6 +592,18 @@ export function liveSourceView(
     }
     return { ...source, status: statusFor(source), statusDetail: null }
   }
+  if (source.id === 'burbank-permits') {
+    const listing = overlay?.permitListing
+    if (isPermitListing(listing) && listing.count > 0) {
+      return {
+        ...source,
+        status: 'connected',
+        lastSuccessfulRetrieval: overlay?.retrievedAt ?? source.lastSuccessfulRetrieval,
+        statusDetail: `${listing.count} issued permits from local ${listing.fileName}`,
+      }
+    }
+    return { ...source, status: statusFor(source), statusDetail: null }
+  }
   const keyed = KEYED_LIVE[source.id]
   const overlayField = keyed?.overlayField ?? PUBLIC_OVERLAY[source.id]
   const liveData = overlay && overlayField ? overlay[overlayField] : undefined
@@ -663,6 +676,10 @@ function isPaymentRollup(value: unknown): value is { fileName: string; count: nu
   const fileName = (value as { fileName: unknown }).fileName
   const count = (value as { count: unknown }).count
   return typeof fileName === 'string' && typeof count === 'number'
+}
+
+function isPermitListing(value: unknown): value is { fileName: string; count: number } {
+  return isPaymentRollup(value)
 }
 
 export function accessTone(access: AccessClass): string {

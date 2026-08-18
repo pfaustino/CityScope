@@ -160,7 +160,7 @@ export function dataHealth(wh: Warehouse) {
     restricted: ['burbank-pd', 'flock-alpr', 'bpd-uof'],
     unavailable: [
       'burbank-business',
-      'burbank-permits',
+      ...(wh.permitListing ? [] : ['burbank-permits']),
       ...(wh.budgetAnnual ? [] : ['burbank-opengov']),
       'bur-airport',
       ...(wh.collisions.length > 0 || wh.collisionsGlendale.length > 0 ? [] : ['switrs']),
@@ -170,7 +170,7 @@ export function dataHealth(wh: Warehouse) {
     recordCounts: {
       crime: wh.crime.length,
       businesses: wh.businesses.length,
-      permits: wh.permits.length,
+      permits: wh.permitListing?.count ?? wh.permits.length,
       expenditures: wh.expenditures.length,
       budgetDepartments: wh.budgetAnnual ? wh.budgetAnnual.departments.filter((d) => !d.isTotal).length : 0,
       collisions: wh.collisions.length,

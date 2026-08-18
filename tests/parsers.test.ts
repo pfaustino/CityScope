@@ -27,6 +27,7 @@ import {
   parseOpenGovPaymentsCsv,
   ytdActualPeriod,
 } from '../shared/opengov.ts'
+import { parseOnBasePermitsCsv } from '../shared/onbase.ts'
 
 describe('live parsers', () => {
   it('documents the public XML URLs used on page load', () => {
@@ -520,5 +521,39 @@ describe('live parsers', () => {
     expect(snap.dateStart).toBe('2025-08-01')
     expect(snap.dateEnd).toBe('2026-07-31')
     expect(snap.topVendors[0]?.vendor).toBe('CALPERS')
+  })
+
+  it('rolls up an OnBase Building Documents listing', () => {
+    const snap = parseOnBasePermitsCsv(
+      [
+        '"Burbank"',
+        '"Building Documents"',
+        '"Download generated on 08/17/2026"',
+        '"https://ccpa.burbankca.gov/PublicAccess/cq-search/index.html"',
+        '',
+        'Street No,Street Direction,Street Name,Permit No,Permit Type,Date Issued',
+        '3717,W,VICTORY BLVD,BS2209436,ACCESSORY DWELLING UNIT,7/19/2024',
+        '340,N,FREDERIC ST,BS2607056,ELECTRICAL SERVICE,6/30/2026',
+        '340,N,FREDERIC ST,BS2607056,ELECTRICAL SERVICE,6/30/2026',
+        '1506,N,MAPLE ST,BS2605450,SINGLE-FAMILY REPAIR / MAINTENANCE,6/5/2026',
+      ].join('\n'),
+      'OnBase-Building-Permits.csv',
+    )
+    expect(snap.count).toBe(3)
+    expect(snap.dateStart).toBe('2024-07-19')
+    expect(snap.dateEnd).toBe('2026-06-30')
+    expect(snap.byType[0]).toEqual({ type: 'ACCESSORY DWELLING UNIT', count: 1 })
+    expect(snap.rows[0]?.permitNo).toBe('BS2607056')
+    expect(snap.dataClass).toBe('snapshot')
+  })
+
+  it('parses the local OnBase Building Documents CSV', () => {
+    const file = path.join(process.cwd(), 'OnBase-Building-Permits.csv')
+    expect(existsSync(file)).toBe(true)
+    const snap = parseOnBasePermitsCsv(readFileSync(file, 'utf8'), 'OnBase-Building-Permits.csv')
+    expect(snap.count).toBe(11192)
+    expect(snap.dateStart).toBe('2024-01-02')
+    expect(snap.dateEnd).toBe('2026-07-28')
+    expect(snap.byType.some((row) => row.type === 'ACCESSORY DWELLING UNIT')).toBe(true)
   })
 })

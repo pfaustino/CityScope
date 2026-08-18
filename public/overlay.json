@@ -1,5 +1,5 @@
 {
-  "retrievedAt": "2026-08-18T03:43:46.689Z",
+  "retrievedAt": "2026-08-18T04:29:50.791Z",
   "census": [
     {
       "year": "2023",
@@ -108579,6 +108579,1846 @@
         "vendor": "ONESOURCE SUPPLY SOLUTION",
         "amount": 2915644.29,
         "count": 136
+      }
+    ],
+    "dataClass": "snapshot"
+  },
+  "permitListing": {
+    "fileName": "OnBase-Building-Permits.csv",
+    "report": "Building Documents",
+    "generatedOn": "2026-08-17",
+    "sourceUrl": "https://ccpa.burbankca.gov/PublicAccess/cq-search/index.html",
+    "count": 11192,
+    "dateStart": "2024-01-02",
+    "dateEnd": "2026-07-28",
+    "byMonth": [
+      {
+        "month": "2024-01",
+        "count": 362
+      },
+      {
+        "month": "2024-02",
+        "count": 319
+      },
+      {
+        "month": "2024-03",
+        "count": 334
+      },
+      {
+        "month": "2024-04",
+        "count": 395
+      },
+      {
+        "month": "2024-05",
+        "count": 460
+      },
+      {
+        "month": "2024-06",
+        "count": 377
+      },
+      {
+        "month": "2024-07",
+        "count": 417
+      },
+      {
+        "month": "2024-08",
+        "count": 397
+      },
+      {
+        "month": "2024-09",
+        "count": 376
+      },
+      {
+        "month": "2024-10",
+        "count": 420
+      },
+      {
+        "month": "2024-11",
+        "count": 329
+      },
+      {
+        "month": "2024-12",
+        "count": 293
+      },
+      {
+        "month": "2025-01",
+        "count": 445
+      },
+      {
+        "month": "2025-02",
+        "count": 454
+      },
+      {
+        "month": "2025-03",
+        "count": 427
+      },
+      {
+        "month": "2025-04",
+        "count": 496
+      },
+      {
+        "month": "2025-05",
+        "count": 344
+      },
+      {
+        "month": "2025-06",
+        "count": 445
+      },
+      {
+        "month": "2025-07",
+        "count": 370
+      },
+      {
+        "month": "2025-08",
+        "count": 313
+      },
+      {
+        "month": "2025-09",
+        "count": 304
+      },
+      {
+        "month": "2025-10",
+        "count": 399
+      },
+      {
+        "month": "2025-11",
+        "count": 277
+      },
+      {
+        "month": "2025-12",
+        "count": 259
+      },
+      {
+        "month": "2026-01",
+        "count": 284
+      },
+      {
+        "month": "2026-02",
+        "count": 252
+      },
+      {
+        "month": "2026-03",
+        "count": 330
+      },
+      {
+        "month": "2026-04",
+        "count": 328
+      },
+      {
+        "month": "2026-05",
+        "count": 342
+      },
+      {
+        "month": "2026-06",
+        "count": 348
+      },
+      {
+        "month": "2026-07",
+        "count": 296
+      }
+    ],
+    "byType": [
+      {
+        "type": "SINGLE-FAMILY REPAIR / MAINTENANCE",
+        "count": 2512
+      },
+      {
+        "type": "ELECTRICAL SERVICE",
+        "count": 1469
+      },
+      {
+        "type": "ELECTRICAL",
+        "count": 1223
+      },
+      {
+        "type": "PLUMBING",
+        "count": 958
+      },
+      {
+        "type": "SINGLE-FAMILY ADDITION / ALTERATION",
+        "count": 909
+      },
+      {
+        "type": "MECHANICAL",
+        "count": 797
+      },
+      {
+        "type": "MULTI-FAMILY REPAIR AND MAINTENANCE",
+        "count": 694
+      },
+      {
+        "type": "ACCESSORY DWELLING UNIT",
+        "count": 627
+      },
+      {
+        "type": "COMMERCIAL TENANT IMPROVEMENT",
+        "count": 353
+      },
+      {
+        "type": "MULTI-FAMILY ADDITION AND ALTERATION",
+        "count": 247
+      },
+      {
+        "type": "COMMERCIAL REPAIR AND MAINTENANCE",
+        "count": 235
+      },
+      {
+        "type": "DEMOLITION",
+        "count": 202
+      },
+      {
+        "type": "POOL/SPA",
+        "count": 192
+      },
+      {
+        "type": "SIGN",
+        "count": 147
+      },
+      {
+        "type": "NEW SINGLE-FAMILY DWELLING",
+        "count": 133
+      },
+      {
+        "type": "SITEWORK",
+        "count": 117
+      },
+      {
+        "type": "NEW COMMERCIAL STRUCTURE",
+        "count": 97
+      },
+      {
+        "type": "SOLAR",
+        "count": 83
+      },
+      {
+        "type": "SINGLE-FAMILY ACCESSORY BUILDING",
+        "count": 65
+      },
+      {
+        "type": "MEP COMBO",
+        "count": 40
+      },
+      {
+        "type": "COMMERCIAL ADDITION AND ALTERATION",
+        "count": 39
+      },
+      {
+        "type": "GRADING & SHORING",
+        "count": 27
+      },
+      {
+        "type": "NEW MULTI-FAMILY DWELLING",
+        "count": 19
+      },
+      {
+        "type": "BUILDING",
+        "count": 5
+      },
+      {
+        "type": "MULTI-FAMILY ACCESSORY BUILDING",
+        "count": 2
+      }
+    ],
+    "rows": [
+      {
+        "permitNo": "BS2401560",
+        "streetNo": "777",
+        "streetDirection": "N",
+        "streetName": "FRONT ST",
+        "permitType": "ELECTRICAL",
+        "issuedOn": "2026-07-28"
+      },
+      {
+        "permitNo": "BS2511800",
+        "streetNo": "3513",
+        "streetDirection": "W",
+        "streetName": "ALAMEDA AVE",
+        "permitType": "ELECTRICAL SERVICE",
+        "issuedOn": "2026-07-28"
+      },
+      {
+        "permitNo": "BS2512536",
+        "streetNo": "1318",
+        "streetDirection": "N",
+        "streetName": "ORCHARD DR",
+        "permitType": "ACCESSORY DWELLING UNIT",
+        "issuedOn": "2026-07-28"
+      },
+      {
+        "permitNo": "BS2601190",
+        "streetNo": "1711",
+        "streetDirection": "",
+        "streetName": "GRISMER AVE",
+        "permitType": "MULTI-FAMILY ADDITION AND ALTERATION",
+        "issuedOn": "2026-07-28"
+      },
+      {
+        "permitNo": "BS2602068",
+        "streetNo": "3301",
+        "streetDirection": "",
+        "streetName": "BROOKSHIRE CT",
+        "permitType": "SINGLE-FAMILY ADDITION / ALTERATION",
+        "issuedOn": "2026-07-28"
+      },
+      {
+        "permitNo": "BS2602958",
+        "streetNo": "714",
+        "streetDirection": "E",
+        "streetName": "TUJUNGA AVE",
+        "permitType": "ELECTRICAL SERVICE",
+        "issuedOn": "2026-07-28"
+      },
+      {
+        "permitNo": "BS2604975",
+        "streetNo": "500",
+        "streetDirection": "S",
+        "streetName": "BUENA VISTA ST",
+        "permitType": "ELECTRICAL",
+        "issuedOn": "2026-07-28"
+      },
+      {
+        "permitNo": "BS2607886",
+        "streetNo": "724",
+        "streetDirection": "N",
+        "streetName": "ROSE ST",
+        "permitType": "ELECTRICAL SERVICE",
+        "issuedOn": "2026-07-28"
+      },
+      {
+        "permitNo": "BS2607927",
+        "streetNo": "1551",
+        "streetDirection": "N",
+        "streetName": "VICTORY PL",
+        "permitType": "MECHANICAL",
+        "issuedOn": "2026-07-28"
+      },
+      {
+        "permitNo": "BS2608019",
+        "streetNo": "2011",
+        "streetDirection": "W",
+        "streetName": "OLIVE AVE",
+        "permitType": "PLUMBING",
+        "issuedOn": "2026-07-28"
+      },
+      {
+        "permitNo": "BS2608042",
+        "streetNo": "2016",
+        "streetDirection": "W",
+        "streetName": "OAK ST",
+        "permitType": "NEW SINGLE-FAMILY DWELLING",
+        "issuedOn": "2026-07-28"
+      },
+      {
+        "permitNo": "BS2608088",
+        "streetNo": "1113",
+        "streetDirection": "N",
+        "streetName": "GRIFFITH PARK DR",
+        "permitType": "MEP COMBO",
+        "issuedOn": "2026-07-28"
+      },
+      {
+        "permitNo": "BS2608091",
+        "streetNo": "3036",
+        "streetDirection": "",
+        "streetName": "SCOTT RD",
+        "permitType": "SINGLE-FAMILY REPAIR / MAINTENANCE",
+        "issuedOn": "2026-07-28"
+      },
+      {
+        "permitNo": "BS2608092",
+        "streetNo": "1044",
+        "streetDirection": "N",
+        "streetName": "ONTARIO ST",
+        "permitType": "SINGLE-FAMILY REPAIR / MAINTENANCE",
+        "issuedOn": "2026-07-28"
+      },
+      {
+        "permitNo": "BS2608093",
+        "streetNo": "500",
+        "streetDirection": "S",
+        "streetName": "BUENA VISTA ST",
+        "permitType": "PLUMBING",
+        "issuedOn": "2026-07-28"
+      },
+      {
+        "permitNo": "BS2608095",
+        "streetNo": "500",
+        "streetDirection": "S",
+        "streetName": "BUENA VISTA ST",
+        "permitType": "ELECTRICAL",
+        "issuedOn": "2026-07-28"
+      },
+      {
+        "permitNo": "BS2608099",
+        "streetNo": "836",
+        "streetDirection": "N",
+        "streetName": "PARISH PL",
+        "permitType": "SINGLE-FAMILY REPAIR / MAINTENANCE",
+        "issuedOn": "2026-07-28"
+      },
+      {
+        "permitNo": "BS2608101",
+        "streetNo": "906",
+        "streetDirection": "N",
+        "streetName": "VALLEY ST",
+        "permitType": "ELECTRICAL SERVICE",
+        "issuedOn": "2026-07-28"
+      },
+      {
+        "permitNo": "BS2608114",
+        "streetNo": "3058",
+        "streetDirection": "N",
+        "streetName": "LIMA ST",
+        "permitType": "ELECTRICAL SERVICE",
+        "issuedOn": "2026-07-28"
+      },
+      {
+        "permitNo": "BS2608127",
+        "streetNo": "1711",
+        "streetDirection": "",
+        "streetName": "GRISMER AVE",
+        "permitType": "MECHANICAL",
+        "issuedOn": "2026-07-28"
+      },
+      {
+        "permitNo": "BS2608128",
+        "streetNo": "1711",
+        "streetDirection": "",
+        "streetName": "GRISMER AVE",
+        "permitType": "ELECTRICAL",
+        "issuedOn": "2026-07-28"
+      },
+      {
+        "permitNo": "BS2608129",
+        "streetNo": "1711",
+        "streetDirection": "",
+        "streetName": "GRISMER AVE",
+        "permitType": "PLUMBING",
+        "issuedOn": "2026-07-28"
+      },
+      {
+        "permitNo": "BS2211708",
+        "streetNo": "223",
+        "streetDirection": "S",
+        "streetName": "KENNETH RD",
+        "permitType": "ACCESSORY DWELLING UNIT",
+        "issuedOn": "2026-07-27"
+      },
+      {
+        "permitNo": "BS2401114",
+        "streetNo": "832",
+        "streetDirection": "",
+        "streetName": "AMHERST DR",
+        "permitType": "ACCESSORY DWELLING UNIT",
+        "issuedOn": "2026-07-27"
+      },
+      {
+        "permitNo": "BS2508978",
+        "streetNo": "510",
+        "streetDirection": "N",
+        "streetName": "CATALINA ST",
+        "permitType": "SINGLE-FAMILY ADDITION / ALTERATION",
+        "issuedOn": "2026-07-27"
+      },
+      {
+        "permitNo": "BS2600860",
+        "streetNo": "935",
+        "streetDirection": "N",
+        "streetName": "FAIRVIEW ST",
+        "permitType": "SINGLE-FAMILY ADDITION / ALTERATION",
+        "issuedOn": "2026-07-27"
+      },
+      {
+        "permitNo": "BS2600979",
+        "streetNo": "215",
+        "streetDirection": "S",
+        "streetName": "REESE PL",
+        "permitType": "ACCESSORY DWELLING UNIT",
+        "issuedOn": "2026-07-27"
+      },
+      {
+        "permitNo": "BS2600980",
+        "streetNo": "215",
+        "streetDirection": "S",
+        "streetName": "REESE PL",
+        "permitType": "NEW SINGLE-FAMILY DWELLING",
+        "issuedOn": "2026-07-27"
+      },
+      {
+        "permitNo": "BS2607978",
+        "streetNo": "815",
+        "streetDirection": "",
+        "streetName": "UCLAN DR",
+        "permitType": "SINGLE-FAMILY REPAIR / MAINTENANCE",
+        "issuedOn": "2026-07-27"
+      },
+      {
+        "permitNo": "BS2608017",
+        "streetNo": "1621",
+        "streetDirection": "N",
+        "streetName": "FAIRVIEW ST",
+        "permitType": "ELECTRICAL SERVICE",
+        "issuedOn": "2026-07-27"
+      },
+      {
+        "permitNo": "BS2608032",
+        "streetNo": "504",
+        "streetDirection": "E",
+        "streetName": "ELMWOOD AVE",
+        "permitType": "ELECTRICAL SERVICE",
+        "issuedOn": "2026-07-27"
+      },
+      {
+        "permitNo": "BS2608034",
+        "streetNo": "139",
+        "streetDirection": "S",
+        "streetName": "AVON ST",
+        "permitType": "ELECTRICAL",
+        "issuedOn": "2026-07-27"
+      },
+      {
+        "permitNo": "BS2608037",
+        "streetNo": "750",
+        "streetDirection": "S",
+        "streetName": "GRIFFITH PARK DR",
+        "permitType": "MEP COMBO",
+        "issuedOn": "2026-07-27"
+      },
+      {
+        "permitNo": "BS2608044",
+        "streetNo": "244",
+        "streetDirection": "S",
+        "streetName": "MYERS ST",
+        "permitType": "ELECTRICAL SERVICE",
+        "issuedOn": "2026-07-27"
+      },
+      {
+        "permitNo": "BS2608046",
+        "streetNo": "510",
+        "streetDirection": "S",
+        "streetName": "BEL AIRE DR",
+        "permitType": "SINGLE-FAMILY REPAIR / MAINTENANCE",
+        "issuedOn": "2026-07-27"
+      },
+      {
+        "permitNo": "BS2608050",
+        "streetNo": "558",
+        "streetDirection": "E",
+        "streetName": "VERDUGO AVE",
+        "permitType": "MULTI-FAMILY ADDITION AND ALTERATION",
+        "issuedOn": "2026-07-27"
+      },
+      {
+        "permitNo": "BS2608052",
+        "streetNo": "702",
+        "streetDirection": "N",
+        "streetName": "BEACHWOOD DR",
+        "permitType": "ELECTRICAL SERVICE",
+        "issuedOn": "2026-07-27"
+      },
+      {
+        "permitNo": "BS2608057",
+        "streetNo": "830",
+        "streetDirection": "",
+        "streetName": "AMHERST DR",
+        "permitType": "ELECTRICAL SERVICE",
+        "issuedOn": "2026-07-27"
+      },
+      {
+        "permitNo": "BS2608060",
+        "streetNo": "2546",
+        "streetDirection": "N",
+        "streetName": "LAMER ST",
+        "permitType": "ELECTRICAL SERVICE",
+        "issuedOn": "2026-07-27"
+      },
+      {
+        "permitNo": "BS2608063",
+        "streetNo": "2546",
+        "streetDirection": "N",
+        "streetName": "LAMER ST",
+        "permitType": "ELECTRICAL SERVICE",
+        "issuedOn": "2026-07-27"
+      },
+      {
+        "permitNo": "BS2411870",
+        "streetNo": "2800",
+        "streetDirection": "",
+        "streetName": "CLYBOURN AVE",
+        "permitType": "NEW COMMERCIAL STRUCTURE",
+        "issuedOn": "2026-07-24"
+      },
+      {
+        "permitNo": "BS2411874",
+        "streetNo": "2800",
+        "streetDirection": "",
+        "streetName": "CLYBOURN AVE",
+        "permitType": "ELECTRICAL",
+        "issuedOn": "2026-07-24"
+      },
+      {
+        "permitNo": "BS2505936",
+        "streetNo": "341",
+        "streetDirection": "N",
+        "streetName": "FREDERIC ST",
+        "permitType": "SINGLE-FAMILY ADDITION / ALTERATION",
+        "issuedOn": "2026-07-24"
+      },
+      {
+        "permitNo": "BS2511899",
+        "streetNo": "2827",
+        "streetDirection": "N",
+        "streetName": "HOLLYWOOD WAY",
+        "permitType": "NEW COMMERCIAL STRUCTURE",
+        "issuedOn": "2026-07-24"
+      },
+      {
+        "permitNo": "BS2511904",
+        "streetNo": "2827",
+        "streetDirection": "N",
+        "streetName": "HOLLYWOOD WAY",
+        "permitType": "NEW COMMERCIAL STRUCTURE",
+        "issuedOn": "2026-07-24"
+      },
+      {
+        "permitNo": "BS2603174",
+        "streetNo": "1216",
+        "streetDirection": "N",
+        "streetName": "SCREENLAND DR",
+        "permitType": "MULTI-FAMILY REPAIR AND MAINTENANCE",
+        "issuedOn": "2026-07-24"
+      },
+      {
+        "permitNo": "BS2604837",
+        "streetNo": "3406",
+        "streetDirection": "",
+        "streetName": "CHANDLER BLVD",
+        "permitType": "SINGLE-FAMILY ACCESSORY BUILDING",
+        "issuedOn": "2026-07-24"
+      },
+      {
+        "permitNo": "BS2607970",
+        "streetNo": "706",
+        "streetDirection": "",
+        "streetName": "FAIRMOUNT RD",
+        "permitType": "ELECTRICAL SERVICE",
+        "issuedOn": "2026-07-24"
+      },
+      {
+        "permitNo": "BS2607975",
+        "streetNo": "1214",
+        "streetDirection": "W",
+        "streetName": "ALAMEDA AVE",
+        "permitType": "MULTI-FAMILY REPAIR AND MAINTENANCE",
+        "issuedOn": "2026-07-24"
+      },
+      {
+        "permitNo": "BS2607977",
+        "streetNo": "2905",
+        "streetDirection": "W",
+        "streetName": "CLARK AVE",
+        "permitType": "MECHANICAL",
+        "issuedOn": "2026-07-24"
+      },
+      {
+        "permitNo": "BS2607982",
+        "streetNo": "1031",
+        "streetDirection": "",
+        "streetName": "DINCARA RD",
+        "permitType": "SINGLE-FAMILY REPAIR / MAINTENANCE",
+        "issuedOn": "2026-07-24"
+      },
+      {
+        "permitNo": "BS2607984",
+        "streetNo": "510",
+        "streetDirection": "N",
+        "streetName": "HOLLYWOOD WAY",
+        "permitType": "PLUMBING",
+        "issuedOn": "2026-07-24"
+      },
+      {
+        "permitNo": "BS2607985",
+        "streetNo": "3215",
+        "streetDirection": "N",
+        "streetName": "KENNETH RD",
+        "permitType": "SINGLE-FAMILY REPAIR / MAINTENANCE",
+        "issuedOn": "2026-07-24"
+      },
+      {
+        "permitNo": "BS2607986",
+        "streetNo": "216",
+        "streetDirection": "N",
+        "streetName": "AVON ST",
+        "permitType": "POOL/SPA",
+        "issuedOn": "2026-07-24"
+      },
+      {
+        "permitNo": "BS2501717",
+        "streetNo": "906",
+        "streetDirection": "E",
+        "streetName": "PALM AVE",
+        "permitType": "ACCESSORY DWELLING UNIT",
+        "issuedOn": "2026-07-23"
+      },
+      {
+        "permitNo": "BS2604297",
+        "streetNo": "2627",
+        "streetDirection": "N",
+        "streetName": "HOLLYWOOD WAY",
+        "permitType": "ELECTRICAL",
+        "issuedOn": "2026-07-23"
+      },
+      {
+        "permitNo": "BS2607917",
+        "streetNo": "2415",
+        "streetDirection": "N",
+        "streetName": "LAMER ST",
+        "permitType": "SINGLE-FAMILY REPAIR / MAINTENANCE",
+        "issuedOn": "2026-07-23"
+      },
+      {
+        "permitNo": "BS2607919",
+        "streetNo": "1122",
+        "streetDirection": "N",
+        "streetName": "CORDOVA ST",
+        "permitType": "ELECTRICAL SERVICE",
+        "issuedOn": "2026-07-23"
+      },
+      {
+        "permitNo": "BS2607921",
+        "streetNo": "1637",
+        "streetDirection": "N",
+        "streetName": "VICTORY PL",
+        "permitType": "COMMERCIAL REPAIR AND MAINTENANCE",
+        "issuedOn": "2026-07-23"
+      },
+      {
+        "permitNo": "BS2607922",
+        "streetNo": "1637",
+        "streetDirection": "N",
+        "streetName": "VICTORY PL",
+        "permitType": "MECHANICAL",
+        "issuedOn": "2026-07-23"
+      },
+      {
+        "permitNo": "BS2607925",
+        "streetNo": "929",
+        "streetDirection": "E",
+        "streetName": "ORANGE GROVE AVE",
+        "permitType": "ELECTRICAL SERVICE",
+        "issuedOn": "2026-07-23"
+      },
+      {
+        "permitNo": "BS2607926",
+        "streetNo": "1551",
+        "streetDirection": "N",
+        "streetName": "VICTORY PL",
+        "permitType": "COMMERCIAL REPAIR AND MAINTENANCE",
+        "issuedOn": "2026-07-23"
+      },
+      {
+        "permitNo": "BS2607929",
+        "streetNo": "380",
+        "streetDirection": "W",
+        "streetName": "ALAMEDA AVE",
+        "permitType": "PLUMBING",
+        "issuedOn": "2026-07-23"
+      },
+      {
+        "permitNo": "BS2607931",
+        "streetNo": "323",
+        "streetDirection": "S",
+        "streetName": "PARISH PL",
+        "permitType": "SINGLE-FAMILY REPAIR / MAINTENANCE",
+        "issuedOn": "2026-07-23"
+      },
+      {
+        "permitNo": "BS2607932",
+        "streetNo": "821",
+        "streetDirection": "N",
+        "streetName": "LIMA ST",
+        "permitType": "ELECTRICAL SERVICE",
+        "issuedOn": "2026-07-23"
+      },
+      {
+        "permitNo": "BS2607943",
+        "streetNo": "250",
+        "streetDirection": "N",
+        "streetName": "FIRST ST",
+        "permitType": "PLUMBING",
+        "issuedOn": "2026-07-23"
+      },
+      {
+        "permitNo": "BS2607944",
+        "streetNo": "721",
+        "streetDirection": "N",
+        "streetName": "MYERS ST",
+        "permitType": "ELECTRICAL SERVICE",
+        "issuedOn": "2026-07-23"
+      },
+      {
+        "permitNo": "BS2607946",
+        "streetNo": "630",
+        "streetDirection": "",
+        "streetName": "UCLAN DR",
+        "permitType": "SINGLE-FAMILY REPAIR / MAINTENANCE",
+        "issuedOn": "2026-07-23"
+      },
+      {
+        "permitNo": "BS2604300",
+        "streetNo": "321",
+        "streetDirection": "E",
+        "streetName": "ELMWOOD AVE",
+        "permitType": "ELECTRICAL SERVICE",
+        "issuedOn": "2026-07-22"
+      },
+      {
+        "permitNo": "BS2605730",
+        "streetNo": "3800",
+        "streetDirection": "W",
+        "streetName": "ALAMEDA AVE",
+        "permitType": "ELECTRICAL",
+        "issuedOn": "2026-07-22"
+      },
+      {
+        "permitNo": "BS2607829",
+        "streetNo": "4128",
+        "streetDirection": "W",
+        "streetName": "HOOD AVE",
+        "permitType": "MULTI-FAMILY REPAIR AND MAINTENANCE",
+        "issuedOn": "2026-07-22"
+      },
+      {
+        "permitNo": "BS2607848",
+        "streetNo": "2211",
+        "streetDirection": "W",
+        "streetName": "VERDUGO AVE",
+        "permitType": "SINGLE-FAMILY REPAIR / MAINTENANCE",
+        "issuedOn": "2026-07-22"
+      },
+      {
+        "permitNo": "BS2607861",
+        "streetNo": "3400",
+        "streetDirection": "",
+        "streetName": "RIVERSIDE DR",
+        "permitType": "SIGN",
+        "issuedOn": "2026-07-22"
+      },
+      {
+        "permitNo": "BS2607869",
+        "streetNo": "436",
+        "streetDirection": "E",
+        "streetName": "MAGNOLIA BLVD",
+        "permitType": "MULTI-FAMILY REPAIR AND MAINTENANCE",
+        "issuedOn": "2026-07-22"
+      },
+      {
+        "permitNo": "BS2607874",
+        "streetNo": "420",
+        "streetDirection": "E",
+        "streetName": "MAGNOLIA BLVD",
+        "permitType": "MULTI-FAMILY REPAIR AND MAINTENANCE",
+        "issuedOn": "2026-07-22"
+      },
+      {
+        "permitNo": "BS2607875",
+        "streetNo": "332",
+        "streetDirection": "W",
+        "streetName": "LINDEN AVE",
+        "permitType": "ELECTRICAL",
+        "issuedOn": "2026-07-22"
+      },
+      {
+        "permitNo": "BS2607876",
+        "streetNo": "627",
+        "streetDirection": "E",
+        "streetName": "ANGELENO AVE",
+        "permitType": "PLUMBING",
+        "issuedOn": "2026-07-22"
+      },
+      {
+        "permitNo": "BS2607877",
+        "streetNo": "2536",
+        "streetDirection": "N",
+        "streetName": "LAMER ST",
+        "permitType": "SINGLE-FAMILY ADDITION / ALTERATION",
+        "issuedOn": "2026-07-22"
+      },
+      {
+        "permitNo": "BS2607879",
+        "streetNo": "840",
+        "streetDirection": "N",
+        "streetName": "CALIFORNIA ST",
+        "permitType": "ELECTRICAL SERVICE",
+        "issuedOn": "2026-07-22"
+      },
+      {
+        "permitNo": "BS2607885",
+        "streetNo": "807",
+        "streetDirection": "N",
+        "streetName": "SPARKS ST",
+        "permitType": "SINGLE-FAMILY REPAIR / MAINTENANCE",
+        "issuedOn": "2026-07-22"
+      },
+      {
+        "permitNo": "BS2607888",
+        "streetNo": "125",
+        "streetDirection": "N",
+        "streetName": "BRIGHTON ST",
+        "permitType": "MULTI-FAMILY REPAIR AND MAINTENANCE",
+        "issuedOn": "2026-07-22"
+      },
+      {
+        "permitNo": "BS2607889",
+        "streetNo": "222",
+        "streetDirection": "N",
+        "streetName": "BUENA VISTA ST",
+        "permitType": "MULTI-FAMILY REPAIR AND MAINTENANCE",
+        "issuedOn": "2026-07-22"
+      },
+      {
+        "permitNo": "BS2607891",
+        "streetNo": "139",
+        "streetDirection": "S",
+        "streetName": "AVON ST",
+        "permitType": "MULTI-FAMILY REPAIR AND MAINTENANCE",
+        "issuedOn": "2026-07-22"
+      },
+      {
+        "permitNo": "BS2510448",
+        "streetNo": "828",
+        "streetDirection": "E",
+        "streetName": "ELMWOOD AVE",
+        "permitType": "ACCESSORY DWELLING UNIT",
+        "issuedOn": "2026-07-21"
+      },
+      {
+        "permitNo": "BS2600363",
+        "streetNo": "2217",
+        "streetDirection": "N",
+        "streetName": "BRIGHTON ST",
+        "permitType": "ACCESSORY DWELLING UNIT",
+        "issuedOn": "2026-07-21"
+      },
+      {
+        "permitNo": "BS2601821",
+        "streetNo": "1045",
+        "streetDirection": "E",
+        "streetName": "WALNUT AVE",
+        "permitType": "SINGLE-FAMILY ADDITION / ALTERATION",
+        "issuedOn": "2026-07-21"
+      },
+      {
+        "permitNo": "BS2602847",
+        "streetNo": "3111",
+        "streetDirection": "N",
+        "streetName": "KENWOOD ST",
+        "permitType": "SITEWORK",
+        "issuedOn": "2026-07-21"
+      },
+      {
+        "permitNo": "BS2603839",
+        "streetNo": "1007",
+        "streetDirection": "N",
+        "streetName": "ONTARIO ST",
+        "permitType": "POOL/SPA",
+        "issuedOn": "2026-07-21"
+      },
+      {
+        "permitNo": "BS2607643",
+        "streetNo": "2217",
+        "streetDirection": "N",
+        "streetName": "BRIGHTON ST",
+        "permitType": "NEW SINGLE-FAMILY DWELLING",
+        "issuedOn": "2026-07-21"
+      },
+      {
+        "permitNo": "BS2607656",
+        "streetNo": "1236",
+        "streetDirection": "N",
+        "streetName": "SCREENLAND DR",
+        "permitType": "MULTI-FAMILY ADDITION AND ALTERATION",
+        "issuedOn": "2026-07-21"
+      },
+      {
+        "permitNo": "BS2607784",
+        "streetNo": "1508",
+        "streetDirection": "N",
+        "streetName": "HOLLYWOOD WAY",
+        "permitType": "MULTI-FAMILY ADDITION AND ALTERATION",
+        "issuedOn": "2026-07-21"
+      },
+      {
+        "permitNo": "BS2607787",
+        "streetNo": "5036",
+        "streetDirection": "",
+        "streetName": "LEDGE AVE",
+        "permitType": "MECHANICAL",
+        "issuedOn": "2026-07-21"
+      },
+      {
+        "permitNo": "BS2607796",
+        "streetNo": "1925",
+        "streetDirection": "N",
+        "streetName": "PASS AVE",
+        "permitType": "MECHANICAL",
+        "issuedOn": "2026-07-21"
+      },
+      {
+        "permitNo": "BS2607798",
+        "streetNo": "837",
+        "streetDirection": "",
+        "streetName": "BROWN DR",
+        "permitType": "ELECTRICAL SERVICE",
+        "issuedOn": "2026-07-21"
+      },
+      {
+        "permitNo": "BS2607800",
+        "streetNo": "3400",
+        "streetDirection": "",
+        "streetName": "RIVERSIDE DR",
+        "permitType": "PLUMBING",
+        "issuedOn": "2026-07-21"
+      },
+      {
+        "permitNo": "BS2607804",
+        "streetNo": "837",
+        "streetDirection": "",
+        "streetName": "BROWN DR",
+        "permitType": "SINGLE-FAMILY ADDITION / ALTERATION",
+        "issuedOn": "2026-07-21"
+      },
+      {
+        "permitNo": "BS2607805",
+        "streetNo": "1369",
+        "streetDirection": "",
+        "streetName": "PASEO REDONDO",
+        "permitType": "SINGLE-FAMILY REPAIR / MAINTENANCE",
+        "issuedOn": "2026-07-21"
+      },
+      {
+        "permitNo": "BS2607807",
+        "streetNo": "848",
+        "streetDirection": "N",
+        "streetName": "MAPLE ST",
+        "permitType": "SINGLE-FAMILY REPAIR / MAINTENANCE",
+        "issuedOn": "2026-07-21"
+      },
+      {
+        "permitNo": "BS2607814",
+        "streetNo": "3400",
+        "streetDirection": "",
+        "streetName": "RIVERSIDE DR",
+        "permitType": "PLUMBING",
+        "issuedOn": "2026-07-21"
+      },
+      {
+        "permitNo": "BS2607817",
+        "streetNo": "1046",
+        "streetDirection": "E",
+        "streetName": "VERDUGO AVE",
+        "permitType": "SINGLE-FAMILY REPAIR / MAINTENANCE",
+        "issuedOn": "2026-07-21"
+      },
+      {
+        "permitNo": "BS2607820",
+        "streetNo": "2306",
+        "streetDirection": "N",
+        "streetName": "KENNETH RD",
+        "permitType": "ELECTRICAL SERVICE",
+        "issuedOn": "2026-07-21"
+      },
+      {
+        "permitNo": "BS2607823",
+        "streetNo": "1450",
+        "streetDirection": "",
+        "streetName": "CLYBOURN AVE",
+        "permitType": "ELECTRICAL SERVICE",
+        "issuedOn": "2026-07-21"
+      },
+      {
+        "permitNo": "BS2513173",
+        "streetNo": "2800",
+        "streetDirection": "",
+        "streetName": "EMPIRE AVE",
+        "permitType": "COMMERCIAL TENANT IMPROVEMENT",
+        "issuedOn": "2026-07-20"
+      },
+      {
+        "permitNo": "BS2513175",
+        "streetNo": "2800",
+        "streetDirection": "",
+        "streetName": "EMPIRE AVE",
+        "permitType": "ELECTRICAL",
+        "issuedOn": "2026-07-20"
+      },
+      {
+        "permitNo": "BS2600532",
+        "streetNo": "812",
+        "streetDirection": "N",
+        "streetName": "GLENOAKS BLVD",
+        "permitType": "ACCESSORY DWELLING UNIT",
+        "issuedOn": "2026-07-20"
+      },
+      {
+        "permitNo": "BS2600535",
+        "streetNo": "812",
+        "streetDirection": "N",
+        "streetName": "GLENOAKS BLVD",
+        "permitType": "MULTI-FAMILY REPAIR AND MAINTENANCE",
+        "issuedOn": "2026-07-20"
+      },
+      {
+        "permitNo": "BS2603616",
+        "streetNo": "3400",
+        "streetDirection": "",
+        "streetName": "RIVERSIDE DR",
+        "permitType": "COMMERCIAL TENANT IMPROVEMENT",
+        "issuedOn": "2026-07-20"
+      },
+      {
+        "permitNo": "BS2603793",
+        "streetNo": "3400",
+        "streetDirection": "",
+        "streetName": "RIVERSIDE DR",
+        "permitType": "COMMERCIAL TENANT IMPROVEMENT",
+        "issuedOn": "2026-07-20"
+      },
+      {
+        "permitNo": "BS2607273",
+        "streetNo": "984",
+        "streetDirection": "",
+        "streetName": "RIVERSIDE DR",
+        "permitType": "MULTI-FAMILY ADDITION AND ALTERATION",
+        "issuedOn": "2026-07-20"
+      },
+      {
+        "permitNo": "BS2607737",
+        "streetNo": "106",
+        "streetDirection": "N",
+        "streetName": "ROSE ST",
+        "permitType": "SINGLE-FAMILY REPAIR / MAINTENANCE",
+        "issuedOn": "2026-07-20"
+      },
+      {
+        "permitNo": "BS2607742",
+        "streetNo": "2672",
+        "streetDirection": "N",
+        "streetName": "FREDERIC ST",
+        "permitType": "MULTI-FAMILY REPAIR AND MAINTENANCE",
+        "issuedOn": "2026-07-20"
+      },
+      {
+        "permitNo": "BS2607743",
+        "streetNo": "732",
+        "streetDirection": "N",
+        "streetName": "LIMA ST",
+        "permitType": "ELECTRICAL SERVICE",
+        "issuedOn": "2026-07-20"
+      },
+      {
+        "permitNo": "BS2607744",
+        "streetNo": "732",
+        "streetDirection": "N",
+        "streetName": "LIMA ST",
+        "permitType": "ELECTRICAL",
+        "issuedOn": "2026-07-20"
+      },
+      {
+        "permitNo": "BS2607745",
+        "streetNo": "1121",
+        "streetDirection": "N",
+        "streetName": "MARIPOSA ST",
+        "permitType": "ELECTRICAL SERVICE",
+        "issuedOn": "2026-07-20"
+      },
+      {
+        "permitNo": "BS2607746",
+        "streetNo": "1121",
+        "streetDirection": "N",
+        "streetName": "MARIPOSA ST",
+        "permitType": "ELECTRICAL",
+        "issuedOn": "2026-07-20"
+      },
+      {
+        "permitNo": "BS2607747",
+        "streetNo": "1434",
+        "streetDirection": "N",
+        "streetName": "MAPLE ST",
+        "permitType": "SINGLE-FAMILY REPAIR / MAINTENANCE",
+        "issuedOn": "2026-07-20"
+      },
+      {
+        "permitNo": "BS2607756",
+        "streetNo": "826",
+        "streetDirection": "E",
+        "streetName": "PALM AVE",
+        "permitType": "ELECTRICAL SERVICE",
+        "issuedOn": "2026-07-20"
+      },
+      {
+        "permitNo": "BS2607770",
+        "streetNo": "1812",
+        "streetDirection": "N",
+        "streetName": "BRIGHTON ST",
+        "permitType": "SINGLE-FAMILY REPAIR / MAINTENANCE",
+        "issuedOn": "2026-07-20"
+      },
+      {
+        "permitNo": "BS2607697",
+        "streetNo": "613",
+        "streetDirection": "N",
+        "streetName": "CALIFORNIA ST",
+        "permitType": "ELECTRICAL SERVICE",
+        "issuedOn": "2026-07-17"
+      },
+      {
+        "permitNo": "BS2607699",
+        "streetNo": "2718",
+        "streetDirection": "N",
+        "streetName": "LAMER ST",
+        "permitType": "SINGLE-FAMILY REPAIR / MAINTENANCE",
+        "issuedOn": "2026-07-17"
+      },
+      {
+        "permitNo": "BS2607705",
+        "streetNo": "433",
+        "streetDirection": "N",
+        "streetName": "LAMER ST",
+        "permitType": "SINGLE-FAMILY REPAIR / MAINTENANCE",
+        "issuedOn": "2026-07-17"
+      },
+      {
+        "permitNo": "BS2607707",
+        "streetNo": "435",
+        "streetDirection": "N",
+        "streetName": "LAMER ST",
+        "permitType": "MULTI-FAMILY REPAIR AND MAINTENANCE",
+        "issuedOn": "2026-07-17"
+      },
+      {
+        "permitNo": "BS2607712",
+        "streetNo": "716",
+        "streetDirection": "E",
+        "streetName": "SAN JOSE AVE",
+        "permitType": "MULTI-FAMILY REPAIR AND MAINTENANCE",
+        "issuedOn": "2026-07-17"
+      },
+      {
+        "permitNo": "BS2607713",
+        "streetNo": "718",
+        "streetDirection": "E",
+        "streetName": "SAN JOSE AVE",
+        "permitType": "MULTI-FAMILY REPAIR AND MAINTENANCE",
+        "issuedOn": "2026-07-17"
+      },
+      {
+        "permitNo": "BS2607720",
+        "streetNo": "1407",
+        "streetDirection": "W",
+        "streetName": "VICTORY BLVD",
+        "permitType": "SINGLE-FAMILY REPAIR / MAINTENANCE",
+        "issuedOn": "2026-07-17"
+      },
+      {
+        "permitNo": "BS2607722",
+        "streetNo": "1508",
+        "streetDirection": "N",
+        "streetName": "HOLLYWOOD WAY",
+        "permitType": "ELECTRICAL SERVICE",
+        "issuedOn": "2026-07-17"
+      },
+      {
+        "permitNo": "BS2505138",
+        "streetNo": "414",
+        "streetDirection": "S",
+        "streetName": "GLENWOOD PL",
+        "permitType": "ACCESSORY DWELLING UNIT",
+        "issuedOn": "2026-07-16"
+      },
+      {
+        "permitNo": "BS2512384",
+        "streetNo": "200",
+        "streetDirection": "N",
+        "streetName": "THIRD ST",
+        "permitType": "COMMERCIAL TENANT IMPROVEMENT",
+        "issuedOn": "2026-07-16"
+      },
+      {
+        "permitNo": "BS2512385",
+        "streetNo": "200",
+        "streetDirection": "N",
+        "streetName": "THIRD ST",
+        "permitType": "PLUMBING",
+        "issuedOn": "2026-07-16"
+      },
+      {
+        "permitNo": "BS2512386",
+        "streetNo": "200",
+        "streetDirection": "N",
+        "streetName": "THIRD ST",
+        "permitType": "ELECTRICAL",
+        "issuedOn": "2026-07-16"
+      },
+      {
+        "permitNo": "BS2512387",
+        "streetNo": "200",
+        "streetDirection": "N",
+        "streetName": "THIRD ST",
+        "permitType": "MECHANICAL",
+        "issuedOn": "2026-07-16"
+      },
+      {
+        "permitNo": "BS2513105",
+        "streetNo": "820",
+        "streetDirection": "",
+        "streetName": "FORD ST",
+        "permitType": "ACCESSORY DWELLING UNIT",
+        "issuedOn": "2026-07-16"
+      },
+      {
+        "permitNo": "BS2601739",
+        "streetNo": "444",
+        "streetDirection": "W",
+        "streetName": "VALENCIA AVE",
+        "permitType": "DEMOLITION",
+        "issuedOn": "2026-07-16"
+      },
+      {
+        "permitNo": "BS2601740",
+        "streetNo": "446",
+        "streetDirection": "W",
+        "streetName": "VALENCIA AVE",
+        "permitType": "ACCESSORY DWELLING UNIT",
+        "issuedOn": "2026-07-16"
+      },
+      {
+        "permitNo": "BS2601898",
+        "streetNo": "1046",
+        "streetDirection": "E",
+        "streetName": "GRINNELL DR",
+        "permitType": "SINGLE-FAMILY ADDITION / ALTERATION",
+        "issuedOn": "2026-07-16"
+      },
+      {
+        "permitNo": "BS2607651",
+        "streetNo": "1228",
+        "streetDirection": "S",
+        "streetName": "LAKE ST",
+        "permitType": "SINGLE-FAMILY REPAIR / MAINTENANCE",
+        "issuedOn": "2026-07-16"
+      },
+      {
+        "permitNo": "BS2607652",
+        "streetNo": "821",
+        "streetDirection": "N",
+        "streetName": "LIMA ST",
+        "permitType": "SINGLE-FAMILY REPAIR / MAINTENANCE",
+        "issuedOn": "2026-07-16"
+      },
+      {
+        "permitNo": "BS2607655",
+        "streetNo": "826",
+        "streetDirection": "N",
+        "streetName": "VALLEY ST",
+        "permitType": "SINGLE-FAMILY REPAIR / MAINTENANCE",
+        "issuedOn": "2026-07-16"
+      },
+      {
+        "permitNo": "BS2607657",
+        "streetNo": "1050",
+        "streetDirection": "N",
+        "streetName": "CORDOVA ST",
+        "permitType": "ELECTRICAL",
+        "issuedOn": "2026-07-16"
+      },
+      {
+        "permitNo": "BS2607659",
+        "streetNo": "1410",
+        "streetDirection": "N",
+        "streetName": "KENWOOD ST",
+        "permitType": "SINGLE-FAMILY REPAIR / MAINTENANCE",
+        "issuedOn": "2026-07-16"
+      },
+      {
+        "permitNo": "BS2607660",
+        "streetNo": "2513",
+        "streetDirection": "N",
+        "streetName": "KEYSTONE ST",
+        "permitType": "SINGLE-FAMILY REPAIR / MAINTENANCE",
+        "issuedOn": "2026-07-16"
+      },
+      {
+        "permitNo": "BS2607661",
+        "streetNo": "2925",
+        "streetDirection": "W",
+        "streetName": "BURBANK BLVD",
+        "permitType": "SINGLE-FAMILY REPAIR / MAINTENANCE",
+        "issuedOn": "2026-07-16"
+      },
+      {
+        "permitNo": "BS2607662",
+        "streetNo": "300",
+        "streetDirection": "N",
+        "streetName": "CORDOVA ST",
+        "permitType": "ELECTRICAL SERVICE",
+        "issuedOn": "2026-07-16"
+      },
+      {
+        "permitNo": "BS2607666",
+        "streetNo": "1216",
+        "streetDirection": "N",
+        "streetName": "VALLEY ST",
+        "permitType": "MECHANICAL",
+        "issuedOn": "2026-07-16"
+      },
+      {
+        "permitNo": "BS2607667",
+        "streetNo": "2233",
+        "streetDirection": "N",
+        "streetName": "MANNING ST",
+        "permitType": "SINGLE-FAMILY REPAIR / MAINTENANCE",
+        "issuedOn": "2026-07-16"
+      },
+      {
+        "permitNo": "BS2607671",
+        "streetNo": "845",
+        "streetDirection": "N",
+        "streetName": "CALIFORNIA ST",
+        "permitType": "ELECTRICAL SERVICE",
+        "issuedOn": "2026-07-16"
+      },
+      {
+        "permitNo": "BS2607680",
+        "streetNo": "1346",
+        "streetDirection": "E",
+        "streetName": "TUJUNGA AVE",
+        "permitType": "SINGLE-FAMILY ADDITION / ALTERATION",
+        "issuedOn": "2026-07-16"
+      },
+      {
+        "permitNo": "BS2512759",
+        "streetNo": "3209",
+        "streetDirection": "",
+        "streetName": "VALLEYHEART DR",
+        "permitType": "SINGLE-FAMILY ADDITION / ALTERATION",
+        "issuedOn": "2026-07-15"
+      },
+      {
+        "permitNo": "BS2600132",
+        "streetNo": "634",
+        "streetDirection": "E",
+        "streetName": "SAN JOSE AVE",
+        "permitType": "MULTI-FAMILY REPAIR AND MAINTENANCE",
+        "issuedOn": "2026-07-15"
+      },
+      {
+        "permitNo": "BS2600212",
+        "streetNo": "541",
+        "streetDirection": "N",
+        "streetName": "NAOMI ST",
+        "permitType": "MULTI-FAMILY REPAIR AND MAINTENANCE",
+        "issuedOn": "2026-07-15"
+      },
+      {
+        "permitNo": "BS2601459",
+        "streetNo": "411",
+        "streetDirection": "N",
+        "streetName": "HOLLYWOOD WAY",
+        "permitType": "SITEWORK",
+        "issuedOn": "2026-07-15"
+      },
+      {
+        "permitNo": "BS2605697",
+        "streetNo": "500",
+        "streetDirection": "S",
+        "streetName": "BUENA VISTA ST",
+        "permitType": "COMMERCIAL TENANT IMPROVEMENT",
+        "issuedOn": "2026-07-15"
+      },
+      {
+        "permitNo": "BS2607595",
+        "streetNo": "1429",
+        "streetDirection": "N",
+        "streetName": "HOLLYWOOD WAY",
+        "permitType": "PLUMBING",
+        "issuedOn": "2026-07-15"
+      },
+      {
+        "permitNo": "BS2607598",
+        "streetNo": "926",
+        "streetDirection": "E",
+        "streetName": "PROVIDENCIA AVE",
+        "permitType": "SINGLE-FAMILY REPAIR / MAINTENANCE",
+        "issuedOn": "2026-07-15"
+      },
+      {
+        "permitNo": "BS2607600",
+        "streetNo": "225",
+        "streetDirection": "W",
+        "streetName": "ELMWOOD AVE",
+        "permitType": "DEMOLITION",
+        "issuedOn": "2026-07-15"
+      },
+      {
+        "permitNo": "BS2607603",
+        "streetNo": "238",
+        "streetDirection": "S",
+        "streetName": "BRIGHTON ST",
+        "permitType": "ELECTRICAL SERVICE",
+        "issuedOn": "2026-07-15"
+      },
+      {
+        "permitNo": "BS2607605",
+        "streetNo": "1214 1/2",
+        "streetDirection": "W",
+        "streetName": "ALAMEDA AVE",
+        "permitType": "MECHANICAL",
+        "issuedOn": "2026-07-15"
+      },
+      {
+        "permitNo": "BS2607607",
+        "streetNo": "708",
+        "streetDirection": "N",
+        "streetName": "FREDERIC ST",
+        "permitType": "SINGLE-FAMILY ADDITION / ALTERATION",
+        "issuedOn": "2026-07-15"
+      },
+      {
+        "permitNo": "BS2607608",
+        "streetNo": "710",
+        "streetDirection": "E",
+        "streetName": "WALNUT AVE",
+        "permitType": "SINGLE-FAMILY ADDITION / ALTERATION",
+        "issuedOn": "2026-07-15"
+      },
+      {
+        "permitNo": "BS2607619",
+        "streetNo": "1636",
+        "streetDirection": "N",
+        "streetName": "PEPPER ST",
+        "permitType": "SOLAR",
+        "issuedOn": "2026-07-15"
+      },
+      {
+        "permitNo": "BS2607624",
+        "streetNo": "1010",
+        "streetDirection": "N",
+        "streetName": "VICTORY PL",
+        "permitType": "COMMERCIAL REPAIR AND MAINTENANCE",
+        "issuedOn": "2026-07-15"
+      },
+      {
+        "permitNo": "BS2512481",
+        "streetNo": "3405",
+        "streetDirection": "",
+        "streetName": "CASTLEMAN LANE",
+        "permitType": "SITEWORK",
+        "issuedOn": "2026-07-14"
+      },
+      {
+        "permitNo": "BS2512482",
+        "streetNo": "3405",
+        "streetDirection": "",
+        "streetName": "CASTLEMAN LANE",
+        "permitType": "SINGLE-FAMILY ADDITION / ALTERATION",
+        "issuedOn": "2026-07-14"
+      },
+      {
+        "permitNo": "BS2513209",
+        "streetNo": "1129",
+        "streetDirection": "N",
+        "streetName": "FREDERIC ST",
+        "permitType": "SINGLE-FAMILY ADDITION / ALTERATION",
+        "issuedOn": "2026-07-14"
+      },
+      {
+        "permitNo": "BS2607296",
+        "streetNo": "800",
+        "streetDirection": "S",
+        "streetName": "MAIN ST",
+        "permitType": "SIGN",
+        "issuedOn": "2026-07-14"
+      },
+      {
+        "permitNo": "BS2607535",
+        "streetNo": "1136",
+        "streetDirection": "N",
+        "streetName": "REESE PL",
+        "permitType": "ELECTRICAL SERVICE",
+        "issuedOn": "2026-07-14"
+      },
+      {
+        "permitNo": "BS2607538",
+        "streetNo": "151",
+        "streetDirection": "N",
+        "streetName": "MAPLE ST",
+        "permitType": "MULTI-FAMILY REPAIR AND MAINTENANCE",
+        "issuedOn": "2026-07-14"
+      },
+      {
+        "permitNo": "BS2607540",
+        "streetNo": "642",
+        "streetDirection": "",
+        "streetName": "UCLAN DR",
+        "permitType": "ELECTRICAL SERVICE",
+        "issuedOn": "2026-07-14"
+      },
+      {
+        "permitNo": "BS2607543",
+        "streetNo": "406",
+        "streetDirection": "",
+        "streetName": "BIRMINGHAM RD",
+        "permitType": "SINGLE-FAMILY REPAIR / MAINTENANCE",
+        "issuedOn": "2026-07-14"
+      },
+      {
+        "permitNo": "BS2607557",
+        "streetNo": "1110",
+        "streetDirection": "N",
+        "streetName": "NIAGARA ST",
+        "permitType": "ELECTRICAL SERVICE",
+        "issuedOn": "2026-07-14"
+      },
+      {
+        "permitNo": "BS2607561",
+        "streetNo": "211",
+        "streetDirection": "N",
+        "streetName": "BEACHWOOD DR",
+        "permitType": "PLUMBING",
+        "issuedOn": "2026-07-14"
+      },
+      {
+        "permitNo": "BS2607562",
+        "streetNo": "211",
+        "streetDirection": "N",
+        "streetName": "BEACHWOOD DR",
+        "permitType": "ELECTRICAL",
+        "issuedOn": "2026-07-14"
+      },
+      {
+        "permitNo": "BS2607567",
+        "streetNo": "231",
+        "streetDirection": "N",
+        "streetName": "NIAGARA ST",
+        "permitType": "ELECTRICAL SERVICE",
+        "issuedOn": "2026-07-14"
+      },
+      {
+        "permitNo": "BS2607569",
+        "streetNo": "2012",
+        "streetDirection": "",
+        "streetName": "RICHARD ST",
+        "permitType": "PLUMBING",
+        "issuedOn": "2026-07-14"
+      },
+      {
+        "permitNo": "BS2607570",
+        "streetNo": "230",
+        "streetDirection": "N",
+        "streetName": "CORDOVA ST",
+        "permitType": "MULTI-FAMILY REPAIR AND MAINTENANCE",
+        "issuedOn": "2026-07-14"
+      },
+      {
+        "permitNo": "BS2605074",
+        "streetNo": "2300",
+        "streetDirection": "",
+        "streetName": "RIVERSIDE DR",
+        "permitType": "ELECTRICAL",
+        "issuedOn": "2026-07-13"
+      },
+      {
+        "permitNo": "BS2607395",
+        "streetNo": "1301",
+        "streetDirection": "N",
+        "streetName": "HOLLYWOOD WAY",
+        "permitType": "ELECTRICAL",
+        "issuedOn": "2026-07-13"
+      },
+      {
+        "permitNo": "BS2607479",
+        "streetNo": "1136",
+        "streetDirection": "N",
+        "streetName": "REESE PL",
+        "permitType": "ELECTRICAL",
+        "issuedOn": "2026-07-13"
+      },
+      {
+        "permitNo": "BS2607482",
+        "streetNo": "609",
+        "streetDirection": "N",
+        "streetName": "FAIRVIEW ST",
+        "permitType": "ELECTRICAL",
+        "issuedOn": "2026-07-13"
+      },
+      {
+        "permitNo": "BS2607483",
+        "streetNo": "900",
+        "streetDirection": "",
+        "streetName": "BIRMINGHAM RD",
+        "permitType": "PLUMBING",
+        "issuedOn": "2026-07-13"
+      },
+      {
+        "permitNo": "BS2607485",
+        "streetNo": "1104",
+        "streetDirection": "N",
+        "streetName": "NAOMI ST",
+        "permitType": "ELECTRICAL",
+        "issuedOn": "2026-07-13"
+      },
+      {
+        "permitNo": "BS2607491",
+        "streetNo": "243",
+        "streetDirection": "N",
+        "streetName": "CORDOVA ST",
+        "permitType": "SINGLE-FAMILY REPAIR / MAINTENANCE",
+        "issuedOn": "2026-07-13"
+      },
+      {
+        "permitNo": "BS2607501",
+        "streetNo": "1136",
+        "streetDirection": "N",
+        "streetName": "REESE PL",
+        "permitType": "SINGLE-FAMILY REPAIR / MAINTENANCE",
+        "issuedOn": "2026-07-13"
+      },
+      {
+        "permitNo": "BS2607503",
+        "streetNo": "1024",
+        "streetDirection": "W",
+        "streetName": "PALM AVE",
+        "permitType": "ELECTRICAL SERVICE",
+        "issuedOn": "2026-07-13"
+      },
+      {
+        "permitNo": "BS2607504",
+        "streetNo": "513",
+        "streetDirection": "N",
+        "streetName": "FLORENCE ST",
+        "permitType": "SINGLE-FAMILY REPAIR / MAINTENANCE",
+        "issuedOn": "2026-07-13"
+      },
+      {
+        "permitNo": "BS2607505",
+        "streetNo": "323",
+        "streetDirection": "W",
+        "streetName": "LUTGE AVE",
+        "permitType": "SINGLE-FAMILY REPAIR / MAINTENANCE",
+        "issuedOn": "2026-07-13"
+      },
+      {
+        "permitNo": "BS2607508",
+        "streetNo": "820",
+        "streetDirection": "N",
+        "streetName": "EVERGREEN ST",
+        "permitType": "SINGLE-FAMILY REPAIR / MAINTENANCE",
+        "issuedOn": "2026-07-13"
+      },
+      {
+        "permitNo": "BS2607518",
+        "streetNo": "800",
+        "streetDirection": "N",
+        "streetName": "BRIGHTON ST",
+        "permitType": "ELECTRICAL SERVICE",
+        "issuedOn": "2026-07-13"
+      },
+      {
+        "permitNo": "BS2607519",
+        "streetNo": "800",
+        "streetDirection": "N",
+        "streetName": "BRIGHTON ST",
+        "permitType": "ELECTRICAL SERVICE",
+        "issuedOn": "2026-07-13"
+      },
+      {
+        "permitNo": "BS2607521",
+        "streetNo": "904",
+        "streetDirection": "E",
+        "streetName": "PALM AVE",
+        "permitType": "PLUMBING",
+        "issuedOn": "2026-07-13"
+      },
+      {
+        "permitNo": "BS2512789",
+        "streetNo": "2114",
+        "streetDirection": "N",
+        "streetName": "SCREENLAND DR",
+        "permitType": "NEW SINGLE-FAMILY DWELLING",
+        "issuedOn": "2026-07-10"
+      },
+      {
+        "permitNo": "BS2600836",
+        "streetNo": "1452",
+        "streetDirection": "N",
+        "streetName": "ONTARIO ST",
+        "permitType": "ACCESSORY DWELLING UNIT",
+        "issuedOn": "2026-07-10"
+      },
+      {
+        "permitNo": "BS2600837",
+        "streetNo": "1452",
+        "streetDirection": "N",
+        "streetName": "ONTARIO ST",
+        "permitType": "NEW SINGLE-FAMILY DWELLING",
+        "issuedOn": "2026-07-10"
+      },
+      {
+        "permitNo": "BS2601165",
+        "streetNo": "3904",
+        "streetDirection": "",
+        "streetName": "RIVERSIDE DR",
+        "permitType": "COMMERCIAL TENANT IMPROVEMENT",
+        "issuedOn": "2026-07-10"
+      },
+      {
+        "permitNo": "BS2605620",
+        "streetNo": "528",
+        "streetDirection": "",
+        "streetName": "AMHERST DR",
+        "permitType": "ELECTRICAL SERVICE",
+        "issuedOn": "2026-07-10"
+      },
+      {
+        "permitNo": "BS2607379",
+        "streetNo": "2520",
+        "streetDirection": "N",
+        "streetName": "PARISH PL",
+        "permitType": "SINGLE-FAMILY REPAIR / MAINTENANCE",
+        "issuedOn": "2026-07-10"
+      },
+      {
+        "permitNo": "BS2607440",
+        "streetNo": "2566",
+        "streetDirection": "N",
+        "streetName": "BUENA VISTA ST",
+        "permitType": "ELECTRICAL SERVICE",
+        "issuedOn": "2026-07-10"
+      },
+      {
+        "permitNo": "BS2607442",
+        "streetNo": "2574",
+        "streetDirection": "N",
+        "streetName": "BUENA VISTA ST",
+        "permitType": "ELECTRICAL SERVICE",
+        "issuedOn": "2026-07-10"
+      },
+      {
+        "permitNo": "BS2607443",
+        "streetNo": "1450",
+        "streetDirection": "N",
+        "streetName": "ONTARIO ST",
+        "permitType": "DEMOLITION",
+        "issuedOn": "2026-07-10"
+      },
+      {
+        "permitNo": "BS2607448",
+        "streetNo": "529",
+        "streetDirection": "N",
+        "streetName": "LINCOLN ST",
+        "permitType": "SINGLE-FAMILY REPAIR / MAINTENANCE",
+        "issuedOn": "2026-07-10"
       }
     ],
     "dataClass": "snapshot"

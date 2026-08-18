@@ -26,13 +26,16 @@ export const ACCESS_GAPS: AccessGap[] = [
   },
   {
     domain: 'permits',
-    status: 'needs_registration',
-    headline: 'Access Status: Needs registration / extract',
-    detail: 'Burbank Online Permits is an applicant portal, not a public bulk dataset. No demonstration permits are shown.',
-    howToObtain: 'Register at the city permit portal for individual lookups, or request a bulk CSV from Community Development.',
+    status: 'unavailable',
+    headline: 'Access Status: Portal public — issued listing, not valuation',
+    detail:
+      'OnBase Building Documents search results are parsed from a local extract. That listing is issued permits (number, type, date, street). It is not a valuation file and not the Burbank Online Permits applicant portal.',
+    howToObtain:
+      'Search Type Building Documents at https://ccpa.burbankca.gov/PublicAccess/cq-search/index.html. City page: https://www.burbankca.gov/web/city-clerks-office/public-records-portal. Refresh with node scripts/fetch-onbase-permits.mjs.',
     portals: [
-      { name: 'Burbank Online Permits', url: 'https://permit.burbankca.gov/bop/onlineLogon.do' },
-      { name: 'Building Permits', url: 'https://www.burbankca.gov/web/community-development/building-permits' },
+      { name: 'Public Records Portal', url: 'https://www.burbankca.gov/web/city-clerks-office/public-records-portal' },
+      { name: 'OnBase Building Documents search', url: 'https://ccpa.burbankca.gov/PublicAccess/cq-search/index.html' },
+      { name: 'Burbank Online Permits (applicant portal)', url: 'https://permit.burbankca.gov/bop/onlineLogon.do' },
     ],
   },
   {
